@@ -18,7 +18,20 @@ public class TitleController : MonoBehaviour {
     [SerializeField] private RectTransform _title = null;
     [SerializeField, Header("横・縦に拡大する速さ")] private float _expandSpeed = 5000.0f;
     [SerializeField] private string _nextSceneName = "";
+
+    [SerializeField, Range( 1, 8 )]
+    private int _useDisplayCount = 2;
     #endregion
+
+    private void Awake()
+    {
+        int count   = Mathf.Min( Display.displays.Length, _useDisplayCount );
+
+        for( int i = 0; i < count; ++i )
+        {
+            Display.displays[ i ].Activate();
+        }
+    }
 
     private void Start() {
         _audioSource_SE = SE.Instance.GetComponent<AudioSource>();

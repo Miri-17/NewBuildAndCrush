@@ -26,6 +26,7 @@ public class BGM : MonoBehaviour {
         #region // デバッグ用
         switch (SceneManager.GetActiveScene().name) {
             case "Title":
+            case "ModeSelection":
                 _audioSource.clip = _bgmDB.AudioClips[0];
                 break;
             default:
