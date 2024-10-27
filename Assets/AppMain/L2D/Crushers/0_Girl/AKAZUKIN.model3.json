@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "AKAZUKIN.moc3",
+		"Textures": [
+			"AKAZUKIN.4096/texture_00.png"
+		],
+		"Physics": "AKAZUKIN.physics3.json",
+		"DisplayInfo": "AKAZUKIN.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

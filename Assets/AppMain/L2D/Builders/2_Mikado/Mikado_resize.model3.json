@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Mikado_resize.moc3",
+		"Textures": [
+			"Mikado_resize.4096/texture_00.png"
+		],
+		"Physics": "Mikado_resize.physics3.json",
+		"DisplayInfo": "Mikado_resize.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: 3_Witch.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: ac03ffff7603ffff2603ffffd6effeff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 0f4f65e117ffd4f779272861caaa7a3d, type: 2}
+  - {fileID: 11400000, guid: 22a15c6bf533846b2a8385a5d9773cdb, type: 2}
+  - {fileID: 11400000, guid: b9c122d9eda974e70bf80a42307ac764, type: 2}
+  - {fileID: 11400000, guid: ceb0f11d915a04b41bac49cb7fffd805, type: 2}

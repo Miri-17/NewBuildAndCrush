@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: 1_QueenAlice.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: b804ffff5ed2feff86b3feff36b3feff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 4810330b1e73540b3b4565bcab841b18, type: 2}
+  - {fileID: 11400000, guid: 691b274b986df4e4b8016838c059b125, type: 2}
+  - {fileID: 11400000, guid: 5bb5effbd0f25460881e55706c826052, type: 2}
+  - {fileID: 11400000, guid: 5a6c2bb07e45248efa8ca80588131d4a, type: 2}

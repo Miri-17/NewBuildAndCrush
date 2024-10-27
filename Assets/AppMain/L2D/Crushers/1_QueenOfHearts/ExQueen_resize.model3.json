@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "ExQueen_resize.moc3",
+		"Textures": [
+			"ExQueen_resize.4096/texture_00.png"
+		],
+		"Physics": "ExQueen_resize.physics3.json",
+		"DisplayInfo": "ExQueen_resize.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

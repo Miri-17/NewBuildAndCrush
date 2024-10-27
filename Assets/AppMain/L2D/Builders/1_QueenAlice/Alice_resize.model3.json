@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Alice_resize.moc3",
+		"Textures": [
+			"Alice_resize.4096/texture_00.png"
+		],
+		"Physics": "Alice_resize.physics3.json",
+		"DisplayInfo": "Alice_resize.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Wolf.moc3",
+		"Textures": [
+			"Wolf.4096/texture_00.png"
+		],
+		"Physics": "Wolf.physics3.json",
+		"DisplayInfo": "Wolf.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

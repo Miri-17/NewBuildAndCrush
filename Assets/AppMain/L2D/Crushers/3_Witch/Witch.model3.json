@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Witch.moc3",
+		"Textures": [
+			"Witch.4096/texture_00.png"
+		],
+		"Physics": "Witch.physics3.json",
+		"DisplayInfo": "Witch.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}
