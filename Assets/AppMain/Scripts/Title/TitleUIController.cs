@@ -4,11 +4,8 @@ using TMPro;
 using DG.Tweening;
 
 public class TitleUIController : MonoBehaviour {
-    #region Constant
     private const float START_TEXT_FADE_DURATION = 1.0f;
     private const float TITLE_SCALE = 10.0f;
-    private const float TRANSITION_DURATION = 0.5f;
-    #endregion
 
     private Image _titleImage;
 
@@ -18,6 +15,8 @@ public class TitleUIController : MonoBehaviour {
     [SerializeField] private RectTransform _title = null;
     [SerializeField] private Image _filter = null;
     #endregion
+
+    public static float TransitionDuration { get; private set; } = 0.5f;
 
     private void Start() {
         if (_title == null || _startText == null || _filter == null) {
@@ -43,17 +42,17 @@ public class TitleUIController : MonoBehaviour {
 
         var sequence = DOTween.Sequence();
         sequence.Append(
-            _title.DOScale(TITLE_SCALE, TRANSITION_DURATION)
+            _title.DOScale(TITLE_SCALE, TransitionDuration)
                 .SetEase(Ease.Linear)
                 .SetLink(_title.gameObject)
         );
         sequence.Join(
-            _titleImage.DOFade(0, TRANSITION_DURATION)
+            _titleImage.DOFade(0, TransitionDuration)
                 .SetEase(Ease.Linear)
                 .SetLink(_titleImage.gameObject)
         );
         sequence.Join(
-            _filter.DOFade(0, TRANSITION_DURATION)
+            _filter.DOFade(0, TransitionDuration)
                 .SetEase(Ease.Linear)
                 .SetLink(_filter.gameObject)
         );

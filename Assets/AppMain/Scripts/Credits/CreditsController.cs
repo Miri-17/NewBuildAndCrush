@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 
-public class TitleController : MonoBehaviour {
+public class CreditsController : MonoBehaviour {
     #region Private Fields
+    private AudioSource _audioSource_BGM = null;
     private AudioSource _audioSource_SE = null;
     private AudioClip _audioClip_SE = null;
     // シーン遷移関係
@@ -13,7 +15,7 @@ public class TitleController : MonoBehaviour {
     private bool _isChangingScene = false;
     #endregion
 
-    [SerializeField] private TitleUIController _titleUIController = null;
+    [SerializeField] private CreditsUIController _creditsUIController = null;
     // シーン遷移関係
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
 
@@ -32,22 +34,34 @@ public class TitleController : MonoBehaviour {
             return;
         }
 
+        _audioSource_BGM = BGM.Instance.GetComponent<AudioSource>();
         _audioSource_SE = SE.Instance.GetComponent<AudioSource>();
-        _audioClip_SE = SE.Instance.SEDB.AudioClips[0];
+        _audioClip_SE = SE.Instance.SEDB.AudioClips[2];
         if (_audioSource_SE == null || _audioClip_SE == null)
             Debug.LogError("AudioSource of AudioClip is not assigned properly.");
     }
 
     private void Update() {
-        if (_isChangingScene || !Input.GetButtonDown("Select"))
+        if (_isChangingScene || !Input.GetButtonDown("Jump"))
+            return;
+        
+        _audioSource_SE.PlayOneShot(_audioClip_SE);
+        ChangeScene();
+    }
+
+    /// <summary>
+    /// シーン遷移する
+    /// </summary>
+    public void ChangeScene() {
+        if (_isChangingScene)
             return;
         
         _isChangingScene = true;
-
-        _audioSource_SE.PlayOneShot(_audioClip_SE);
-        _titleUIController.TransitionUI();
-
-        GoNextSceneAsync(TitleUIController.TransitionDuration, _nextSceneNames[_nextSceneIndex]).Forget();
+        _creditsUIController.FadeInImage();
+        var duration = CreditsUIController.TransitionDuration;
+        _audioSource_BGM.DOFade(0, duration)
+            .SetLink(_audioSource_BGM.gameObject);
+        GoNextSceneAsync(duration, _nextSceneNames[_nextSceneIndex]).Forget();
     }
 
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {

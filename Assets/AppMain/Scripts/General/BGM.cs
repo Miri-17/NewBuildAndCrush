@@ -25,9 +25,13 @@ public class BGM : MonoBehaviour {
         _audioSource.clip = _bgmDB.AudioClips[0];
         #region // デバッグ用
         switch (SceneManager.GetActiveScene().name) {
-            case "Title":
-            case "ModeSelection":
-                _audioSource.clip = _bgmDB.AudioClips[0];
+            case "PlayerSelection":
+                _audioSource.clip = _bgmDB.AudioClips[1];
+                break;
+            case "SoundTrack":
+                break;
+            case "Credits":
+                _audioSource.clip = _bgmDB.AudioClips[13];
                 break;
             default:
                 break;
@@ -44,9 +48,27 @@ public class BGM : MonoBehaviour {
         Debug.Log("Next Scene is " + nextScene.name);
 
         switch (nextScene.name) {
-            case "Title":
+            case "ModeSelection":
+                if (_audioSource.isPlaying && _audioSource.clip == _bgmDB.AudioClips[0])
+                        break;
                 _audioSource.Stop();
+                _audioSource.volume = 1;
                 _audioSource.clip = _bgmDB.AudioClips[0];
+                Debug.Log("audioSource.clip: " + _audioSource.clip);
+                _audioSource.Play();
+                break;
+            case "PlayerSelection":
+                _audioSource.Stop();
+                _audioSource.clip = _bgmDB.AudioClips[1];
+                Debug.Log("audioSource.clip: " + _audioSource.clip);
+                _audioSource.Play();
+                break;
+            case "SoundTrack":
+                _audioSource.Stop();
+                break;
+            case "Credits":
+                _audioSource.Stop();
+                _audioSource.clip = _bgmDB.AudioClips[13];
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
