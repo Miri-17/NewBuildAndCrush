@@ -17,16 +17,18 @@ public class GameDirector : MonoBehaviour {
     // [SerializeField] private float _currentFill = 0;
     // [SerializeField] private bool _crusherWin = true;
     // [SerializeField] private bool _builderWin = true;
-    // // ビルダー4体の順. 勝ったら0が1になる.
-    // [SerializeField] private List<int> _girlAchievements = new List<int>() { 0, 0, 0, 0, };
-    // [SerializeField] private List<int> _queenOfHeartsAchievements = new List<int>() { 0, 0, 0, 0, };
-    // [SerializeField] private List<int> _tenjinAchievements = new List<int>() { 0, 0, 0, 0, };
-    // [SerializeField] private List<int> _witchAchievements = new List<int>() { 0, 0, 0, 0, };
-    // // クラッシャー4体の順. 勝ったら0が1になる.
-    // [SerializeField] private List<int> _wolfAchievements = new List<int>() { 0, 0, 0, 0, };
-    // [SerializeField] private List<int> _queenAliceAchievements =new List<int>() { 0, 0, 0, 0, };
-    // [SerializeField] private List<int> _mikadoAchievements = new List<int>() { 0, 0, 0, 0, };
-    // [SerializeField] private List<int> _hanzelGretelAchievements = new List<int>() { 0, 0, 0, 0, };
+
+    
+    // ビルダー4体の順. 勝ったら0が1になる.
+    [SerializeField] private List<int> _girlAchievements = new List<int>() { 0, 0, 0, 0, };
+    [SerializeField] private List<int> _queenOfHeartsAchievements = new List<int>() { 0, 0, 0, 0, };
+    [SerializeField] private List<int> _tenjinAchievements = new List<int>() { 0, 0, 0, 0, };
+    [SerializeField] private List<int> _witchAchievements = new List<int>() { 0, 0, 0, 0, };
+    // クラッシャー4体の順. 勝ったら0が1になる.
+    [SerializeField] private List<int> _wolfAchievements = new List<int>() { 0, 0, 0, 0, };
+    [SerializeField] private List<int> _queenAliceAchievements =new List<int>() { 0, 0, 0, 0, };
+    [SerializeField] private List<int> _mikadoAchievements = new List<int>() { 0, 0, 0, 0, };
+    [SerializeField] private List<int> _hanzelGretelAchievements = new List<int>() { 0, 0, 0, 0, };
     #endregion
 
     #region
@@ -42,14 +44,16 @@ public class GameDirector : MonoBehaviour {
     // public float CurrentFill { get => _currentFill; set => _currentFill = value; }
     // public bool CrusherWin { get => _crusherWin; set => _crusherWin = value; }
     // public bool BuilderWin { get => _builderWin; set => _builderWin = value; }
-    // public List<int> GirlAchievements { get => _girlAchievements; set => _girlAchievements = value; }
-    // public List<int> QueenOfHeartsAchievements { get => _queenOfHeartsAchievements; set => _queenOfHeartsAchievements = value; }
-    // public List<int> TenjinAchievements { get => _tenjinAchievements; set => _tenjinAchievements = value; }
-    // public List<int> WitchAchievements { get => _witchAchievements; set => _witchAchievements = value; }
-    // public List<int> WolfAchievements { get => _wolfAchievements; set => _wolfAchievements = value; }
-    // public List<int> QueenAliceAchievements { get => _queenAliceAchievements; set => _queenAliceAchievements = value; }
-    // public List<int> MikadoAchievements { get => _mikadoAchievements; set => _mikadoAchievements = value; }
-    // public List<int> HanzelGretelAchievements { get => _hanzelGretelAchievements; set => _hanzelGretelAchievements = value; }
+
+
+    public List<int> GirlAchievements { get => _girlAchievements; set => _girlAchievements = value; }
+    public List<int> QueenOfHeartsAchievements { get => _queenOfHeartsAchievements; set => _queenOfHeartsAchievements = value; }
+    public List<int> TenjinAchievements { get => _tenjinAchievements; set => _tenjinAchievements = value; }
+    public List<int> WitchAchievements { get => _witchAchievements; set => _witchAchievements = value; }
+    public List<int> WolfAchievements { get => _wolfAchievements; set => _wolfAchievements = value; }
+    public List<int> QueenAliceAchievements { get => _queenAliceAchievements; set => _queenAliceAchievements = value; }
+    public List<int> MikadoAchievements { get => _mikadoAchievements; set => _mikadoAchievements = value; }
+    public List<int> HanzelGretelAchievements { get => _hanzelGretelAchievements; set => _hanzelGretelAchievements = value; }
     #endregion
 
     private void Awake() {
