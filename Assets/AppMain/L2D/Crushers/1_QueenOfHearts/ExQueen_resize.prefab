@@ -7030,6 +7030,7 @@ GameObject:
   - component: {fileID: 5095289738883335152}
   - component: {fileID: 8237027369033739212}
   - component: {fileID: 6230012066792649162}
+  - component: {fileID: 1698657297469875025}
   m_Layer: 6
   m_Name: ExQueen_resize
   m_TagString: Untagged
@@ -7582,6 +7583,20 @@ MonoBehaviour:
     Gravity: {x: 0, y: -1}
     Wind: {x: 0, y: 0}
     Fps: 30
+--- !u!114 &1698657297469875025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716250388179314951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e895845bd3b4852a0afadffc44f7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _warningPanel: {fileID: 8011197536318670741, guid: cf094d0c90f004a328bd5e762a52d523, type: 3}
+  _parentName: CrusherFrontCanvas
 --- !u!1 &4820480328102391162
 GameObject:
   m_ObjectHideFlags: 0

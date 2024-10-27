@@ -3883,3 +3883,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: -69634
     messageOptions: 1
+  - time: 1.4670001
+    functionName: OnCompleteAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

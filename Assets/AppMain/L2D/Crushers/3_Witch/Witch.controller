@@ -39,7 +39,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Witch@idle_L2D
+  m_Name: WitchL2D_Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -65,7 +65,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Witch@select_L2D
+  m_Name: WitchL2D_Select
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -91,7 +91,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Witch@lose_L2D
+  m_Name: WitchL2D_Lose
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -139,7 +139,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Witch@win_L2D
+  m_Name: WitchL2D_Win
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

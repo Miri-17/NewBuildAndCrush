@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e670620a7843f4af1a30b71b5aa0e32d, type: 3}
+  m_Name: 0_BuilderDB
+  m_EditorClassIdentifier: 
+  _name: "\u30AA\u30AA\u30AB\u30DF"
+  _englishName: Wolf
+  _live2D: {fileID: 794753891948485932, guid: 35d23796c183042768b7d9789deb72fe, type: 3}

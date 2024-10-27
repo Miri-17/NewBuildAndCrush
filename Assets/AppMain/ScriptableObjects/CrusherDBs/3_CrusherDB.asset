@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcdef148c03b14921aabc64d0d082a60, type: 3}
+  m_Name: 3_CrusherDB
+  m_EditorClassIdentifier: 
+  _name: "\u304A\u83D3\u5B50\u306E\u9B54\u5973"
+  _englishName: Witch
+  _live2D: {fileID: 852929565010149808, guid: 021b7beaf590e4d55a94b2f2db6889b7, type: 3}

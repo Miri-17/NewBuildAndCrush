@@ -18,7 +18,7 @@ public class TitleController : MonoBehaviour {
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
 
     private void Start() {
-        if (SE.Instance == null) {
+        if (CrusherSE.Instance == null) {
             Debug.LogError("SE instance is not available.");
             return;
         }
@@ -32,8 +32,8 @@ public class TitleController : MonoBehaviour {
             return;
         }
 
-        _audioSource_SE = SE.Instance.GetComponent<AudioSource>();
-        _audioClip_SE = SE.Instance.SEDB.AudioClips[0];
+        _audioSource_SE = CrusherSE.Instance.GetComponent<AudioSource>();
+        _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
         if (_audioSource_SE == null || _audioClip_SE == null)
             Debug.LogError("AudioSource of AudioClip is not assigned properly.");
     }

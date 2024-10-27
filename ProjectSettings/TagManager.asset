@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BuilderWarningPanel
+  - CrusherWarningPanel
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - CrusherL2D
   - BuilderL2D
-  - 
+  - FrontUI
   - 
   - 
   - 

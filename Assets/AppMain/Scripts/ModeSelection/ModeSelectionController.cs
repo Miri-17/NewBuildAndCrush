@@ -22,7 +22,7 @@ public class ModeSelectionController : MonoBehaviour {
     [SerializeField] private List<Sprite> _rulesButtonSprites = new List<Sprite>();
 
     private void Start() {
-        if (SE.Instance == null) {
+        if (CrusherSE.Instance == null) {
             Debug.LogError("SE instance is not available.");
             return;
         }
@@ -36,8 +36,8 @@ public class ModeSelectionController : MonoBehaviour {
             return;
         }
 
-        _audioSource_SE = SE.Instance.GetComponent<AudioSource>();
-        _audioClip_SE = SE.Instance.SEDB.AudioClips[0];
+        _audioSource_SE = CrusherSE.Instance.GetComponent<AudioSource>();
+        _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
         if (_audioSource_SE == null || _audioClip_SE == null)
             Debug.LogError("AudioSource of AudioClip is not assigned properly.");
         
@@ -62,14 +62,14 @@ public class ModeSelectionController : MonoBehaviour {
                     _nextSceneIndex = _nextSceneNames.Count - 1;
             }
 
-            _audioClip_SE = SE.Instance.SEDB.AudioClips[1];
+            _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[1];
             _audioSource_SE.PlayOneShot(_audioClip_SE);
         }
 
         if (Input.GetButtonDown("Select")) {
             _isChangingScene = true;
 
-            _audioClip_SE = SE.Instance.SEDB.AudioClips[0];
+            _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
             _audioSource_SE.PlayOneShot(_audioClip_SE);
 
             GoNextSceneAsync(0.5f, _nextSceneNames[_nextSceneIndex]).Forget();

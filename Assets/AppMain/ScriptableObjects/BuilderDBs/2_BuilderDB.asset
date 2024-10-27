@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e670620a7843f4af1a30b71b5aa0e32d, type: 3}
+  m_Name: 2_BuilderDB
+  m_EditorClassIdentifier: 
+  _name: "\u5FA1\u9580"
+  _englishName: Mikado
+  _live2D: {fileID: 2350566629287001065, guid: d31d2ae8add3049c1abac4b30e5ea3ad, type: 3}

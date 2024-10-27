@@ -2286,6 +2286,7 @@ GameObject:
   - component: {fileID: 6617400096422304668}
   - component: {fileID: 525848669747597265}
   - component: {fileID: 5412180086310776857}
+  - component: {fileID: 1654965558035755383}
   m_Layer: 7
   m_Name: Alice_resize
   m_TagString: Untagged
@@ -2954,6 +2955,20 @@ MonoBehaviour:
     Gravity: {x: 0, y: -1}
     Wind: {x: 0, y: 0}
     Fps: 30
+--- !u!114 &1654965558035755383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301678314306599323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f144b554fdbfb4c8db5c21bf27c16fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _warningPanel: {fileID: 8011197536318670741, guid: 174c3d9d81e774ca99eca8a10783fa85, type: 3}
+  _parentName: BuilderFrontCanvas
 --- !u!1 &1306844880428721910
 GameObject:
   m_ObjectHideFlags: 0

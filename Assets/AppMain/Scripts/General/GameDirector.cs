@@ -5,8 +5,8 @@ public class GameDirector : MonoBehaviour {
     public static GameDirector Instance { get; private set; }
 
     #region
-    // [SerializeField] private int _crusherIndex = 0;
-    // [SerializeField] private int _builderIndex = 0;
+    [SerializeField] private int _crusherIndex = 0;
+    [SerializeField] private int _builderIndex = 0;
     // [SerializeField] private int _crusherScore = 0;
     // [SerializeField] private int _builderScore = 0;
     // [SerializeField] private int _wagonCrushCounts = 0;
@@ -32,8 +32,8 @@ public class GameDirector : MonoBehaviour {
     #endregion
 
     #region
-    // public int CrusherIndex { get => _crusherIndex; set => _crusherIndex = value; }
-    // public int BuilderIndex { get => _builderIndex; set => _builderIndex = value; }
+    public int CrusherIndex { get => _crusherIndex; set => _crusherIndex = value; }
+    public int BuilderIndex { get => _builderIndex; set => _builderIndex = value; }
     // public int CrusherScore { get => _crusherScore; set => _crusherScore = value; }
     // public int BuilderScore { get => _builderScore; set => _builderScore = value; }
     // public int WagonCrushCounts { get => _wagonCrushCounts; set => _wagonCrushCounts = value; }
@@ -44,7 +44,6 @@ public class GameDirector : MonoBehaviour {
     // public float CurrentFill { get => _currentFill; set => _currentFill = value; }
     // public bool CrusherWin { get => _crusherWin; set => _crusherWin = value; }
     // public bool BuilderWin { get => _builderWin; set => _builderWin = value; }
-
 
     public List<int> GirlAchievements { get => _girlAchievements; set => _girlAchievements = value; }
     public List<int> QueenOfHeartsAchievements { get => _queenOfHeartsAchievements; set => _queenOfHeartsAchievements = value; }

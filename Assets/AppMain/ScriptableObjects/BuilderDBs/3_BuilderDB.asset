@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e670620a7843f4af1a30b71b5aa0e32d, type: 3}
+  m_Name: 3_BuilderDB
+  m_EditorClassIdentifier: 
+  _name: "\u30D8\u30F3\u30BC\u30EB\u3068\u30B0\u30EC\u30FC\u30C6\u30EB"
+  _englishName: HanzelGretel
+  _live2D: {fileID: 5390927402218144024, guid: b17736b9abc094436a279e96b9e4424b, type: 3}

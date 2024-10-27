@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7923802de918449309a2310aa55d4280, type: 3}
+  m_Name: CrushersDB
+  m_EditorClassIdentifier: 
+  _crusherDBs:
+  - {fileID: 11400000, guid: 95a5b6873f493454d844726d17a82e9f, type: 2}
+  - {fileID: 11400000, guid: d13c8d16f25bc408a8eacadd1b75161f, type: 2}
+  - {fileID: 11400000, guid: 33589feb52e3e41dd877648bf54cdcf4, type: 2}
+  - {fileID: 11400000, guid: 52679fd17ccc04b7296de92ad57a1ac0, type: 2}
+  _crusherInfoDBs:
+  - {fileID: 11400000, guid: cef0407afdeb54e22aa51b993fc3e549, type: 2}
+  - {fileID: 11400000, guid: 7959bb77566ec4e90b5a3169514e122a, type: 2}
+  - {fileID: 11400000, guid: 11af79054208a428089ca914f780f6ee, type: 2}
+  - {fileID: 11400000, guid: 28e4f574f5e2c4fd5bc4efb48905df82, type: 2}

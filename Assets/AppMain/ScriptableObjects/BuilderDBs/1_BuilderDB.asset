@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e670620a7843f4af1a30b71b5aa0e32d, type: 3}
+  m_Name: 1_BuilderDB
+  m_EditorClassIdentifier: 
+  _name: "\u5973\u738B\u30A2\u30EA\u30B9"
+  _englishName: QueenAlice
+  _live2D: {fileID: 1301678314306599323, guid: 46925062631224e30b8c33c75bfecbfd, type: 3}
