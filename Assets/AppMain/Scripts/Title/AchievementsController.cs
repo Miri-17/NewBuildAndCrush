@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AchievementsController : MonoBehaviour {
-    [SerializeField] private List<Image> _crusherAchievementImages = new List<Image>();
-    [SerializeField] private List<Image> _builderAchievementImages = new List<Image>();
-
     private List<List<int>> _achievementLists = new List<List<int>>();
     private GameDirector _gameDirector = null;
+
+    [SerializeField] private List<Image> _crusherAchievementImages = new List<Image>();
+    [SerializeField] private List<Image> _builderAchievementImages = new List<Image>();
 
     private void Start() {
         _gameDirector = GameDirector.Instance;

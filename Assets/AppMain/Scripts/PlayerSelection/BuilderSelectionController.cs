@@ -44,6 +44,7 @@ public class BuilderSelectionController : MonoBehaviour {
 
         _builderName.text = Builder.Name;
         _builderL2D = Instantiate(Builder.Live2D, new Vector3(0, 0, 80.0f), Quaternion.identity);
+        _builderL2D.transform.SetParent(GameObject.Find("Builder").transform, false);
         BuilderAnimator = _builderL2D.GetComponent<Animator>();
 
         _builderNickname.text = builderInfo.Nickname;

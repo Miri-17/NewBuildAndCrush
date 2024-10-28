@@ -15,6 +15,7 @@ public class ModeSelectionController : MonoBehaviour {
     #endregion
 
     // シーン遷移関係
+    [SerializeField] private ModeSelectionUIController _modeSelectionUIController = null;
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
     // TODO ルールパネル系 (UIの方に移すかも)
     [SerializeField] private GameObject _rulesPanel = null;
@@ -47,7 +48,7 @@ public class ModeSelectionController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_isChangingScene)
+        if (_isChangingScene || !_modeSelectionUIController.IsAnimationEnded)
             return;
         
         if (Input.GetButtonDown("Horizontal")) {

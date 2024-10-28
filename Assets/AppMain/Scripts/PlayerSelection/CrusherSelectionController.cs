@@ -98,6 +98,7 @@ public class CrusherSelectionController : MonoBehaviour {
 
         _crusherName.text = _crusher.Name;
         _crusherL2D = Instantiate(_crusher.Live2D, new Vector3(0, 0, 80.0f), Quaternion.identity);
+        _crusherL2D.transform.SetParent(GameObject.Find("Crusher").transform, false);
         _crusherAnimator = _crusherL2D.GetComponent<Animator>();
 
         _crusherNickname.text = crusherInfo.Nickname;

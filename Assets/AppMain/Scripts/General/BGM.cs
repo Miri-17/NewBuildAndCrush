@@ -33,6 +33,10 @@ public class BGM : MonoBehaviour {
             case "Credits":
                 _audioSource.clip = _bgmDB.AudioClips[13];
                 break;
+            case "Result":
+                _audioSource.loop = false;
+                _audioSource.clip = _bgmDB.AudioClips[11];
+                break;
             default:
                 break;
         }
@@ -69,6 +73,13 @@ public class BGM : MonoBehaviour {
             case "Credits":
                 _audioSource.Stop();
                 _audioSource.clip = _bgmDB.AudioClips[13];
+                Debug.Log("audioSource.clip: " + _audioSource.clip);
+                _audioSource.Play();
+                break;
+            case "Result":
+                _audioSource.Stop();
+                _audioSource.loop = false;
+                _audioSource.clip = _bgmDB.AudioClips[11];
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;

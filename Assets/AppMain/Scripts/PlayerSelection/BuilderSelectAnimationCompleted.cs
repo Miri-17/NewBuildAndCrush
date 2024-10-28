@@ -10,9 +10,11 @@ public class BuilderSelectAnimationCompleted : MonoBehaviour {
     [SerializeField] private string _parentName = "";
 
     private void Start() {
-        if (SceneManager.GetActiveScene().name != "PlayerSelection")
+        if (SceneManager.GetActiveScene().name != "PlayerSelection") {
             Destroy(this.GetComponent<BuilderSelectAnimationCompleted>());
-        
+            return;
+        }
+
         _builderSelectionController = GameObject.Find("BuilderSelectionController").GetComponent<BuilderSelectionController>();
     }
 
