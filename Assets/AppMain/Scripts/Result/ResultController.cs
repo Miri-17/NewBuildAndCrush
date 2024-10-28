@@ -74,8 +74,8 @@ public class ResultController : MonoBehaviour {
         switch (index) {
             case 0: return new Vector3(1.0f, 0, 80.0f);
             case 1: return new Vector3(0.75f, 0, 80.0f);
-            case 2: return new Vector3(1.0f, 0, 80.0f); // TODO 要調節
-            default: return new Vector3(1.0f, 0, 80.0f); // TODO 要調節 (2人とものお手手を見せたい)
+            case 2: return new Vector3(0.9f, 0, 80.0f);
+            default: return new Vector3(0.85f, 0, 80.0f);
         }
     }
     
@@ -83,7 +83,7 @@ public class ResultController : MonoBehaviour {
         switch (index) {
             case 0: return new Vector3(-0.45f, 0, 80.0f);
             case 1: return new Vector3(-0.95f, 0, 80.0f);
-            case 2: return new Vector3(-0.77f, 0, 80.0f); // TODO 要調節
+            case 2: return new Vector3(-0.87f, 0, 80.0f);
             default: return new Vector3(-0.65f, 0, 80.0f);
         }
     }

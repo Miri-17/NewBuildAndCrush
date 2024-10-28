@@ -11,10 +11,12 @@ public class ModeSelectionController : MonoBehaviour {
     private AudioClip _audioClip_SE = null;
     // シーン遷移関係
     private int _nextSceneIndex = 0;
+    private int _previousSelectIndex = 0;
     private bool _isChangingScene = false;
     #endregion
 
     // シーン遷移関係
+    [SerializeField] private List<ModeSelectionBook> _modeSelectionBooks = new List<ModeSelectionBook>();
     [SerializeField] private ModeSelectionUIController _modeSelectionUIController = null;
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
     // TODO ルールパネル系 (UIの方に移すかも)
@@ -42,6 +44,9 @@ public class ModeSelectionController : MonoBehaviour {
         if (_audioSource_SE == null || _audioClip_SE == null)
             Debug.LogError("AudioSource of AudioClip is not assigned properly.");
         
+        _modeSelectionBooks[_nextSceneIndex].SetSelection(true);
+        _previousSelectIndex = _nextSceneIndex;
+        
         // TODO ルールパネル系 (UIの方に移すかも)
         _rulesPanel.SetActive(false);
         _rulesButton.sprite = _rulesButtonSprites[0];
@@ -62,6 +67,10 @@ public class ModeSelectionController : MonoBehaviour {
                 if (_nextSceneIndex < 0)
                     _nextSceneIndex = _nextSceneNames.Count - 1;
             }
+
+            _modeSelectionBooks[_previousSelectIndex].SetSelection(false);
+            _modeSelectionBooks[_nextSceneIndex].SetSelection(true);
+            _previousSelectIndex = _nextSceneIndex;
 
             _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[1];
             _audioSource_SE.PlayOneShot(_audioClip_SE);

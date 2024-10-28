@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,25 +24,31 @@ public class BGM : MonoBehaviour {
         _audioSource = this.GetComponent<AudioSource>();
 
         _audioSource.clip = _bgmDB.AudioClips[0];
+        _audioSource.Play();
         #region // デバッグ用
         switch (SceneManager.GetActiveScene().name) {
             case "PlayerSelection":
                 _audioSource.clip = _bgmDB.AudioClips[1];
+                _audioSource.Play();
                 break;
-            case "SoundTrack":
+            case "SoundList":
+            case "Battle":
+                _audioSource.Stop();
                 break;
             case "Credits":
                 _audioSource.clip = _bgmDB.AudioClips[13];
+                _audioSource.Play();
                 break;
             case "Result":
                 _audioSource.loop = false;
                 _audioSource.clip = _bgmDB.AudioClips[11];
+                _audioSource.Play();
                 break;
             default:
                 break;
         }
         #endregion
-        _audioSource.Play();
+        // _audioSource.Play(); // TODO デバッグを終えたらコメントアウト外す！！
 
         // シーンが切り替わった時に呼ばれるメソッドを登録する.
         SceneManager.activeSceneChanged += ChangedActiveScene;
@@ -67,7 +74,7 @@ public class BGM : MonoBehaviour {
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
-            case "SoundTrack":
+            case "SoundList":
                 _audioSource.Stop();
                 break;
             case "Credits":

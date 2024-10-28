@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildersDB : ScriptableObject {
     [SerializeField] private List<BuilderDB> _builderDBs = new List<BuilderDB>();
     [SerializeField] private List<BuilderInfoDB> _builderInfoDBs = new List<BuilderInfoDB>();
+    [SerializeField] private List<BattleBuilderDB> _battleBuilderDBs = new List<BattleBuilderDB>();
 
     // public List<BuilderDB> BuilderDatabases { get => _builderDBs; set => _builderDBs = value; }
     // public List<BuilderInfoDB> BuilderInfoDBs { get => _builderInfoDBs; set => _builderInfoDBs = value; }
@@ -32,5 +33,14 @@ public class BuildersDB : ScriptableObject {
     /// <returns></returns>
     public BuilderInfoDB GetBuilderInfo(int index) {
         return _builderInfoDBs[index];
+    }
+
+    /// <summary>
+    /// Battleで使うビルダーの情報を返す
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public BattleBuilderDB GetBattleBuilder(int index) {
+        return _battleBuilderDBs[index];
     }
 }

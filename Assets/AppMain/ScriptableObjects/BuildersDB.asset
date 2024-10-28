@@ -22,3 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 005902fae30ba44299bcee1b4b8e9e01, type: 2}
   - {fileID: 11400000, guid: 1a1dddf9ecfc944b79729c369b6a21fc, type: 2}
   - {fileID: 11400000, guid: f4ca8902243964ff8809983c284882fa, type: 2}
+  _battleBuilderDBs:
+  - {fileID: 11400000, guid: 6ac30b969184843b0af9f989510c6d3d, type: 2}
+  - {fileID: 11400000, guid: 460a620ec13804060a9576c80e9197cd, type: 2}
+  - {fileID: 11400000, guid: fe58fe64072254a12a0d26c3f703890d, type: 2}
+  - {fileID: 11400000, guid: 0b887374d200342c88fcb074c864bcf7, type: 2}

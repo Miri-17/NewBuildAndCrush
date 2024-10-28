@@ -11,9 +11,11 @@ public class ResultUIController : MonoBehaviour {
     [Header("どちらも勝ち, 負けの順")]
     [SerializeField] private List<Sprite> _bgs = new List<Sprite>();
     [SerializeField] private List<Sprite> _nameBgs = new List<Sprite>();
+    [SerializeField] private List<Sprite> _winLoses = new List<Sprite>();
     [Header("すべてBuilder, Crusherの順")]
     [SerializeField] private List<Image> _bgImages = new List<Image>();
     [SerializeField] private List<Image> _nameBgImages = new List<Image>();
+    [SerializeField] private List<Image> _winLoseImages = new List<Image>();
     [SerializeField] private List<TextMeshProUGUI> _crusherScores = new List<TextMeshProUGUI>();
     [SerializeField] private List<TextMeshProUGUI> _builderScores = new List<TextMeshProUGUI>();
     [SerializeField] private List<TextMeshProUGUI> _crusherKillCounts = new List<TextMeshProUGUI>();
@@ -43,6 +45,8 @@ public class ResultUIController : MonoBehaviour {
         _bgImages[1].sprite = _bgs[isBuilderWin ? 1 : 0];
         _nameBgImages[0].sprite = _nameBgs[isBuilderWin ? 0 : 1];
         _nameBgImages[1].sprite = _nameBgs[isBuilderWin ? 1 : 0];
+        _winLoseImages[0].sprite = _winLoses[isBuilderWin ? 0 : 1];
+        _winLoseImages[1].sprite = _winLoses[isBuilderWin ? 1 : 0];
     }
 
     private void SetScoreUI(int builderScore, int crusherScore) {
