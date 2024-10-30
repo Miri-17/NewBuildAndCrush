@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d197dfbea17e4272815adb669f72145, type: 3}
   m_Name: 0_BattleBuilderDB
   m_EditorClassIdentifier: 
+  _obstacleDBs:
+  - {fileID: 11400000, guid: 73f8ed09978f141dd9c314a4c67ddaa5, type: 2}
+  - {fileID: 11400000, guid: a960b840d56b24ada954d46d17754c95, type: 2}
+  - {fileID: 11400000, guid: fa450793236eb4a489a8d99bc05ff497, type: 2}
+  - {fileID: 11400000, guid: 1403932b5ebff48f683d9774fc8492ef, type: 2}
+  - {fileID: 11400000, guid: aabb450b4191642e1baa1333d9a41867, type: 2}
+  - {fileID: 11400000, guid: de033ddc0351f461594d2f79b5dbd179, type: 2}
   _bg: {fileID: 21300000, guid: 4364f55abb4e74f68a0620e227dfe357, type: 3}
   _ground: {fileID: 21300000, guid: 5df10f3cda83f4e27a55133933a4f8c8, type: 3}
+  _builderPrefab: {fileID: 3169502150516134200, guid: 8ae5a3ea4cb0c4166b02ecb7f2a3e47a, type: 3}
+  _wagonPrefab: {fileID: 525510771325377293, guid: aabebbfe8e712400ea9ca570d22f42b8, type: 3}

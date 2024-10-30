@@ -22,3 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7959bb77566ec4e90b5a3169514e122a, type: 2}
   - {fileID: 11400000, guid: 11af79054208a428089ca914f780f6ee, type: 2}
   - {fileID: 11400000, guid: 28e4f574f5e2c4fd5bc4efb48905df82, type: 2}
+  _battleCrusherDBs:
+  - {fileID: 11400000, guid: e46422c6177e94a0aa9de47abf5dbd84, type: 2}
+  - {fileID: 11400000, guid: 885ef16d7cad148408bff71647cf802b, type: 2}
+  - {fileID: 11400000, guid: 86d136bcaf36c47de93302fb5893d07e, type: 2}
+  - {fileID: 11400000, guid: c2e86bab068fb4357b841006d0e35878, type: 2}

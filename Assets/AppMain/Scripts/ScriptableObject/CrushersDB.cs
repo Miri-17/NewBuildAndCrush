@@ -5,9 +5,7 @@ using UnityEngine;
 public class CrushersDB : ScriptableObject {
     [SerializeField] private List<CrusherDB> _crusherDBs = new List<CrusherDB>();
     [SerializeField] private List<CrusherInfoDB> _crusherInfoDBs = new List<CrusherInfoDB>();
-
-    // public List<CrusherDB> CrusherDatabases { get => _crusherDBs; set => _crusherDBs = value; }
-    // public List<CrusherInfoDB> CrusherInfoDBs { get => _crusherInfoDBs; set => _crusherInfoDBs = value; }
+    [SerializeField] private List<BattleCrusherDB> _battleCrusherDBs = new List<BattleCrusherDB>();
     
     /// <summary>
     /// クラッシャーの数を返す
@@ -32,5 +30,14 @@ public class CrushersDB : ScriptableObject {
     /// <returns></returns>
     public CrusherInfoDB GetCrusherInfo(int index) {
         return _crusherInfoDBs[index];
+    }
+
+    /// <summary>
+    /// Battleで使うクラッシャーの情報を返す
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public BattleCrusherDB GetBattleCrusher(int index) {
+        return _battleCrusherDBs[index];
     }
 }

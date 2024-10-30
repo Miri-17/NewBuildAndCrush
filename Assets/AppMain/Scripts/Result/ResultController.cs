@@ -54,7 +54,7 @@ public class ResultController : MonoBehaviour {
         var builder = _buildersDB.GetBuilder(builderIndex);
 
         _builderName.text = builder.Name;
-        Vector3 builderPosition = GetBuilderPosition(builderIndex);
+        var builderPosition = GetBuilderPosition(builderIndex);
         var builderL2D = Instantiate(builder.Live2D, builderPosition, Quaternion.identity, GameObject.Find("Builder").transform);
         string animationState = GameDirector.Instance.IsBuilderWin ? "L2D_Win" : "L2D_Lose";
         builderL2D.GetComponent<Animator>().Play($"{builder.EnglishName}{animationState}");
@@ -64,7 +64,7 @@ public class ResultController : MonoBehaviour {
         var crusher = _crushersDB.GetCrusher(crusherIndex);
 
         _crusherName.text = crusher.Name;
-        Vector3 crusherPosition = GetCrusherPosition(crusherIndex);
+        var crusherPosition = GetCrusherPosition(crusherIndex);
         var crusherL2D = Instantiate(crusher.Live2D, crusherPosition, Quaternion.identity, GameObject.Find("Crusher").transform);
         string animationState = GameDirector.Instance.IsBuilderWin ? "L2D_Lose" : "L2D_Win";
         crusherL2D.GetComponent<Animator>().Play($"{crusher.EnglishName}{animationState}");

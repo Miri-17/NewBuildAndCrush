@@ -11,13 +11,10 @@ public class GameDirector : MonoBehaviour {
     [SerializeField] private int _crusherScore = 0;
     [SerializeField] private int _crusherKillCounts = 0;
     [SerializeField] private int _wagonCrushCounts = 0;
-    // [SerializeField] private float _timeLimit = 600.0f;
-    // [SerializeField] private float _crusherPosition = 0;
-    // [SerializeField] private float _builderPosition = 0;
     // [SerializeField] private float _currentFill = 0;
-    // [SerializeField] private bool _crusherWin = true;
     [SerializeField] private bool _isBuilderWin = true;
-
+    [SerializeField] private float _builderPosition = 0;
+    [SerializeField] private float _crusherPosition = 0;
     
     // ビルダー4体の順. 勝ったら0が1になる.
     [SerializeField] private List<int> _wolfAchievements = new List<int>() { 0, 0, 0, 0, };
@@ -38,12 +35,12 @@ public class GameDirector : MonoBehaviour {
     public int CrusherScore { get => _crusherScore; set => _crusherScore = value; }
     public int CrusherKillCounts { get => _crusherKillCounts; set => _crusherKillCounts = value; }
     public int WagonCrushCounts { get => _wagonCrushCounts; set => _wagonCrushCounts = value; }
-    // public float TimeLimit { get => _timeLimit; set => _timeLimit = value; }
-    // public float CrusherPosition { get => _crusherPosition; set => _crusherPosition = value; }
-    // public float BuilderPosition { get => _builderPosition; set => _builderPosition = value; }
     // public float CurrentFill { get => _currentFill; set => _currentFill = value; }
-    // public bool CrusherWin { get => _crusherWin; set => _crusherWin = value; }
     public bool IsBuilderWin { get => _isBuilderWin; set => _isBuilderWin = value; }
+    // TODO BuilderController, CrusherController
+    // Battleシーン外では使わないためできればここで宣言したくない.
+    public float BuilderPosition { get => _builderPosition; set => _builderPosition = value; }
+    public float CrusherPosition { get => _crusherPosition; set => _crusherPosition = value; }
 
     public List<int> WolfAchievements { get => _wolfAchievements; set => _wolfAchievements = value; }
     public List<int> QueenAliceAchievements { get => _queenAliceAchievements; set => _queenAliceAchievements = value; }

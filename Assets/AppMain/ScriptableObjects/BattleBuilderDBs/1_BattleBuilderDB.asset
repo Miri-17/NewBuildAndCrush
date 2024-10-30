@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d197dfbea17e4272815adb669f72145, type: 3}
   m_Name: 1_BattleBuilderDB
   m_EditorClassIdentifier: 
+  _obstacleDBs: []
   _bg: {fileID: 21300000, guid: 071c7933563374226a068fe818abb4e4, type: 3}
   _ground: {fileID: 21300000, guid: 4d6da20109133464da9b407a96b14eae, type: 3}
+  _builderPrefab: {fileID: 5204580094136108304, guid: 6e897521b79d649409a077764ce08d00, type: 3}
+  _wagonPrefab: {fileID: 525510771325377293, guid: df2b33896c32e47ddb4e49b7ac661b7a, type: 3}

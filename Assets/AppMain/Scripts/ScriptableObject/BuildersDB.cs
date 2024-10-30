@@ -7,9 +7,6 @@ public class BuildersDB : ScriptableObject {
     [SerializeField] private List<BuilderInfoDB> _builderInfoDBs = new List<BuilderInfoDB>();
     [SerializeField] private List<BattleBuilderDB> _battleBuilderDBs = new List<BattleBuilderDB>();
 
-    // public List<BuilderDB> BuilderDatabases { get => _builderDBs; set => _builderDBs = value; }
-    // public List<BuilderInfoDB> BuilderInfoDBs { get => _builderInfoDBs; set => _builderInfoDBs = value; }
-
     /// <summary>
     /// ビルダーの数を返す
     /// </summary>

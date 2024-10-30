@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b38c9c02a6b415bb2f174d9c6cdef9, type: 3}
+  m_Name: BattleBGMDB
+  m_EditorClassIdentifier: 
+  _normalAudioClips:
+  - {fileID: 8300000, guid: 6e45b2cae38304283997220cc07a3124, type: 3}
+  - {fileID: 8300000, guid: 657f6ecd16e7d40c8a14c55bd3d2a46f, type: 3}
+  - {fileID: 8300000, guid: 44b47a4b49ec94f0f807179622d3f6d4, type: 3}
+  - {fileID: 8300000, guid: af29007109571429790e16f6faa05126, type: 3}
+  _wagonAudioClips:
+  - {fileID: 8300000, guid: 41f2a2d9bfe894283a353bd8a21c9d03, type: 3}
+  - {fileID: 8300000, guid: 388f2fb7ec955439fae06b85e49b7a89, type: 3}
+  - {fileID: 8300000, guid: 1072100ffe5c34ed2a5717a07103ca0d, type: 3}
+  - {fileID: 8300000, guid: d785d7695fea14d0e913f64ada029ccd, type: 3}
