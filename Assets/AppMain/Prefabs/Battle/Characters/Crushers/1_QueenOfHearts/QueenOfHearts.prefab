@@ -250,9 +250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9254d9433a9bc47ba98b95865c3eb045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLayer:
+  _crusherName: 
+  _groundLayer:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 0
   _walkSpeed: 100
   _runSpeed: 180
   _jumpForce: 250
@@ -272,12 +273,16 @@ MonoBehaviour:
   _attackPointUp: {fileID: 4349981885289270438}
   _attackPointDown: {fileID: 7853886447805807255}
   _attackRate: 3
+  _damage: 2
+  _attackRange: 15
+  _obstacleCrushEffect: {fileID: 9190961169032549529, guid: e1fe2726918e34697b43cd9f1748f352, type: 3}
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 3072
   _attackEffectPrefab: {fileID: 6153939136802968804, guid: 6591c8c86c1474a36a21f5a760fda84e, type: 3}
   _chargeTime: 1
   _chargingEffectPrefab: {fileID: 8761406981511861170, guid: 7d9509deb6ecf4d8b8c9fcf66f5021d0, type: 3}
   _heartChargedEffectPrefab: {fileID: 2296678229785276914, guid: dd5a2c82dedc04c24ac7e3c2165cf433, type: 3}
-  _damage: 2
-  _attackRange: 15
 --- !u!82 &8898293777038848580
 AudioSource:
   m_ObjectHideFlags: 0

@@ -14,14 +14,14 @@ public class WitchAttack : MonoBehaviour {
     [SerializeField] private Transform _attackPointUp = null;
     [SerializeField] private Transform _attackPointDown = null;
     [SerializeField, Header("1秒に何回攻撃できるか")] private float _attackRate = 0.8f;
+    [SerializeField] private int _damage = 2;
+    [SerializeField] private float _attackRange = 10.0f;
+    [SerializeField] private GameObject _obstacleCrushEffect;
+    [SerializeField] private LayerMask _obstacleLayer;
 
     // Witch固有
     [SerializeField] private GameObject _cupcakePrefab;
     [SerializeField] private float _duration = 0.05f;
-    // [SerializeField] private float attackRange = 10.0f;
-    // [SerializeField] private LayerMask obstacleLayer;
-    // [SerializeField] private int damage = 2;
-    // [SerializeField] private GameObject obstaclesCrushEffect;
     #endregion
 
 
@@ -37,15 +37,15 @@ public class WitchAttack : MonoBehaviour {
         var verticalKey = Input.GetAxisRaw("Vertical");
         if (verticalKey > 0) {
             _animator.SetTrigger("Attack_Upwards");
-            // Attack(attackPointUp);
+            Attack(_attackPointUp);
             Shoot(_attackPointUp).Forget();
         } else if (verticalKey < 0) {
             _animator.SetTrigger("Attack_Downwards");
-            // Attack(attackPointDown);
+            Attack(_attackPointDown);
             Shoot(_attackPointDown).Forget();
         } else {
             _animator.SetTrigger("Attack");
-            // Attack(attackPoint);
+            Attack(_attackPoint);
             Shoot(_attackPoint).Forget();
         }
         _audioSource.PlayOneShot(_audioSource.clip);
@@ -60,69 +60,21 @@ public class WitchAttack : MonoBehaviour {
         }
     }
 
-    // private void Attack(Transform point)
-    // {
-    //     Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, attackRange, obstacleLayer);
+    private void Attack(Transform point) {
+        Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, _attackRange, _obstacleLayer);
+        foreach (Collider2D hitInfo in hitInfos) {
+            var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
+            // BuilderDestroy builderDestroy = hitInfo.transform.GetComponent<BuilderDestroy>();
 
-    //     foreach (Collider2D hitInfo in hitInfos)
-    //     {
-    //         //WoodBox woodbox = hitInfo.transform.GetComponent<WoodBox>();
-    //         Brick brick = hitInfo.transform.GetComponent<Brick>();
-    //         Spike spike = hitInfo.transform.GetComponent<Spike>();
-    //         Rose rose = hitInfo.transform.GetComponent<Rose>();
-    //         Canon canon = hitInfo.transform.GetComponent<Canon>();
-    //         Wolf wolf = hitInfo.transform.GetComponent<Wolf>();
-    //         //daichi changed
-    //         Halberd halberd = hitInfo.transform.GetComponent<Halberd>();
-    //         Pig pig = hitInfo.transform.GetComponent<Pig>();
-    //         PartsDestroy partsDestroy = hitInfo.transform.GetComponent<PartsDestroy>();
+            if (destroyableObstacle != null) {
+                destroyableObstacle.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
 
-    //         /*if (woodbox != null)
-    //         {
-    //             woodbox.TakeDamage(damage);
-    //         }*/
-    //         if (brick != null)
-    //         {
-    //             brick.TakeDamage(damage);
-    //         }
-
-    //         if (spike != null)
-    //         {
-    //             spike.TakeDamage(damage);
-    //         }
-
-    //         if (rose != null)
-    //         {
-    //             rose.TakeDamage(damage);
-    //         }
-
-    //         if (canon != null)
-    //         {
-    //             canon.TakeDamage(damage);
-    //         }
-
-    //         if (wolf != null)
-    //         {
-    //             wolf.TakeDamage(damage);
-    //         }
-
-    //         //daichi changed
-    //         if (halberd != null)
-    //         {
-    //             halberd.TakeDamage(damage);
-    //         }
-
-    //         if (pig != null)
-    //         {
-    //             pig.TakeDamage(damage);
-    //         }
-
-    //         if (partsDestroy != null)
-    //         {
-    //             partsDestroy.TakeDamage(damage);
-    //         }
-
-    //         Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //     }
-    // }
+            // if (builderDestroy != null) {
+            //     builderDestroy.TakeDamage(damage);
+            //     Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            // }
+        }
+    }
 }

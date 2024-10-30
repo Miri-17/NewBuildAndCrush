@@ -20,19 +20,16 @@ public class QueenOfHeartsAttack : MonoBehaviour {
     [SerializeField] private Transform _attackPointUp = null;
     [SerializeField] private Transform _attackPointDown = null;
     [SerializeField, Header("1秒に何回攻撃できるか")] private float _attackRate = 3.0f;
+    [SerializeField] private int _damage = 2;
+    [SerializeField] private float _attackRange = 15.0f;
+    [SerializeField] private GameObject _obstacleCrushEffect = null;
+    [SerializeField] private LayerMask _obstacleLayer;
 
     // QueenOfHearts固有
     [SerializeField] private GameObject _attackEffectPrefab;
     [SerializeField] private float _chargeTime = 1.0f;
     [SerializeField] private GameObject _chargingEffectPrefab = null;
     [SerializeField] private GameObject _heartChargedEffectPrefab = null;
-    [SerializeField] private int _damage = 2;
-    [SerializeField] private float _attackRange = 15.0f;
-
-    // [SerializeField] private LayerMask obstacleLayer;
-    // [SerializeField] private GameObject obstaclesCrushEffect;
-    // [SerializeField] private GameObject chargeEffect;
-    // [SerializeField] private GameObject chargeEffectGorld;
     #endregion
 
 
@@ -53,15 +50,15 @@ public class QueenOfHeartsAttack : MonoBehaviour {
 
             if (verticalKey > 0) {
                 _animator.SetTrigger("Attack_Upwards");
-                // Attack(_attackPointUp);
+                Attack(_attackPointUp);
                 Instantiate(_attackEffectPrefab, _attackPointUp.position, _attackPointUp.rotation);
             } else if (verticalKey < 0) {
                 _animator.SetTrigger("Attack_Downwards");
-                // Attack(_attackPointDown);
+                Attack(_attackPointDown);
                 Instantiate(_attackEffectPrefab, _attackPointDown.position, _attackPointDown.rotation);
             } else {
                 _animator.SetTrigger("Attack");
-                // Attack(_attackPoint);
+                Attack(_attackPoint);
                 Instantiate(_attackEffectPrefab, _attackPoint.position, _attackPoint.rotation);
             }
             _audioSource.PlayOneShot(_audioSource.clip);
@@ -70,12 +67,9 @@ public class QueenOfHeartsAttack : MonoBehaviour {
             
             // 値のリセット.
             if (_isCharging)
-                // TODO heartエフェクトを消す処理
                 Destroy(_heartChargedEffect);
             _isCharging = false;
-            // TODO エフェクトをDestroyする関数を呼ぶ
             Destroy(_chargingEffect);
-            // chargeEffect.SetActive(false);
             _chargeCounter = 0;
             _damage = _normalDamage;
             _attackRange = _normalAttackRange;
@@ -91,10 +85,7 @@ public class QueenOfHeartsAttack : MonoBehaviour {
             if (_chargeCounter >= _chargeTime) {
                 _isCharging = true;
 
-                // TODO エフェクトをDestroyする関数を呼ぶ
                 Destroy(_chargingEffect);
-                // chargeEffect.SetActive(false);
-                // var heartChargedEffect = Instantiate(_heartChargedEffectPrefab, Vector3.zero, Quaternion.identity);
                 if (_heartChargedEffect == null) {
                     _heartChargedEffect = Instantiate(_heartChargedEffectPrefab, Vector3.zero, Quaternion.identity);
                     _heartChargedEffect.transform.SetParent(this.transform, false);
@@ -104,7 +95,6 @@ public class QueenOfHeartsAttack : MonoBehaviour {
                 _damage = _normalDamage + 2;
                 _attackRange = _normalAttackRange * 4.0f;
             } else {
-                // var chargingEffect = Instantiate(_chargingEffectPrefab, Vector3.zero, Quaternion.identity);
                 if (_chargingEffect == null) {
                     _chargingEffect = Instantiate(_chargingEffectPrefab, Vector3.zero, Quaternion.identity);
                     _chargingEffect.transform.SetParent(this.transform, false);
@@ -116,91 +106,21 @@ public class QueenOfHeartsAttack : MonoBehaviour {
         }
     }
 
-    // private void Attack(Transform point)
-    // {
-    //     Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, attackRange, obstacleLayer);
+    private void Attack(Transform point) {
+        Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, _attackRange, _obstacleLayer);
+        foreach (Collider2D hitInfo in hitInfos) {
+            var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
+            // BuilderDestroy builderDestroy = hitInfo.transform.GetComponent<BuilderDestroy>();
 
-    //     foreach (Collider2D hitInfo in hitInfos)
-    //     {
-    //         //WoodBox woodbox = hitInfo.transform.GetComponent<WoodBox>();
-    //         Brick brick = hitInfo.transform.GetComponent<Brick>();
-    //         Spike spike = hitInfo.transform.GetComponent<Spike>();
-    //         Rose rose = hitInfo.transform.GetComponent<Rose>();
-    //         Canon canon = hitInfo.transform.GetComponent<Canon>();
-    //         Wolf wolf = hitInfo.transform.GetComponent<Wolf>();
-    //         //daichi changed
-    //         Halberd halberd = hitInfo.transform.GetComponent<Halberd>();
-    //         Pig pig = hitInfo.transform.GetComponent<Pig>();
-    //         PartsDestroy partsDestroy = hitInfo.transform.GetComponent<PartsDestroy>();
-    //         Bushi bushi = hitInfo.transform.GetComponent<Bushi>();
-    //         BuilderDestroy builderDestroy = hitInfo.transform.GetComponent<BuilderDestroy>();
+            if (destroyableObstacle != null) {
+                destroyableObstacle.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
 
-
-    //         /*if (woodbox != null)
-    //         {
-    //             woodbox.TakeDamage(damage);
-    //         }*/
-    //         if (brick != null)
-    //         {
-    //             brick.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (spike != null)
-    //         {
-    //             spike.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (rose != null)
-    //         {
-    //             rose.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (canon != null)
-    //         {
-    //             canon.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (wolf != null)
-    //         {
-    //             wolf.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         //daichi changed
-
-    //         if (halberd != null)
-    //         {
-    //             halberd.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (pig != null)
-    //         {
-    //             pig.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (partsDestroy != null)
-    //         {
-    //             partsDestroy.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (bushi != null)
-    //         {
-    //             bushi.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-
-    //         if (builderDestroy != null)
-    //         {
-    //             builderDestroy.TakeDamage(damage);
-    //             Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-    //         }
-    //     }
-    // }
+            // if (builderDestroy != null) {
+            //     builderDestroy.TakeDamage(damage);
+            //     Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            // }
+        }
+    }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// TODO wagonに乗る前のクラッシャーコンティニュー位置
 public class StageGenerator : MonoBehaviour {
     private GameObject _crusher = null;
     private CrusherController _crusherController = null;

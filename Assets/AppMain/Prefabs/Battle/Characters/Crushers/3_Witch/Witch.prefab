@@ -281,9 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9254d9433a9bc47ba98b95865c3eb045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLayer:
+  _crusherName: 
+  _groundLayer:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 0
   _walkSpeed: 90
   _runSpeed: 162
   _jumpForce: 250
@@ -303,8 +304,14 @@ MonoBehaviour:
   _attackPointUp: {fileID: 76280736576024895}
   _attackPointDown: {fileID: 1667282692462205127}
   _attackRate: 0.8
+  _damage: 4
+  _attackRange: 10
+  _obstacleCrushEffect: {fileID: 9190961169032549529, guid: e1fe2726918e34697b43cd9f1748f352, type: 3}
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 3072
   _cupcakePrefab: {fileID: 1290395511602444049, guid: ec1ba1a6476844ad7860c2880f3c7b18, type: 3}
-  burstRate: 0.05
+  _duration: 0.05
 --- !u!82 &4272537562007653539
 AudioSource:
   m_ObjectHideFlags: 0

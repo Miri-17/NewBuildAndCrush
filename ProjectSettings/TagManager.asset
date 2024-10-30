@@ -9,6 +9,8 @@ TagManager:
   - Crusher
   - GameOver
   - Obstacle
+  - ObstacleGround
+  - SpecialFloor
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - FrontUI
   - Ground
   - ObstacleGround
-  - 
+  - Obstacle
   - 
   - 
   - 

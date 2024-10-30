@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31feb786ee6544ffeae0ddbb909888b9, type: 3}
+  m_Name: 3_Chef
+  m_EditorClassIdentifier: 
+  _obstacleImage: {fileID: 21300000, guid: 0780de87a638d431890274d520304d75, type: 3}
+  _obstaclePrefab: {fileID: 362790618622682966, guid: e10153483647941b3b26163a465646d4, type: 3}
+  _obstacleWeight: 0
+  _generationTime: 0

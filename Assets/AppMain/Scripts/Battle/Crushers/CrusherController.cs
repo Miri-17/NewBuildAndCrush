@@ -180,7 +180,7 @@ public class CrusherController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Gum")) {
+        if (collision.CompareTag("SpecialFloor")) {
             _walkSpeed *= 0.5f;
             _runSpeed *= 0.3f;
             _jumpForce *= 0.7f;
@@ -188,7 +188,7 @@ public class CrusherController : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("Gum")) {
+        if (other.CompareTag("SpecialFloor")) {
             _walkSpeed = _normalWalkSpeed;
             _runSpeed = _normalRunSpeed;
             _jumpForce = _normalJumpForce;

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31feb786ee6544ffeae0ddbb909888b9, type: 3}
+  m_Name: 0_Bookshelf
+  m_EditorClassIdentifier: 
+  _obstacleImage: {fileID: 21300000, guid: 54a92231a836a432ba5e6a7de184b10b, type: 3}
+  _obstaclePrefab: {fileID: 3815827090996932343, guid: 317aeef0fb56149eea38d7fc7b606232, type: 3}
+  _obstacleWeight: 5
+  _generationTime: 3
