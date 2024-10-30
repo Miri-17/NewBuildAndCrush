@@ -3533,7 +3533,11 @@ MonoBehaviour:
   _startPosY: 128
   _space: 32
   _baseBlockPrefab: {fileID: 2018720812316114909, guid: 11644775d2c244fe59693d943bc32b3a, type: 3}
-  _csvFile: {fileID: 4900000, guid: 91d626be7d6774c09ac60728707e2360, type: 3}
+  _csvFiles:
+  - {fileID: 4900000, guid: 91d626be7d6774c09ac60728707e2360, type: 3}
+  - {fileID: 4900000, guid: 91d626be7d6774c09ac60728707e2360, type: 3}
+  - {fileID: 4900000, guid: 91d626be7d6774c09ac60728707e2360, type: 3}
+  - {fileID: 4900000, guid: 91d626be7d6774c09ac60728707e2360, type: 3}
 --- !u!1 &913117233
 GameObject:
   m_ObjectHideFlags: 0
@@ -8143,7 +8147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherIndex
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherScore

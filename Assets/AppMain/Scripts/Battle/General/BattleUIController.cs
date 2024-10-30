@@ -1,11 +1,9 @@
 using System.Collections.Generic;
-using DG.Tweening;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class BattleUIController : MonoBehaviour {
-    private const float END_POSITION = 5270.0f;
+   private const float END_POSITION = 5270.0f;
 
     #region Private Fields
     private int _builderUpdateScore = 0;

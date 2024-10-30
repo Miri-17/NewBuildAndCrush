@@ -89,7 +89,9 @@ public class CrusherController : MonoBehaviour {
         }
 
         if (IsGrounded()) {
+            Debug.Log("接地してるよ");
             if (Input.GetButtonDown("Jump")) {
+                Debug.Log("ジャンプボタンを押したよ");
                 _isJumping = true;
                 Jump();
             } else {
@@ -153,6 +155,7 @@ public class CrusherController : MonoBehaviour {
     }
 
     private void Jump() {
+        Debug.Log("ジャンプ！");
         _rb2D.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
     }
 

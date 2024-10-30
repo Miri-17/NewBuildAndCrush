@@ -5,6 +5,7 @@ public class BattleBGMController : MonoBehaviour {
     private AudioSource _audioSource_Normal;
     private AudioSource _audioSource_Wagon;
     private bool _isInWagon = false;
+    private bool _isNormalMusic = true;
 
     #region Serialized Fields
     [SerializeField] private BuilderController _builderController;
@@ -52,6 +53,7 @@ public class BattleBGMController : MonoBehaviour {
         
         _audioSource_Wagon.DOFade(1, _fadeDuration)
             .SetLink(_audioSource_Normal.gameObject);
+            // .OnComplete(() => _isNormalMusic = false);
     }
     
     private void SetNormalBGM() {
@@ -60,5 +62,6 @@ public class BattleBGMController : MonoBehaviour {
         
         _audioSource_Wagon.DOFade(1, _fadeDuration)
             .SetLink(_audioSource_Normal.gameObject);
+            // .OnComplete(() => _isNormalMusic = true);
     }
 }
