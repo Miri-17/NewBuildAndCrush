@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/AppMain/Scenes/Credits.unity
     guid: 94ee7aba962734b8f85a2d7f17c2c280
   - enabled: 1
+    path: Assets/AppMain/Scenes/Battle.unity
+    guid: 19c20f23c385d4b1eb98d35e9f77a229
+  - enabled: 1
     path: Assets/AppMain/Scenes/Result.unity
     guid: a60e2ddbdc48c4758a2e2c19393fc3a9
   m_configObjects: {}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7449615653304863440}
   - component: {fileID: 3702415501156437624}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Hatake
   m_TagString: Untagged
   m_Icon: {fileID: 0}

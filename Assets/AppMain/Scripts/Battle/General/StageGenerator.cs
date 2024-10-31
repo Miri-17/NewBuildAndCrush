@@ -32,10 +32,10 @@ public class StageGenerator : MonoBehaviour {
             _crusherController.ContinueCrusher();
         }
 
-        if (_builderController.wagonControllerRun != null)
+        if (_builderController.WagonControllerRun != null)
             // ワゴンに乗ったらコンティニューポイントを変更する.
-            if (_builderController.wagonControllerRun.CrusherEnterCheck.IsOn)
-                _continuePoint = _builderController.wagonControllerRun.CrusherContinuePosition;
+            if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn)
+                _continuePoint = _builderController.WagonControllerRun.CrusherContinuePosition;
     }
 
     private void UpdateCrusherInfo(int crusherIndex) {

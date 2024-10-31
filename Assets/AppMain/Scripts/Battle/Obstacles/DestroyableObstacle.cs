@@ -15,6 +15,7 @@ public class DestroyableObstacle : MonoBehaviour {
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private bool _isUsingParticleSystem = false;
     [SerializeField] private int _defense = 4;
+    // TODO そもそも、子オブジェクトは先に消す処理を行った方が良いかもしれん（Fanとかの風的に）
     [SerializeField] private List<BoxCollider2D> _boxCollider2Ds;
     [SerializeField] private List<CircleCollider2D> _circleCollider2Ds; // ZakoWolf
     [SerializeField] private List<CapsuleCollider2D> _capsuleCollider2Ds;

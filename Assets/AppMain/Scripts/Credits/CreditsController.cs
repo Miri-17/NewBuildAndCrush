@@ -39,6 +39,8 @@ public class CreditsController : MonoBehaviour {
         _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[2];
         if (_audioSource_SE == null || _audioClip_SE == null)
             Debug.LogError("AudioSource of AudioClip is not assigned properly.");
+        
+        GameDirector.Instance.PreviousSceneName = "Credits";
     }
 
     private void Update() {

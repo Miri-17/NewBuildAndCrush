@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2718449964437987990}
   - component: {fileID: 8314453027185028010}
   - component: {fileID: 5608533819787543820}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,9 +155,10 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: 59a70ab73814e48ef8824bd74498b383, type: 3}
   _isUsingParticleSystem: 1
   _defense: 6
-  _capsuleCollider2Ds: []
   _boxCollider2Ds:
   - {fileID: 54709860104087960}
+  _circleCollider2Ds: []
+  _capsuleCollider2Ds: []
   _duration: 2
 --- !u!198 &2718449964437987990
 ParticleSystem:

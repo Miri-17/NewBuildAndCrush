@@ -1,8 +1,9 @@
+using Cysharp.Threading.Tasks.Triggers;
 using UnityEngine;
 
 public class WagonController : MonoBehaviour {
     #region Private Fields
-    private BuilderController _builderController = null;
+    private BattleBuilderUIController _battleBuilderUIController = null;
     private BattleController _battleController = null;
     private Rigidbody2D _rb2D = null;
     private float _xSpeed = 0;
@@ -12,10 +13,9 @@ public class WagonController : MonoBehaviour {
     [SerializeField] private CrusherTriggerCheck _crusherEnterCheck = null;
     [SerializeField] private CrusherTriggerCheck _crusherExitCheck = null;
     [SerializeField] private GameObject _crusherContinuePosition = null;
-    [SerializeField] private GameObject explosionEffect = null;
+    [SerializeField] private GameObject _wagonExplosionPrefab = null;
     [SerializeField] private float _speed = 180.0f;
     #endregion
-
 
     #region
     // BuilderControllerのRunWagon()で値を変更する変数
@@ -29,15 +29,14 @@ public class WagonController : MonoBehaviour {
     #endregion
 
     private void Start() {
-        _builderController = GameObject.Find("BuilderController").GetComponent<BuilderController>();
+        _battleBuilderUIController = GameObject.Find("BuilderUIController").GetComponent<BattleBuilderUIController>();
         _battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         _rb2D = this.GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
-        if (_crusherExitCheck.IsOn) {
+        if (_crusherExitCheck.IsOn)
             DestroyWagon();
-        }
     }
 
     private void FixedUpdate() {
@@ -50,9 +49,9 @@ public class WagonController : MonoBehaviour {
     }
     
     private void DestroyWagon() {
-        // _builderController.goButtonFirstClick = false;
+        _battleBuilderUIController.SetGoButtonInteractive(true);
         GameDirector.Instance.WagonCrushCounts++;
-        Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
+        Instantiate(_wagonExplosionPrefab, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 

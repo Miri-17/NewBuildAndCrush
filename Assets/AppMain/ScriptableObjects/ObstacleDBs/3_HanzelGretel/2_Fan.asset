@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleImage: {fileID: 21300000, guid: 93f53753e9e7041409e1e592f8c2c059, type: 3}
   _obstaclePrefab: {fileID: 313190825525046733, guid: d4d2daf4b92a6405c93bb080ab57d0e9, type: 3}
-  _obstacleWeight: 0
-  _generationTime: 0
+  _obstacleWeight: 10
+  _generationTime: 8

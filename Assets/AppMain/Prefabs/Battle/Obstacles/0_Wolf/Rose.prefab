@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7117903356096185079}
   - component: {fileID: 8087770656943770238}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: Spiny
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2461358901049329928}
   - component: {fileID: 4901436967443571404}
   - component: {fileID: 1888521030607781721}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Rose
   m_TagString: Untagged
   m_Icon: {fileID: 0}

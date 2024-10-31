@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1799964490750700762}
   - component: {fileID: 9150122595426923066}
   - component: {fileID: 6584882718464775758}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: Chef
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

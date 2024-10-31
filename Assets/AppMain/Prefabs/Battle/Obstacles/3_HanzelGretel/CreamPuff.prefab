@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2445212464883868421}
   - component: {fileID: 7328597867480201130}
   - component: {fileID: 8964414671894888061}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: CreamPuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -20,9 +20,11 @@ public class BattleUIController : MonoBehaviour {
     [SerializeField] private float _currentTime = 600.0f;
     #endregion
 
+    #region Public Properties
     public bool IsTimeUp { get; private set; } = false;
     public int CrusherCurrentScore { get; private set; } = 0;
     public int BuilderCurrentScore { get; private set; } = 0;
+    #endregion
 
     private void Start() {
         _builderScores[0].text = BuilderCurrentScore.ToString();

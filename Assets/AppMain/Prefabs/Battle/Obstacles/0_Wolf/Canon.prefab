@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7050990237488452378}
   - component: {fileID: 8159678570849828186}
   - component: {fileID: 3898858341394067640}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5120,7 +5120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5471313652611192260}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: ShotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1043641183119655806}
   - component: {fileID: 5826868884619130449}
   - component: {fileID: 4163087440601431394}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: Robot
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

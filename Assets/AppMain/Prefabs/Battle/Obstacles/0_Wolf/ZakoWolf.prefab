@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2009656229818087829}
   - component: {fileID: 7027775867093379433}
   - component: {fileID: 2163311155038666879}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: ZakoWolf
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -126,11 +126,11 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: beea520f19dcd4f1abaf48ff3ff561f8, type: 3}
   _isUsingParticleSystem: 0
   _defense: 4
-  _capsuleCollider2Ds: []
-  _circleCollider2Ds:
-  - {fileID: 2163311155038666879}
   _boxCollider2Ds:
   - {fileID: 7027775867093379433}
+  _circleCollider2Ds:
+  - {fileID: 2163311155038666879}
+  _capsuleCollider2Ds: []
   _duration: 2
 --- !u!82 &2009656229818087829
 AudioSource:

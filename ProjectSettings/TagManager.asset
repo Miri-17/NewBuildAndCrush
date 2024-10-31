@@ -18,18 +18,18 @@ TagManager:
   - 
   - Water
   - UI
+  - Ground
+  - Obstacle
+  - ObstacleGround
+  - SpawnPoint
+  - UnreactiveSpawnPoint
+  - 
+  - 
+  - 
+  - 
   - CrusherL2D
   - BuilderL2D
   - FrontUI
-  - Ground
-  - ObstacleGround
-  - Obstacle
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

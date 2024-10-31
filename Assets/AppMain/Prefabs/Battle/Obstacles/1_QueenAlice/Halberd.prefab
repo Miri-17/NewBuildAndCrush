@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6266857990564462055}
   - component: {fileID: 7524333434891761747}
   - component: {fileID: 6940563860895003575}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: Blade
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -5207,7 +5207,7 @@ GameObject:
   - component: {fileID: 8056525994248818126}
   - component: {fileID: 6108298637258892349}
   - component: {fileID: 6400005478653397950}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Halberd
   m_TagString: Untagged
   m_Icon: {fileID: 0}

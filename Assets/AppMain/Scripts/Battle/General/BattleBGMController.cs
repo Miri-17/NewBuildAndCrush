@@ -2,10 +2,11 @@ using UnityEngine;
 using DG.Tweening;
 
 public class BattleBGMController : MonoBehaviour {
+    #region Private Fields
     private AudioSource _audioSource_Normal;
     private AudioSource _audioSource_Wagon;
     private bool _isInWagon = false;
-    private bool _isNormalMusic = true;
+    #endregion
 
     #region Serialized Fields
     [SerializeField] private BuilderController _builderController;
@@ -31,20 +32,21 @@ public class BattleBGMController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_builderController.wagonControllerRun == null)
+        if (_builderController.WagonControllerRun == null)
             return;
-
+        
         // ワゴンに乗ったら音楽を変更.
-        if (!_isInWagon && _builderController.wagonControllerRun.CrusherEnterCheck.IsOn) {
+        if (!_isInWagon && _builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
             _isInWagon = true;
             SetWagonBGM();
             Debug.Log("曲をワゴン用に変更");
         }
         //ワゴンから降りたら音楽を変更.
-        if (_isInWagon && _builderController.wagonControllerRun.CrusherExitCheck.IsOn)
+        if (_isInWagon && _builderController.WagonControllerRun.CrusherExitCheck.IsOn) {
             _isInWagon = false;
             SetNormalBGM();
             Debug.Log("曲を普通用に変更");
+        }
     }
 
     private void SetWagonBGM() {
@@ -53,15 +55,13 @@ public class BattleBGMController : MonoBehaviour {
         
         _audioSource_Wagon.DOFade(1, _fadeDuration)
             .SetLink(_audioSource_Normal.gameObject);
-            // .OnComplete(() => _isNormalMusic = false);
     }
     
     private void SetNormalBGM() {
-        _audioSource_Normal.DOFade(0, _fadeDuration)
+        _audioSource_Normal.DOFade(1, _fadeDuration)
             .SetLink(_audioSource_Normal.gameObject);
         
-        _audioSource_Wagon.DOFade(1, _fadeDuration)
+        _audioSource_Wagon.DOFade(0, _fadeDuration)
             .SetLink(_audioSource_Normal.gameObject);
-            // .OnComplete(() => _isNormalMusic = true);
     }
 }

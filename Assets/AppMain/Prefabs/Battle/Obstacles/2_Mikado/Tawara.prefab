@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1863607512669050420}
   - component: {fileID: 955089190749443872}
   - component: {fileID: 5865611353408623252}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Tawara
   m_TagString: Untagged
   m_Icon: {fileID: 0}

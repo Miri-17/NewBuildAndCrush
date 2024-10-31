@@ -397,7 +397,7 @@ MonoBehaviour:
   _crusherEnterCheck: {fileID: 1280487915461758219}
   _crusherExitCheck: {fileID: 5516220381450809725}
   _crusherContinuePosition: {fileID: 7673990595559105970}
-  explosionEffect: {fileID: 7749779667050500448, guid: 83bd0126d3f3740adb27bb4761c581ae, type: 3}
+  _wagonExplosionPrefab: {fileID: 7749779667050500448, guid: 83bd0126d3f3740adb27bb4761c581ae, type: 3}
   _speed: 180
 --- !u!1 &4517660878620231015
 GameObject:

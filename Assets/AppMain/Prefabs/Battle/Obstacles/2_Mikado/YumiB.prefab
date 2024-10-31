@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3288087645707348522}
   - component: {fileID: 2743020586371182387}
   - component: {fileID: 7364193434833972885}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: YumiB
   m_TagString: Untagged
   m_Icon: {fileID: 0}

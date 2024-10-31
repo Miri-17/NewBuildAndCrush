@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7449615653304863440}
   - component: {fileID: 3702415501156437624}
   - component: {fileID: 1962987899501940240}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Gum
   m_TagString: Untagged
   m_Icon: {fileID: 0}

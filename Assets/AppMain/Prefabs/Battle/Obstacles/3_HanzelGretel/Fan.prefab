@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2259634203280391817}
   - component: {fileID: 1367167227203628158}
   - component: {fileID: 1275339174487537111}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5067,7 +5067,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 204db03c21f294660b2254c4f5d3bcbc, type: 2}
+  - {fileID: 2100000, guid: d09d56705c14041c8b5d8f3276dbecb9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

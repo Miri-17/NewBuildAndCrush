@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4532084967478915745}
   - component: {fileID: 7214719471267110909}
   - component: {fileID: 2718013861580417183}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: WoodBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,9 +152,10 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: 4cf3c53cee74043bbb85d9fb9add5184, type: 3}
   _isUsingParticleSystem: 1
   _defense: 4
-  _capsuleCollider2Ds: []
   _boxCollider2Ds:
   - {fileID: 5416708595197959338}
+  _circleCollider2Ds: []
+  _capsuleCollider2Ds: []
   _duration: 2
 --- !u!198 &4532084967478915745
 ParticleSystem:

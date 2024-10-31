@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8881065655517714293}
   - component: {fileID: 6019575029376930230}
   - component: {fileID: 2361016594614492095}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: Bushi
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

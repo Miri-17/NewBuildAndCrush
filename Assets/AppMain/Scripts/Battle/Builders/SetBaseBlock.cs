@@ -7,13 +7,13 @@ public class SetBaseBlock : MonoBehaviour {
     private Dictionary<int, List<Vector2Int>> _patterns = new Dictionary<int, List<Vector2Int>>();
 
     #region Serialized Fields
-    [SerializeField] private BuilderController _builderController;
-    [SerializeField] private GameObject _spawnPointPrefab;
+    [SerializeField] private BuilderController _builderController = null;
+    [SerializeField] private GameObject _spawnPointPrefab = null;
     [SerializeField] private float _startPosX = -272.0f;
     [SerializeField] private float _startPosY = 128.0f;
     [SerializeField] private float _space = 32.0f;
-    [SerializeField] private GameObject _baseBlockPrefab;
-    [SerializeField] private List<TextAsset> _csvFiles; // CSVファイルをインスペクタで指定
+    [SerializeField] private GameObject _baseBlockPrefab = null;
+    [SerializeField] private List<TextAsset> _csvFiles = new List<TextAsset>();
     #endregion
 
     private void Start() {
@@ -25,15 +25,15 @@ public class SetBaseBlock : MonoBehaviour {
         // CSVの各行を読み込み、パターンごとに占有座標を保存
         var lines = _csvFiles[GameDirector.Instance.BuilderIndex].text.Split('\n');
         foreach (var line in lines) {
-            if (string.IsNullOrWhiteSpace(line)) continue;
+            if (string.IsNullOrWhiteSpace(line))
+                continue;
             var values = line.Split(',');
             int patternId = int.Parse(values[0]);
             int row = int.Parse(values[1]);
             int col = int.Parse(values[2]);
 
-            if (!_patterns.ContainsKey(patternId)) {
+            if (!_patterns.ContainsKey(patternId))
                 _patterns[patternId] = new List<Vector2Int>();
-            }
             _patterns[patternId].Add(new Vector2Int(col, row));
         }
     }
@@ -44,12 +44,12 @@ public class SetBaseBlock : MonoBehaviour {
         // spawnPointsの初期化
         for (int j = 0; j < 9; j++) {
             for (int i = 0; i < 18; i++) {
-                GameObject spawnPoint = Instantiate(_spawnPointPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                var spawnPoint = Instantiate(_spawnPointPrefab, new Vector3(0, 0, 0), Quaternion.identity);
                 spawnPoint.transform.parent = _builderController._wagon.transform.Find("Grid").transform;
                 spawnPoint.transform.localPosition = new Vector3(_startPosX + _space * i, _startPosY - _space * j, 0);
                 _spawnPoints[i, j] = spawnPoint.GetComponent<SpawnPoint>();
-                _spawnPoints[i, j].x = i;
-                _spawnPoints[i, j].y = j;
+                _spawnPoints[i, j].X = i;
+                _spawnPoints[i, j].Y = j;
             }
         }
 
@@ -59,19 +59,22 @@ public class SetBaseBlock : MonoBehaviour {
     }
 
     private void ApplyPattern(int patternId) {
-        if (!_patterns.ContainsKey(patternId)) return;
+        if (!_patterns.ContainsKey(patternId))
+            return;
 
         foreach (var pos in _patterns[patternId]) {
-            _spawnPoints[pos.x, pos.y].isOccupied = true;
+            Debug.Log("hello");
+            // _spawnPoints[pos.x, pos.y].IsOccupied = true;
+            _spawnPoints[pos.x, pos.y].SetOccupied(true);
         }
 
         // isOccupiedがtrueの箇所にベースブロックを配置
         for (int j = 0; j < 9; j++) {
             for (int i = 0; i < 18; i++) {
-                if (_spawnPoints[i, j].isOccupied) {
-                    GameObject bbObj = Instantiate(_baseBlockPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-                    bbObj.transform.parent = _builderController._wagon.transform;
-                    bbObj.transform.localPosition = _spawnPoints[i, j].transform.localPosition;
+                if (_spawnPoints[i, j].IsOccupied) {
+                    var baseBlock = Instantiate(_baseBlockPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                    baseBlock.transform.parent = _builderController._wagon.transform;
+                    baseBlock.transform.localPosition = _spawnPoints[i, j].transform.localPosition;
                 }
             }
         }

@@ -7,13 +7,7 @@ public class BuilderController : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private BuildersDB _buildersDB = null;
     [SerializeField] private SetBaseBlock _setBaseBlock = null;
-
-
-    [Header("ビルダー用カメラ"), SerializeField]
-    private Camera builderCamera;
-    // [Header("wagonの大元"), SerializeField]
-    // private GameObject[] wagonOriginal;
-
+    [SerializeField] private BattleBuilderUIController _battleBuilderUIController = null;
     // [Header("ワゴン爆発エフェクト"), SerializeField]
     // private GameObject explosionEffect;
     // [SerializeField] private Clicker clicker;
@@ -27,18 +21,18 @@ public class BuilderController : MonoBehaviour {
 
 
     // ObstacleButtonManagerでも使用する変数.
-    [HideInInspector] public bool[] isSetWagon = { false, false, false, false, false, false, };
+    // [HideInInspector] public bool[] isSetWagon = { false, false, false, false, false, false, };
     [HideInInspector] public bool[] isRunningWagon = { false, false, false, false, false, false, };
     // SetBaseblock~~のスクリプトでも使用する変数.
     [HideInInspector] public GameObject _wagon;
     // 走っているwagonのWagonController.
     // BGM, CrusherControllerでも使用する変数.
-    [HideInInspector] public WagonController wagonControllerRun = null;
+    [HideInInspector] public WagonController WagonControllerRun = null;
     // WagonControllerでも使用する変数.
     [HideInInspector] public bool goButtonFirstClick = false;
     // 生成されたPrefabのWagonController.
     // ObstacleButtonManagerでも使用する変数.
-    [HideInInspector] public WagonController wagonController = null;
+    [HideInInspector] public WagonController WagonController = null;
     #endregion
 
     private void Awake() {
@@ -56,8 +50,8 @@ public class BuilderController : MonoBehaviour {
         if (_wagon.transform.position.x < 5060.0f)
             SetWagon(new Vector3(5734, 11, 0));
         
-        if (wagonControllerRun != null)
-            GameDirector.Instance.BuilderPosition = wagonControllerRun.transform.position.x;
+        if (WagonControllerRun != null)
+            GameDirector.Instance.BuilderPosition = WagonControllerRun.transform.position.x;
     }
 
     // ワゴンを配置する座標を受け取りワゴンを配置する.
@@ -65,18 +59,21 @@ public class BuilderController : MonoBehaviour {
         _wagon = Instantiate(BattleBuilder.WagonPrefab, position, Quaternion.identity, GameObject.Find("Builder").transform);
         _setBaseBlock.SetSpawnPoint();
 
-        wagonController = _wagon.GetComponent<WagonController>();
-        for (int i = 0; i < 6; i++) {
-            isSetWagon[i] = true;
-        }
+        WagonController = _wagon.GetComponent<WagonController>();
+
+        Debug.Log("placable");
+        _battleBuilderUIController.SetObstaclePlaceable();
+        // for (int i = 0; i < 6; i++) {
+        //     isSetWagon[i] = true;
+        // }
     }
 
     /// <summary>
     /// ワゴンを走らせる.
     /// </summary>
     public void RunWagon() {
-        wagonControllerRun = wagonController;
-        wagonControllerRun.XSpeed = -wagonControllerRun.Speed;
+        WagonControllerRun = WagonController;
+        WagonControllerRun.XSpeed = -WagonControllerRun.Speed;
         for (int i = 0; i < 6; i++) {
             isRunningWagon[i] = true;
         }

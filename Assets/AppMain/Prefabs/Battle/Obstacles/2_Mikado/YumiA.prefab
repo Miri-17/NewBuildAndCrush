@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8406729220380239768}
   - component: {fileID: 2489476694591490794}
   - component: {fileID: 4404292816239954053}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: YumiA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

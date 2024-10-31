@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d197dfbea17e4272815adb669f72145, type: 3}
   m_Name: 2_BattleBuilderDB
   m_EditorClassIdentifier: 
-  _obstacleDBs: []
+  _obstacleDBs:
+  - {fileID: 11400000, guid: 2f745c3ecc47b4a14bc6a21d36364528, type: 2}
+  - {fileID: 11400000, guid: 45444840e4de84db7948e42fc408391d, type: 2}
+  - {fileID: 11400000, guid: b3423557463774989abe122b44a7cf50, type: 2}
+  - {fileID: 11400000, guid: 70f390416c5ea4ade8aad2114bb9a8e3, type: 2}
+  - {fileID: 11400000, guid: 0a184c93eedc84fc4bf24b0b3957e478, type: 2}
+  - {fileID: 11400000, guid: b7d011172bcc248fdb7208d751fb1a77, type: 2}
   _bg: {fileID: 21300000, guid: 61dd613dc8dc840e7a8afb1e39a5c40f, type: 3}
   _ground: {fileID: 21300000, guid: e0f5b71374674498084fc4ce661b93ad, type: 3}
   _builderPrefab: {fileID: 8914690196146070818, guid: 39c5a4e821e514c479a89b4a3a9be1e3, type: 3}

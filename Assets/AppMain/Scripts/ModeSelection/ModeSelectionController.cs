@@ -44,6 +44,16 @@ public class ModeSelectionController : MonoBehaviour {
         if (_audioSource_SE == null || _audioClip_SE == null)
             Debug.LogError("AudioSource of AudioClip is not assigned properly.");
         
+        switch (GameDirector.Instance.PreviousSceneName) {
+            case "SoundList":
+                _nextSceneIndex = 1;
+                break;
+            case "Credits":
+                _nextSceneIndex = 2;
+                break;
+            default:
+                break;
+        }
         _modeSelectionBooks[_nextSceneIndex].SetSelection(true);
         _previousSelectIndex = _nextSceneIndex;
         

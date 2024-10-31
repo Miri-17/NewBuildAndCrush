@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CrusherController : MonoBehaviour {
+    private const float RIGHT_NUM = 18.5f;
+    private const float END_NUM = 19.5f;
+
     #region Private Fields
     private BuilderController _builderController = null;
     private Animator _animator = null;
@@ -16,8 +19,8 @@ public class CrusherController : MonoBehaviour {
     private float _normalWalkSpeed = 0;
     private float _normalJumpForce = 0;
     private float _addSpeedX = 0.0f;
-    private List<float> _rightNum = new List<float>() { 19.0f, 19.0f, 20.0f, 18.5f, };
-    private List<float> _endNum = new List<float>() { 19.2f, 19.2f, 20.2f, 19.5f, };
+    private List<float> _rightNum = new List<float>() { 19.0f, 17.0f, 20.0f, 18.9f, };
+    private List<float> _endNum = new List<float>() { 20.2f, 18.2f, 21.2f, 20.1f, };
     private int _crusherIndex = 0;
     #endregion
 
@@ -89,9 +92,7 @@ public class CrusherController : MonoBehaviour {
         }
 
         if (IsGrounded()) {
-            Debug.Log("接地してるよ");
             if (Input.GetButtonDown("Jump")) {
-                Debug.Log("ジャンプボタンを押したよ");
                 _isJumping = true;
                 Jump();
             } else {
@@ -100,13 +101,13 @@ public class CrusherController : MonoBehaviour {
         }
 
         // FixedUpdate()に書くと他の処理との兼ね合いか、ワゴンを出た後にスピードが元に戻らないので注意.
-        if (_builderController.wagonControllerRun != null) {
+        if (_builderController.WagonControllerRun != null) {
             // ワゴンに乗ったらクラッシャーのスピードをワゴンのスピードとも関連づける.
-            if (_builderController.wagonControllerRun.CrusherEnterCheck.IsOn)
-                _addSpeedX = _builderController.wagonControllerRun.GetWagonVelocity();
+            if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn)
+                _addSpeedX = _builderController.WagonControllerRun.GetWagonVelocity();
 
             //ワゴンから降りたらクラッシャーのスピードを通常に戻す.
-            if (_builderController.wagonControllerRun.CrusherExitCheck.IsOn)
+            if (_builderController.WagonControllerRun.CrusherExitCheck.IsOn)
                 _addSpeedX = 0.0f;
         }
         
@@ -145,8 +146,11 @@ public class CrusherController : MonoBehaviour {
 
     private bool IsGrounded() {
         Vector3 startRightVec = transform.position - transform.up * _rightNum[_crusherIndex] + transform.right * 5.2f;
+        // Vector3 startRightVec = transform.position - transform.up * RIGHT_NUM + transform.right * 5.2f;
         Vector3 startLeftVec = transform.position - transform.up * _rightNum[_crusherIndex] - transform.right * 5.2f;
+        // Vector3 startLeftVec = transform.position - transform.up * RIGHT_NUM - transform.right * 5.2f;
         Vector3 endVec = transform.position - transform.up * _endNum[_crusherIndex];
+        // Vector3 endVec = transform.position - transform.up * END_NUM;
         Debug.DrawLine(startRightVec, endVec);
         Debug.DrawLine(startLeftVec, endVec);
 

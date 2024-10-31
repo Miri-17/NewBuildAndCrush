@@ -43,6 +43,8 @@ public class CrusherSelectionController : MonoBehaviour {
         
         _crusherCount = _crushersDB.CrusherCount;
         UpdateCrusher(_crusherIndex);
+
+        GameDirector.Instance.PreviousSceneName = "PlayerSelection";
     }
 
     private void Update() {

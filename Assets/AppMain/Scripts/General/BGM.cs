@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 public class BGM : MonoBehaviour {
     public static BGM Instance { get; private set; }
 
+    private AudioSource _audioSource = null;
+
     [SerializeField] private BGMDB _bgmDB = null;
 
-    private AudioSource _audioSource = null;
+    public BGMDB BGMDB { get => _bgmDB; set => _bgmDB = value; }
 
     private void Awake() {
         // すでにロードされていたら、自分自身を破棄して終了する.
@@ -60,7 +62,8 @@ public class BGM : MonoBehaviour {
 
         switch (nextScene.name) {
             case "ModeSelection":
-                if (_audioSource.isPlaying && _audioSource.clip == _bgmDB.AudioClips[0])
+                // if (_audioSource.isPlaying && _audioSource.clip == _bgmDB.AudioClips[0])
+                if (GameDirector.Instance.PreviousSceneName == "Title" && _audioSource.clip == _bgmDB.AudioClips[0])
                         break;
                 _audioSource.Stop();
                 _audioSource.volume = 1;

@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 5610384551482557536}
   - component: {fileID: 4531192903568912951}
   - component: {fileID: 262928165767506925}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Ougi
   m_TagString: Untagged
   m_Icon: {fileID: 0}

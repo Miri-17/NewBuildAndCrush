@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7380691875738639402}
   - component: {fileID: 6649214257109107411}
   - component: {fileID: 3571957867120727926}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Biscuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
