@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Cysharp.Threading.Tasks;
 
 public class CreditsUIController : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private CreditsController _creditsController = null;
     [SerializeField] private RectTransform _scrollingObjects = null;
-    [SerializeField] private float _endAnchorPosY = 7230.0f;
-    [SerializeField] private float _time = 60.0f;
+    [SerializeField] private float _endAnchorPosY = 10725.0f;
+    [SerializeField] private float _time = 90.0f;
     [SerializeField] private List<Image> _fadeInImages = new List<Image>();
     #endregion
 
@@ -17,6 +18,7 @@ public class CreditsUIController : MonoBehaviour {
     private void Start() {
         _scrollingObjects.DOAnchorPosY(_endAnchorPosY, _time)
             .SetEase(Ease.Linear)
+            // .OnComplete(CreditsEnded.Forget())
             .OnComplete(CreditsEnded)
             .SetLink(_scrollingObjects.gameObject);
     }
@@ -36,6 +38,9 @@ public class CreditsUIController : MonoBehaviour {
     }
 
     private void CreditsEnded() {
+    // private async UniTaskVoid CreditsEnded() {
+        // await UniTask.Delay((int)(0.5f * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
+        // await UniTask.Delay((int)(1.0f * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         _creditsController.ChangeScene();
     }
 }

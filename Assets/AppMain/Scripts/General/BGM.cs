@@ -38,6 +38,7 @@ public class BGM : MonoBehaviour {
                 _audioSource.Stop();
                 break;
             case "Credits":
+            case "Credits_":
                 _audioSource.clip = _bgmDB.AudioClips[13];
                 _audioSource.Play();
                 break;
@@ -81,6 +82,7 @@ public class BGM : MonoBehaviour {
                 _audioSource.Stop();
                 break;
             case "Credits":
+            case "Credits_":
                 _audioSource.Stop();
                 _audioSource.clip = _bgmDB.AudioClips[13];
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
