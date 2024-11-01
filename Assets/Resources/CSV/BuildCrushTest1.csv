@@ -1,0 +1,6 @@
+﻿背景,発話キャラ,内容,キャラクター
+OpeningAF0,1,私は誰？,01Normal
+OpeningAF1,2,アリスだよ,02Angry
+OpeningAG0,3,いいや、御門だよ,03Happy
+OpeningAG1,4,グレーテルかわいいでしょ！,04Panic
+OpeningBE0,5,終わりだよ,05Sad

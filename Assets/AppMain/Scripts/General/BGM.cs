@@ -38,8 +38,11 @@ public class BGM : MonoBehaviour {
                 _audioSource.Stop();
                 break;
             case "Credits":
-            case "Credits_":
                 _audioSource.clip = _bgmDB.AudioClips[13];
+                _audioSource.Play();
+                break;
+            case "Crossover":
+                _audioSource.clip = _bgmDB.AudioClips[2];
                 _audioSource.Play();
                 break;
             case "Result":
@@ -79,12 +82,18 @@ public class BGM : MonoBehaviour {
                 _audioSource.Play();
                 break;
             case "SoundList":
+            case "Battle":
                 _audioSource.Stop();
                 break;
             case "Credits":
-            case "Credits_":
                 _audioSource.Stop();
                 _audioSource.clip = _bgmDB.AudioClips[13];
+                Debug.Log("audioSource.clip: " + _audioSource.clip);
+                _audioSource.Play();
+                break;
+            case "Crossover":
+                _audioSource.Stop();
+                _audioSource.clip = _bgmDB.AudioClips[2];
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;

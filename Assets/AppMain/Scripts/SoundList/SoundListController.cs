@@ -10,14 +10,14 @@ public class SoundListController : MonoBehaviour {
     private int _audioClipCount = 0;
     private AudioSource _audioSourceBGM = null;
     private int _previousSelectionIndex = -1;
-    // シーン遷移関係
+    // シーン遷移関係.
     private bool _isChangingScene = false;
     private AudioSource _audioSourceSE = null;
     #endregion
 
     #region Serialized Fields
     [SerializeField] private SoundListUIController _soundListUIController = null;
-    [SerializeField] private List<SoundListMusic> _soundListMusic = null;
+    [SerializeField] private List<FadeInOutLoopAnimation> _fadeInOutLoopAnimations = null;
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
     #endregion
 
@@ -67,7 +67,7 @@ public class SoundListController : MonoBehaviour {
             if (_audioSourceBGM.isPlaying && _previousSelectionIndex == SoundIndex) {
                 _audioSourceBGM.Stop();
                 _soundListUIController.ResetPlayback();
-                _soundListMusic[_previousSelectionIndex].NoteOnOff(false);
+                _fadeInOutLoopAnimations[_previousSelectionIndex].AnimationOnOff(false);
                 return;
             }
 
@@ -75,13 +75,13 @@ public class SoundListController : MonoBehaviour {
             _audioSourceBGM.Stop();
             _soundListUIController.ResetPlayback();
             if (_previousSelectionIndex != -1)
-                _soundListMusic[_previousSelectionIndex].NoteOnOff(false);
+                _fadeInOutLoopAnimations[_previousSelectionIndex].AnimationOnOff(false);
             
             // 今回のBGMに対する処理
             _audioSourceBGM.clip = BGM.Instance.BGMDB.AudioClips[SoundIndex];
             _audioSourceBGM.Play();
             _soundListUIController.StartPlayback();
-            _soundListMusic[SoundIndex].NoteOnOff(true);
+            _fadeInOutLoopAnimations[SoundIndex].AnimationOnOff(true);
 
             _previousSelectionIndex = SoundIndex;
         }

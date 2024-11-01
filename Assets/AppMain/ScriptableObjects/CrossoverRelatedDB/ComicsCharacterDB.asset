@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3c9ae05bdd241099ad217192b9de22, type: 3}
+  m_Name: ComicsCharacterDB
+  m_EditorClassIdentifier: 
+  Parameters:
+  - DisplayName: ' '
+    Character: 0
+    ImageParams:
+    - Emotion: 0
+      Sprite: {fileID: 21300000, guid: 5fbfb01941d954d67937cd4a9527ebed, type: 3}
+  - DisplayName: "\u30AA\u30AA\u30AB\u30DF"
+    Character: 1
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 42d98b631ac204a34938eb0746457d93, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: 804e501e7e6a14cd38f31f724545955e, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 1bef427f3da8644cf9defd5fbc42b124, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: b2cce8b557b58484bbe81147629eeb69, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 83953f0135d0044fe87b0dfeeb80f952, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: f2d518521a3924d69aff87f8c6b0e793, type: 3}
+  - DisplayName: "\u5973\u738B\u30A2\u30EA\u30B9"
+    Character: 2
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 549d5df1fcf104d9ba86b65f1dedbe28, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: b44a2aa66c5444cacb6cb7b4dde6cc6f, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: c8855d4b2c11745f89fed3d1ae2d166a, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 950d3e4afbd6e4c29a35d964ba6fb835, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: 0a2503c1b9e4d440f97c7f0eeb699eea, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 7cd32199ace29438cbd173abb1186917, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: ed9fc94bd7d294367bde0633523e0fe7, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: f6434e2c345c54e0a8ce6e71657e5c5a, type: 3}
+  - DisplayName: "\u5FA1\u9580"
+    Character: 3
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 2b646cebda3984b72be402e06d5d3449, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: 854d7cc6a80d84f49a4a1a0aa142a3b9, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: 30b7aff9a40d541459e0ed365c0d89c7, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: f089afa54d3ea4a5cae0247efe332e90, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: b233c6ddda7ea460b851b88ee1a4172e, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 7791971c0f01743c78c25741b6e708d3, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: 30a67b77343e844aab5aaa06e3f230bb, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: 0c66e2f539e1c43dca7f1ec1d74d5683, type: 3}
+  - DisplayName: "\u30D8\u30F3\u30BC\u30EB\u3068\u30B0\u30EC\u30FC\u30C6\u30EB"
+    Character: 4
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 1a9f8e9115679468aaae7a6b667a9a12, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 17bdb69a378014dadb19c0e04a710006, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: fd7c80545d67946b198eccc824ea01a0, type: 3}
+  - DisplayName: "\u8D64\u305A\u304D\u3093"
+    Character: 5
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 73667d4f99c714ff1a16f7404a88baa8, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: b4186199f830c4b3992a2c57876ceaf3, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: cf6f5fe93f8844655a7bc1df9c9a09c9, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 15fda1cbb5c9145ffaf651abb355f26e, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: 01a3271e7c8c742e5add974cdc0919f0, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 139ec508c847240da99513299117438e, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: 798a7c7e71b8443bc8c233624bd2bdeb, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: 41b4fe684321f4e52aef67e257e1784d, type: 3}
+  - DisplayName: "\u30CF\u30FC\u30C8\u306E\u5973\u738B"
+    Character: 6
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 2d23a0f75e98042a2a075b51f263f0ce, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: 25a54096470964df6bd3cff2f2b901da, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: 9c119ae1e693e472983435c03f767fe0, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 444d96122beba4fd79c2f0964789da33, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: 190412bad296b41a999439bd34a81ab9, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 9e98191961a3f472786c0fee82410b82, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: cff6a2f8e5d894b8691b7d4d28a6b1ff, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: 4e7fdcbc6c3144f0fb6e3644a8202c5b, type: 3}
+  - DisplayName: "\u5929\u4EBA"
+    Character: 7
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 00e864044e6f3402d83975b484209336, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: 36e1fb8bee6fd4eb7a604139a0cd01bc, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 202e60980f932427e80f3f7b5a5a07ae, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: 104acd182e4a349948505c17e26e0931, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 90fe8f07def4446f48daaddcb433570b, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: 5a8aa0dda1ec2450891c748079fcb948, type: 3}
+  - DisplayName: "\u304A\u83D3\u5B50\u306E\u9B54\u5973"
+    Character: 8
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 3546f8f21653e4d7bb5ff7af3514b45c, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: 6590690cc087649c8b1b63086dd19f6e, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: 27413585d61c64605a2c96381b1a3382, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 9f7a856a128b743d0952c1dbab9b1df9, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: 81cce7c7874e941ec91540cf83321ea1, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 7188027cebc9042f49170990e5886bcd, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: b035b1e200c924607ba2ba409cdd45bc, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: bd7b3126894de40d4a776f1e3cac35d7, type: 3}
+  - DisplayName: "\u30D8\u30F3\u30BC\u30EB"
+    Character: 9
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 2d7b64a692cec40ad9891fe151076890, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: 9075297b730c54a34ad2e62dd06f1f6c, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 3cccba0ae142d46c0972af9bc843155d, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: e1e19e877b65848e4ad9fd23ce461d70, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: 0a2e3dc1d5b57459a91a8d775a29a7a2, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: 11accc52cc9264bc19134e3338478073, type: 3}
+  - DisplayName: "\u30B0\u30EC\u30FC\u30C6\u30EB"
+    Character: 10
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 70dfbd8a72dab43249d5a8566cf27fab, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: 82be269e5a68a439caebeca78961a21d, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 640fd8440e87d4eafaf715a7e9940997, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: d9807cfd8bd6748da9ce54ae8dfd8ab2, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: a7144a9fd108740dcbf7a54c667410e2, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: 5d6ed5351ec5e4b249c70bbaea954a22, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: 24a3e2a8d812c4aa88c896ee5e68cdf9, type: 3}
+  - DisplayName: "\u304B\u3050\u3084\u59EB"
+    Character: 11
+    ImageParams:
+    - Emotion: 1
+      Sprite: {fileID: 21300000, guid: 69c6fcc02c4c34079bff65d80a72a172, type: 3}
+    - Emotion: 2
+      Sprite: {fileID: 21300000, guid: 60b1e5d13f04547fb936e0162c28c8c3, type: 3}
+    - Emotion: 3
+      Sprite: {fileID: 21300000, guid: f7a67c21b71b343d780bc1e814a8105c, type: 3}
+    - Emotion: 4
+      Sprite: {fileID: 21300000, guid: 9ca3a8eee7f23423a8f9ce1a7de1c0ec, type: 3}
+    - Emotion: 5
+      Sprite: {fileID: 21300000, guid: 144ed54cb6f7d44d197e6b8e82276a0c, type: 3}
+    - Emotion: 6
+      Sprite: {fileID: 21300000, guid: 5628ae11906284aa09ad26a483f51ec2, type: 3}
+    - Emotion: 7
+      Sprite: {fileID: 21300000, guid: e93d8f7228b5b4c8183a57a5d406b419, type: 3}
+    - Emotion: 8
+      Sprite: {fileID: 21300000, guid: 6e2ef561607cd43fda8228a4a815cd37, type: 3}
