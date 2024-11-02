@@ -4,25 +4,45 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
+using UnityEngine.UI;
+using Cysharp.Threading.Tasks.CompilerServices;
+using DG.Tweening;
 
 public class CrusherSelectionController : MonoBehaviour {
+    #region Private Fields
     private GameObject _crusherL2D = null;
     private CrusherDB _crusher = null;
     private int _crusherIndex = 0;
+    private int _previousCrusherIndex = 0;
     private int _crusherCount = 0;
     private bool _isCrusherSelected = false;
     private Animator _crusherAnimator = null;
-    private AudioSource _audioSource_SE = null;
-    private AudioClip _audioClip_SE = null;
+    private AudioSource _audioSourceBGM = null;
+    private AudioSource _audioSourceSE = null;
+    private AudioClip _audioClipSE = null;
     // シーン遷移関係
     private bool _isChangingScene = false;
+    #endregion
 
+    #region Serialized Fields
     [SerializeField] private CrushersDB _crushersDB = null;
-    [SerializeField] private TextMeshProUGUI _crusherName = null;
+    [SerializeField] private CrusherSelectionUIController _crusherSelectionUIController = null;
+    [SerializeField] private BuilderSelectionController _builderSelectionController = null;
     [SerializeField] private TextMeshProUGUI _crusherNickname = null;
+    [SerializeField] private TextMeshProUGUI _crusherName = null;
     [SerializeField] private TextMeshProUGUI _crusherDescription = null;
+    // WaitingPanel
+    [SerializeField, Header("0...Crusher, 1...Builder")] private List<GameObject> _waitingPanels = new List<GameObject>();
+    [SerializeField] private List<GameObject> _waitingCharacters = new List<GameObject>();
+    // ConfirmPanel
+    [SerializeField, Header("0...Crusher, 1...Builder")] private List<GameObject> _confirmPanels = new List<GameObject>();
+    // FadeInImage
+    [SerializeField] private List<Image> _fadeInImages = new List<Image>();
     // シーン遷移関係
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    #endregion
+
+    [HideInInspector] public bool IsSetConfirmPanel = false;
 
     private void Start() {
         if (CrusherSE.Instance == null) {
@@ -39,32 +59,76 @@ public class CrusherSelectionController : MonoBehaviour {
             return;
         }
 
-        _audioSource_SE = CrusherSE.Instance.GetComponent<AudioSource>();
+        _audioSourceBGM = BGM.Instance.GetComponent<AudioSource>();
+        _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
         
         _crusherCount = _crushersDB.CrusherCount;
         UpdateCrusher(_crusherIndex);
+
+        _waitingPanels[0].SetActive(false);
+        foreach (var confirmPanel in _confirmPanels)
+            confirmPanel.SetActive(false);
 
         GameDirector.Instance.PreviousSceneName = "PlayerSelection";
     }
 
     private void Update() {
-        if (_isChangingScene)
-            return;
-        
-        if (_isCrusherSelected) {
-            if (Input.GetButtonDown("Jump")) {
-                _isCrusherSelected = false;
+        if (_isChangingScene) return;
 
-                _crusherAnimator.Play(_crusher.EnglishName + "L2D_Idle");
+        if (_isCrusherSelected) {
+            // Debug.Log("クラッシャー選択状態です");
+            if (_confirmPanels[0].activeSelf) {
+                Debug.Log("yeah!!!!");
+                if (Input.GetButtonDown("Select")) {
+                    _isChangingScene = true;
+
+                    _audioSourceBGM.Stop();
+
+                    _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[0];
+                    _audioSourceSE.PlayOneShot(_audioClipSE);
+                    foreach (var confirmPanel in _confirmPanels)
+                        confirmPanel.SetActive(false);
+                    _crusherAnimator.Play(_crusher.EnglishName + "L2D_Select");
+                    _builderSelectionController.BuilderAnimator.Play(_builderSelectionController.Builder.EnglishName + "L2D_Select");
+                    
+                    GameDirector.Instance.BuilderIndex = _builderSelectionController.BuilderIndex;
+                    GameDirector.Instance.CrusherIndex = _crusherIndex;
+                    FadeInImageAsync(1.8f).Forget();
+                } else if (Input.GetButtonDown("Jump")) {
+                    foreach (var confirmPanel in _confirmPanels)
+                        confirmPanel.SetActive(false);
+                    
+                    _isCrusherSelected = false;
+                    _builderSelectionController.IsBuilderSelected = false;
+                    IsSetConfirmPanel = false;
+
+                    _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[2];
+                    _audioSourceSE.PlayOneShot(_audioClipSE);
+                }
+            } else {
+                if (!_confirmPanels[0].activeSelf && _builderSelectionController.IsBuilderSelected) {
+                    // IsSettingConfirmPanel = true;
+                    IsSetConfirmPanel = true;   // ビルダーに選択の余地を与えない用
+                    SetConfirmPanel();
+                } else if (Input.GetButtonDown("Jump")) {
+                    _isCrusherSelected = false;
+
+                    _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[2];
+                    _audioSourceSE.PlayOneShot(_audioClipSE);
+
+                    _crusherAnimator.enabled = true;
+                    _waitingPanels[0].SetActive(false);
+                }
             }
         } else {
             if (Input.GetButtonDown("Select")) {
                 _isCrusherSelected = true;
 
-                _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
-                _audioSource_SE.PlayOneShot(_audioClip_SE);
-                
-                _crusherAnimator.Play(_crusher.EnglishName + "L2D_Select");
+                _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[0];
+                _audioSourceSE.PlayOneShot(_audioClipSE);
+
+                _crusherAnimator.enabled = false;
+                _waitingPanels[0].SetActive(true);
             } else if (Input.GetButtonDown("Horizontal")) {
                 var horizontalKey = Input.GetAxisRaw("Horizontal");
                 if (horizontalKey > 0) {
@@ -77,8 +141,8 @@ public class CrusherSelectionController : MonoBehaviour {
                         _crusherIndex = _crusherCount - 1;
                 }
 
-                _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[1];
-                _audioSource_SE.PlayOneShot(_audioClip_SE);
+                _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[1];
+                _audioSourceSE.PlayOneShot(_audioClipSE);
 
                 if (_crusherL2D != null)
                     Destroy(_crusherL2D);
@@ -86,8 +150,8 @@ public class CrusherSelectionController : MonoBehaviour {
             } else if (Input.GetButtonDown("Jump")) {
                 _isChangingScene = true;
 
-                _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[2];
-                _audioSource_SE.PlayOneShot(_audioClip_SE);
+                _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[2];
+                _audioSourceSE.PlayOneShot(_audioClipSE);
 
                 GoNextSceneAsync(0.5f, _nextSceneNames[0]).Forget();
             }
@@ -99,12 +163,47 @@ public class CrusherSelectionController : MonoBehaviour {
         var crusherInfo = _crushersDB.GetCrusherInfo(crusherIndex);
 
         _crusherName.text = _crusher.Name;
-        _crusherL2D = Instantiate(_crusher.Live2D, new Vector3(0, 0, 80.0f), Quaternion.identity);
-        _crusherL2D.transform.SetParent(GameObject.Find("Crusher").transform, false);
+        var crusherPosition = GetCrusherPosition(crusherIndex);
+        _crusherL2D = Instantiate(_crusher.Live2D, crusherPosition, Quaternion.identity, GameObject.Find("Crusher").transform);
         _crusherAnimator = _crusherL2D.GetComponent<Animator>();
 
         _crusherNickname.text = crusherInfo.Nickname;
         _crusherDescription.text = crusherInfo.Description;
+        if (crusherIndex == 0 || crusherIndex == 1)
+            _crusherDescription.lineSpacing = 80;
+        else
+            _crusherDescription.lineSpacing = 60;
+        
+        _crusherSelectionUIController.SetSprites(crusherIndex);
+        
+        _waitingCharacters[_previousCrusherIndex].gameObject.SetActive(false);
+        _waitingCharacters[crusherIndex].gameObject.SetActive(true);
+
+        _previousCrusherIndex = crusherIndex;
+    }
+
+    private Vector3 GetCrusherPosition(int index) {
+        switch (index) {
+            case 0: return new Vector3(-0.5f, 0, 80.0f);
+            case 1: return new Vector3(-0.85f, 0, 80.0f);
+            case 2: return new Vector3(-0.85f, 0, 80.0f);
+            default: return new Vector3(-0.65f, 0, 80.0f);
+        }
+    }
+
+    private async UniTaskVoid FadeInImageAsync(float duration) {
+        try {
+            await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
+            _fadeInImages[0].DOFade(1.0f, 0.5f)
+                .SetEase(Ease.Linear)
+                .SetLink(_fadeInImages[0].gameObject);
+            _fadeInImages[1].DOFade(1.0f, 0.5f)
+                .SetEase(Ease.Linear)
+                .SetLink(_fadeInImages[1].gameObject)
+                .OnComplete(() => GoNextSceneAsync(0.5f, _nextSceneNames[1]).Forget());
+        } catch (System.Exception e) {
+            Debug.LogError($"Image fading-in failed: {e.Message}");
+        }
     }
 
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
@@ -114,5 +213,16 @@ public class CrusherSelectionController : MonoBehaviour {
         } catch (System.Exception e) {
             Debug.LogError($"Scene transition failed: {e.Message}");
         }
+    }
+
+    private void SetConfirmPanel() {
+        foreach (var waitingPanel in _waitingPanels)
+            waitingPanel.SetActive(false);
+        
+        _builderSelectionController.BuilderAnimator.enabled = true;
+        _crusherAnimator.enabled = true;
+        
+        foreach (var confirmPanel in _confirmPanels)
+            confirmPanel.SetActive(true);
     }
 }

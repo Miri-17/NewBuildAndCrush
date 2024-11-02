@@ -7522,7 +7522,6 @@ GameObject:
   - component: {fileID: 9020765196046143370}
   - component: {fileID: 8644184733372403902}
   - component: {fileID: 3015715385320719940}
-  - component: {fileID: 4803819697119317792}
   m_Layer: 15
   m_Name: Tenjin_resize
   m_TagString: Untagged
@@ -8043,20 +8042,6 @@ MonoBehaviour:
     Gravity: {x: 0, y: -1}
     Wind: {x: 0, y: 0}
     Fps: 30
---- !u!114 &4803819697119317792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3100244259056883136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e895845bd3b4852a0afadffc44f7cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _warningPanel: {fileID: 8011197536318670741, guid: cf094d0c90f004a328bd5e762a52d523, type: 3}
-  _parentName: CrusherFrontCanvas
 --- !u!1 &3120736832136786873
 GameObject:
   m_ObjectHideFlags: 0

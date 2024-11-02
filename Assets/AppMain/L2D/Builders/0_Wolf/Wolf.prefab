@@ -1008,7 +1008,6 @@ GameObject:
   - component: {fileID: 7849624996908107148}
   - component: {fileID: 1579246782527773165}
   - component: {fileID: 5333836091467070211}
-  - component: {fileID: 7596934880645759629}
   m_Layer: 16
   m_Name: Wolf
   m_TagString: Untagged
@@ -1394,20 +1393,6 @@ MonoBehaviour:
     Gravity: {x: 0, y: -1}
     Wind: {x: 0, y: 0}
     Fps: 30
---- !u!114 &7596934880645759629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794753891948485932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f144b554fdbfb4c8db5c21bf27c16fc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _warningPanel: {fileID: 8011197536318670741, guid: 174c3d9d81e774ca99eca8a10783fa85, type: 3}
-  _parentName: BuilderFrontCanvas
 --- !u!1 &892352655437834260
 GameObject:
   m_ObjectHideFlags: 0

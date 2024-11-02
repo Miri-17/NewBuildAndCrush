@@ -26,8 +26,6 @@ public class SoundListUIController : MonoBehaviour {
     [SerializeField] private RectTransform _selection = null;
     #endregion
 
-    // public bool IsFadingIllustration { get; private set; } = false;
-
     private void Start() {
         InitializeRecord();
         InitializeIllustration();
