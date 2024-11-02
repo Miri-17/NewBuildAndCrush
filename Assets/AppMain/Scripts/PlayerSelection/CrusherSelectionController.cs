@@ -93,6 +93,7 @@ public class CrusherSelectionController : MonoBehaviour {
                     
                     GameDirector.Instance.BuilderIndex = _builderSelectionController.BuilderIndex;
                     GameDirector.Instance.CrusherIndex = _crusherIndex;
+                    GameDirector.Instance.IsOpening = true;
                     FadeInImageAsync(1.8f).Forget();
                 } else if (Input.GetButtonDown("Jump")) {
                     foreach (var confirmPanel in _confirmPanels)

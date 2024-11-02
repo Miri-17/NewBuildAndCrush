@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32785a5538ac4fa3978a42cbdc8cc72, type: 3}
+  m_Name: CrusherWinDB
+  m_EditorClassIdentifier: 
+  _builderParameters:
+  - Name: "\u30AA\u30AA\u30AB\u30DF"
+    CrusherParameter:
+    - Name: "\u8D64\u305A\u304D\u3093"
+      StoryTitle: "\u30AA\u30AA\u30AB\u30DF\u8CA0\u3051\u8D64\u305A\u304D\u3093\u52DD\u3061"
+      CSVName: CrusherWin/EndingAE
+    - Name: "\u30CF\u30FC\u30C8\u306E\u5973\u738B"
+      StoryTitle: "\u30AA\u30AA\u30AB\u30DF\u8CA0\u3051\u30CF\u30FC\u30C8\u306E\u5973\u738B\u52DD\u3061"
+      CSVName: CrusherWin/EndingBE
+    - Name: "\u5929\u4EBA"
+      StoryTitle: "\u30AA\u30AA\u30AB\u30DF\u8CA0\u3051\u5929\u4EBA\u52DD\u3061"
+      CSVName: CrusherWin/EndingCE
+    - Name: "\u304A\u83D3\u5B50\u306E\u9B54\u5973"
+      StoryTitle: "\u30AA\u30AA\u30AB\u30DF\u8CA0\u3051\u304A\u83D3\u5B50\u306E\u9B54\u5973\u52DD\u3061"
+      CSVName: CrusherWin/EndingDE
+  - Name: "\u5973\u738B\u30A2\u30EA\u30B9"
+    CrusherParameter:
+    - Name: "\u8D64\u305A\u304D\u3093"
+      StoryTitle: "\u5973\u738B\u30A2\u30EA\u30B9\u8CA0\u3051\u8D64\u305A\u304D\u3093\u52DD\u3061"
+      CSVName: CrusherWin/EndingAF
+    - Name: "\u30CF\u30FC\u30C8\u306E\u5973\u738B"
+      StoryTitle: "\u5973\u738B\u30A2\u30EA\u30B9\u8CA0\u3051\u30CF\u30FC\u30C8\u306E\u5973\u738B\u52DD\u3061"
+      CSVName: CrusherWin/EndingBF
+    - Name: "\u5929\u4EBA"
+      StoryTitle: "\u5973\u738B\u30A2\u30EA\u30B9\u8CA0\u3051\u5929\u4EBA\u52DD\u3061"
+      CSVName: CrusherWin/EndingCF
+    - Name: "\u304A\u83D3\u5B50\u306E\u9B54\u5973"
+      StoryTitle: "\u5973\u738B\u30A2\u30EA\u30B9\u8CA0\u3051\u304A\u83D3\u5B50\u306E\u9B54\u5973\u52DD\u3061"
+      CSVName: CrusherWin/EndingDF
+  - Name: "\u5FA1\u9580"
+    CrusherParameter:
+    - Name: "\u8D64\u305A\u304D\u3093"
+      StoryTitle: "\u5FA1\u9580\u8CA0\u3051\u8D64\u305A\u304D\u3093\u52DD\u3061"
+      CSVName: CrusherWin/EndingAG
+    - Name: "\u30CF\u30FC\u30C8\u306E\u5973\u738B"
+      StoryTitle: "\u5FA1\u9580\u8CA0\u3051\u30CF\u30FC\u30C8\u306E\u5973\u738B\u52DD\u3061"
+      CSVName: CrusherWin/EndingBG
+    - Name: "\u5929\u4EBA"
+      StoryTitle: "\u5FA1\u9580\u8CA0\u3051\u5929\u4EBA\u52DD\u3061"
+      CSVName: CrusherWin/EndingCG
+    - Name: "\u304A\u83D3\u5B50\u306E\u9B54\u5973"
+      StoryTitle: "\u5FA1\u9580\u8CA0\u3051\u304A\u83D3\u5B50\u306E\u9B54\u5973\u52DD\u3061"
+      CSVName: CrusherWin/EndingDG
+  - Name: "\u30D8\u30F3\u30BC\u30EB\u3068\u30B0\u30EC\u30FC\u30C6\u30EB"
+    CrusherParameter:
+    - Name: "\u8D64\u305A\u304D\u3093"
+      StoryTitle: "\u30D8\u30F3\u30B0\u30EC\u8CA0\u3051\u8D64\u305A\u304D\u3093\u52DD\u3061"
+      CSVName: CrusherWin/EndingAH
+    - Name: "\u30CF\u30FC\u30C8\u306E\u5973\u738B"
+      StoryTitle: "\u30D8\u30F3\u30B0\u30EC\u8CA0\u3051\u30CF\u30FC\u30C8\u306E\u5973\u738B\u52DD\u3061"
+      CSVName: CrusherWin/EndingBH
+    - Name: "\u5929\u4EBA"
+      StoryTitle: "\u30D8\u30F3\u30B0\u30EC\u8CA0\u3051\u5929\u4EBA\u52DD\u3061"
+      CSVName: CrusherWin/EndingCH
+    - Name: "\u304A\u83D3\u5B50\u306E\u9B54\u5973"
+      StoryTitle: "\u30D8\u30F3\u30B0\u30EC\u8CA0\u3051\u304A\u83D3\u5B50\u306E\u9B54\u5973\u52DD\u3061"
+      CSVName: CrusherWin/EndingDH

@@ -16,7 +16,7 @@ public class GameDirector : MonoBehaviour {
     [SerializeField] private float _builderPosition = 0;
     [SerializeField] private float _crusherPosition = 0;
     [SerializeField] private string _previousSceneName = "Title";
-    
+    [SerializeField] private bool _isOpening = true;
     // ビルダー4体の順. 勝ったら0が1になる.
     [SerializeField] private List<int> _wolfAchievements = new List<int>() { 0, 0, 0, 0, };
     [SerializeField] private List<int> _queenAliceAchievements =new List<int>() { 0, 0, 0, 0, };
@@ -43,6 +43,7 @@ public class GameDirector : MonoBehaviour {
     public float BuilderPosition { get => _builderPosition; set => _builderPosition = value; }
     public float CrusherPosition { get => _crusherPosition; set => _crusherPosition = value; }
     public string PreviousSceneName { get => _previousSceneName; set => _previousSceneName = value; }
+    public bool IsOpening { get => _isOpening; set => _isOpening = value; }
 
     public List<int> WolfAchievements { get => _wolfAchievements; set => _wolfAchievements = value; }
     public List<int> QueenAliceAchievements { get => _queenAliceAchievements; set => _queenAliceAchievements = value; }

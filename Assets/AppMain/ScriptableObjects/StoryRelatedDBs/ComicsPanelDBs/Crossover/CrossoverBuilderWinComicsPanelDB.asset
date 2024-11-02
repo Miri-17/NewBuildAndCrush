@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ada3a50210f44408b5a833827b1209, type: 3}
+  m_Name: CrossoverBuilderWinComicsPanelDB
+  m_EditorClassIdentifier: 
+  Parameters:
+  - Name: EndingEB
+    Sprite: {fileID: 21300000, guid: 052a9539dfa8f4e5aaf62895a3448c41, type: 3}
+  - Name: EndingEC
+    Sprite: {fileID: 21300000, guid: 52893cf42febf436b85ae13c22724dcb, type: 3}
+  - Name: EndingED
+    Sprite: {fileID: 21300000, guid: 63275a0874fef48baa7ebc4ebe232092, type: 3}
+  - Name: EndingFA
+    Sprite: {fileID: 21300000, guid: 668c35bb97c6d45a289449fb91280883, type: 3}
+  - Name: EndingFC
+    Sprite: {fileID: 21300000, guid: de65542411b9145a29722fe9380a9853, type: 3}
+  - Name: EndingFD
+    Sprite: {fileID: 21300000, guid: 8b1bb008bdcca48a4878020efc9659a1, type: 3}
+  - Name: EndingGA
+    Sprite: {fileID: 21300000, guid: d7997a00e8c164ed48845d46618d3bde, type: 3}
+  - Name: EndingGB
+    Sprite: {fileID: 21300000, guid: d35a3e502a6cd4224aff20e19d96e095, type: 3}
+  - Name: EndingGD
+    Sprite: {fileID: 21300000, guid: 7200ca86966134f61b8e823d5453d369, type: 3}
+  - Name: EndingHA
+    Sprite: {fileID: 21300000, guid: eab05a7ae3d004ef4af51d95318512fd, type: 3}
+  - Name: EndingHB
+    Sprite: {fileID: 21300000, guid: 0501ab7ee58d843bd887783e90b27ff0, type: 3}
+  - Name: EndingHC
+    Sprite: {fileID: 21300000, guid: 95f803482bd7a401a836163a1dafcd51, type: 3}

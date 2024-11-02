@@ -97,6 +97,7 @@ public class ResultController : MonoBehaviour {
     private void TransitionNextScene() {
         _isChangingScene = true;
         _audioSource_SE.PlayOneShot(_audioClip_SE);
+        GameDirector.Instance.IsOpening = false;
         GoNextSceneAsync(TitleUIController.TransitionDuration, _nextSceneNames[_nextSceneIndex]).Forget();
     }
 
