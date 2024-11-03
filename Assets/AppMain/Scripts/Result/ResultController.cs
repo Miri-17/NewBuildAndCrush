@@ -34,7 +34,7 @@ public class ResultController : MonoBehaviour {
             return;
         }
 
-        _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[2];
+        _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
         UpdateBuilder(GameDirector.Instance.BuilderIndex);
         UpdateCrusher(GameDirector.Instance.CrusherIndex);
 
