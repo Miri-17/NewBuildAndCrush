@@ -22,6 +22,7 @@ public class ComicsCharacterDB : ScriptableObject {
         Hanzel = 9,
         Gretel = 10,
         Kaguya = 11,
+        Jumin = 12,
     }
 
     /// <summary>
@@ -76,7 +77,7 @@ public class ComicsCharacterDB : ScriptableObject {
     /// <returns>キャラクター表示名</returns>
     public string GetCharacterName(int characterNumber) {
         // キャラクター番号が0やif文指定範囲以外の時は何もなしで返す.
-        if (characterNumber < 0 && characterNumber > 11) return "";
+        if (characterNumber < 0 && characterNumber > 12) return "";
         
         Parameter param = GetParameterFromNumber(characterNumber);
         return param.DisplayName;

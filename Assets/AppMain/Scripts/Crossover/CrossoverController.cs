@@ -39,6 +39,17 @@ public class CrossoverController : MonoBehaviour {
     [SerializeField] private Image _characterImage = null;
     [SerializeField, Header("0...Opening, 1...BuilderWin, 2...CrusherWin")] private List<ComicsPanelDB> _comicsPanelDBs = new List<ComicsPanelDB>();
     #endregion
+
+    // private void Awake() {
+    //     if (GameDirector.Instance.IsOpening) {
+    //         _comicsPanelDB = _comicsPanelDBs[0];
+    //     } else {
+    //         if (GameDirector.Instance.IsBuilderWin)
+    //             _comicsPanelDB = _comicsPanelDBs[1];
+    //         else
+    //             _comicsPanelDB = _comicsPanelDBs[2];
+    //     }
+    // }
     
     private void Start() {
         if (GameDirector.Instance.IsOpening) {
@@ -82,7 +93,8 @@ public class CrossoverController : MonoBehaviour {
     }
 
     // 会話の開始.
-    private async UniTask TalkStart(List<StoryData> talkList, float wordInterval = 0.1f) {
+    // private async UniTask TalkStart(List<StoryData> talkList, float wordInterval = 0.1f) {
+    private async UniTask TalkStart(List<StoryData> talkList, float wordInterval = 0.08f) {
         _currentCharacter = "";
 
         Debug.Log("talkList Count: " + talkList.Count);
@@ -198,6 +210,7 @@ public class CrossoverController : MonoBehaviour {
     }
 
     private void SetComicsPanel(string comicsPanel) {
+        Debug.Log("ComicsPanel: " + comicsPanel);
         Sprite comicsPanelSprite = _comicsPanelDB.GetComicsPanelSprite(comicsPanel);
 
         string currentComicsPanel = _comicsPanel.sprite.name;

@@ -94,7 +94,7 @@ public class CrusherSelectionController : MonoBehaviour {
                     GameDirector.Instance.BuilderIndex = _builderSelectionController.BuilderIndex;
                     GameDirector.Instance.CrusherIndex = _crusherIndex;
                     GameDirector.Instance.IsOpening = true;
-                    FadeInImageAsync(1.8f).Forget();
+                    FadeInImageAsync(1.8f, GameDirector.Instance.BuilderIndex == GameDirector.Instance.CrusherIndex).Forget();
                 } else if (Input.GetButtonDown("Jump")) {
                     foreach (var confirmPanel in _confirmPanels)
                         confirmPanel.SetActive(false);
@@ -192,16 +192,26 @@ public class CrusherSelectionController : MonoBehaviour {
         }
     }
 
-    private async UniTaskVoid FadeInImageAsync(float duration) {
+    private async UniTaskVoid FadeInImageAsync(float duration, bool isStory) {
         try {
             await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
-            _fadeInImages[0].DOFade(1.0f, 0.5f)
-                .SetEase(Ease.Linear)
-                .SetLink(_fadeInImages[0].gameObject);
-            _fadeInImages[1].DOFade(1.0f, 0.5f)
-                .SetEase(Ease.Linear)
-                .SetLink(_fadeInImages[1].gameObject)
-                .OnComplete(() => GoNextSceneAsync(0.5f, _nextSceneNames[1]).Forget());
+            if (isStory) {
+                _fadeInImages[0].DOFade(1.0f, 0.5f)
+                    .SetEase(Ease.Linear)
+                    .SetLink(_fadeInImages[0].gameObject);
+                _fadeInImages[1].DOFade(1.0f, 0.5f)
+                    .SetEase(Ease.Linear)
+                    .SetLink(_fadeInImages[1].gameObject)
+                    .OnComplete(() => GoNextSceneAsync(0.5f, _nextSceneNames[1]).Forget());
+            } else {
+                _fadeInImages[0].DOFade(1.0f, 0.5f)
+                    .SetEase(Ease.Linear)
+                    .SetLink(_fadeInImages[0].gameObject);
+                _fadeInImages[1].DOFade(1.0f, 0.5f)
+                    .SetEase(Ease.Linear)
+                    .SetLink(_fadeInImages[1].gameObject)
+                    .OnComplete(() => GoNextSceneAsync(0.5f, _nextSceneNames[2]).Forget());
+            }
         } catch (System.Exception e) {
             Debug.LogError($"Image fading-in failed: {e.Message}");
         }

@@ -19,12 +19,16 @@ public class ComicsGenerator : MonoBehaviour {
     public string CSVName { get; private set; } = "";
 
     private void Awake() {
+        _builderIndex = GameDirector.Instance.BuilderIndex;
+        _crusherIndex = GameDirector.Instance.CrusherIndex;
+        
         if (GameDirector.Instance.IsOpening) {
             CSVName = _comicsDBs[0].GetCSVName(_builderIndex, _crusherIndex);
             _storyTitle.text = _comicsDBs[0].GetStoryTitle(_builderIndex, _crusherIndex);
         } else {
             if (GameDirector.Instance.IsBuilderWin) {
                 CSVName = _comicsDBs[1].GetCSVName(_builderIndex, _crusherIndex);
+                Debug.Log(CSVName);
                 _storyTitle.text = _comicsDBs[1].GetStoryTitle(_builderIndex, _crusherIndex);
             } else {
                 CSVName = _comicsDBs[2].GetCSVName(_builderIndex, _crusherIndex);
@@ -34,8 +38,6 @@ public class ComicsGenerator : MonoBehaviour {
     }
 
     private void Start() {
-        _builderIndex = GameDirector.Instance.BuilderIndex;
-        _crusherIndex = GameDirector.Instance.CrusherIndex;
 
         _builder.sprite = _builderSprites[_builderIndex];
         _crusher.sprite = _crusherSprites[_crusherIndex];

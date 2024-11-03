@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/AppMain/Scenes/Credits.unity
     guid: 94ee7aba962734b8f85a2d7f17c2c280
   - enabled: 1
+    path: Assets/AppMain/Scenes/Story.unity
+    guid: 22667dcefaf45430c9eae6d8b0d9a403
+  - enabled: 1
     path: Assets/AppMain/Scenes/Crossover.unity
     guid: c80803a9b73d14272889b321e18c9521
   - enabled: 1

@@ -6511,7 +6511,8 @@ MonoBehaviour:
   - {fileID: 184624726}
   _nextSceneNames:
   - ModeSelection
-  - Battle
+  - Story
+  - Crossover
   IsSetConfirmPanel: 0
 --- !u!1 &1838214042
 GameObject:

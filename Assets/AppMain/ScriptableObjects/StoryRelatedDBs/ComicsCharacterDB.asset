@@ -203,3 +203,8 @@ MonoBehaviour:
       Sprite: {fileID: 21300000, guid: e93d8f7228b5b4c8183a57a5d406b419, type: 3}
     - Emotion: 8
       Sprite: {fileID: 21300000, guid: 6e2ef561607cd43fda8228a4a815cd37, type: 3}
+  - DisplayName: "\u8857\u306E\u4F4F\u6C11"
+    Character: 12
+    ImageParams:
+    - Emotion: 0
+      Sprite: {fileID: 21300000, guid: 5fbfb01941d954d67937cd4a9527ebed, type: 3}

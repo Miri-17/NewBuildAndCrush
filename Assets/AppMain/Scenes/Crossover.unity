@@ -867,7 +867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &618461919
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1182,19 +1182,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393b4b87fc1dc4c28999a0b5a9ac3076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 339516146}
   _comicsText: {fileID: 1114368208}
   _skipText: {fileID: 1755935716}
   _fadeInOutLoopAnimation: {fileID: 27151}
+  _comicsPanel: {fileID: 2048395894}
+  _csvReader: {fileID: 1961149999}
+  _comicsGenerator: {fileID: 775691232}
+  _nameText: {fileID: 339516146}
   _comicsCharacterDB: {fileID: 11400000, guid: 1d09dd1030c674c19a5b1fd820e3f332, type: 2}
+  _characterImage: {fileID: 1117786533}
   _comicsPanelDBs:
   - {fileID: 11400000, guid: 8f5a1d2b157ca46dcb990f4347efaf65, type: 2}
   - {fileID: 11400000, guid: ceaae56a54bb84609972a0a96fa862fc, type: 2}
   - {fileID: 11400000, guid: c629956e0358c4454a0a33d2eb8e1675, type: 2}
-  _characterImage: {fileID: 1117786533}
-  _comicsPanel: {fileID: 2048395894}
-  _csvReader: {fileID: 1961149999}
-  _comicsGenerator: {fileID: 775691232}
 --- !u!1 &915824685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1053413385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2619,6 +2619,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
+      propertyPath: _isOpening
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
+      propertyPath: _builderIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
+      propertyPath: _crusherIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3375424341938098833, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: m_Name
       value: GameDirector

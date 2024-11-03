@@ -33,9 +33,12 @@ public class ComicsDB : ScriptableObject {
     /// <param name="crusherIndex"></param>
     /// <returns></returns>
     public string GetCSVName(int builderIndex, int crusherIndex) {
+        Debug.Log("GetCSVName()");
         if (builderIndex < 0 && builderIndex > 4
             || crusherIndex < 0 && crusherIndex > 4) return "";
         
+        Debug.Log("builderIndex: " + builderIndex);
+        Debug.Log("crusherIndex: " + crusherIndex);
         BuilderParameter builderParameter = GetBuilderParameter(builderIndex);
         CrusherParameter crusherParameter = GetCrusherParameter(builderParameter, crusherIndex);
         return crusherParameter.CSVName;
