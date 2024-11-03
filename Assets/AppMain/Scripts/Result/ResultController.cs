@@ -40,6 +40,11 @@ public class ResultController : MonoBehaviour {
 
         if (!_nextSceneNames?.Any() ?? true)
             Debug.LogError("Next scene names list is not set or contains invalid entries.");
+        
+        if (GameDirector.Instance.BuilderIndex == GameDirector.Instance.CrusherIndex)
+            _nextSceneIndex = 0;
+        else
+            _nextSceneIndex = 1;
     }
 
     private void Update() {

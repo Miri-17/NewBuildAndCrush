@@ -4,6 +4,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class CrossoverController : MonoBehaviour {
     #region Private Fields
@@ -20,10 +21,11 @@ public class CrossoverController : MonoBehaviour {
     // タグ判定用.
     private bool _isInTag = false;
     private string _tagStrings = "";
+    private string _csvName = "";
     // シーン遷移関係.
+    private AudioSource _audioSourceBGM = null;
     private AudioSource _audioSourceSE = null;
     private bool _isChangingScene = false;
-    private string _csvName = "";
     #endregion
 
     #region Serialized Fields
@@ -39,17 +41,6 @@ public class CrossoverController : MonoBehaviour {
     [SerializeField] private Image _characterImage = null;
     [SerializeField, Header("0...Opening, 1...BuilderWin, 2...CrusherWin")] private List<ComicsPanelDB> _comicsPanelDBs = new List<ComicsPanelDB>();
     #endregion
-
-    // private void Awake() {
-    //     if (GameDirector.Instance.IsOpening) {
-    //         _comicsPanelDB = _comicsPanelDBs[0];
-    //     } else {
-    //         if (GameDirector.Instance.IsBuilderWin)
-    //             _comicsPanelDB = _comicsPanelDBs[1];
-    //         else
-    //             _comicsPanelDB = _comicsPanelDBs[2];
-    //     }
-    // }
     
     private void Start() {
         if (GameDirector.Instance.IsOpening) {
@@ -61,15 +52,26 @@ public class CrossoverController : MonoBehaviour {
                 _comicsPanelDB = _comicsPanelDBs[2];
         }
         _csvName = _comicsGenerator.CSVName;
+
+        _audioSourceBGM = BGM.Instance.GetComponent<AudioSource>();
         _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
+
         StartTalk();
     }
 
     private void Update() {
         if (!_isChangingScene && Input.GetButtonDown("Fire1")) {
             _isChangingScene = true;
-            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-            GoNextSceneAsync(0.5f, "Battle").Forget();
+            if (GameDirector.Instance.IsOpening) {
+                _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
+                GoNextSceneAsync(0.5f, "Battle").Forget();
+            } else {
+                _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[2]);
+                _audioSourceBGM.DOFade(0, 1.0f)
+                    .SetEase(Ease.Linear)
+                    .SetLink(_audioSourceBGM.gameObject);
+                GoNextSceneAsync(1.0f, "ModeSelection").Forget();
+            }
         }
         if (Input.GetButtonDown("Select")) {
             if (_currentPageCompleted)
@@ -88,8 +90,15 @@ public class CrossoverController : MonoBehaviour {
         if (_isChangingScene) return;
 
         _isChangingScene = true;
-        _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-        GoNextSceneAsync(0.5f, "Battle").Forget();
+        if (GameDirector.Instance.IsOpening) {
+            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
+            GoNextSceneAsync(0.5f, "Battle").Forget();
+        } else {
+            _audioSourceBGM.DOFade(0, 1.0f)
+                .SetEase(Ease.Linear)
+                .SetLink(_audioSourceBGM.gameObject);
+            GoNextSceneAsync(1.0f, "ModeSelection").Forget();
+        }
     }
 
     // 会話の開始.

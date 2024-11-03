@@ -31,6 +31,7 @@ public class CrusherSelectionController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _crusherNickname = null;
     [SerializeField] private TextMeshProUGUI _crusherName = null;
     [SerializeField] private TextMeshProUGUI _crusherDescription = null;
+    [SerializeField] private GameObject _statusPanel = null;
     // WaitingPanel
     [SerializeField, Header("0...Crusher, 1...Builder")] private List<GameObject> _waitingPanels = new List<GameObject>();
     [SerializeField] private List<GameObject> _waitingCharacters = new List<GameObject>();
@@ -65,6 +66,7 @@ public class CrusherSelectionController : MonoBehaviour {
         _crusherCount = _crushersDB.CrusherCount;
         UpdateCrusher(_crusherIndex);
 
+        _statusPanel.SetActive(false);
         _waitingPanels[0].SetActive(false);
         foreach (var confirmPanel in _confirmPanels)
             confirmPanel.SetActive(false);
@@ -155,6 +157,8 @@ public class CrusherSelectionController : MonoBehaviour {
                 _audioSourceSE.PlayOneShot(_audioClipSE);
 
                 GoNextSceneAsync(0.5f, _nextSceneNames[0]).Forget();
+            } else if (Input.GetButtonDown("Fire1")) {
+                _statusPanel.SetActive(!_statusPanel.activeSelf);
             }
         }
     }

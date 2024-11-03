@@ -21,6 +21,9 @@ public class BuilderSelectionController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _builderNickname = null;
     [SerializeField] private TextMeshProUGUI _builderName = null;
     [SerializeField] private TextMeshProUGUI _builderDescription = null;
+    [SerializeField] private GameObject _statusPanel = null;
+    [SerializeField] private Button _displayStatusButton = null;
+    [SerializeField] private Button _hideStatusButton = null;
     [SerializeField] private List<Button> _leftButtons = new List<Button>();
     [SerializeField] private List<Button> _rightButtons = new List<Button>();
     [SerializeField] private Button _selectionButton = null;
@@ -48,12 +51,15 @@ public class BuilderSelectionController : MonoBehaviour {
         _builderCount = _buildersDB.BuilderCount;
         UpdateBuilder(BuilderIndex);
 
+        _displayStatusButton.onClick.AddListener(() => OnDisplayStatusButtonClicked());
+        _hideStatusButton.onClick.AddListener(() => OnHideStatusButtonClicked());
         foreach(var leftButton in _leftButtons)
             leftButton.onClick.AddListener(() => OnLeftButtonClicked());
         foreach(var rightButton in _rightButtons)
             rightButton.onClick.AddListener(() => OnRightButtonClicked());
         _selectionButton.onClick.AddListener(() => OnSelectionButtonClicked());
         
+        _statusPanel.SetActive(false);
         _waitingPanel.SetActive(false);
         _deselectButton.onClick.AddListener(() => OnDeselectButtonClicked());
     }
@@ -111,6 +117,14 @@ public class BuilderSelectionController : MonoBehaviour {
         _builderAnimator = _builderL2D.GetComponent<Animator>();
         _builderAnimator.enabled = false;
         _waitingPanel.SetActive(true);
+    }
+
+    private void OnDisplayStatusButtonClicked() {
+        _statusPanel.SetActive(true);
+    }
+    
+    private void OnHideStatusButtonClicked() {
+        _statusPanel.SetActive(false);
     }
 
     private void OnLeftButtonClicked() {

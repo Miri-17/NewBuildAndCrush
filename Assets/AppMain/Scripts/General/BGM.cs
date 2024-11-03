@@ -42,7 +42,10 @@ public class BGM : MonoBehaviour {
                 _audioSource.Play();
                 break;
             case "Crossover":
-                _audioSource.clip = _bgmDB.AudioClips[2];
+                if (GameDirector.Instance.IsOpening)
+                    _audioSource.clip = _bgmDB.AudioClips[2];
+                else
+                    _audioSource.clip = _bgmDB.AudioClips[12];
                 _audioSource.Play();
                 break;
             case "Result":
@@ -93,7 +96,10 @@ public class BGM : MonoBehaviour {
                 break;
             case "Crossover":
                 _audioSource.Stop();
-                _audioSource.clip = _bgmDB.AudioClips[2];
+                if (GameDirector.Instance.IsOpening)
+                    _audioSource.clip = _bgmDB.AudioClips[2];
+                else
+                    _audioSource.clip = _bgmDB.AudioClips[12];
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;

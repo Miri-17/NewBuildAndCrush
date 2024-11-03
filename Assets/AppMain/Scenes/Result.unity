@@ -1696,7 +1696,8 @@ MonoBehaviour:
   _crusherName: {fileID: 1356636306}
   _audioClipLoop: {fileID: 8300000, guid: a371afad975f64edabdf70a13ac85c77, type: 3}
   _nextSceneNames:
-  - ModeSelection
+  - Story
+  - Crossover
 --- !u!1 &543490721
 GameObject:
   m_ObjectHideFlags: 0
@@ -5412,7 +5413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderIndex
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderScore
