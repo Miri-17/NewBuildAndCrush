@@ -437,6 +437,7 @@ MonoBehaviour:
   _fadeInOutImages:
   - {fileID: 1197321313}
   - {fileID: 1360852345}
+  _lowerRightText: {fileID: 1755935716}
 --- !u!1 &161912407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,11 +1232,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comicsText: {fileID: 1114368208}
-  _skipText: {fileID: 1755935716}
   _fadeInOutLoopAnimation: {fileID: 27151}
   _comicsPanel: {fileID: 2048395894}
   _csvReader: {fileID: 1961149999}
   _comicsGenerator: {fileID: 775691232}
+  _storiesUIController: {fileID: 159431068}
   _nameText: {fileID: 339516146}
   _comicsCharacterDB: {fileID: 11400000, guid: 1d09dd1030c674c19a5b1fd820e3f332, type: 2}
   _characterImage: {fileID: 1117786533}
@@ -1243,7 +1244,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f5a1d2b157ca46dcb990f4347efaf65, type: 2}
   - {fileID: 11400000, guid: ceaae56a54bb84609972a0a96fa862fc, type: 2}
   - {fileID: 11400000, guid: c629956e0358c4454a0a33d2eb8e1675, type: 2}
-  _storyUIController: {fileID: 159431068}
 --- !u!1 &915824685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,7 +2328,7 @@ GameObject:
   - component: {fileID: 1755935717}
   - component: {fileID: 1755935716}
   m_Layer: 5
-  m_Name: SkipText
+  m_Name: LowerRightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2821,7 +2821,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _isOpening
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderIndex

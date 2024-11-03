@@ -4,6 +4,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class StoryController : MonoBehaviour {
     #region Private Fields
@@ -15,27 +16,24 @@ public class StoryController : MonoBehaviour {
     // スキップフラグ.
     private bool _isSkipped = false;
     // 現在のキャラクター情報.
-    // private string _currentCharacter = "";
     private List<StoryData> _talks = new List<StoryData>();
     // タグ判定用.
     private bool _isInTag = false;
     private string _tagStrings = "";
     // シーン遷移関係.
+    private AudioSource _audioSourceBGM = null;
     private AudioSource _audioSourceSE = null;
     private bool _isChangingScene = false;
     private string _csvName = "";
     #endregion
 
     #region Serialized Fields
-    // [SerializeField] private TextMeshProUGUI _nameText = null;
     [SerializeField] private TextMeshProUGUI _comicsText = null;
-    [SerializeField] private TextMeshProUGUI _skipText = null;
     [SerializeField] private FadeInOutLoopAnimation _fadeInOutLoopAnimation = null;
-    // [SerializeField] private ComicsCharacterDB _comicsCharacterDB = null;
-    // [SerializeField] private Image _characterImage = null;
     [SerializeField] CSVReader _csvReader = null;
     [SerializeField] ComicsGenerator _comicsGenerator = null;
     [SerializeField] private Image _comicsPanel = null;
+    [SerializeField] private StoriesUIController _storiesUIController = null;
     // Story特有.
     [Header("ビルダーのインデックス順")]
     [SerializeField] private List<ComicsPanelDB> _openingsPanelDBs = new List<ComicsPanelDB>();
@@ -53,15 +51,28 @@ public class StoryController : MonoBehaviour {
                 _comicsPanelDB = _crusherWinPanelDBs[GameDirector.Instance.BuilderIndex];
         }
         _csvName = _comicsGenerator.CSVName;
+        
+        _audioSourceBGM = BGM.Instance.GetComponent<AudioSource>();
         _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
+        
         StartTalk();
     }
 
     private void Update() {
         if (!_isChangingScene && Input.GetButtonDown("Fire1")) {
             _isChangingScene = true;
-            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-            GoNextSceneAsync(0.5f, "Battle").Forget();
+            if (GameDirector.Instance.IsOpening) {
+                _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
+                _storiesUIController.TransitionUI(0.5f);
+                GoNextSceneAsync(0.5f, "Battle").Forget();
+            } else {
+                _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[2]);
+                _audioSourceBGM.DOFade(0, 1.0f)
+                    .SetEase(Ease.Linear)
+                    .SetLink(_audioSourceBGM.gameObject);
+                _storiesUIController.TransitionUI(1.0f);
+                GoNextSceneAsync(1.0f, "ModeSelection").Forget();
+            }
         }
         if (Input.GetButtonDown("Select")) {
             if (_currentPageCompleted)
@@ -80,14 +91,21 @@ public class StoryController : MonoBehaviour {
         if (_isChangingScene) return;
 
         _isChangingScene = true;
-        _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-        GoNextSceneAsync(0.5f, "Battle").Forget();
+        if (GameDirector.Instance.IsOpening) {
+            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
+            _storiesUIController.TransitionUI(0.5f);
+            GoNextSceneAsync(0.5f, "Battle").Forget();
+        } else {
+            _audioSourceBGM.DOFade(0, 1.0f)
+                .SetEase(Ease.Linear)
+                .SetLink(_audioSourceBGM.gameObject);
+            _storiesUIController.TransitionUI(1.0f);
+            GoNextSceneAsync(1.0f, "ModeSelection").Forget();
+        }
     }
 
     // 会話の開始.
-    private async UniTask TalkStart(List<StoryData> talkList, float wordInterval = 0.1f) {
-        // _currentCharacter = "";
-
+    private async UniTask TalkStart(List<StoryData> talkList, float wordInterval = 0.08f) {
         Debug.Log("talkList Count: " + talkList.Count);
         int i = 0;
         foreach (var talk in talkList) {
@@ -95,13 +113,13 @@ public class StoryController : MonoBehaviour {
                 SetComicsPanel(talk.ComicPanel);
             }
 
-            // _nameText.text = _comicsCharacterDB.GetCharacterName(int.Parse(talk.Name));
+            // Debug.Log("talkCount: " + i);
+
             _comicsText.text = "";
             _goToNextPage = false;
             _currentPageCompleted = false;
             _isSkipped = false;
             _fadeInOutLoopAnimation.AnimationOnOff(false);
-            // await SetCharacter(talk);
 
             await UniTask.Delay((int)(0.5f * 1000f));
 
@@ -138,13 +156,14 @@ public class StoryController : MonoBehaviour {
 
             _currentPageCompleted = true;
             _fadeInOutLoopAnimation.AnimationOnOff(true);
+
             await UniTask.WaitUntil(() => _goToNextPage == true);
-            Debug.Log("hello!");
+            
             i++;
             if (i == talkList.Count - 1) {
                 Debug.Log("Yを消し、Rの文章を変える");
                 Destroy(_fadeInOutLoopAnimation.gameObject);
-                _skipText.text = "Yでバトルへ";
+                _storiesUIController.ChangeText();
             }
         }
     }
@@ -156,49 +175,9 @@ public class StoryController : MonoBehaviour {
     /// <param name="initText"></param>
     /// <returns></returns>
     private void Open(string initName = "", string initText = "") {
-        // SetCharacter(null).Forget();
-        // _nameText.text = initName;
         _comicsText.text = initText;
         _fadeInOutLoopAnimation.AnimationOnOff(false);
     }
-
-    // private async UniTask SetCharacter(StoryData storyData) {
-    //     // nullなら全て消す
-    //     if (storyData == null) {
-    //         // _characterImage.enabled = false;
-    //         return;
-    //     }
-
-    //     var tasks = new List<UniTask>();
-    //     bool hideLeft = false;
-
-    //     // 値がない場合は非表示にする.
-    //     // 値が前回と違う場合は画像を変更して表示.
-    //     // 値が同じ場合は変化なし.
-    //     Debug.Log("currentCharacter: " + _currentCharacter);
-    //     Debug.Log("storyData.CurrentCharacter: " + storyData.CurrentCharacter);
-
-    //     // キャラクター設定.
-    //     if (string.IsNullOrEmpty(storyData.CurrentCharacter) == true) {
-    //         Debug.Log("キャラクター画像の非表示");
-
-    //         hideLeft = true;
-    //     } else if (_currentCharacter != storyData.CurrentCharacter) {
-    //         Debug.Log("キャラクター画像の変更");
-
-    //         // Sprite characterSprite = _comicsCharacterDB.GetCharacterSprite(storyData.CurrentCharacter);
-    //         // _characterImage.sprite = characterSprite;
-    //         // _characterImage.enabled = true;
-
-    //         _currentCharacter = storyData.CurrentCharacter;
-    //     } else {
-    //         Debug.Log("キャラクター画像の変化なし");
-    //     }
-
-    //     await UniTask.WhenAll(tasks);
-
-    //     // if (hideLeft == true) _characterImage.enabled = false;
-    // }
 
     private void SetComicsPanel(string comicsPanel) {
         Sprite comicsPanelSprite = _comicsPanelDB.GetComicsPanelSprite(comicsPanel);
@@ -208,11 +187,32 @@ public class StoryController : MonoBehaviour {
             Debug.Log("同じ背景なので変更をスキップします");
             return;
         }
-
+        
         _comicsPanel.gameObject.SetActive(false);
         _comicsPanel.sprite = comicsPanelSprite;
+
         _comicsPanel.gameObject.SetActive(true);
     }
+    
+    // private async void SetAliceComicsPanel(string comicsPanel) {
+    //     Sprite comicsPanelSprite = _comicsPanelDB.GetComicsPanelSprite(comicsPanel);
+
+    //     string currentComicsPanel = _comicsPanel.sprite.name;
+    //     if (currentComicsPanel == comicsPanelSprite.name) {
+    //         Debug.Log("同じ背景なので変更をスキップします");
+    //         return;
+    //     }
+
+    //     // await 
+    //     // フェードイン
+        
+    //     _comicsPanel.gameObject.SetActive(false);
+    //     _comicsPanel.sprite = comicsPanelSprite;
+    //     // await 
+    //     // フェードアウト
+
+    //     _comicsPanel.gameObject.SetActive(true);
+    // }
 
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
         try {

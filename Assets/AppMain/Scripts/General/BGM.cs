@@ -41,6 +41,35 @@ public class BGM : MonoBehaviour {
                 _audioSource.clip = _bgmDB.AudioClips[13];
                 _audioSource.Play();
                 break;
+            case "Story":
+                if (GameDirector.Instance.IsOpening) {
+                    switch (GameDirector.Instance.BuilderIndex) {
+                        case 0:
+                            _audioSource.clip = _bgmDB.AudioClips[2];
+                            break;
+                        case 1:
+                            _audioSource.clip = _bgmDB.AudioClips[5];
+                            break;
+                        case 2:
+                            _audioSource.clip = _bgmDB.AudioClips[7];
+                            break;
+                        default:
+                            _audioSource.clip = _bgmDB.AudioClips[9];
+                            break;
+                    }
+                } else {
+                    switch (GameDirector.Instance.BuilderIndex) {
+                        case 0:
+                        case 3:
+                            _audioSource.clip = _bgmDB.AudioClips[12];
+                            break;
+                        default:
+                            _audioSource.clip = _bgmDB.AudioClips[13];
+                            break;
+                    }
+                }
+                _audioSource.Play();
+                break;
             case "Crossover":
                 if (GameDirector.Instance.IsOpening)
                     _audioSource.clip = _bgmDB.AudioClips[2];
@@ -92,6 +121,36 @@ public class BGM : MonoBehaviour {
                 _audioSource.Stop();
                 _audioSource.clip = _bgmDB.AudioClips[13];
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
+                _audioSource.Play();
+                break;
+            case "Story":
+                _audioSource.Stop();
+                if (GameDirector.Instance.IsOpening) {
+                    switch (GameDirector.Instance.BuilderIndex) {
+                        case 0:
+                            _audioSource.clip = _bgmDB.AudioClips[2];
+                            break;
+                        case 1:
+                            _audioSource.clip = _bgmDB.AudioClips[5];
+                            break;
+                        case 2:
+                            _audioSource.clip = _bgmDB.AudioClips[7];
+                            break;
+                        default:
+                            _audioSource.clip = _bgmDB.AudioClips[9];
+                            break;
+                    }
+                } else {
+                    switch (GameDirector.Instance.BuilderIndex) {
+                        case 0:
+                        case 3:
+                            _audioSource.clip = _bgmDB.AudioClips[12];
+                            break;
+                        default:
+                            _audioSource.clip = _bgmDB.AudioClips[13];
+                            break;
+                    }
+                }
                 _audioSource.Play();
                 break;
             case "Crossover":

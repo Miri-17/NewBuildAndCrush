@@ -5,7 +5,6 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
-using Unity.VisualScripting;
 
 public class CrossoverController : MonoBehaviour {
     #region Private Fields
@@ -31,18 +30,16 @@ public class CrossoverController : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private TextMeshProUGUI _comicsText = null;
-    [SerializeField] private TextMeshProUGUI _skipText = null;
     [SerializeField] private FadeInOutLoopAnimation _fadeInOutLoopAnimation = null;
     [SerializeField] private Image _comicsPanel = null;
     [SerializeField] CSVReader _csvReader = null;
     [SerializeField] ComicsGenerator _comicsGenerator = null;
+    [SerializeField] private StoriesUIController _storiesUIController = null;
     // Crossover特有.
     [SerializeField] private TextMeshProUGUI _nameText = null;
     [SerializeField] private ComicsCharacterDB _comicsCharacterDB = null;
     [SerializeField] private Image _characterImage = null;
     [SerializeField, Header("0...Opening, 1...BuilderWin, 2...CrusherWin")] private List<ComicsPanelDB> _comicsPanelDBs = new List<ComicsPanelDB>();
-
-    [SerializeField] private StoriesUIController _storyUIController = null;
     #endregion
     
     private void Start() {
@@ -67,14 +64,14 @@ public class CrossoverController : MonoBehaviour {
             _isChangingScene = true;
             if (GameDirector.Instance.IsOpening) {
                 _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-                _storyUIController.TransitionUI(0.5f);
+                _storiesUIController.TransitionUI(0.5f);
                 GoNextSceneAsync(0.5f, "Battle").Forget();
             } else {
                 _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[2]);
                 _audioSourceBGM.DOFade(0, 1.0f)
                     .SetEase(Ease.Linear)
                     .SetLink(_audioSourceBGM.gameObject);
-                _storyUIController.TransitionUI(1.0f);
+                _storiesUIController.TransitionUI(1.0f);
                 GoNextSceneAsync(1.0f, "ModeSelection").Forget();
             }
         }
@@ -97,13 +94,13 @@ public class CrossoverController : MonoBehaviour {
         _isChangingScene = true;
         if (GameDirector.Instance.IsOpening) {
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-            _storyUIController.TransitionUI(0.5f);
+            _storiesUIController.TransitionUI(0.5f);
             GoNextSceneAsync(0.5f, "Battle").Forget();
         } else {
             _audioSourceBGM.DOFade(0, 1.0f)
                 .SetEase(Ease.Linear)
                 .SetLink(_audioSourceBGM.gameObject);
-            _storyUIController.TransitionUI(1.0f);
+            _storiesUIController.TransitionUI(1.0f);
             GoNextSceneAsync(1.0f, "ModeSelection").Forget();
         }
     }
@@ -161,13 +158,14 @@ public class CrossoverController : MonoBehaviour {
 
             _currentPageCompleted = true;
             _fadeInOutLoopAnimation.AnimationOnOff(true);
+            
             await UniTask.WaitUntil(() => _goToNextPage == true);
-            Debug.Log("hello!");
+
             i++;
             if (i == talkList.Count - 1) {
                 Debug.Log("Yを消し、Rの文章を変える");
                 Destroy(_fadeInOutLoopAnimation.gameObject);
-                _skipText.text = "Yでバトルへ";
+                _storiesUIController.ChangeText();
             }
         }
     }
