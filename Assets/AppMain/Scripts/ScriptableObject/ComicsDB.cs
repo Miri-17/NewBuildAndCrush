@@ -6,6 +6,7 @@ public class ComicsDB : ScriptableObject {
     [System.Serializable]
     public class CrusherParameter {
         public string Name = "";
+        [Multiline(2)]
         public string StoryTitle = "";
         public string CSVName = "";
     }

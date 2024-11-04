@@ -19,10 +19,10 @@ public class ModeSelectionController : MonoBehaviour {
     [SerializeField] private List<ModeSelectionBook> _modeSelectionBooks = new List<ModeSelectionBook>();
     [SerializeField] private ModeSelectionUIController _modeSelectionUIController = null;
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
-    // TODO ルールパネル系 (UIの方に移すかも)
     [SerializeField] private GameObject _rulesPanel = null;
     [SerializeField] private Image _rulesButton = null;
-    [SerializeField] private List<Sprite> _rulesButtonSprites = new List<Sprite>();
+    [SerializeField] private Sprite _clickedRulesButtonSprite = null;
+    [SerializeField] private GameObject _warningPanel = null;
 
     private void Start() {
         if (CrusherSE.Instance == null) {
@@ -57,13 +57,14 @@ public class ModeSelectionController : MonoBehaviour {
         _modeSelectionBooks[_nextSceneIndex].SetSelection(true);
         _previousSelectIndex = _nextSceneIndex;
         
-        // TODO ルールパネル系 (UIの方に移すかも)
         _rulesPanel.SetActive(false);
-        _rulesButton.sprite = _rulesButtonSprites[0];
+        _rulesButton.sprite = _clickedRulesButtonSprite;
+
+        _warningPanel.SetActive(false);
     }
 
     private void Update() {
-        if (_isChangingScene || !_modeSelectionUIController.IsAnimationEnded)
+        if (_rulesPanel.activeSelf || _isChangingScene || !_modeSelectionUIController.IsAnimationEnded)
             return;
         
         if (Input.GetButtonDown("Horizontal")) {
@@ -82,26 +83,16 @@ public class ModeSelectionController : MonoBehaviour {
             _modeSelectionBooks[_nextSceneIndex].SetSelection(true);
             _previousSelectIndex = _nextSceneIndex;
 
-            _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[1];
-            _audioSource_SE.PlayOneShot(_audioClip_SE);
-        }
-
-        if (Input.GetButtonDown("Select")) {
+            _audioSource_SE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[1]);
+        } else if (Input.GetButtonDown("Select")) {
             _isChangingScene = true;
-
-            _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
-            _audioSource_SE.PlayOneShot(_audioClip_SE);
+            
+            _audioSource_SE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
 
             GoNextSceneAsync(0.5f, _nextSceneNames[_nextSceneIndex]).Forget();
-        }
-
-        // TODO ルールパネル系 (UIの方に移すかも)
-        if (!_rulesPanel.activeSelf && Input.GetButtonDown("Fire1")) {
+        } else if (Input.GetButtonDown("Fire1")) {
             _rulesPanel.SetActive(true);
-            _rulesButton.sprite = _rulesButtonSprites[1];
-        } else if (_rulesPanel.activeSelf && Input.GetButtonDown("Jump")) {
-            _rulesPanel.SetActive(false);
-            _rulesButton.sprite = _rulesButtonSprites[0];
+            _rulesButton.sprite = _clickedRulesButtonSprite;
         }
     }
 

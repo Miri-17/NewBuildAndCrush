@@ -9,8 +9,7 @@ public class ModeSelectionBook : MonoBehaviour {
     [SerializeField] private Image _selectedImage = null;
     [SerializeField] private Image _textImage = null;
     [SerializeField] private List<Image> _arrowImages = new List<Image>();
-    // TODO 後で名前を_arrowXPositionsに変更
-    [SerializeField] private List<float> _arrowPosXs = new List<float>();
+    [SerializeField] private List<float> _arrowXPositions = new List<float>();
     
     public bool IsSelected { get; private set; } = false;
 
@@ -20,7 +19,7 @@ public class ModeSelectionBook : MonoBehaviour {
             RectTransform arrow = arrowImage.GetComponent<RectTransform>();
             _arrows.Add(arrow);
 
-            arrow.DOAnchorPosX(_arrowPosXs[i], 1.0f)
+            arrow.DOAnchorPosX(_arrowXPositions[i], 1.0f)
                 .SetEase(Ease.OutCubic)
                 .SetLoops(-1, LoopType.Yoyo)
                 .SetLink(arrow.gameObject);

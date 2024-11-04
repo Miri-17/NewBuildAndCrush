@@ -28,12 +28,6 @@ public class AchievementsController : MonoBehaviour {
         UpdateAchievementImages();
     }
 
-    private void LoadPlayerPrefs() {
-        for (int i = 0; i < _achievementLists.Count; i++)
-            for (int j = 0; j < _achievementLists[i].Count; j++)
-                _achievementLists[i][j] = PlayerPrefs.GetInt($"{GetAchievementKey(i)}{j}Data", 0);
-    }
-
     private string GetAchievementKey(int index) {
         return index switch {
             0 => "girlAchievement",
@@ -47,12 +41,7 @@ public class AchievementsController : MonoBehaviour {
             _ => "unknownAchievement"
         };
     }
-
-    private void UpdateAchievementImages() {
-        UpdateAchievementImageList(_crusherAchievementImages, _achievementLists.Take(4).ToList());
-        UpdateAchievementImageList(_builderAchievementImages, _achievementLists.Skip(4).Take(4).ToList());
-    }
-
+    
     private void UpdateAchievementImageList(List<Image> imageList, List<List<int>> achievementList) {
         if (imageList.Count != achievementList.Count) {
             Debug.LogError("The number of images does not match the number of achievement lists.");
@@ -61,5 +50,22 @@ public class AchievementsController : MonoBehaviour {
 
         for (int i = 0; i < imageList.Count; i++)
             imageList[i].enabled = achievementList[i].All(value => value != 0);
+    }
+
+    /// <summary>
+    /// アチーブメント情報をロードする.
+    /// </summary>
+    public void LoadPlayerPrefs() {
+        for (int i = 0; i < _achievementLists.Count; i++)
+            for (int j = 0; j < _achievementLists[i].Count; j++)
+                _achievementLists[i][j] = PlayerPrefs.GetInt($"{GetAchievementKey(i)}{j}Data", 0);
+    }
+
+    /// <summary>
+    /// アチーブメント画像の表示をアップデートする.
+    /// </summary>
+    public void UpdateAchievementImages() {
+        UpdateAchievementImageList(_crusherAchievementImages, _achievementLists.Take(4).ToList());
+        UpdateAchievementImageList(_builderAchievementImages, _achievementLists.Skip(4).Take(4).ToList());
     }
 }
