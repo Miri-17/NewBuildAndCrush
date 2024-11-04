@@ -101,6 +101,8 @@ public class ResultController : MonoBehaviour {
 
     private void TransitionNextScene() {
         _isChangingScene = true;
+        // PlayLoopingBGMに入る前にストーリーに行くと、BGMが止まるのを防ぐ.
+        _audioSource_BGM.loop = true;
         _audioSource_SE.PlayOneShot(_audioClip_SE);
         GameDirector.Instance.IsOpening = false;
         GoNextSceneAsync(TitleUIController.TransitionDuration, _nextSceneNames[_nextSceneIndex]).Forget();

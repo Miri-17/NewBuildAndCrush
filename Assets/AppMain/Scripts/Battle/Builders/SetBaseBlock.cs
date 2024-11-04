@@ -3,6 +3,7 @@ using System.IO;
 using UnityEngine;
 
 public class SetBaseBlock : MonoBehaviour {
+    private GameObject _baseBlockPrefab = null;
     private SpawnPoint[,] _spawnPoints = new SpawnPoint[18, 9];
     private Dictionary<int, List<Vector2Int>> _patterns = new Dictionary<int, List<Vector2Int>>();
 
@@ -12,11 +13,12 @@ public class SetBaseBlock : MonoBehaviour {
     [SerializeField] private float _startPosX = -272.0f;
     [SerializeField] private float _startPosY = 128.0f;
     [SerializeField] private float _space = 32.0f;
-    [SerializeField] private GameObject _baseBlockPrefab = null;
+    [SerializeField] private List<GameObject> _baseBlockPrefabs = new List<GameObject>();
     [SerializeField] private List<TextAsset> _csvFiles = new List<TextAsset>();
     #endregion
 
     private void Start() {
+        _baseBlockPrefab = _baseBlockPrefabs[GameDirector.Instance.BuilderIndex];
         LoadPatternsFromCSV();
         SetSpawnPoint();
     }

@@ -13,12 +13,16 @@ public class BattleController : MonoBehaviour {
 
     private void Update() {
         if (!_isChangingScene && _battleUIController.IsTimeUp) {
-            _isChangingScene = true;
+            // _isChangingScene = true;
             GoNextScene();
         }
     }
 
+    /// <summary>
+    /// 次のシーンへ移動する. WagonControllerでも使用.
+    /// </summary>
     public void GoNextScene() {
+        _isChangingScene = true;
         GameDirector.Instance.BuilderScore = _battleUIController.BuilderCurrentScore;
         GameDirector.Instance.CrusherScore = _battleUIController.CrusherCurrentScore;
         // TODO CrusherControllerで扱っているCrusherKillCountsと
@@ -28,7 +32,7 @@ public class BattleController : MonoBehaviour {
         else
             GameDirector.Instance.IsBuilderWin = false;
         
-        GoNextSceneAsync(TitleUIController.TransitionDuration, _nextSceneNames[_nextSceneIndex]).Forget();
+        GoNextSceneAsync(0.5f, _nextSceneNames[_nextSceneIndex]).Forget();
     }
 
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
