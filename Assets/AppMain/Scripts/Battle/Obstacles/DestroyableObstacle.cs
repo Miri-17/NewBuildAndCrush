@@ -4,9 +4,10 @@ using Cysharp.Threading.Tasks;
 
 public class DestroyableObstacle : MonoBehaviour {
     #region Private Fields
-    private SpriteRenderer _spriteRenderer;
-    private AudioSource _audioSource;
-    private ParticleSystem _particleSystem;
+    private SpriteRenderer _spriteRenderer = null;
+    private AudioSource _audioSource = null;
+    private ParticleSystem _particleSystem = null;
+    // private Animator _animator = null;
     private int i = 1;
     #endregion
 
@@ -20,12 +21,17 @@ public class DestroyableObstacle : MonoBehaviour {
     [SerializeField] private List<CircleCollider2D> _circleCollider2Ds; // ZakoWolf
     [SerializeField] private List<CapsuleCollider2D> _capsuleCollider2Ds;
     [SerializeField] private float _duration = 0;
+
+    [SerializeField] private List<GameObject> _childGameObjects = null;
     #endregion
+
+    public bool IsCrushed { get; private set; } = false;
 
     private void Start() {
         _spriteRenderer = this.GetComponent<SpriteRenderer>();
         _audioSource = this.GetComponent<AudioSource>();
         _particleSystem = this.GetComponent<ParticleSystem>();
+        // _animator = this.GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage) {
@@ -60,8 +66,13 @@ public class DestroyableObstacle : MonoBehaviour {
         if (_capsuleCollider2Ds.Count > 0)
             foreach (var collider2D in _capsuleCollider2Ds)
                 Destroy(collider2D);
-        
-        Destroy(_spriteRenderer);
+        if (_childGameObjects.Count > 0)
+            foreach (var childGameObject in _childGameObjects)
+                Destroy(childGameObject);
+        // if (_animator != null)
+        //     _animator.Play(this.gameObject.name + "_Defeat");
+        // else
+            Destroy(_spriteRenderer);
         
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         

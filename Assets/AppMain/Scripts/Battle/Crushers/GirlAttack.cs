@@ -63,17 +63,21 @@ public class GirlAttack : MonoBehaviour {
         Collider2D[] hitInfos = Physics2D.OverlapBoxAll(point.position, new Vector2(_attackRange, 1), lineAngle, _obstacleLayer);
         foreach (Collider2D hitInfo in hitInfos) {
             var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
-            // BuilderDestroy builderDestroy = hitInfo.transform.GetComponent<BuilderDestroy>();
+            var destroyableBuilder = hitInfo.transform.GetComponent<DestroyableBuilder>();
+            var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
 
             if (destroyableObstacle != null) {
                 destroyableObstacle.TakeDamage(_damage);
                 Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
             }
-
-            // if (builderDestroy != null) {
-            //     builderDestroy.TakeDamage(damage);
-            //     Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            // }
+            if (destroyableBuilder != null) {
+                destroyableBuilder.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (creamPuff != null) {
+                creamPuff.TakeDamage();
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
         }
     }
 }

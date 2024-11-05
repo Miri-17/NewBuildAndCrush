@@ -14,28 +14,32 @@ public class StageGenerator : MonoBehaviour {
     [SerializeField] private SpriteRenderer _ground;
     [SerializeField] private GameObject _startPoint = null;
     #endregion
-
-    private void Awake() {
-        // Awakeに置かないと、CrusherCameraControllerでCrusherタグを見つけられない
-        UpdateCrusherInfo(GameDirector.Instance.CrusherIndex);
-    }
     
     private void Start() {
+        UpdateCrusherInfo(GameDirector.Instance.CrusherIndex);
         UpdateBuilderInfo(GameDirector.Instance.BuilderIndex);
+        // TODO 死んだ位置から少し前にコンティニューするよう変更.
+        _continuePoint = _startPoint;
     }
-
-    // TODO 時間があれば, このコードはBattleControllerに移す.
-    // StageGeneratorという名前に見合わない仕事のため.
+    
     private void Update() {
+        // カメラに関する処理.
+        var crusherPosition = _crusher.transform.position;
+        if (crusherPosition.x > -25.0f && crusherPosition.x < 5070.0f)
+            this.transform.position = new Vector3(crusherPosition.x, this.transform.position.y, this.transform.position.z);
+        
         if (_crusherController.IsContinueWaiting()) {
             _crusher.transform.position = _continuePoint.transform.position;
             _crusherController.ContinueCrusher();
         }
 
-        if (_builderController.WagonControllerRun != null)
+        // TODO 時間があれば, このコードはBattleControllerに移す.
+        if (_builderController.WagonControllerRun != null) {
             // ワゴンに乗ったらコンティニューポイントを変更する.
             if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn)
                 _continuePoint = _builderController.WagonControllerRun.CrusherContinuePosition;
+            // TODO ワゴンから降りたら、死んだ位置から少し前にコンティニューするよう変更.
+        }
     }
 
     private void UpdateCrusherInfo(int crusherIndex) {

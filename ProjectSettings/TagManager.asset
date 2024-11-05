@@ -11,6 +11,7 @@ TagManager:
   - Obstacle
   - ObstacleGround
   - SpecialFloor
+  - Wagon
   layers:
   - Default
   - TransparentFX

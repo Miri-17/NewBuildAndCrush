@@ -7,9 +7,9 @@ using TMPro;
 
 public class ResultController : MonoBehaviour {
     #region Private Fields
-    private AudioSource _audioSource_BGM = null;
-    private AudioSource _audioSource_SE = null;
-    private AudioClip _audioClip_SE = null;
+    private AudioSource _audioSourceBGM = null;
+    private AudioSource _audioSourceSE = null;
+    private AudioClip _audioClipSE = null;
     // シーン遷移関係
     private int _nextSceneIndex = 0;
     private bool _isChangingScene = false;
@@ -27,14 +27,14 @@ public class ResultController : MonoBehaviour {
     #endregion
 
     private void Start() {
-        _audioSource_BGM = BGM.Instance?.GetComponent<AudioSource>();
-        _audioSource_SE = CrusherSE.Instance?.GetComponent<AudioSource>();
-        if (_audioSource_BGM == null || _audioSource_SE == null || CrusherSE.Instance?.SEDB.AudioClips.Count < 3) {
+        _audioSourceBGM = BGM.Instance?.GetComponent<AudioSource>();
+        _audioSourceSE = CrusherSE.Instance?.GetComponent<AudioSource>();
+        if (_audioSourceBGM == null || _audioSourceSE == null || CrusherSE.Instance?.SEDB.AudioClips.Count < 3) {
             Debug.LogError("AudioSource of AudioClip is not set up correctly.");
             return;
         }
 
-        _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
+        _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[0];
         UpdateBuilder(GameDirector.Instance.BuilderIndex);
         UpdateCrusher(GameDirector.Instance.CrusherIndex);
 
@@ -48,7 +48,7 @@ public class ResultController : MonoBehaviour {
     }
 
     private void Update() {
-        if (!_audioSource_BGM.isPlaying)
+        if (!_audioSourceBGM.isPlaying)
             PlayLoopingBGM();
 
         if (_resultUIController.IsFadeOut && !_isChangingScene && Input.GetButtonDown("Select"))
@@ -94,16 +94,16 @@ public class ResultController : MonoBehaviour {
     }
 
     private void PlayLoopingBGM() {
-        _audioSource_BGM.clip = _audioClipLoop;
-        _audioSource_BGM.loop = true;
-        _audioSource_BGM.Play();
+        _audioSourceBGM.clip = _audioClipLoop;
+        _audioSourceBGM.loop = true;
+        _audioSourceBGM.Play();
     }
 
     private void TransitionNextScene() {
         _isChangingScene = true;
         // PlayLoopingBGMに入る前にストーリーに行くと、BGMが止まるのを防ぐ.
-        _audioSource_BGM.loop = true;
-        _audioSource_SE.PlayOneShot(_audioClip_SE);
+        _audioSourceBGM.loop = true;
+        _audioSourceSE.PlayOneShot(_audioClipSE);
         GameDirector.Instance.IsOpening = false;
         GoNextSceneAsync(TitleUIController.TransitionDuration, _nextSceneNames[_nextSceneIndex]).Forget();
     }

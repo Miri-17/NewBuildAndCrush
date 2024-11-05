@@ -22,6 +22,8 @@ public class CrusherController : MonoBehaviour {
     private List<float> _rightNum = new List<float>() { 19.0f, 17.0f, 20.0f, 18.9f, };
     private List<float> _endNum = new List<float>() { 20.2f, 18.2f, 21.2f, 20.1f, };
     private int _crusherIndex = 0;
+    // private AudioSource _audioSourceSE = null;
+    // private AudioClip _audioClipSE = null;
     #endregion
 
     private enum MOVE_DIRECTION {
@@ -52,6 +54,9 @@ public class CrusherController : MonoBehaviour {
         _crusherIndex = GameDirector.Instance.CrusherIndex;
 
         _builderController = GameObject.Find("BuilderController").GetComponent<BuilderController>();
+
+        // _audioSourceSE = CrusherSE.Instance?.GetComponent<AudioSource>();
+        // _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[4];
     }
 
     private void Update() {

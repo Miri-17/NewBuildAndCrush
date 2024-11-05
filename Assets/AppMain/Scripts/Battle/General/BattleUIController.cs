@@ -33,8 +33,10 @@ public class BattleUIController : MonoBehaviour {
         _crusherScores[1].text = CrusherCurrentScore.ToString();
         
         _builderIcons[0].anchoredPosition = new Vector2(475.0f, -60.0f);
+        // _builderIcons[0].anchoredPosition = new Vector2(467.0f, -2.0f);
         _builderIcons[1].anchoredPosition = new Vector2(-490.0f, 0);
         _crusherIcons[0].anchoredPosition = new Vector2(-490.0f, -60.0f);
+        // _crusherIcons[0].anchoredPosition = new Vector2(-460.0f, -2.0f);
         _crusherIcons[1].anchoredPosition = new Vector2(-475.0f, 0);
     }
 
@@ -53,7 +55,9 @@ public class BattleUIController : MonoBehaviour {
             _currentTime = 0;
             IsTimeUp = true;
             _timeText[0].text = "Time Up!";
+            _timeText[0].fontSize = 60;
             _timeText[1].text = "Time Up!";
+            _timeText[1].fontSize = 60;
             return;
         }
 
@@ -64,8 +68,10 @@ public class BattleUIController : MonoBehaviour {
     private void IconPositionUpdate() {
         // TODO 第一引数をなぜこれにしているのか要確認.
         _builderIcons[0].anchoredPosition = new Vector2(-560 + GameDirector.Instance.BuilderPosition * 958f / END_POSITION, -60.0f);
+        // _builderIcons[0].anchoredPosition = new Vector2(-560 + GameDirector.Instance.BuilderPosition * 958f / END_POSITION, -2.0f);
         _builderIcons[1].anchoredPosition = new Vector2(-560 + GameDirector.Instance.BuilderPosition * 961.53f / END_POSITION, 0);
         _crusherIcons[0].anchoredPosition = new Vector2(-475 + GameDirector.Instance.CrusherPosition * 958f / END_POSITION, -60.0f);
+        // _crusherIcons[0].anchoredPosition = new Vector2(-475 + GameDirector.Instance.CrusherPosition * 958f / END_POSITION, -2.0f);
         _crusherIcons[1].anchoredPosition = new Vector2(-475 + GameDirector.Instance.CrusherPosition  * 961.53f / END_POSITION, 0);
     }
 

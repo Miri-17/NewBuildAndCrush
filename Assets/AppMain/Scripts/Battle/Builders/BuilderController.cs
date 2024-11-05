@@ -35,14 +35,9 @@ public class BuilderController : MonoBehaviour {
     [HideInInspector] public WagonController WagonController = null;
     #endregion
 
-    private void Awake() {
+    private void Start() {
         BattleBuilder = _buildersDB.GetBattleBuilder(GameDirector.Instance.BuilderIndex);
         SetWagon(_wagonStartPosition);
-    }
-
-    private void Start() {
-        // BattleBuilder = _buildersDB.GetBattleBuilder(GameDirector.Instance.BuilderIndex);
-        // SetWagon(_wagonStartPosition);
         GameDirector.Instance.BuilderPosition = 5734.0f;
     }
 

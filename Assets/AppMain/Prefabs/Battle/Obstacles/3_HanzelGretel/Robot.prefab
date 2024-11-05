@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1043641183119655806}
   - component: {fileID: 5826868884619130449}
   - component: {fileID: 4163087440601431394}
+  - component: {fileID: 7871985050127706967}
   m_Layer: 7
   m_Name: Robot
   m_TagString: Obstacle
@@ -224,6 +225,7 @@ MonoBehaviour:
   _circleCollider2Ds: []
   _capsuleCollider2Ds: []
   _duration: 2
+  _childGameObjects: []
 --- !u!198 &1043641183119655806
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5026,7 +5028,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 204db03c21f294660b2254c4f5d3bcbc, type: 2}
+  - {fileID: 2100000, guid: 5d4a323e161ae42deabf462f07182c5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5175,3 +5177,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7871985050127706967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643386429687315035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb338a7151ed543be9a537f936c386b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

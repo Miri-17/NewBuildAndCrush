@@ -26,8 +26,8 @@ public class BattleBuilderUIController : MonoBehaviour {
     [SerializeField] private BuilderController _builderController = null;
     [SerializeField] private List<Slider> _partsGenerationBars = new List<Slider>();
     [SerializeField] private Slider _weighingBar = null;
-    [SerializeField] private List<Image> _faceImages = new List<Image>();
-    [SerializeField] private List<Sprite> _faceSprites = new List<Sprite>();
+    [SerializeField] private Image _facesImage = null;
+    [SerializeField] private List<Sprite> _facesSprites = new List<Sprite>();
     [SerializeField] private Button _goButton = null;
     [SerializeField] private List<Button> _obstacleButtons = new List<Button>();
     [SerializeField] private GameObject _warningPanel = null;
@@ -47,8 +47,7 @@ public class BattleBuilderUIController : MonoBehaviour {
 
         _weighingBar.value = _currentWeight;
         _maxWeight = _weighingBar.maxValue;
-        _faceImages[0].sprite = _faceSprites[0];
-        _faceImages[1].sprite = _faceSprites[0];
+        _facesImage.sprite = _facesSprites[0];
         _goButton.onClick.AddListener(() => OnGoButtonClicked());
 
         for (int i = 0; i < _obstacleButtons.Count; i++) {
@@ -67,20 +66,17 @@ public class BattleBuilderUIController : MonoBehaviour {
         if (_weighingBar.value < 50) {
             if (_faceExpression != FACE_EXPRESSION.FINE) {
                 _faceExpression = FACE_EXPRESSION.FINE;
-                _faceImages[0].sprite = _faceSprites[0];
-                _faceImages[1].sprite = _faceSprites[0];
+                _facesImage.sprite = _facesSprites[0];
             }
         } else if (_weighingBar.value < 80) {
             if (_faceExpression != FACE_EXPRESSION.PALE) {
                 _faceExpression = FACE_EXPRESSION.PALE;
-                _faceImages[0].sprite = _faceSprites[1];
-                _faceImages[1].sprite = _faceSprites[1];
+                _facesImage.sprite = _facesSprites[1];
             }
         } else {
             if (_faceExpression != FACE_EXPRESSION.DEATHLY_PALE) {
                 _faceExpression = FACE_EXPRESSION.DEATHLY_PALE;
-                _faceImages[0].sprite = _faceSprites[2];
-                _faceImages[1].sprite = _faceSprites[2];
+                _facesImage.sprite = _facesSprites[2];
             }
         }
     }

@@ -7,9 +7,10 @@ public class DestroyableBuilder : MonoBehaviour {
     private SpriteRenderer _spriteRenderer = null;
     private AudioSource _audioSource = null;
     private ParticleSystem _particleSystem = null;
-    private int i = 1;
+    // private int i = 1;
 
     private Animator _animator = null;
+    private bool _isDamaged = false;
     #endregion
 
     #region Serialized Fields
@@ -25,8 +26,8 @@ public class DestroyableBuilder : MonoBehaviour {
     #endregion
 
     private void Start() {
-        // _spriteRenderer = this.GetComponent<SpriteRenderer>();
-        // _particleSystem = this.GetComponent<ParticleSystem>();
+        _spriteRenderer = this.GetComponent<SpriteRenderer>();
+        _particleSystem = this.GetComponent<ParticleSystem>();
         _animator = this.GetComponent<Animator>();
 
         _audioSource = this.GetComponent<AudioSource>();
@@ -44,17 +45,14 @@ public class DestroyableBuilder : MonoBehaviour {
             return;
         }
 
-        if (_defense < 5)
-            SetDamageAnimation();  
-
-        // if (i < _obstacleSprites.Count) {
-        //     _spriteRenderer.sprite = _obstacleSprites[i];
-        //     i++;
-        // }
+        if (!_isDamaged && _defense < 5) {
+            _isDamaged = true;
+            SetDamageAnimation();
+        } 
     }
 
     private void SetDamageAnimation() {
-        _animator.SetBool("Damage", true);
+        _animator.SetBool("Damage", _isDamaged);
     }
 
     private async UniTaskVoid Crush(float duration) {

@@ -160,6 +160,8 @@ MonoBehaviour:
   _circleCollider2Ds: []
   _capsuleCollider2Ds: []
   _duration: 2
+  _childGameObjects:
+  - {fileID: 7475645548050071422}
 --- !u!198 &6220598030211963822
 ParticleSystem:
   m_ObjectHideFlags: 0

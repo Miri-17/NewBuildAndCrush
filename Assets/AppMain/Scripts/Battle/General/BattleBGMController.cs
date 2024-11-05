@@ -3,8 +3,8 @@ using DG.Tweening;
 
 public class BattleBGMController : MonoBehaviour {
     #region Private Fields
-    private AudioSource _audioSource_Normal;
-    private AudioSource _audioSource_Wagon;
+    private AudioSource _audioSourceNormal;
+    private AudioSource _audioSourceWagon;
     private bool _isInWagon = false;
     #endregion
 
@@ -15,20 +15,20 @@ public class BattleBGMController : MonoBehaviour {
     #endregion
 
     private void Start() {
-        _audioSource_Normal = this.gameObject.AddComponent<AudioSource>();
-        _audioSource_Wagon = this.gameObject.AddComponent<AudioSource>();
+        _audioSourceNormal = this.gameObject.AddComponent<AudioSource>();
+        _audioSourceWagon = this.gameObject.AddComponent<AudioSource>();
 
-        _audioSource_Normal.clip = _battleBGMDB.GetNormalAudioClip(GameDirector.Instance.BuilderIndex);
-        _audioSource_Wagon.clip = _battleBGMDB.GetWagonAudioClip(GameDirector.Instance.BuilderIndex);
+        _audioSourceNormal.clip = _battleBGMDB.GetNormalAudioClip(GameDirector.Instance.BuilderIndex);
+        _audioSourceWagon.clip = _battleBGMDB.GetWagonAudioClip(GameDirector.Instance.BuilderIndex);
 
-        _audioSource_Normal.loop = true;
-        _audioSource_Wagon.loop = true;
+        _audioSourceNormal.loop = true;
+        _audioSourceWagon.loop = true;
 
-        _audioSource_Normal.Play();
-        _audioSource_Wagon.Play();
+        _audioSourceNormal.Play();
+        _audioSourceWagon.Play();
 
-        _audioSource_Normal.volume = 1;
-        _audioSource_Wagon.volume = 0;
+        _audioSourceNormal.volume = 1;
+        _audioSourceWagon.volume = 0;
     }
 
     private void Update() {
@@ -50,18 +50,18 @@ public class BattleBGMController : MonoBehaviour {
     }
 
     private void SetWagonBGM() {
-        _audioSource_Normal.DOFade(0, _fadeDuration)
-            .SetLink(_audioSource_Normal.gameObject);
+        _audioSourceNormal.DOFade(0, _fadeDuration)
+            .SetLink(_audioSourceNormal.gameObject);
         
-        _audioSource_Wagon.DOFade(1, _fadeDuration)
-            .SetLink(_audioSource_Normal.gameObject);
+        _audioSourceWagon.DOFade(1, _fadeDuration)
+            .SetLink(_audioSourceWagon.gameObject);
     }
     
     private void SetNormalBGM() {
-        _audioSource_Normal.DOFade(1, _fadeDuration)
-            .SetLink(_audioSource_Normal.gameObject);
+        _audioSourceNormal.DOFade(1, _fadeDuration)
+            .SetLink(_audioSourceNormal.gameObject);
         
-        _audioSource_Wagon.DOFade(0, _fadeDuration)
-            .SetLink(_audioSource_Normal.gameObject);
+        _audioSourceWagon.DOFade(0, _fadeDuration)
+            .SetLink(_audioSourceWagon.gameObject);
     }
 }

@@ -80,13 +80,12 @@ public class CrusherSelectionController : MonoBehaviour {
         if (_isCrusherSelected) {
             // Debug.Log("クラッシャー選択状態です");
             if (_confirmPanels[0].activeSelf) {
-                Debug.Log("yeah!!!!");
                 if (Input.GetButtonDown("Select")) {
                     _isChangingScene = true;
 
                     _audioSourceBGM.Stop();
 
-                    _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[0];
+                    _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[4];
                     _audioSourceSE.PlayOneShot(_audioClipSE);
                     foreach (var confirmPanel in _confirmPanels)
                         confirmPanel.SetActive(false);
