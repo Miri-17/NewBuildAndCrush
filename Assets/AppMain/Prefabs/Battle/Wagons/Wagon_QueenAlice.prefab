@@ -399,6 +399,7 @@ MonoBehaviour:
   _crusherContinuePosition: {fileID: 7673990595559105970}
   _wagonExplosionPrefab: {fileID: 7749779667050500448, guid: 83bd0126d3f3740adb27bb4761c581ae, type: 3}
   _speed: 180
+  _explodeAudioClip: {fileID: 8300000, guid: b105f0203193b4bce81362a405487f19, type: 3}
 --- !u!1 &4517660878620231015
 GameObject:
   m_ObjectHideFlags: 0

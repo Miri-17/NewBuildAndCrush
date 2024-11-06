@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class AttackEffect : MonoBehaviour {
     private CancellationTokenSource _cancellationTokenSource = null;
-    private Rigidbody2D _rb2D = null;
     
     [SerializeField] private float _existenceTime = 0.1f;
     [SerializeField] private float _speed = 200.0f;
+    [SerializeField] private int _damage = 2;
+    [SerializeField] private GameObject _obstacleCrushEffect;
 
-    private void Start() {
-        _rb2D = this.GetComponent<Rigidbody2D>();
-        _rb2D.velocity = transform.right * _speed;
+    private void Update() {
+        this.transform.Translate(_speed * Time.deltaTime, 0, 0);
     }
     
     private void OnEnable() {
@@ -34,5 +34,18 @@ public class AttackEffect : MonoBehaviour {
         } catch (OperationCanceledException) {
             // 処理のキャンセルが行われた.
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        var destroyableObstacle = collision.transform.GetComponent<DestroyableObstacle>();
+
+        if (destroyableObstacle != null) {
+            destroyableObstacle.TakeDamage(_damage);
+            Instantiate(_obstacleCrushEffect, this.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+
+        if (!collision.collider.CompareTag("Crusher") || !collision.collider.CompareTag("WitchAttack"))
+            Destroy(this.gameObject);
     }
 }

@@ -35,15 +35,15 @@ public class TenjinAttack : MonoBehaviour {
         if (verticalKey > 0) {
             _animator.SetTrigger("Attack_Upwards");
             Attack(_attackPointUp);
-            Instantiate(_attackEffectPrefab, _attackPointUp.position, _attackPointUp.rotation);
+            Instantiate(_attackEffectPrefab, _attackPointUp.position, _attackPointUp.rotation, this.transform);
         } else if (verticalKey < 0) {
             _animator.SetTrigger("Attack_Downwards");
             Attack(_attackPointDown);
-            Instantiate(_attackEffectPrefab, _attackPointDown.position, _attackPointDown.rotation);
+            Instantiate(_attackEffectPrefab, _attackPointDown.position, _attackPointDown.rotation, this.transform);
         } else {
             _animator.SetTrigger("Attack");
             Attack(_attackPoint);
-            Instantiate(_attackEffectPrefab, _attackPoint.position, _attackPoint.rotation);
+            Instantiate(_attackEffectPrefab, _attackPoint.position, _attackPoint.rotation, this.transform);
         }
         _audioSource.PlayOneShot(_audioSource.clip);
 

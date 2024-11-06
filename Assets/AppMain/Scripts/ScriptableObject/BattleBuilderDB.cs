@@ -9,17 +9,15 @@ public class BattleBuilderDB : ScriptableObject {
     [SerializeField] private Sprite _ground = null;
     [SerializeField] private GameObject _builderPrefab = null;
     [SerializeField] private GameObject _wagonPrefab = null;
-    // [SerializeField] private List<Sprite> _obstacleImages = new List<Sprite>();
-    // [SerializeField] private List<GameObject> _obstaclePrefabs = new List<GameObject>();
-    // [SerializeField] private List<float> _obstacleWeight = new List<float>();
+    [SerializeField] private Sprite _frameSprite = null;
+    [SerializeField] private List<Sprite> _faceSprites = new List<Sprite>();
 
     public Sprite Bg { get => _bg; set => _bg = value; }
     public Sprite Ground { get => _ground; set => _ground = value; }
     public GameObject BuilderPrefab { get => _builderPrefab; set => _builderPrefab = value; }
     public GameObject WagonPrefab { get => _wagonPrefab; set => _wagonPrefab = value; }
-    // public List<Sprite> ObstacleImages { get => _obstacleImages; set => _obstacleImages = value; }
-    // public List<GameObject> ObstaclePrefabs { get => _obstaclePrefabs; set => _obstaclePrefabs = value; }
-    // public List<float> ObstacleWeight { get => _obstacleWeight; set => _obstacleWeight = value; }
+    public Sprite FrameSprite { get => _frameSprite; set => _frameSprite = value; }
+    public List<Sprite> FaceSprites { get => _faceSprites; set => _faceSprites = value; }
 
     /// <summary>
     /// Battleで使う障害物の情報を返す

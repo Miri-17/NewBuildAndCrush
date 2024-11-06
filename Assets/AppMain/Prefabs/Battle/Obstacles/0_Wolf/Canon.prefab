@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7050990237488452378}
   - component: {fileID: 8159678570849828186}
   - component: {fileID: 3898858341394067640}
+  - component: {fileID: 2015086271672435179}
   m_Layer: 8
   m_Name: Canon
   m_TagString: Untagged
@@ -160,6 +161,9 @@ MonoBehaviour:
   _circleCollider2Ds: []
   _capsuleCollider2Ds: []
   _duration: 2
+  _childGameObjects:
+  - {fileID: 7260408185650554378}
+  _enableDefeatAnimation: 0
 --- !u!198 &7050990237488452378
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5111,6 +5115,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2015086271672435179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2173234679056203793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420768e3ab1f24b7790fc863f11149b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canonBulletPrefab: {fileID: 7951667993541498347, guid: cb55c7b7240ca4cddb0b8703cf483d5a, type: 3}
+  _attackPoint: {fileID: 5471313652611192260}
+  _audioClip: {fileID: 8300000, guid: 02f87254b4a7249d39d5b1c205ba4939, type: 3}
+  _attackRate: 0.5
 --- !u!1 &7260408185650554378
 GameObject:
   m_ObjectHideFlags: 0
@@ -5121,7 +5141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5471313652611192260}
   m_Layer: 0
-  m_Name: ShotPosition
+  m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

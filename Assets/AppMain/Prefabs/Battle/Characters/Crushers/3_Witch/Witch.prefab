@@ -288,6 +288,7 @@ MonoBehaviour:
   _walkSpeed: 90
   _runSpeed: 162
   _jumpForce: 250
+  _stunAudioClip: {fileID: 8300000, guid: 0848345c261f94981b16639cb4a47cb3, type: 3}
 --- !u!114 &4117164537601133451
 MonoBehaviour:
   m_ObjectHideFlags: 0

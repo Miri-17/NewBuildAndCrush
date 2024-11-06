@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7781380892088024399}
   - component: {fileID: 8659843986743272637}
   - component: {fileID: 1799964490750700762}
-  - component: {fileID: 9150122595426923066}
+  - component: {fileID: 2269584870390421789}
   - component: {fileID: 6584882718464775758}
   m_Layer: 7
   m_Name: Chef
@@ -145,7 +145,7 @@ CapsuleCollider2D:
   m_Offset: {x: -4, y: -6.6}
   m_Size: {x: 18, y: 32}
   m_Direction: 0
---- !u!114 &9150122595426923066
+--- !u!114 &2269584870390421789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,18 +154,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 362790618622682966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac4ce4a7da94415aaa4f4205174c08c, type: 3}
+  m_Script: {fileID: 11500000, guid: 01b68c24637884faea539aeaba441ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacleSprites: []
   _audioClip: {fileID: 8300000, guid: be9e2f523d848424db0b460649517d5a, type: 3}
-  _isUsingParticleSystem: 0
+  _prefab: {fileID: 4935826132412208241, guid: 31131d99d0ec643c08fefba47b6f43c0, type: 3}
+  _attackPoint: {fileID: 6148208375725424958}
+  _attackRate: 1
+  _maxCount: 3
+  _capsuleCollider2D: {fileID: 1799964490750700762}
+  _childGameObject: {fileID: 5730846784861986021}
+  _duration: 0.5
   _defense: 4
-  _boxCollider2Ds: []
-  _circleCollider2Ds: []
-  _capsuleCollider2Ds:
-  - {fileID: 1799964490750700762}
-  _duration: 2
 --- !u!82 &6584882718464775758
 AudioSource:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6148208375725424958}
   m_Layer: 0
-  m_Name: DishThrowPoint
+  m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

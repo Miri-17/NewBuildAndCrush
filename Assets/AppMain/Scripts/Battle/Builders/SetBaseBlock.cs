@@ -47,7 +47,7 @@ public class SetBaseBlock : MonoBehaviour {
         for (int j = 0; j < 9; j++) {
             for (int i = 0; i < 18; i++) {
                 var spawnPoint = Instantiate(_spawnPointPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-                spawnPoint.transform.parent = _builderController._wagon.transform.Find("Grid").transform;
+                spawnPoint.transform.parent = _builderController.Wagon.transform.Find("Grid").transform;
                 spawnPoint.transform.localPosition = new Vector3(_startPosX + _space * i, _startPosY - _space * j, 0);
                 _spawnPoints[i, j] = spawnPoint.GetComponent<SpawnPoint>();
                 _spawnPoints[i, j].X = i;
@@ -75,7 +75,7 @@ public class SetBaseBlock : MonoBehaviour {
             for (int i = 0; i < 18; i++) {
                 if (_spawnPoints[i, j].IsOccupied) {
                     var baseBlock = Instantiate(_baseBlockPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-                    baseBlock.transform.parent = _builderController._wagon.transform;
+                    baseBlock.transform.parent = _builderController.Wagon.transform;
                     baseBlock.transform.localPosition = _spawnPoints[i, j].transform.localPosition;
                 }
             }

@@ -23,3 +23,8 @@ MonoBehaviour:
   _ground: {fileID: 21300000, guid: 89961e91fdd194382b13fc64a7476da9, type: 3}
   _builderPrefab: {fileID: 7406400808989113761, guid: a59034300449a457980097a2fed47288, type: 3}
   _wagonPrefab: {fileID: 525510771325377293, guid: 06407811c940d43218262104ab83c10c, type: 3}
+  _frameSprite: {fileID: 21300000, guid: 773d8c8e2df514b0faee03e74b367d3d, type: 3}
+  _faceSprites:
+  - {fileID: 21300000, guid: a2b05c729c912498c90b03255ee9d73d, type: 3}
+  - {fileID: 21300000, guid: f57b1d71b53f0497d85e86e3d51751d5, type: 3}
+  - {fileID: 21300000, guid: 6e6d4b67d046649838979c0d2b6e2957, type: 3}

@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 5867066041434363192}
   - component: {fileID: 6041305430364374420}
   - component: {fileID: 7914909974082009656}
+  - component: {fileID: 3671187139180303611}
   - component: {fileID: 5589331791995094144}
   m_Layer: 0
   m_Name: AttackEffect_Tenjin
-  m_TagString: Untagged
+  m_TagString: TenjinAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!61 &3671187139180303611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312410549088993576}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 23}
+    newSize: {x: 8, y: 23}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8, y: 23}
+  m_EdgeRadius: 0
 --- !u!114 &5589331791995094144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,4 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _existenceTime: 0.1
-  _speed: 200
+  _speed: 300
+  _damage: 2
+  _obstacleCrushEffect: {fileID: 9190961169032549529, guid: e1fe2726918e34697b43cd9f1748f352, type: 3}

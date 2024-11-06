@@ -7,7 +7,7 @@ public class DestroyableObstacle : MonoBehaviour {
     private SpriteRenderer _spriteRenderer = null;
     private AudioSource _audioSource = null;
     private ParticleSystem _particleSystem = null;
-    // private Animator _animator = null;
+    private Animator _animator = null;
     private int i = 1;
     #endregion
 
@@ -16,22 +16,26 @@ public class DestroyableObstacle : MonoBehaviour {
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private bool _isUsingParticleSystem = false;
     [SerializeField] private int _defense = 4;
-    // TODO そもそも、子オブジェクトは先に消す処理を行った方が良いかもしれん（Fanとかの風的に）
     [SerializeField] private List<BoxCollider2D> _boxCollider2Ds;
-    [SerializeField] private List<CircleCollider2D> _circleCollider2Ds; // ZakoWolf
+    [SerializeField] private List<CircleCollider2D> _circleCollider2Ds;
     [SerializeField] private List<CapsuleCollider2D> _capsuleCollider2Ds;
     [SerializeField] private float _duration = 0;
-
     [SerializeField] private List<GameObject> _childGameObjects = null;
+    [SerializeField] private bool _enableDefeatAnimation = false;
     #endregion
 
-    public bool IsCrushed { get; private set; } = false;
+    /// <summary>
+    /// Roseで使用.
+    /// </summary>
+    public bool IsDamaged { get; private set; } = false;
 
     private void Start() {
         _spriteRenderer = this.GetComponent<SpriteRenderer>();
         _audioSource = this.GetComponent<AudioSource>();
         _particleSystem = this.GetComponent<ParticleSystem>();
-        // _animator = this.GetComponent<Animator>();
+
+        if (!_enableDefeatAnimation) return;
+        _animator = this.GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage) {
@@ -46,6 +50,7 @@ public class DestroyableObstacle : MonoBehaviour {
             return;
         }
 
+        IsDamaged = true;
         if (i < _obstacleSprites.Count) {
             _spriteRenderer.sprite = _obstacleSprites[i];
             i++;
@@ -69,9 +74,9 @@ public class DestroyableObstacle : MonoBehaviour {
         if (_childGameObjects.Count > 0)
             foreach (var childGameObject in _childGameObjects)
                 Destroy(childGameObject);
-        // if (_animator != null)
-        //     _animator.Play(this.gameObject.name + "_Defeat");
-        // else
+        if (_enableDefeatAnimation)
+            _animator.Play(this.gameObject.name + "_Defeat");
+        else
             Destroy(_spriteRenderer);
         
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());

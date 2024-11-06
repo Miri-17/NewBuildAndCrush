@@ -331,15 +331,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleSprites: []
-  _audioClip: {fileID: 8300000, guid: be9e2f523d848424db0b460649517d5a, type: 3}
+  _audioClip: {fileID: 8300000, guid: 564e639f003364bfa937eef24bd3d6c0, type: 3}
   _isUsingParticleSystem: 0
   _defense: 6
-  _boxCollider2Ds:
-  - {fileID: 953811185924147546}
+  _boxCollider2Ds: []
   _circleCollider2Ds: []
   _capsuleCollider2Ds:
   - {fileID: 4531192903568912951}
-  _duration: 1
+  _duration: 0.5
+  _childGameObjects:
+  - {fileID: 4987102605270826447}
+  _enableDefeatAnimation: 1
 --- !u!82 &1598993036933506022
 AudioSource:
   m_ObjectHideFlags: 0

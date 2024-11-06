@@ -55,7 +55,7 @@ public class WitchAttack : MonoBehaviour {
 
     private async UniTaskVoid Shoot(Transform point) {
         for (int i = 0; i < 3; i++) {
-            Instantiate(_cupcakePrefab, point.position, point.rotation);
+            Instantiate(_cupcakePrefab, point.position, point.rotation, this.transform);
             await UniTask.Delay(TimeSpan.FromSeconds(_duration));
         }
     }

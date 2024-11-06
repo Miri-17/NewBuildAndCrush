@@ -22,8 +22,7 @@ public class CrusherController : MonoBehaviour {
     private List<float> _rightNum = new List<float>() { 19.0f, 17.0f, 20.0f, 18.9f, };
     private List<float> _endNum = new List<float>() { 20.2f, 18.2f, 21.2f, 20.1f, };
     private int _crusherIndex = 0;
-    // private AudioSource _audioSourceSE = null;
-    // private AudioClip _audioClipSE = null;
+    private AudioSource _audioSourceSE = null;
     #endregion
 
     private enum MOVE_DIRECTION {
@@ -39,6 +38,7 @@ public class CrusherController : MonoBehaviour {
     [SerializeField] private float _walkSpeed = 100.0f;
     [SerializeField] private float _runSpeed = 180.0f;
     [SerializeField] private float _jumpForce = 250.0f;
+    [SerializeField] private AudioClip _stunAudioClip = null;
     #endregion
 
     private void Start() {
@@ -55,8 +55,7 @@ public class CrusherController : MonoBehaviour {
 
         _builderController = GameObject.Find("BuilderController").GetComponent<BuilderController>();
 
-        // _audioSourceSE = CrusherSE.Instance?.GetComponent<AudioSource>();
-        // _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[4];
+        _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -108,8 +107,10 @@ public class CrusherController : MonoBehaviour {
         // FixedUpdate()に書くと他の処理との兼ね合いか、ワゴンを出た後にスピードが元に戻らないので注意.
         if (_builderController.WagonControllerRun != null) {
             // ワゴンに乗ったらクラッシャーのスピードをワゴンのスピードとも関連づける.
-            if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn)
+            if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
+                Debug.Log("add speed x: " + _addSpeedX);
                 _addSpeedX = _builderController.WagonControllerRun.GetWagonVelocity();
+            }
 
             //ワゴンから降りたらクラッシャーのスピードを通常に戻す.
             if (_builderController.WagonControllerRun.CrusherExitCheck.IsOn)
@@ -151,11 +152,8 @@ public class CrusherController : MonoBehaviour {
 
     private bool IsGrounded() {
         Vector3 startRightVec = transform.position - transform.up * _rightNum[_crusherIndex] + transform.right * 5.2f;
-        // Vector3 startRightVec = transform.position - transform.up * RIGHT_NUM + transform.right * 5.2f;
         Vector3 startLeftVec = transform.position - transform.up * _rightNum[_crusherIndex] - transform.right * 5.2f;
-        // Vector3 startLeftVec = transform.position - transform.up * RIGHT_NUM - transform.right * 5.2f;
         Vector3 endVec = transform.position - transform.up * _endNum[_crusherIndex];
-        // Vector3 endVec = transform.position - transform.up * END_NUM;
         Debug.DrawLine(startRightVec, endVec);
         Debug.DrawLine(startLeftVec, endVec);
 
@@ -175,11 +173,11 @@ public class CrusherController : MonoBehaviour {
         _animator.SetBool("Jump", _isJumping);
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.collider.CompareTag("Obstacle")) {
-            GameDirector.Instance.CrusherKillCounts++;
-
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (!_isStunning && collision.collider.CompareTag("Obstacle")) {
             _isStunning = true;
+            GameDirector.Instance.CrusherKillCounts++;
+            _audioSourceSE.PlayOneShot(_stunAudioClip);
             _animator.SetBool("Stun",true);
             _isWalking = false;
             _isRunning = false;
@@ -188,8 +186,8 @@ public class CrusherController : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("SpecialFloor")) {
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("SpecialFloor")) {
             _walkSpeed *= 0.5f;
             _runSpeed *= 0.3f;
             _jumpForce *= 0.7f;

@@ -1,18 +1,15 @@
 using UnityEngine;
 
 public class Clicker : MonoBehaviour {
-    // ObstacleButtonManagerでも使用する変数.
-    // public int[] isOtherButtonDown;
-
-    [SerializeField] private Camera _builderCamera;
-    // [SerializeField]
-    // // private ObstacleButtonManager[] obstacleButtonManager;
-    [SerializeField] private BattleBuilderUIController _battleBuilderUIController = null;
-    [SerializeField] private BuilderController _builderController;
-
     // private Ray _ray;
     // private RaycastHit2D _hit;
     // private bool isClick = false;
+    
+    #region Serialized Fields
+    [SerializeField] private Camera _builderCamera;
+    [SerializeField] private BattleBuilderUIController _battleBuilderUIController = null;
+    [SerializeField] private BuilderController _builderController;
+    #endregion
 
     private void Update() {
         if (!_battleBuilderUIController.IsButtonDown)

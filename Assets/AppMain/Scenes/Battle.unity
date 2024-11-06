@@ -3799,11 +3799,6 @@ MonoBehaviour:
   _buildersDB: {fileID: 11400000, guid: 8b225cca68c2e4a41858d94457241968, type: 2}
   _setBaseBlock: {fileID: 887549564}
   _battleBuilderUIController: {fileID: 1686731071}
-  isRunningWagon: 000000000000
-  _wagon: {fileID: 0}
-  WagonControllerRun: {fileID: 0}
-  goButtonFirstClick: 0
-  WagonController: {fileID: 0}
 --- !u!114 &887549564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3934,6 +3929,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &916687154
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 160.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -148.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104592732111638745, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049516153029791366, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
+      propertyPath: m_Name
+      value: Ougi
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 820f13cafcbd440ac8dd502df7fc5bae, type: 3}
 --- !u!1 &919876829
 GameObject:
   m_ObjectHideFlags: 0
@@ -6643,21 +6695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa22b16a3fd046c6a92743bd59731b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _builderController: {fileID: 887549563}
-  _partsGenerationBars:
-  - {fileID: 710426482}
-  - {fileID: 1223592768}
-  - {fileID: 1365049347}
-  - {fileID: 654423557}
-  - {fileID: 498259893}
-  - {fileID: 1167570878}
-  _weighingBar: {fileID: 2079143053}
-  _facesImage: {fileID: 123363239}
-  _facesSprites:
-  - {fileID: 21300000, guid: 5b6e4c0d332f24f72a7ea445d97732d9, type: 3}
-  - {fileID: 21300000, guid: a6042783699834b91b16c1849349d1ce, type: 3}
-  - {fileID: 21300000, guid: ec2bdfbc8ba334833a047844c7b4b69a, type: 3}
-  _goButton: {fileID: 1967813582}
+  _buildersDB: {fileID: 11400000, guid: 8b225cca68c2e4a41858d94457241968, type: 2}
   _obstacleButtons:
   - {fileID: 919876831}
   - {fileID: 115883010}
@@ -6665,6 +6703,18 @@ MonoBehaviour:
   - {fileID: 1825406814}
   - {fileID: 1973986438}
   - {fileID: 1254465533}
+  _partsGenerationBars:
+  - {fileID: 710426482}
+  - {fileID: 1223592768}
+  - {fileID: 1365049347}
+  - {fileID: 654423557}
+  - {fileID: 498259893}
+  - {fileID: 1167570878}
+  _frame: {fileID: 128352977}
+  _facesImage: {fileID: 123363239}
+  _builderController: {fileID: 887549563}
+  _weighingBar: {fileID: 2079143053}
+  _goButton: {fileID: 1967813582}
   _warningPanel: {fileID: 1488826836}
 --- !u!1 &1698846001
 GameObject:
@@ -8736,7 +8786,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderIndex
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderScore
@@ -8826,3 +8876,4 @@ SceneRoots:
   - {fileID: 1925495908}
   - {fileID: 1650596472}
   - {fileID: 766501290}
+  - {fileID: 916687154}

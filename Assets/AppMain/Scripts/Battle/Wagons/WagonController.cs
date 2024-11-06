@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks.Triggers;
 using UnityEngine;
 
 public class WagonController : MonoBehaviour {
@@ -7,6 +6,7 @@ public class WagonController : MonoBehaviour {
     private BattleController _battleController = null;
     private Rigidbody2D _rb2D = null;
     private float _xSpeed = 0;
+    private AudioSource _audioSourceSE = null;
     #endregion
 
     #region Serialized Fields
@@ -32,6 +32,7 @@ public class WagonController : MonoBehaviour {
         _battleBuilderUIController = GameObject.Find("BuilderUIController").GetComponent<BattleBuilderUIController>();
         _battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         _rb2D = this.GetComponent<Rigidbody2D>();
+        _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -49,6 +50,8 @@ public class WagonController : MonoBehaviour {
     }
     
     private void DestroyWagon() {
+        // WagonController自体は消えてしまうので, null参照しないようにデータベースに入れたAudioClipを再生.
+        _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[5]);
         _battleBuilderUIController.SetGoButtonInteractive(true);
         GameDirector.Instance.WagonCrushCounts++;
         Instantiate(_wagonExplosionPrefab, this.transform.position, Quaternion.identity);

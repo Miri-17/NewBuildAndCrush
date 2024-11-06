@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 2461358901049329928}
   - component: {fileID: 4901436967443571404}
   - component: {fileID: 1888521030607781721}
+  - component: {fileID: 8872663957081418126}
   m_Layer: 8
   m_Name: Rose
   m_TagString: Untagged
@@ -252,10 +253,11 @@ MonoBehaviour:
   _defense: 4
   _boxCollider2Ds:
   - {fileID: 2135651682476762060}
-  - {fileID: 8087770656943770238}
   _circleCollider2Ds: []
   _capsuleCollider2Ds: []
   _duration: 2
+  _childGameObjects:
+  - {fileID: 2129023698361217353}
 --- !u!198 &2461358901049329928
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5207,3 +5209,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8872663957081418126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539286983814056864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32dc1c9f033547008aedc364aba1c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyableObstacle: {fileID: 2872045931244368812}
+  _spiny: {fileID: 8087770656943770238}
