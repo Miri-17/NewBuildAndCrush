@@ -58,7 +58,7 @@ public class AttackEffect : MonoBehaviour {
             Destroy(this.gameObject);
         }
         if (destroyableBuilder != null) {
-            destroyableBuilder.TakeDamage(_damage);
+            destroyableBuilder.TakeDamage(1);
             Instantiate(_obstacleCrushEffect, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

@@ -17,6 +17,10 @@ TagManager:
   - TenjinAttack
   - WitchAttack
   - Builder
+  - Direction
+  - BuilderDirection
+  - CrusherDirection
+  - BattleBGM
   layers:
   - Default
   - TransparentFX

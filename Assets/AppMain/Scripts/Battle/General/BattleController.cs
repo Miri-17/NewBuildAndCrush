@@ -4,15 +4,19 @@ using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
 
 public class BattleController : MonoBehaviour {
-    private bool _isChangingScene = false;
+    #region Private Fields
     private int _nextSceneIndex = 0;
     private DestroyableBuilder _destroyableBuilder = null;
     private AudioSource _audioSourceSE = null;
+    private bool _isChangingScene = false;
+    #endregion
 
+    #region Serialized Fields
+    [SerializeField] private DirectionController _directionController = null;
     [SerializeField] private BattleUIController _battleUIController = null;
     // シーン遷移関係
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
-    [SerializeField] private BattleBGMController _battleBGMController = null;
+    #endregion
 
     private void Start() {
         var builder = GameObject.FindGameObjectWithTag("Builder");
@@ -33,6 +37,7 @@ public class BattleController : MonoBehaviour {
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[6]);
             GoNextScene();
         } else if (!_isChangingScene && _destroyableBuilder.IsCrushed) {
+            _isChangingScene = true;
             GameDirector.Instance.IsBuilderWin = true;
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[7]);
             GoNextScene();
@@ -44,8 +49,10 @@ public class BattleController : MonoBehaviour {
     /// </summary>
     public void GoNextScene() {
         _isChangingScene = true;
+        if (!_battleUIController.IsTimeUp)
+            _battleUIController.SetFinishText();
 
-        Destroy(_battleBGMController.gameObject);
+        _directionController.FinishDirection();
         
         // TODO CrusherControllerで扱っているCrusherKillCountsと
         // WagonControllerで扱っているWagonCrushCountsもここで管理できるようにしたい.

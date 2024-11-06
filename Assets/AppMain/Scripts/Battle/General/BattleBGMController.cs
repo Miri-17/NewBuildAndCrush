@@ -3,18 +3,19 @@ using DG.Tweening;
 
 public class BattleBGMController : MonoBehaviour {
     #region Private Fields
-    private AudioSource _audioSourceNormal;
-    private AudioSource _audioSourceWagon;
-    private bool _isInWagon = false;
+    private BuilderController _builderController = null;
+    private AudioSource _audioSourceNormal = null;
+    private AudioSource _audioSourceWagon = null;
     #endregion
 
     #region Serialized Fields
-    [SerializeField] private BuilderController _builderController;
-    [SerializeField] private BattleBGMDB _battleBGMDB;
+    [SerializeField] private BattleBGMDB _battleBGMDB = null;
     [SerializeField] private float _fadeDuration = 1.0f;
     #endregion
 
     private void Start() {
+        _builderController = GameObject.Find("BuilderController").GetComponent<BuilderController>();
+        
         _audioSourceNormal = this.gameObject.AddComponent<AudioSource>();
         _audioSourceWagon = this.gameObject.AddComponent<AudioSource>();
 
@@ -32,18 +33,11 @@ public class BattleBGMController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_builderController.WagonControllerRun == null)
-            return;
-        
-        // ワゴンに乗ったら音楽を変更.
-        if (!_isInWagon && _builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
-            _isInWagon = true;
-            SetWagonBGM();
-        }
-        //ワゴンから降りたら音楽を変更.
-        if (_isInWagon && _builderController.WagonControllerRun.CrusherExitCheck.IsOn) {
-            _isInWagon = false;
-            SetNormalBGM();
+        if (_builderController.WagonControllerRun != null) {
+            if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
+                Debug.Log("Yeah");
+                SetWagonBGM();
+            }
         }
     }
 
@@ -55,7 +49,7 @@ public class BattleBGMController : MonoBehaviour {
             .SetLink(_audioSourceWagon.gameObject);
     }
     
-    private void SetNormalBGM() {
+    public void SetNormalBGM() {
         _audioSourceNormal.DOFade(1, _fadeDuration)
             .SetLink(_audioSourceNormal.gameObject);
         

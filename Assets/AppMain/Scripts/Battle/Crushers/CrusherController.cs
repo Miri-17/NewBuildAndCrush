@@ -6,6 +6,7 @@ public class CrusherController : MonoBehaviour {
     private const float END_NUM = 19.5f;
 
     #region Private Fields
+    private DirectionController _directionController = null;
     private BuilderController _builderController = null;
     private Animator _animator = null;
     private Rigidbody2D _rb2D = null;
@@ -53,12 +54,15 @@ public class CrusherController : MonoBehaviour {
 
         _crusherIndex = GameDirector.Instance.CrusherIndex;
 
+        _directionController = GameObject.FindWithTag("Direction").GetComponent<DirectionController>();
         _builderController = GameObject.Find("BuilderController").GetComponent<BuilderController>();
 
         _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
     }
 
     private void Update() {
+        if (_directionController.IsDirection) return;
+        
         GameDirector.Instance.CrusherPosition = this.transform.position.x;
 
         float horizontalKey = Input.GetAxisRaw("Horizontal");
@@ -108,13 +112,15 @@ public class CrusherController : MonoBehaviour {
         if (_builderController.WagonControllerRun != null) {
             // ワゴンに乗ったらクラッシャーのスピードをワゴンのスピードとも関連づける.
             if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
-                Debug.Log("add speed x: " + _addSpeedX);
+                // Debug.Log("add speed x: " + _addSpeedX);
                 _addSpeedX = _builderController.WagonControllerRun.GetWagonVelocity();
             }
 
             //ワゴンから降りたらクラッシャーのスピードを通常に戻す.
-            if (_builderController.WagonControllerRun.CrusherExitCheck.IsOn)
+            if (_builderController.WagonControllerRun.CrusherExitCheck.IsOn) {
+                // Debug.Log("降りた。add speed x: " + _addSpeedX);
                 _addSpeedX = 0.0f;
+            }
         }
         
         SetAnimation();

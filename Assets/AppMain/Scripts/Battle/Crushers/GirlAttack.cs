@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class GirlAttack : MonoBehaviour {
     #region Private Fields
+    private DirectionController _directionController = null;
     private Animator _animator = null;
     private AudioSource _audioSource = null;
     private float _nextAttackTime = 0;
-    
     private bool _isHorizontal = false;
     #endregion
 
@@ -24,12 +24,13 @@ public class GirlAttack : MonoBehaviour {
     #endregion
 
     private void Start() {
+        _directionController = GameObject.FindWithTag("Direction").GetComponent<DirectionController>();
         _animator = this.GetComponent<Animator>();
         _audioSource = this.GetComponent<AudioSource>();
     }
 
     private void Update() {
-        if (Time.time < _nextAttackTime || !Input.GetButton("Fire1"))
+        if (_directionController.IsDirection || Time.time < _nextAttackTime || !Input.GetButton("Fire1"))
             return;
 
         var verticalKey = Input.GetAxisRaw("Vertical");

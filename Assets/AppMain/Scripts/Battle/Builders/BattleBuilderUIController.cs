@@ -67,6 +67,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         _weighingBar.value = _currentWeight;
         _maxWeight = _weighingBar.maxValue;
         _goButton.onClick.AddListener(() => OnGoButtonClicked());
+        _warningPanel.SetActive(false);
     }
 
     private void Update() {
@@ -120,6 +121,8 @@ public class BattleBuilderUIController : MonoBehaviour {
         // 重量を初期化する.
         _currentWeight = 0;
         _weighingBar.value = _currentWeight;
+
+        _warningPanel.SetActive(false);
     }
 
     private void SetPartsGenerationBar(int index) {
@@ -162,9 +165,12 @@ public class BattleBuilderUIController : MonoBehaviour {
                 continue;
             _obstacleButtons[i].interactable = true;
         }
-        SetGoButtonInteractive(true);
 
         SetWeighingBar(_obstacleWeight[_selectedIndex]);
+
+        if (_builderController.WagonControllerRun != null) return;
+        // ワゴンが走っている時はこの処理を走らせない
+        SetGoButtonInteractive(true);
     }
 
     /// <summary>
@@ -175,6 +181,9 @@ public class BattleBuilderUIController : MonoBehaviour {
         _goButton.interactable = interactable;
     }
 
+    /// <summary>
+    /// ワゴンが再設置されたら呼び出される.
+    /// </summary>
     public void SetObstaclePlaceable() {
         _isPlaceable = true;
     }

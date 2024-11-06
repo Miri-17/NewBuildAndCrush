@@ -34,7 +34,6 @@ public class BGM : MonoBehaviour {
                 _audioSource.Play();
                 break;
             case "SoundList":
-            case "Battle":
                 _audioSource.Stop();
                 break;
             case "Credits":
@@ -75,6 +74,10 @@ public class BGM : MonoBehaviour {
                     _audioSource.clip = _bgmDB.AudioClips[2];
                 else
                     _audioSource.clip = _bgmDB.AudioClips[12];
+                _audioSource.Play();
+                break;
+            case "Battle":
+                _audioSource.clip = _bgmDB.AudioClips[14];
                 _audioSource.Play();
                 break;
             case "Result":
@@ -114,7 +117,6 @@ public class BGM : MonoBehaviour {
                 _audioSource.Play();
                 break;
             case "SoundList":
-            case "Battle":
                 _audioSource.Stop();
                 break;
             case "Credits":
@@ -159,6 +161,12 @@ public class BGM : MonoBehaviour {
                     _audioSource.clip = _bgmDB.AudioClips[2];
                 else
                     _audioSource.clip = _bgmDB.AudioClips[12];
+                Debug.Log("audioSource.clip: " + _audioSource.clip);
+                _audioSource.Play();
+                break;
+            case "Battle":
+                _audioSource.Stop();
+                _audioSource.clip = _bgmDB.AudioClips[14];
                 Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;

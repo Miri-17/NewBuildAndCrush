@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TenjinAttack : MonoBehaviour {
     #region Private Fields
+    private DirectionController _directionController = null;
     private Animator _animator = null;
     private AudioSource _audioSource = null;
     private float _nextAttackTime = 0;
@@ -23,12 +24,13 @@ public class TenjinAttack : MonoBehaviour {
 
 
     private void Start() {
+        _directionController = GameObject.FindWithTag("Direction").GetComponent<DirectionController>();
         _animator = this.GetComponent<Animator>();
         _audioSource = this.GetComponent<AudioSource>();
     }
 
     private void Update() {
-        if (Time.time < _nextAttackTime || !Input.GetButton("Fire1"))
+        if (_directionController.IsDirection || Time.time < _nextAttackTime || !Input.GetButton("Fire1"))
             return;
 
         var verticalKey = Input.GetAxisRaw("Vertical");

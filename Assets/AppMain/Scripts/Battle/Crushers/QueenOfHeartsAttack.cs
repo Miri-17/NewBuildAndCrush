@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class QueenOfHeartsAttack : MonoBehaviour {
     #region Private Fields
+    private DirectionController _directionController = null;
     private Animator _animator = null;
     private AudioSource _audioSource = null;
     private float _nextAttackTime = 0;
@@ -34,6 +35,7 @@ public class QueenOfHeartsAttack : MonoBehaviour {
 
 
     private void Start() {
+        _directionController = GameObject.FindWithTag("Direction").GetComponent<DirectionController>();
         _animator = this.GetComponent<Animator>();
         _audioSource = this.GetComponent<AudioSource>();
         
@@ -42,7 +44,7 @@ public class QueenOfHeartsAttack : MonoBehaviour {
     }
 
     private void Update() {
-        if (Time.time < _nextAttackTime)
+        if (_directionController.IsDirection || Time.time < _nextAttackTime)
             return;
 
         if (Input.GetButtonUp("Fire1")) {

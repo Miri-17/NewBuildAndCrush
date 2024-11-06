@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WagonController : MonoBehaviour {
     #region Private Fields
+    private BattleBGMController _battleBGMController = null;
     private BattleBuilderUIController _battleBuilderUIController = null;
     private BattleController _battleController = null;
     private Rigidbody2D _rb2D = null;
@@ -37,8 +38,11 @@ public class WagonController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_crusherExitCheck.IsOn)
+        if (_crusherExitCheck.IsOn) {
+            _battleBGMController = GameObject.FindWithTag("BattleBGM").GetComponent<BattleBGMController>();
+            _battleBGMController.SetNormalBGM();
             DestroyWagon();
+        }
     }
 
     private void FixedUpdate() {

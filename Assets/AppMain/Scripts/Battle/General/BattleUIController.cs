@@ -3,14 +3,16 @@ using UnityEngine;
 using TMPro;
 
 public class BattleUIController : MonoBehaviour {
-   private const float END_POSITION = 5270.0f;
+    private const float END_POSITION = 5270.0f;
 
     #region Private Fields
     private int _builderUpdateScore = 0;
     private int _crusherUpdateScore = 0;
+    private bool _isChangingScene = false;
     #endregion
 
     #region Serialized Fields
+    [SerializeField] private DirectionController _directionController = null;
     [Header("ビルダー側, クラッシャー側の順")]
     [SerializeField] private List<TextMeshProUGUI> _builderScores = new List<TextMeshProUGUI>();
     [SerializeField] private List<TextMeshProUGUI> _crusherScores = new List<TextMeshProUGUI>();
@@ -39,8 +41,7 @@ public class BattleUIController : MonoBehaviour {
     }
 
     private void Update() {
-        if (IsTimeUp)
-            return;
+        if (_directionController.IsDirection || _isChangingScene || IsTimeUp) return;
 
         TimerUpdate();
         IconPositionUpdate();
@@ -90,5 +91,14 @@ public class BattleUIController : MonoBehaviour {
             _crusherScores[0].text = CrusherCurrentScore.ToString();
             _crusherScores[1].text = CrusherCurrentScore.ToString();
         }
+    }
+
+    /// <summary>
+    /// タイマーテキストをFinish!に変更し, 今後処理を受け付けない.
+    /// </summary>
+    public void SetFinishText() {
+        _isChangingScene = true;
+        _timeText[0].text = "Finish!";
+        _timeText[1].text = "Finish!";
     }
 }
