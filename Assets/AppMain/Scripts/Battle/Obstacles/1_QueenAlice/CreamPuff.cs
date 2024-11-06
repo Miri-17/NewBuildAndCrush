@@ -45,7 +45,7 @@ public class CreamPuff : MonoBehaviour {
 
         await UniTask.Delay((int)(0.2f * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         
-        var prefab = Instantiate(_creamPuffFilterPrefab, GameObject.Find("DirectionPanel").transform);
+        var prefab = Instantiate(_creamPuffFilterPrefab, GameObject.Find("CrusherDirectionPanel").transform);
         prefab.transform.localPosition = Vector3.zero;
         Destroy(_spriteRenderer);
         

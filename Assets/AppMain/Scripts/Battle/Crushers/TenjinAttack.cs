@@ -35,15 +35,15 @@ public class TenjinAttack : MonoBehaviour {
         if (verticalKey > 0) {
             _animator.SetTrigger("Attack_Upwards");
             Attack(_attackPointUp);
-            Instantiate(_attackEffectPrefab, _attackPointUp.position, _attackPointUp.rotation, this.transform);
+            Instantiate(_attackEffectPrefab, _attackPointUp.transform);
         } else if (verticalKey < 0) {
             _animator.SetTrigger("Attack_Downwards");
             Attack(_attackPointDown);
-            Instantiate(_attackEffectPrefab, _attackPointDown.position, _attackPointDown.rotation, this.transform);
+            Instantiate(_attackEffectPrefab, _attackPointDown.transform);
         } else {
             _animator.SetTrigger("Attack");
             Attack(_attackPoint);
-            Instantiate(_attackEffectPrefab, _attackPoint.position, _attackPoint.rotation, this.transform);
+            Instantiate(_attackEffectPrefab, _attackPoint.transform);
         }
         _audioSource.PlayOneShot(_audioSource.clip);
 
@@ -51,20 +51,49 @@ public class TenjinAttack : MonoBehaviour {
     }
 
     private void Attack(Transform point) {
-        Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, _attackRange, _obstacleLayer);        
+        Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, _attackRange, _obstacleLayer);
         foreach (Collider2D hitInfo in hitInfos) {
             var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
-            // BuilderDestroy builderDestroy = hitInfo.transform.GetComponent<BuilderDestroy>();
+            var destroyableBuilder = hitInfo.transform.GetComponent<DestroyableBuilder>();
+            var chef = hitInfo.transform.GetComponent<Chef>();
+            var zakoWolf = hitInfo.transform.GetComponent<ZakoWolf>();
+            var pig = hitInfo.transform.GetComponent<Pig>();
+            var frog = hitInfo.transform.GetComponent<Frog>();
+            var bushi = hitInfo.transform.GetComponent<Bushi>();
+            var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
 
             if (destroyableObstacle != null) {
                 destroyableObstacle.TakeDamage(_damage);
                 Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
             }
-
-            // if (builderDestroy != null) {
-            //     builderDestroy.TakeDamage(damage);
-            //     Instantiate(obstaclesCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            // }
+            if (destroyableBuilder != null) {
+                destroyableBuilder.TakeDamage(1);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (chef != null) {
+                chef.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (zakoWolf != null) {
+                zakoWolf.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (pig != null) {
+                pig.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (frog != null) {
+                frog.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (bushi != null) {
+                bushi.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (creamPuff != null) {
+                creamPuff.TakeDamage();
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
         }
     }
 }

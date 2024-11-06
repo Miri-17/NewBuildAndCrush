@@ -11,7 +11,6 @@ public class GameDirector : MonoBehaviour {
     [SerializeField] private int _crusherScore = 0;
     [SerializeField] private int _crusherKillCounts = 0;
     [SerializeField] private int _wagonCrushCounts = 0;
-    // [SerializeField] private float _currentFill = 0;
     [SerializeField] private bool _isBuilderWin = true;
     [SerializeField] private float _builderPosition = 0;
     [SerializeField] private float _crusherPosition = 0;
@@ -36,10 +35,8 @@ public class GameDirector : MonoBehaviour {
     public int CrusherScore { get => _crusherScore; set => _crusherScore = value; }
     public int CrusherKillCounts { get => _crusherKillCounts; set => _crusherKillCounts = value; }
     public int WagonCrushCounts { get => _wagonCrushCounts; set => _wagonCrushCounts = value; }
-    // public float CurrentFill { get => _currentFill; set => _currentFill = value; }
     public bool IsBuilderWin { get => _isBuilderWin; set => _isBuilderWin = value; }
-    // TODO BuilderController, CrusherController
-    // Battleシーン外では使わないためできればここで宣言したくない.
+    // TODO 以下2変数, Battleシーン外では使わないためできればここで宣言したくない.
     public float BuilderPosition { get => _builderPosition; set => _builderPosition = value; }
     public float CrusherPosition { get => _crusherPosition; set => _crusherPosition = value; }
     public string PreviousSceneName { get => _previousSceneName; set => _previousSceneName = value; }

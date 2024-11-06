@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleSprites: []
-  _audioClip: {fileID: 8300000, guid: 564e639f003364bfa937eef24bd3d6c0, type: 3}
+  _audioClip: {fileID: 8300000, guid: 2ec463d1e690541c2a3fb21789ef830f, type: 3}
   _isUsingParticleSystem: 0
   _defense: 6
   _boxCollider2Ds: []

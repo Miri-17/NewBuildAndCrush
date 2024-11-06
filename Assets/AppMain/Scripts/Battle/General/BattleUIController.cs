@@ -31,13 +31,11 @@ public class BattleUIController : MonoBehaviour {
         _builderScores[1].text = BuilderCurrentScore.ToString();
         _crusherScores[0].text = CrusherCurrentScore.ToString();
         _crusherScores[1].text = CrusherCurrentScore.ToString();
-        
-        _builderIcons[0].anchoredPosition = new Vector2(475.0f, -60.0f);
-        // _builderIcons[0].anchoredPosition = new Vector2(467.0f, -2.0f);
-        _builderIcons[1].anchoredPosition = new Vector2(-490.0f, 0);
-        _crusherIcons[0].anchoredPosition = new Vector2(-490.0f, -60.0f);
-        // _crusherIcons[0].anchoredPosition = new Vector2(-460.0f, -2.0f);
-        _crusherIcons[1].anchoredPosition = new Vector2(-475.0f, 0);
+
+        _builderIcons[0].anchoredPosition = new Vector2(467.0f, -2.0f);
+        _builderIcons[1].anchoredPosition = new Vector2(467.0f, -2.0f);
+        _crusherIcons[0].anchoredPosition = new Vector2(-460.0f, -2.0f);
+        _crusherIcons[1].anchoredPosition = new Vector2(-460.0f, -2.0f);
     }
 
     private void Update() {
@@ -66,13 +64,16 @@ public class BattleUIController : MonoBehaviour {
     }
 
     private void IconPositionUpdate() {
-        // TODO 第一引数をなぜこれにしているのか要確認.
-        _builderIcons[0].anchoredPosition = new Vector2(-560 + GameDirector.Instance.BuilderPosition * 958f / END_POSITION, -60.0f);
-        // _builderIcons[0].anchoredPosition = new Vector2(-560 + GameDirector.Instance.BuilderPosition * 958f / END_POSITION, -2.0f);
-        _builderIcons[1].anchoredPosition = new Vector2(-560 + GameDirector.Instance.BuilderPosition * 961.53f / END_POSITION, 0);
-        _crusherIcons[0].anchoredPosition = new Vector2(-475 + GameDirector.Instance.CrusherPosition * 958f / END_POSITION, -60.0f);
-        // _crusherIcons[0].anchoredPosition = new Vector2(-475 + GameDirector.Instance.CrusherPosition * 958f / END_POSITION, -2.0f);
-        _crusherIcons[1].anchoredPosition = new Vector2(-475 + GameDirector.Instance.CrusherPosition  * 961.53f / END_POSITION, 0);
+        // クラッシャーのアイコン位置 + ビルダーの現在位置 * (ビルダーとクラッシャーのアイコン位置の合計) / 最初のビルダーの位置
+        var builderIconPosition = -460f + GameDirector.Instance.BuilderPosition * 927f / 5734f;
+        _builderIcons[0].anchoredPosition = new Vector2(builderIconPosition, -2.0f);
+        _builderIcons[1].anchoredPosition = new Vector2(builderIconPosition, -2.0f);
+
+        var crusherIconPosition = -460f + GameDirector.Instance.CrusherPosition * 927f / 5734f;
+        if (crusherIconPosition >= -460) {
+            _crusherIcons[0].anchoredPosition = new Vector2(crusherIconPosition, -2.0f);
+            _crusherIcons[1].anchoredPosition = new Vector2(crusherIconPosition, -2.0f);
+        }
     }
 
     private void ScoreUpdate() {

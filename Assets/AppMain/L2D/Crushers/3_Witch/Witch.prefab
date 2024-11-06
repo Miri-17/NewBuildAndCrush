@@ -427,12 +427,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1699955687079953022}
+  - {fileID: 5900948134785759907}
+  - {fileID: 6813154923741993359}
+  - {fileID: 3719850424373345472}
+  - {fileID: 4104018707633128539}
+  - {fileID: 2989773787741903208}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _isOverwrittenModelMultiplyColors: 0
   _isOverwrittenModelScreenColors: 0
   _modelMultiplyColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967223d908bf07b4f90945995bdca68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maskTexture: {fileID: 0}
+  _maskTexture: {fileID: 11400000, guid: 16bf142754640ab4487bb625c30931fd, type: 2}
 --- !u!114 &4726087098818278055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1735,7 +1735,7 @@ Animator:
   m_GameObject: {fileID: 852929565010149808}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c07ae112f8fed449db5aac84b063996e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd9e6647bfff7542acb0200ab74bdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CubismFadeMotionList: {fileID: 0}
+  CubismFadeMotionList: {fileID: 11400000, guid: 46700d33457da4dacac7a3a69b175419, type: 2}
 --- !u!114 &5706144756378615554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3155,13 +3155,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1266743855325412680}
+  - {fileID: 3702541829277510006}
+  - {fileID: 1700723924905232049}
+  - {fileID: 126125768506336749}
+  - {fileID: 7124360282611728579}
+  - {fileID: 5983012440428789846}
+  - {fileID: 2827227882903381943}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -6630,23 +6630,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7841188547236620049}
+  - {fileID: 759944377914592882}
+  - {fileID: 1192203090715982541}
+  - {fileID: 8982331373216537371}
+  - {fileID: 239849413325657339}
+  - {fileID: 4069672676520181924}
+  - {fileID: 3170177438675308133}
+  - {fileID: 6802039810762205167}
+  - {fileID: 6477309123414122218}
+  - {fileID: 1071755510827595382}
+  - {fileID: 5847380646775655056}
   _childParts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4329605747661047832}
+  - {fileID: 859942686264423889}
+  - {fileID: 2730390012108613805}
+  - {fileID: 8375588174268016458}
+  - {fileID: 4768707007070452045}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -6970,16 +6970,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3994701756669499067}
+  - {fileID: 4003496073132317249}
+  - {fileID: 8362471152962769781}
+  - {fileID: 2124667145106671604}
+  - {fileID: 2150311283278672169}
+  - {fileID: 5974873865791158458}
+  - {fileID: 2132701973639860627}
+  - {fileID: 8586946461767699265}
   _childParts:
-  - {fileID: 0}
+  - {fileID: 6412720765650068195}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7669,19 +7669,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3912096370438221996}
+  - {fileID: 7915931590424921212}
+  - {fileID: 6202834499522715697}
+  - {fileID: 3590572196647631227}
+  - {fileID: 8096719250671583149}
+  - {fileID: 1205983099682039744}
+  - {fileID: 2642866921543678059}
+  - {fileID: 6471332682436864418}
+  - {fileID: 5550703875656196281}
   _childParts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2948153248754127588}
+  - {fileID: 6397622911378223695}
+  - {fileID: 7971204178014076950}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -11057,11 +11057,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1529640068145489380}
+  - {fileID: 7709998430370542951}
+  - {fileID: 6109985108935552202}
+  - {fileID: 2674051692894621121}
+  - {fileID: 1839149476811259152}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -11691,13 +11691,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8930251196242942552}
+  - {fileID: 1451930984859292847}
+  - {fileID: 3493041488551584206}
+  - {fileID: 3668992136044469006}
+  - {fileID: 6553469303714182614}
+  - {fileID: 1008243386374091352}
+  - {fileID: 4306641586217336070}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -11839,11 +11839,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7042159982031856134}
+  - {fileID: 8147560468881848559}
+  - {fileID: 4619820776210799903}
+  - {fileID: 3360481395269036362}
+  - {fileID: 5280662121773322085}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -12886,18 +12886,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8525797879970205218}
+  - {fileID: 3847752660953429260}
+  - {fileID: 6329658072340963063}
+  - {fileID: 8746323255594809132}
+  - {fileID: 7245116560570327069}
+  - {fileID: 4192867312551464431}
+  - {fileID: 592621896323676703}
+  - {fileID: 8432540348887666340}
+  - {fileID: 99184914705309400}
+  - {fileID: 7916321415180442766}
+  - {fileID: 5629333758540626041}
+  - {fileID: 2971920170844723259}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -12978,11 +12978,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4082421814353290514}
+  - {fileID: 5293510653776338199}
+  - {fileID: 2757974933352946687}
+  - {fileID: 2557613196820262259}
+  - {fileID: 6748170573821083992}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -13612,9 +13612,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3415215195362170417}
+  - {fileID: 6851261966061678699}
+  - {fileID: 6424142923918424171}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -13695,11 +13695,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8743470630731873940}
+  - {fileID: 4469923540540216251}
+  - {fileID: 8893684785580723817}
+  - {fileID: 8978347028046846077}
+  - {fileID: 3540084653981400937}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -15427,13 +15427,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5725451845516933201}
+  - {fileID: 7068223108130067557}
+  - {fileID: 1279758649297075340}
+  - {fileID: 8857089020914735644}
+  - {fileID: 7533853549967356576}
+  - {fileID: 4057942761167329632}
+  - {fileID: 6692868817927165930}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -16246,12 +16246,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 254998316334793132}
+  - {fileID: 3746491764388858223}
+  - {fileID: 5947074363821711031}
+  - {fileID: 3466340838628689998}
+  - {fileID: 3847614173571502491}
+  - {fileID: 962802700794588745}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -16637,16 +16637,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2956112398332932588}
+  - {fileID: 8796009930228125420}
+  - {fileID: 7095617809367217418}
+  - {fileID: 6490209722996649442}
+  - {fileID: 8370248858657144643}
+  - {fileID: 8296569040417299212}
+  - {fileID: 2514631881166866766}
   _childParts:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3413066538300431897}
+  - {fileID: 3939736625028230239}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}

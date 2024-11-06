@@ -83,20 +83,19 @@ public class Frog : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Crusher")) {
             _isSinging = true;
-            _notionSpriteRenderer.enabled = true;
+            if (_notionSpriteRenderer != null) 
+                _notionSpriteRenderer.enabled = true;
             _notionTime = Time.time + _maxNotionTime;
             Debug.Log("Notion time: " + _notionTime);
             _counter = 0;
-            // _animator.Play("Frog_Sing");
-            // _animator.SetBool("Sing", true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Crusher")) {
             _isSinging = false;
-            _notionSpriteRenderer.enabled = false;
-            // _animator.Play("Frog_Idle");
+            if (_notionSpriteRenderer != null) 
+                _notionSpriteRenderer.enabled = false;
             _animator.SetBool("Sing", false);
         }
     }

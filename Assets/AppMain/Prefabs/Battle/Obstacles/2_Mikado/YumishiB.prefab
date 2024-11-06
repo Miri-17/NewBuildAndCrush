@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b68c24637884faea539aeaba441ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 564e639f003364bfa937eef24bd3d6c0, type: 3}
+  _audioClip: {fileID: 8300000, guid: c2ae3de2e2ed746a0abec7ad8663ba44, type: 3}
   _prefab: {fileID: 2360701720814018835, guid: 08faf90743ea04495b3f38eea9da2c65, type: 3}
   _attackPoint: {fileID: 1708247440071727557}
   _attackRate: 1.01

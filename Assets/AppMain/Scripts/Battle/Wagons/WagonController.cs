@@ -7,6 +7,7 @@ public class WagonController : MonoBehaviour {
     private Rigidbody2D _rb2D = null;
     private float _xSpeed = 0;
     private AudioSource _audioSourceSE = null;
+    private bool _isChangingScene = false;
     #endregion
 
     #region Serialized Fields
@@ -45,8 +46,13 @@ public class WagonController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "GameOver")
+        if (!_isChangingScene && collision.gameObject.tag == "GameOver") {
+            _isChangingScene = true;
+            _xSpeed = 0;    // ワゴンを止める.
+            GameDirector.Instance.IsBuilderWin = true;
+            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[7]);
             _battleController.GoNextScene();
+        }
     }
     
     private void DestroyWagon() {

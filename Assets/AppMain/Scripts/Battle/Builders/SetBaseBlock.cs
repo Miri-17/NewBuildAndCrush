@@ -65,8 +65,6 @@ public class SetBaseBlock : MonoBehaviour {
             return;
 
         foreach (var pos in _patterns[patternId]) {
-            Debug.Log("hello");
-            // _spawnPoints[pos.x, pos.y].IsOccupied = true;
             _spawnPoints[pos.x, pos.y].SetOccupied(true);
         }
 

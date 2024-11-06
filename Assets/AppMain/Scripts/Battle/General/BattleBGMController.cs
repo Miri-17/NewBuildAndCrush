@@ -39,13 +39,11 @@ public class BattleBGMController : MonoBehaviour {
         if (!_isInWagon && _builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
             _isInWagon = true;
             SetWagonBGM();
-            Debug.Log("曲をワゴン用に変更");
         }
         //ワゴンから降りたら音楽を変更.
         if (_isInWagon && _builderController.WagonControllerRun.CrusherExitCheck.IsOn) {
             _isInWagon = false;
             SetNormalBGM();
-            Debug.Log("曲を普通用に変更");
         }
     }
 

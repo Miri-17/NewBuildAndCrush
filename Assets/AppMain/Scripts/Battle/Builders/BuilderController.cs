@@ -41,8 +41,7 @@ public class BuilderController : MonoBehaviour {
         _setBaseBlock.SetSpawnPoint();
 
         WagonController = Wagon.GetComponent<WagonController>();
-
-        Debug.Log("placable");
+        
         _battleBuilderUIController.SetObstaclePlaceable();
     }
 

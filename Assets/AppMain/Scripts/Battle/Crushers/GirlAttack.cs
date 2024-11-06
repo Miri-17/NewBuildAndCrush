@@ -10,7 +10,6 @@ public class GirlAttack : MonoBehaviour {
     #endregion
 
     #region Serialized Fields
-    // [SerializeField] private AudioClip _audioClip = null;
     [SerializeField] private Transform _attackPoint = null;
     [SerializeField] private Transform _attackPointUp = null;
     [SerializeField] private Transform _attackPointDown = null;
@@ -51,7 +50,6 @@ public class GirlAttack : MonoBehaviour {
             Attack(_attackPoint);
             Instantiate(_bulletPrefab, _attackPoint.transform);
         }
-        // _audioSource.PlayOneShot(_audioClip);
         _audioSource.PlayOneShot(_audioSource.clip);
 
         _nextAttackTime = Time.time + 1.0f / _attackRate;
@@ -66,35 +64,23 @@ public class GirlAttack : MonoBehaviour {
         foreach (Collider2D hitInfo in hitInfos) {
             var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
             var destroyableBuilder = hitInfo.transform.GetComponent<DestroyableBuilder>();
-            var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
             var chef = hitInfo.transform.GetComponent<Chef>();
-            var bushi = hitInfo.transform.GetComponent<Bushi>();
-            var frog = hitInfo.transform.GetComponent<Frog>();
             var zakoWolf = hitInfo.transform.GetComponent<ZakoWolf>();
             var pig = hitInfo.transform.GetComponent<Pig>();
+            var frog = hitInfo.transform.GetComponent<Frog>();
+            var bushi = hitInfo.transform.GetComponent<Bushi>();
+            var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
 
             if (destroyableObstacle != null) {
                 destroyableObstacle.TakeDamage(_damage);
                 Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
             }
             if (destroyableBuilder != null) {
-                destroyableBuilder.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (creamPuff != null) {
-                creamPuff.TakeDamage();
+                destroyableBuilder.TakeDamage(1);
                 Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
             }
             if (chef != null) {
                 chef.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (bushi != null) {
-                bushi.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (frog != null) {
-                frog.TakeDamage(_damage);
                 Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
             }
             if (zakoWolf != null) {
@@ -103,6 +89,18 @@ public class GirlAttack : MonoBehaviour {
             }
             if (pig != null) {
                 pig.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (frog != null) {
+                frog.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (bushi != null) {
+                bushi.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (creamPuff != null) {
+                creamPuff.TakeDamage();
                 Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
             }
         }

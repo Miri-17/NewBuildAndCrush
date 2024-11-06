@@ -16,6 +16,7 @@ TagManager:
   - QueenOfHeartsAttack
   - TenjinAttack
   - WitchAttack
+  - Builder
   layers:
   - Default
   - TransparentFX

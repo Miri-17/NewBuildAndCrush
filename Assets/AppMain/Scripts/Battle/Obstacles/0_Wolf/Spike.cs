@@ -27,6 +27,7 @@ public class Spike : MonoBehaviour {
         if (hitCount > 0) {
             for (int i = 0; i < hitCount; i++) {
                 // 衝突したオブジェクトのLayerがGround.
+                Debug.Log(_results[i].gameObject.layer);
                 if (_results[i].gameObject.layer == 6) return true;
             }
         }

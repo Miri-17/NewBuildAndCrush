@@ -1,79 +1,81 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using System;
 
 public class DestroyableBuilder : MonoBehaviour {
     #region Private Fields
-    private SpriteRenderer _spriteRenderer = null;
     private AudioSource _audioSource = null;
-    private ParticleSystem _particleSystem = null;
-    // private int i = 1;
-
     private Animator _animator = null;
-    private bool _isDamaged = false;
+    private int _defense = 5;   // どのビルダーも必ず5回の攻撃で倒せる.
     #endregion
 
     #region Serialized Fields
-    [SerializeField] private List<Sprite> _obstacleSprites;
-    [SerializeField] private AudioClip _audioClip;
-    [SerializeField] private bool _isUsingParticleSystem = false;
-    [SerializeField] private int _defense = 4;
-    // TODO そもそも、子オブジェクトは先に消す処理を行った方が良いかもしれん（Fanとかの風的に）
-    [SerializeField] private List<BoxCollider2D> _boxCollider2Ds;
-    [SerializeField] private List<CircleCollider2D> _circleCollider2Ds; // ZakoWolf
-    [SerializeField] private List<CapsuleCollider2D> _capsuleCollider2Ds;
-    [SerializeField] private float _duration = 0;
+    [SerializeField] private AudioClip[] _audioClips = new AudioClip[4];
+    [SerializeField] private GameObject _defeatFilterPrefab = null;
     #endregion
 
-    private void Start() {
-        _spriteRenderer = this.GetComponent<SpriteRenderer>();
-        _particleSystem = this.GetComponent<ParticleSystem>();
-        _animator = this.GetComponent<Animator>();
+    public bool IsCrushed { get; private set; } = false;
 
+    private void Start() {
         _audioSource = this.GetComponent<AudioSource>();
+        _animator = this.GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage) {
-        if (_audioSource != null) {
-            Debug.Log("オブジェクト破壊音がなった");
-            _audioSource.PlayOneShot(_audioClip);
-        }
-
         _defense -= damage;
-        if (_defense <= 0) {
-            Crush(_duration).Forget();
-            return;
+        switch (_defense) {
+            case 0:
+                IsCrushed = true;
+                Crush().Forget();
+                break;
+            case 1:
+                _audioSource.PlayOneShot(_audioClips[3]);
+                break;
+            case 2:
+                _audioSource.PlayOneShot(_audioClips[2]);
+                break;
+            case 3:
+                _audioSource.PlayOneShot(_audioClips[1]);
+                break;
+            case 4:
+                _audioSource.PlayOneShot(_audioClips[0]);
+                _animator.SetBool("Damage", true);
+                break;
+            default:
+                break;
         }
-
-        if (!_isDamaged && _defense < 5) {
-            _isDamaged = true;
-            SetDamageAnimation();
-        } 
     }
 
-    private void SetDamageAnimation() {
-        _animator.SetBool("Damage", _isDamaged);
-    }
+    private async UniTaskVoid Crush() {
+        _animator.SetTrigger("Defeat");
 
-    private async UniTaskVoid Crush(float duration) {
-        if (_isUsingParticleSystem)
-            _particleSystem.Play();
+        var prefab0 = Instantiate(_defeatFilterPrefab, GameObject.Find("CrusherDirectionPanel").transform);
+        prefab0.transform.localPosition = Vector3.zero;
+        var prefab1 = Instantiate(_defeatFilterPrefab, GameObject.Find("BuilderDirectionPanel").transform);
+        prefab1.transform.localPosition = Vector3.zero;
 
-        // this.tag = "ObstacleGround";
-        if (_boxCollider2Ds.Count > 0)
-            foreach (var collider2D in _boxCollider2Ds)
-                Destroy(collider2D);
-        if (_circleCollider2Ds.Count > 0)
-            foreach (var collider2D in _circleCollider2Ds)
-                Destroy(collider2D);
-        if (_capsuleCollider2Ds.Count > 0)
-            foreach (var collider2D in _capsuleCollider2Ds)
-                Destroy(collider2D);
+        this.transform.DORotate(new Vector3(0, 0, -75), 2);
+        this.transform.DOLocalPath(
+            new[] {
+                new Vector3(100f, 30f, 0),
+                new Vector3(200f, -10f, 0),
+            },
+            2f, PathType.CatmullRom)
+            .SetEase(Ease.Linear)
+            .SetRelative();
         
-        Destroy(_spriteRenderer);
-        
-        await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
-        
-        Destroy(this.gameObject);
+        await UniTask.Delay(TimeSpan.FromSeconds(1.9f), cancellationToken: this.GetCancellationTokenOnDestroy());
+
+        this.transform.DOLocalPath(
+            new[] {
+                new Vector3(30f, 10f, 0),
+                new Vector3(60f, -10f, 0),
+            },
+            0.8f, PathType.CatmullRom)
+            .SetEase(Ease.Linear)
+            .SetRelative();
+
+        await UniTask.Delay(TimeSpan.FromSeconds(0.8f), cancellationToken: this.GetCancellationTokenOnDestroy());
     }
 }
