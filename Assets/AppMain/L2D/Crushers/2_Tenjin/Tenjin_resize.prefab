@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1486141660180407780}
   - component: {fileID: 273311915472865282}
   - component: {fileID: 6412584689132405874}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh70
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 5862151139580403203}
   - component: {fileID: 6941817643769387397}
   - component: {fileID: 2732962990247025316}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowLAngle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4805548862470478231}
   - component: {fileID: 4673741841779484006}
   - component: {fileID: 917424074958745908}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,13 +244,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 1527686231943527972}
-  - {fileID: 8804875875453450856}
-  - {fileID: 8011052737453429600}
-  - {fileID: 781852736025223702}
-  - {fileID: 1359267098129411222}
-  - {fileID: 5972025609488836914}
-  - {fileID: 343481606537126468}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 1878855666573792504}
   - component: {fileID: 3207998922607185344}
   - component: {fileID: 9155028617577255560}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 4955588850196223046}
   - component: {fileID: 5885879551445164478}
   - component: {fileID: 359942729990243836}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh111
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 3094630865893975664}
   - component: {fileID: 6507828931787272509}
   - component: {fileID: 4776552620922004754}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,11 +575,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 7659286503456009955}
-  - {fileID: 7443683893330637492}
-  - {fileID: 6126323767131985908}
-  - {fileID: 886123323548688208}
-  - {fileID: 359942729990243836}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 3710877215284178599}
   - component: {fileID: 3669592071300432307}
   - component: {fileID: 2754836729919686814}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh97
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 5984633408251391601}
   - component: {fileID: 8950570882203816117}
   - component: {fileID: 3172429918094884388}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 2138114589862326788}
   - component: {fileID: 7128654922037645055}
   - component: {fileID: 2263791551917726039}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh65
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 2491187026024789036}
   - component: {fileID: 3293640007160688405}
   - component: {fileID: 7294676500996069567}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 6512707413510378270}
   - component: {fileID: 4440911767073312408}
   - component: {fileID: 8625304520732167944}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh122
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 9057436168584365208}
   - component: {fileID: 3752913217299874142}
   - component: {fileID: 1768408804142447165}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh69
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1344,7 +1344,7 @@ GameObject:
   - component: {fileID: 8286627442130593681}
   - component: {fileID: 5293090705878841883}
   - component: {fileID: 340427676394209282}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 480645752839600969}
   - component: {fileID: 7458574997974854980}
   - component: {fileID: 6832357166262376324}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1514,16 +1514,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 5769151543621976488}
-  - {fileID: 3955947802323532628}
-  - {fileID: 7894369213185803216}
-  - {fileID: 6430117592961198146}
-  - {fileID: 7970170801567349063}
-  - {fileID: 2754836729919686814}
-  - {fileID: 8183645300768589466}
-  - {fileID: 3616834364510290963}
-  - {fileID: 8562190014350178631}
-  - {fileID: 6926330985648108679}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -1556,7 +1556,7 @@ GameObject:
   - component: {fileID: 8647146375245479117}
   - component: {fileID: 5748911003950538108}
   - component: {fileID: 2674765998090374074}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 7708545423962271153}
   - component: {fileID: 4319196715426003079}
   - component: {fileID: 7659286503456009955}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh107
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1798,7 +1798,7 @@ GameObject:
   - component: {fileID: 3465100335774100074}
   - component: {fileID: 7037156829696393350}
   - component: {fileID: 2469427872809824265}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamPukaPuka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1859,7 +1859,7 @@ GameObject:
   - component: {fileID: 6306686377568366232}
   - component: {fileID: 9133486326294046831}
   - component: {fileID: 6779815584104201774}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowRForm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1920,7 +1920,7 @@ GameObject:
   - component: {fileID: 1166274598205462325}
   - component: {fileID: 7695996533988616072}
   - component: {fileID: 8811053809881036291}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowLY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1983,7 +1983,7 @@ GameObject:
   - component: {fileID: 5698344962914461081}
   - component: {fileID: 2656635807601298703}
   - component: {fileID: 7089741449942218865}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2104,7 +2104,7 @@ GameObject:
   - component: {fileID: 404614359468933518}
   - component: {fileID: 3706025776366031516}
   - component: {fileID: 475926375675105960}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2153,9 +2153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 8248325608253937241}
-  - {fileID: 7294676500996069567}
-  - {fileID: 3006823180867425618}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -2188,7 +2188,7 @@ GameObject:
   - component: {fileID: 3125710355434298791}
   - component: {fileID: 8120170000433455892}
   - component: {fileID: 7663747983731422246}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2308,7 +2308,7 @@ GameObject:
   - component: {fileID: 867069950942768841}
   - component: {fileID: 5041920042204003132}
   - component: {fileID: 7072403308376342141}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBodyAngleZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2371,7 +2371,7 @@ GameObject:
   - component: {fileID: 2088294306967874123}
   - component: {fileID: 3591450428231020293}
   - component: {fileID: 2304065369177032376}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2493,7 +2493,7 @@ GameObject:
   - component: {fileID: 5154964223073562878}
   - component: {fileID: 8513280420641467308}
   - component: {fileID: 7378925979801671783}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh64
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2615,7 +2615,7 @@ GameObject:
   - component: {fileID: 3222649920435722425}
   - component: {fileID: 4390915012549559463}
   - component: {fileID: 8941555669769109610}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh130
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2736,7 +2736,7 @@ GameObject:
   - component: {fileID: 3779057795810936889}
   - component: {fileID: 3189819038503885042}
   - component: {fileID: 7228219891213401473}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2785,8 +2785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 6301376020714189009}
-  - {fileID: 2304065369177032376}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -2819,7 +2819,7 @@ GameObject:
   - component: {fileID: 4135485538141502094}
   - component: {fileID: 4828547256985713342}
   - component: {fileID: 6430117592961198146}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh95
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2941,7 +2941,7 @@ GameObject:
   - component: {fileID: 2806470605009915224}
   - component: {fileID: 6951333273442996168}
   - component: {fileID: 8943510654268093080}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3061,7 +3061,7 @@ GameObject:
   - component: {fileID: 3658779784289555492}
   - component: {fileID: 1960671119768775067}
   - component: {fileID: 5307853431165722935}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamAngleY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3124,7 +3124,7 @@ GameObject:
   - component: {fileID: 82649851014287088}
   - component: {fileID: 5411594159957120013}
   - component: {fileID: 6401799236555391512}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh102
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3246,7 +3246,7 @@ GameObject:
   - component: {fileID: 5218767249452681997}
   - component: {fileID: 7472767930506642567}
   - component: {fileID: 886123323548688208}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh110
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3368,7 +3368,7 @@ GameObject:
   - component: {fileID: 6241172796957085090}
   - component: {fileID: 4113248422839696651}
   - component: {fileID: 8260820751266750239}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3490,7 +3490,7 @@ GameObject:
   - component: {fileID: 2131467463424765513}
   - component: {fileID: 6016290803676921131}
   - component: {fileID: 343481606537126468}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3612,7 +3612,7 @@ GameObject:
   - component: {fileID: 8131249002030331873}
   - component: {fileID: 8064251618170411993}
   - component: {fileID: 1661062836749586854}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3732,7 +3732,7 @@ GameObject:
   - component: {fileID: 3170348951036364657}
   - component: {fileID: 5498459866032857014}
   - component: {fileID: 7472541844851059519}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamWeaponGrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3795,7 +3795,7 @@ GameObject:
   - component: {fileID: 8257674147915562381}
   - component: {fileID: 4904585388422100574}
   - component: {fileID: 7849198441999236832}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh89
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3915,7 +3915,7 @@ GameObject:
   - component: {fileID: 7070374312469508367}
   - component: {fileID: 5304473907724152521}
   - component: {fileID: 3756908256094565733}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBodyAngleX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3978,7 +3978,7 @@ GameObject:
   - component: {fileID: 1174207283196264871}
   - component: {fileID: 4633813063804896614}
   - component: {fileID: 8888563222571854301}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4099,7 +4099,7 @@ GameObject:
   - component: {fileID: 3691376633605050324}
   - component: {fileID: 2637604111787275757}
   - component: {fileID: 7913170590162158264}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4148,13 +4148,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 6459043994879274915}
-  - {fileID: 2674765998090374074}
-  - {fileID: 7731959692222070331}
-  - {fileID: 3783249825379164291}
-  - {fileID: 1653452304882601681}
-  - {fileID: 8941555669769109610}
-  - {fileID: 7158107399552778630}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -4187,7 +4187,7 @@ GameObject:
   - component: {fileID: 6374479554974476991}
   - component: {fileID: 3880470978292544465}
   - component: {fileID: 7158107399552778630}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4309,7 +4309,7 @@ GameObject:
   - component: {fileID: 6297668927121978565}
   - component: {fileID: 267751447292958995}
   - component: {fileID: 3955947802323532628}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh93
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4431,7 +4431,7 @@ GameObject:
   - component: {fileID: 2370513825275993499}
   - component: {fileID: 3429277345979705757}
   - component: {fileID: 3859317608561101125}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh72
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4553,7 +4553,7 @@ GameObject:
   - component: {fileID: 8914621233207447750}
   - component: {fileID: 3770275187561657647}
   - component: {fileID: 8045312716385314392}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh62
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4675,7 +4675,7 @@ GameObject:
   - component: {fileID: 1324157668948915644}
   - component: {fileID: 5638490644304146175}
   - component: {fileID: 7151515771921265338}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh118
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4797,7 +4797,7 @@ GameObject:
   - component: {fileID: 4579726995136911053}
   - component: {fileID: 8104768654571694170}
   - component: {fileID: 5665150724141354737}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4917,7 +4917,7 @@ GameObject:
   - component: {fileID: 332297606788459414}
   - component: {fileID: 1154057352738571920}
   - component: {fileID: 2369495602333562403}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamDiamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4980,7 +4980,7 @@ GameObject:
   - component: {fileID: 2431292477057033814}
   - component: {fileID: 4199200372836827518}
   - component: {fileID: 8011052737453429600}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5102,7 +5102,7 @@ GameObject:
   - component: {fileID: 1803469527606865279}
   - component: {fileID: 3922227640399340813}
   - component: {fileID: 3652676949193911593}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5223,7 +5223,7 @@ GameObject:
   - component: {fileID: 7699331596384187172}
   - component: {fileID: 2139476782452909404}
   - component: {fileID: 8149264779437768375}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5272,12 +5272,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 7693081248555410264}
-  - {fileID: 7391253456754923659}
-  - {fileID: 7151515771921265338}
-  - {fileID: 9058788169369421689}
-  - {fileID: 1118256524811548477}
-  - {fileID: 6841676534423617350}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -5310,7 +5310,7 @@ GameObject:
   - component: {fileID: 7235775429590049722}
   - component: {fileID: 3607066227162953071}
   - component: {fileID: 7970170801567349063}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh96
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5431,7 +5431,7 @@ GameObject:
   - component: {fileID: 8551529552957074633}
   - component: {fileID: 5771282659993412654}
   - component: {fileID: 8098422825005285063}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5480,10 +5480,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 5356787654866311473}
-  - {fileID: 8260820751266750239}
-  - {fileID: 4211500368544514275}
-  - {fileID: 210597000718130742}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -5516,7 +5516,7 @@ GameObject:
   - component: {fileID: 6845709821857437482}
   - component: {fileID: 5610614142486022298}
   - component: {fileID: 5743801221309252700}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh74
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5638,7 +5638,7 @@ GameObject:
   - component: {fileID: 3968173707569911278}
   - component: {fileID: 8101819485702310282}
   - component: {fileID: 2806011910324508002}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh105
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5760,7 +5760,7 @@ GameObject:
   - component: {fileID: 7033687671083052853}
   - component: {fileID: 8556474828895151807}
   - component: {fileID: 6172456906562273245}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5882,7 +5882,7 @@ GameObject:
   - component: {fileID: 1023131289563612819}
   - component: {fileID: 2584656596061699755}
   - component: {fileID: 8874544860420232239}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh59
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6003,7 +6003,7 @@ GameObject:
   - component: {fileID: 6863333632019399998}
   - component: {fileID: 7120786227150620480}
   - component: {fileID: 3673226348557874035}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6052,12 +6052,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 6969434263586419085}
-  - {fileID: 8874544860420232239}
-  - {fileID: 5572776300702837926}
-  - {fileID: 6580958748522513822}
-  - {fileID: 8045312716385314392}
-  - {fileID: 8888563222571854301}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -6090,7 +6090,7 @@ GameObject:
   - component: {fileID: 2312859022458048330}
   - component: {fileID: 6270485591089133720}
   - component: {fileID: 6126323767131985908}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh109
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6212,7 +6212,7 @@ GameObject:
   - component: {fileID: 1249438749894946323}
   - component: {fileID: 4341493254036149417}
   - component: {fileID: 7443237366795264574}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh115
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6334,7 +6334,7 @@ GameObject:
   - component: {fileID: 2479100357481310915}
   - component: {fileID: 1584116657725215299}
   - component: {fileID: 1495513109018173654}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh106
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6456,7 +6456,7 @@ GameObject:
   - component: {fileID: 7916883522824922852}
   - component: {fileID: 6195592400535958254}
   - component: {fileID: 8183645300768589466}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh98
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6578,7 +6578,7 @@ GameObject:
   - component: {fileID: 3274748313981649907}
   - component: {fileID: 6981213947387378155}
   - component: {fileID: 7474206680160010367}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh112
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6700,7 +6700,7 @@ GameObject:
   - component: {fileID: 1544978592274125934}
   - component: {fileID: 7720770083420564890}
   - component: {fileID: 1527686231943527972}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6822,7 +6822,7 @@ GameObject:
   - component: {fileID: 7341795268925268884}
   - component: {fileID: 434013977051223844}
   - component: {fileID: 6841676534423617350}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh121
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6943,7 +6943,7 @@ GameObject:
   - component: {fileID: 5803532065781801036}
   - component: {fileID: 3718690463556128789}
   - component: {fileID: 3431895863657308066}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6992,8 +6992,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 9155028617577255560}
-  - {fileID: 8942953130143221638}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -7026,7 +7026,7 @@ GameObject:
   - component: {fileID: 1405850039888936534}
   - component: {fileID: 5156025420774282569}
   - component: {fileID: 7894369213185803216}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh94
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7148,7 +7148,7 @@ GameObject:
   - component: {fileID: 2231870049796024359}
   - component: {fileID: 5634350090931428938}
   - component: {fileID: 7568860621332909684}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh124
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7270,7 +7270,7 @@ GameObject:
   - component: {fileID: 643807510325237493}
   - component: {fileID: 6215105949549770919}
   - component: {fileID: 7986346429953903954}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7392,7 +7392,7 @@ GameObject:
   - component: {fileID: 3035964576964156655}
   - component: {fileID: 330185658331323601}
   - component: {fileID: 9191075266298138680}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7597,7 +7597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 1
+  _lastOpacity: 0
   _isOverwrittenModelMultiplyColors: 0
   _isOverwrittenModelScreenColors: 0
   _modelMultiplyColor: {r: 0, g: 0, b: 0, a: 0}
@@ -7623,7 +7623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967223d908bf07b4f90945995bdca68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maskTexture: {fileID: 11400000, guid: 16bf142754640ab4487bb625c30931fd, type: 2}
+  _maskTexture: {fileID: 0}
 --- !u!114 &5142830422102828187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7686,7 +7686,7 @@ Animator:
   m_GameObject: {fileID: 3100244259056883136}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e43f5e0583c554426a2d1becb703eb37, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7709,7 +7709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd9e6647bfff7542acb0200ab74bdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CubismFadeMotionList: {fileID: 11400000, guid: 9f7ca432f3496446e8959cd9ceb1dcc2, type: 2}
+  CubismFadeMotionList: {fileID: 0}
 --- !u!114 &3015715385320719940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8055,7 +8055,7 @@ GameObject:
   - component: {fileID: 6708583942996768718}
   - component: {fileID: 1074514977659015531}
   - component: {fileID: 5572776300702837926}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8177,7 +8177,7 @@ GameObject:
   - component: {fileID: 2149071734222321977}
   - component: {fileID: 4580164859350734076}
   - component: {fileID: 4309834600763999053}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8297,7 +8297,7 @@ GameObject:
   - component: {fileID: 4793796441888749331}
   - component: {fileID: 8064851033720415709}
   - component: {fileID: 5965228837202084512}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEyeRSmile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8360,7 +8360,7 @@ GameObject:
   - component: {fileID: 7110578136767282513}
   - component: {fileID: 4543089632019044734}
   - component: {fileID: 4587411874934105818}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8482,7 +8482,7 @@ GameObject:
   - component: {fileID: 4997160670618441301}
   - component: {fileID: 3808748253369419214}
   - component: {fileID: 6230604418714798160}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8604,7 +8604,7 @@ GameObject:
   - component: {fileID: 8859110608829595069}
   - component: {fileID: 4905286425742086714}
   - component: {fileID: 4211500368544514275}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8726,7 +8726,7 @@ GameObject:
   - component: {fileID: 9070684475834769854}
   - component: {fileID: 621785851791195834}
   - component: {fileID: 7470149368990684639}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh83
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8848,7 +8848,7 @@ GameObject:
   - component: {fileID: 492595342006962815}
   - component: {fileID: 8382150707471761446}
   - component: {fileID: 6530960207908900141}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8970,7 +8970,7 @@ GameObject:
   - component: {fileID: 7826262291272868082}
   - component: {fileID: 8815485892609539917}
   - component: {fileID: 8081397807069562811}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9092,7 +9092,7 @@ GameObject:
   - component: {fileID: 8667916359888343858}
   - component: {fileID: 933006312884756004}
   - component: {fileID: 8202945101316706960}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9212,7 +9212,7 @@ GameObject:
   - component: {fileID: 981203366843686330}
   - component: {fileID: 4310912810557062039}
   - component: {fileID: 606339424216982916}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBreath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9275,7 +9275,7 @@ GameObject:
   - component: {fileID: 4455087979234586429}
   - component: {fileID: 7752450415594221230}
   - component: {fileID: 582830923958889883}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9396,7 +9396,7 @@ GameObject:
   - component: {fileID: 1707003770377466888}
   - component: {fileID: 5723226218650733190}
   - component: {fileID: 6319161013159046204}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9445,18 +9445,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 2391446404936509652}
-  - {fileID: 4385298026364612434}
-  - {fileID: 5525312755236779473}
-  - {fileID: 2676139909239730956}
-  - {fileID: 1661062836749586854}
-  - {fileID: 2657404542064872093}
-  - {fileID: 6095283031857783926}
-  - {fileID: 8064215493744400673}
-  - {fileID: 2758861010376362052}
-  - {fileID: 4309834600763999053}
-  - {fileID: 5665150724141354737}
-  - {fileID: 2795772556289002782}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -9487,7 +9487,7 @@ GameObject:
   - component: {fileID: 6748794651381402671}
   - component: {fileID: 2664277390350364138}
   - component: {fileID: 3676783470622484781}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEyeLSmile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9550,7 +9550,7 @@ GameObject:
   - component: {fileID: 3117140310654539013}
   - component: {fileID: 2148751128367755465}
   - component: {fileID: 8942953130143221638}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9670,7 +9670,7 @@ GameObject:
   - component: {fileID: 7767599020669824859}
   - component: {fileID: 5729514661145319313}
   - component: {fileID: 7729039657777259034}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamAngleX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9731,7 +9731,7 @@ GameObject:
   - component: {fileID: 3055735469118825947}
   - component: {fileID: 7834298148696956731}
   - component: {fileID: 7111105569727157285}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamMouthForm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9794,7 +9794,7 @@ GameObject:
   - component: {fileID: 272011461409838364}
   - component: {fileID: 8729721015621172325}
   - component: {fileID: 5525312755236779473}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9916,7 +9916,7 @@ GameObject:
   - component: {fileID: 6624918198696256032}
   - component: {fileID: 3083681994149436934}
   - component: {fileID: 6711364857131399649}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10036,7 +10036,7 @@ GameObject:
   - component: {fileID: 5668895305304989833}
   - component: {fileID: 777899064694147186}
   - component: {fileID: 9205086662033981402}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEyeROpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10099,7 +10099,7 @@ GameObject:
   - component: {fileID: 6690542055544348048}
   - component: {fileID: 5511370403515254917}
   - component: {fileID: 7443683893330637492}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh108
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10221,7 +10221,7 @@ GameObject:
   - component: {fileID: 7522019244503020674}
   - component: {fileID: 3171266805384339252}
   - component: {fileID: 781852736025223702}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10343,7 +10343,7 @@ GameObject:
   - component: {fileID: 1718403021685039046}
   - component: {fileID: 803230996859943369}
   - component: {fileID: 5769151543621976488}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh92
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10463,7 +10463,7 @@ GameObject:
   - component: {fileID: 3823987053976763940}
   - component: {fileID: 3413733624398495966}
   - component: {fileID: 3567783378671391518}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamPose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10526,7 +10526,7 @@ GameObject:
   - component: {fileID: 8690135489910069801}
   - component: {fileID: 820251394000384090}
   - component: {fileID: 3550384760101982131}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh126
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10646,7 +10646,7 @@ GameObject:
   - component: {fileID: 8633684268582417750}
   - component: {fileID: 435760676775065337}
   - component: {fileID: 2737315982709876366}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEyeBallX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10709,7 +10709,7 @@ GameObject:
   - component: {fileID: 8251777698733796406}
   - component: {fileID: 4514446962563873231}
   - component: {fileID: 6557848250334890615}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh88
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10831,7 +10831,7 @@ GameObject:
   - component: {fileID: 3698323584362289502}
   - component: {fileID: 5994910350539177252}
   - component: {fileID: 4280218598515875320}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10952,7 +10952,7 @@ GameObject:
   - component: {fileID: 2726843401377312076}
   - component: {fileID: 2186895001475892531}
   - component: {fileID: 6074994858863950955}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11001,15 +11001,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 6412584689132405874}
-  - {fileID: 4825307819246570386}
-  - {fileID: 3859317608561101125}
-  - {fileID: 1406675934724736324}
-  - {fileID: 5743801221309252700}
-  - {fileID: 3639935343101711527}
-  - {fileID: 8510906994120846979}
-  - {fileID: 7859092756203404963}
-  - {fileID: 4595878209572813720}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -11042,7 +11042,7 @@ GameObject:
   - component: {fileID: 8589422520963752349}
   - component: {fileID: 4129895744041930247}
   - component: {fileID: 2795772556289002782}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11164,7 +11164,7 @@ GameObject:
   - component: {fileID: 1295025669062061021}
   - component: {fileID: 8191464679353276772}
   - component: {fileID: 1475725758157877139}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh87
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11285,7 +11285,7 @@ GameObject:
   - component: {fileID: 8226992097719195235}
   - component: {fileID: 6397118833108860176}
   - component: {fileID: 7131695653829902811}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11334,18 +11334,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 9191075266298138680}
-  - {fileID: 8202945101316706960}
-  - {fileID: 8320160546375496862}
-  - {fileID: 6127347493109593103}
-  - {fileID: 6530960207908900141}
-  - {fileID: 8943510654268093080}
-  - {fileID: 340427676394209282}
-  - {fileID: 7552702625630644757}
-  - {fileID: 7242209657776238678}
-  - {fileID: 80051102063674195}
-  - {fileID: 6172456906562273245}
-  - {fileID: 7887130838230514871}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -11378,7 +11378,7 @@ GameObject:
   - component: {fileID: 149644183081908408}
   - component: {fileID: 296176691833033952}
   - component: {fileID: 6115156041845234974}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh104
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11498,7 +11498,7 @@ GameObject:
   - component: {fileID: 5414741837372376959}
   - component: {fileID: 8408891465109804583}
   - component: {fileID: 6904321343373515284}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEyeBallY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11561,7 +11561,7 @@ GameObject:
   - component: {fileID: 6022093176586006833}
   - component: {fileID: 9200800727832280822}
   - component: {fileID: 5972025609488836914}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11683,7 +11683,7 @@ GameObject:
   - component: {fileID: 257794991840066591}
   - component: {fileID: 4555578834310567907}
   - component: {fileID: 2893928703789346124}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh84
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11805,7 +11805,7 @@ GameObject:
   - component: {fileID: 8598688090522615315}
   - component: {fileID: 6550317514136873987}
   - component: {fileID: 2758861010376362052}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11927,7 +11927,7 @@ GameObject:
   - component: {fileID: 9103217849872580583}
   - component: {fileID: 3252195923500945877}
   - component: {fileID: 9204824020914674682}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh67
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12049,7 +12049,7 @@ GameObject:
   - component: {fileID: 622850212809089336}
   - component: {fileID: 2977369611871686085}
   - component: {fileID: 1070216585273874002}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh86
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12169,7 +12169,7 @@ GameObject:
   - component: {fileID: 7500828799702059397}
   - component: {fileID: 1895234257342747108}
   - component: {fileID: 2973094488387708899}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEyeGrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12232,7 +12232,7 @@ GameObject:
   - component: {fileID: 1021181040597353184}
   - component: {fileID: 7447971540681678699}
   - component: {fileID: 7693081248555410264}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh116
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12352,7 +12352,7 @@ GameObject:
   - component: {fileID: 8782193814507712283}
   - component: {fileID: 1990126619590963903}
   - component: {fileID: 4011810306394444910}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamMouthOpenY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12415,7 +12415,7 @@ GameObject:
   - component: {fileID: 8409048815697115922}
   - component: {fileID: 2172831626106114952}
   - component: {fileID: 7859092756203404963}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh77
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12536,7 +12536,7 @@ GameObject:
   - component: {fileID: 8040644052012839117}
   - component: {fileID: 3755426386129933019}
   - component: {fileID: 8284163805068920541}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12585,11 +12585,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 6401799236555391512}
-  - {fileID: 5868830898812888812}
-  - {fileID: 6115156041845234974}
-  - {fileID: 2806011910324508002}
-  - {fileID: 1495513109018173654}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -12620,7 +12620,7 @@ GameObject:
   - component: {fileID: 938047019384787271}
   - component: {fileID: 4143965170621767605}
   - component: {fileID: 6758609097133491389}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamWeaponGrowTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12683,7 +12683,7 @@ GameObject:
   - component: {fileID: 6433442068300755290}
   - component: {fileID: 903799250799625350}
   - component: {fileID: 6095283031857783926}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12803,7 +12803,7 @@ GameObject:
   - component: {fileID: 222176840640440779}
   - component: {fileID: 3291471229148362115}
   - component: {fileID: 8095160985409444534}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamHairFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12864,7 +12864,7 @@ GameObject:
   - component: {fileID: 420826681298914017}
   - component: {fileID: 7763480704912888253}
   - component: {fileID: 4150560222142289496}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBodyAngleY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12927,7 +12927,7 @@ GameObject:
   - component: {fileID: 464677123816524596}
   - component: {fileID: 3661930932950723853}
   - component: {fileID: 3639935343101711527}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh75
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13047,7 +13047,7 @@ GameObject:
   - component: {fileID: 7017577590096800720}
   - component: {fileID: 7363164167398209905}
   - component: {fileID: 1599678572129923730}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowLForm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13110,7 +13110,7 @@ GameObject:
   - component: {fileID: 8380611314764948782}
   - component: {fileID: 6284671238159715731}
   - component: {fileID: 1406675934724736324}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh73
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13232,7 +13232,7 @@ GameObject:
   - component: {fileID: 8219707536407803741}
   - component: {fileID: 4930374679258125459}
   - component: {fileID: 7391253456754923659}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh117
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13352,7 +13352,7 @@ GameObject:
   - component: {fileID: 7724348462266638968}
   - component: {fileID: 895554447540458879}
   - component: {fileID: 779684915277951820}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowRAngle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13415,7 +13415,7 @@ GameObject:
   - component: {fileID: 2763942001412219475}
   - component: {fileID: 3917362273869782768}
   - component: {fileID: 6580958748522513822}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh61
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13537,7 +13537,7 @@ GameObject:
   - component: {fileID: 3180631663115022815}
   - component: {fileID: 1043994177591663839}
   - component: {fileID: 7242209657776238678}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13659,7 +13659,7 @@ GameObject:
   - component: {fileID: 6809612598771131918}
   - component: {fileID: 267446419503091242}
   - component: {fileID: 2657404542064872093}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13781,7 +13781,7 @@ GameObject:
   - component: {fileID: 6820924400817534840}
   - component: {fileID: 3200986190622482994}
   - component: {fileID: 1053567903837724401}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh128
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13903,7 +13903,7 @@ GameObject:
   - component: {fileID: 5827144258974390206}
   - component: {fileID: 6523012504311524574}
   - component: {fileID: 5868830898812888812}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh103
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14025,7 +14025,7 @@ GameObject:
   - component: {fileID: 8662327191689172537}
   - component: {fileID: 8430116762144525063}
   - component: {fileID: 66847844554233144}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh80
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14145,7 +14145,7 @@ GameObject:
   - component: {fileID: 5448888588381475724}
   - component: {fileID: 5059488453526576692}
   - component: {fileID: 592578986940618186}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowRY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14208,7 +14208,7 @@ GameObject:
   - component: {fileID: 312825265415500763}
   - component: {fileID: 5879588209511587768}
   - component: {fileID: 210597000718130742}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14330,7 +14330,7 @@ GameObject:
   - component: {fileID: 6964381676844546488}
   - component: {fileID: 3853995212323117275}
   - component: {fileID: 4595878209572813720}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh78
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14452,7 +14452,7 @@ GameObject:
   - component: {fileID: 5451028166854817274}
   - component: {fileID: 7690706270208255258}
   - component: {fileID: 8064215493744400673}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14572,7 +14572,7 @@ GameObject:
   - component: {fileID: 4083939290023526964}
   - component: {fileID: 6726347572884853736}
   - component: {fileID: 389794770903792252}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamHairBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14633,7 +14633,7 @@ GameObject:
   - component: {fileID: 4379305775962963283}
   - component: {fileID: 8026748074759364032}
   - component: {fileID: 4469767446695052153}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowRX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14696,7 +14696,7 @@ GameObject:
   - component: {fileID: 483094155473528170}
   - component: {fileID: 3238652822958052424}
   - component: {fileID: 8320160546375496862}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14816,7 +14816,7 @@ GameObject:
   - component: {fileID: 6321489695575969832}
   - component: {fileID: 3141770749254769923}
   - component: {fileID: 5133634503096567294}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamSweat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14879,7 +14879,7 @@ GameObject:
   - component: {fileID: 5646943003771156675}
   - component: {fileID: 7639965163179656268}
   - component: {fileID: 5663092980379422270}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh113
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15001,7 +15001,7 @@ GameObject:
   - component: {fileID: 4003191408350373927}
   - component: {fileID: 6524729949546863709}
   - component: {fileID: 1501090995456491363}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15123,7 +15123,7 @@ GameObject:
   - component: {fileID: 4810301162934185444}
   - component: {fileID: 3183158099769293004}
   - component: {fileID: 8562190014350178631}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15245,7 +15245,7 @@ GameObject:
   - component: {fileID: 8541264908419246087}
   - component: {fileID: 4097204725479038221}
   - component: {fileID: 6474164981754877715}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15367,7 +15367,7 @@ GameObject:
   - component: {fileID: 8746526248543531325}
   - component: {fileID: 470807517205391309}
   - component: {fileID: 3616834364510290963}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh99
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15489,7 +15489,7 @@ GameObject:
   - component: {fileID: 8669952162247515469}
   - component: {fileID: 1913325852510909377}
   - component: {fileID: 3783249825379164291}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15611,7 +15611,7 @@ GameObject:
   - component: {fileID: 8464713583194685453}
   - component: {fileID: 8779623847287301458}
   - component: {fileID: 6301376020714189009}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15733,7 +15733,7 @@ GameObject:
   - component: {fileID: 2528890588546511906}
   - component: {fileID: 1221349553489026295}
   - component: {fileID: 5356787654866311473}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15851,7 +15851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232146399270236269}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15907,7 +15907,7 @@ GameObject:
   - component: {fileID: 9013855541021162848}
   - component: {fileID: 8068830578383414727}
   - component: {fileID: 6459043994879274915}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16029,7 +16029,7 @@ GameObject:
   - component: {fileID: 5155838357251259389}
   - component: {fileID: 5460747527358794139}
   - component: {fileID: 1066792726337029346}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16151,7 +16151,7 @@ GameObject:
   - component: {fileID: 459403538923855683}
   - component: {fileID: 6250944110708282795}
   - component: {fileID: 4249607519193552030}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh79
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16272,7 +16272,7 @@ GameObject:
   - component: {fileID: 7996748215961278748}
   - component: {fileID: 5517655008231033449}
   - component: {fileID: 4125448628782523174}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16321,10 +16321,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 8081397807069562811}
-  - {fileID: 9204824020914674682}
-  - {fileID: 4280218598515875320}
-  - {fileID: 1768408804142447165}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -16357,7 +16357,7 @@ GameObject:
   - component: {fileID: 6472413573284694617}
   - component: {fileID: 6876474315471783648}
   - component: {fileID: 4385298026364612434}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16477,7 +16477,7 @@ GameObject:
   - component: {fileID: 5328062593624997601}
   - component: {fileID: 1927321505215628602}
   - component: {fileID: 6290560895767676080}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEyeLOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16538,7 +16538,7 @@ GameObject:
   - component: {fileID: 7588126253752806029}
   - component: {fileID: 904101965805766889}
   - component: {fileID: 4234965765097983803}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamHood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16600,7 +16600,7 @@ GameObject:
   - component: {fileID: 6967480218126093345}
   - component: {fileID: 225296652457817734}
   - component: {fileID: 8195962282505921751}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16649,14 +16649,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 6711364857131399649}
-  - {fileID: 7089741449942218865}
-  - {fileID: 346050394854294992}
-  - {fileID: 6474164981754877715}
-  - {fileID: 7663747983731422246}
-  - {fileID: 4587411874934105818}
-  - {fileID: 1501090995456491363}
-  - {fileID: 3652676949193911593}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -16689,7 +16689,7 @@ GameObject:
   - component: {fileID: 3169953204513081758}
   - component: {fileID: 1589733627425696221}
   - component: {fileID: 8248325608253937241}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16811,7 +16811,7 @@ GameObject:
   - component: {fileID: 1659730802852813596}
   - component: {fileID: 1790328235595730879}
   - component: {fileID: 2391446404936509652}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16933,7 +16933,7 @@ GameObject:
   - component: {fileID: 1796292633094603660}
   - component: {fileID: 2512860724849090856}
   - component: {fileID: 1118256524811548477}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17055,7 +17055,7 @@ GameObject:
   - component: {fileID: 6137548488800992662}
   - component: {fileID: 2552448848466400125}
   - component: {fileID: 8804875875453450856}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17177,7 +17177,7 @@ GameObject:
   - component: {fileID: 4506899784680181769}
   - component: {fileID: 8763850810145403962}
   - component: {fileID: 6926330985648108679}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh101
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17299,7 +17299,7 @@ GameObject:
   - component: {fileID: 818218558726891963}
   - component: {fileID: 359614410676608406}
   - component: {fileID: 7552702625630644757}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17421,7 +17421,7 @@ GameObject:
   - component: {fileID: 6713707089148493348}
   - component: {fileID: 3829754867516792358}
   - component: {fileID: 6127347493109593103}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17543,7 +17543,7 @@ GameObject:
   - component: {fileID: 4934867749706852138}
   - component: {fileID: 1584441168261020343}
   - component: {fileID: 3209477945526066723}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh114
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17665,7 +17665,7 @@ GameObject:
   - component: {fileID: 3885653073781527679}
   - component: {fileID: 1383829066658086307}
   - component: {fileID: 2114848274757851253}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh91
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17787,7 +17787,7 @@ GameObject:
   - component: {fileID: 7324820499153570366}
   - component: {fileID: 3538268677457179140}
   - component: {fileID: 4982714126929119033}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17909,7 +17909,7 @@ GameObject:
   - component: {fileID: 7082023406428522292}
   - component: {fileID: 4420996150093217899}
   - component: {fileID: 1653452304882601681}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh129
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18031,7 +18031,7 @@ GameObject:
   - component: {fileID: 778596137619168766}
   - component: {fileID: 2028881977012513727}
   - component: {fileID: 6969434263586419085}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18153,7 +18153,7 @@ GameObject:
   - component: {fileID: 7526181707595295772}
   - component: {fileID: 473451471875888299}
   - component: {fileID: 1582890471179215505}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh123
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18275,7 +18275,7 @@ GameObject:
   - component: {fileID: 3955837354345188318}
   - component: {fileID: 3737894720868961051}
   - component: {fileID: 6658435421863840340}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh127
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18397,7 +18397,7 @@ GameObject:
   - component: {fileID: 7950532123587457496}
   - component: {fileID: 6949920066873086486}
   - component: {fileID: 4825307819246570386}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18518,7 +18518,7 @@ GameObject:
   - component: {fileID: 7776570278058081065}
   - component: {fileID: 438406962895582206}
   - component: {fileID: 7982117495551494416}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18567,10 +18567,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 7474206680160010367}
-  - {fileID: 5663092980379422270}
-  - {fileID: 3209477945526066723}
-  - {fileID: 7443237366795264574}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -18603,7 +18603,7 @@ GameObject:
   - component: {fileID: 9032650435391323066}
   - component: {fileID: 3971762433562056618}
   - component: {fileID: 8510906994120846979}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh76
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18723,7 +18723,7 @@ GameObject:
   - component: {fileID: 1314976338741853976}
   - component: {fileID: 5917741540010846068}
   - component: {fileID: 6006406959915767426}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamHairSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18786,7 +18786,7 @@ GameObject:
   - component: {fileID: 5653190227536767209}
   - component: {fileID: 7544375673029264573}
   - component: {fileID: 346050394854294992}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18907,7 +18907,7 @@ GameObject:
   - component: {fileID: 5558716776949876546}
   - component: {fileID: 7738614205952058401}
   - component: {fileID: 7414690291879734784}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18956,9 +18956,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 3172429918094884388}
-  - {fileID: 7378925979801671783}
-  - {fileID: 2263791551917726039}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -18991,7 +18991,7 @@ GameObject:
   - component: {fileID: 5269335437103906026}
   - component: {fileID: 6950065324215037358}
   - component: {fileID: 1582852321219679860}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh125
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19113,7 +19113,7 @@ GameObject:
   - component: {fileID: 3011531677063299558}
   - component: {fileID: 6629522668610494867}
   - component: {fileID: 9058788169369421689}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh119
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19231,7 +19231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7568941696918698460}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Parameters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19297,7 +19297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5363615157685521755}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Drawables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19462,7 +19462,7 @@ GameObject:
   - component: {fileID: 7773003466233632852}
   - component: {fileID: 2547747502974696906}
   - component: {fileID: 7887130838230514871}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19584,7 +19584,7 @@ GameObject:
   - component: {fileID: 5410071951287973822}
   - component: {fileID: 5123095107173724988}
   - component: {fileID: 2676139909239730956}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19705,7 +19705,7 @@ GameObject:
   - component: {fileID: 2322787976222206894}
   - component: {fileID: 4863226867764717903}
   - component: {fileID: 1884544889644105702}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19754,16 +19754,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 4982714126929119033}
-  - {fileID: 7470149368990684639}
-  - {fileID: 2893928703789346124}
-  - {fileID: 6230604418714798160}
-  - {fileID: 1070216585273874002}
-  - {fileID: 1475725758157877139}
-  - {fileID: 6557848250334890615}
-  - {fileID: 7849198441999236832}
-  - {fileID: 7986346429953903954}
-  - {fileID: 2114848274757851253}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -19794,7 +19794,7 @@ GameObject:
   - component: {fileID: 5610817729002324330}
   - component: {fileID: 2022640159879797623}
   - component: {fileID: 7956048625936478756}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamAngleZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19856,7 +19856,7 @@ GameObject:
   - component: {fileID: 1777095746211990036}
   - component: {fileID: 3133938589923414921}
   - component: {fileID: 4945641203729863314}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19905,9 +19905,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 4249607519193552030}
-  - {fileID: 66847844554233144}
-  - {fileID: 582830923958889883}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -19940,7 +19940,7 @@ GameObject:
   - component: {fileID: 8985621965488072040}
   - component: {fileID: 117246867177517493}
   - component: {fileID: 7731959692222070331}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20060,7 +20060,7 @@ GameObject:
   - component: {fileID: 880396869714743849}
   - component: {fileID: 6291638924524524512}
   - component: {fileID: 6713125161121495442}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamEarring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20122,7 +20122,7 @@ GameObject:
   - component: {fileID: 882603130884174268}
   - component: {fileID: 4444307183720059472}
   - component: {fileID: 6881962155143568387}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Part21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20171,13 +20171,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 8625304520732167944}
-  - {fileID: 1582890471179215505}
-  - {fileID: 7568860621332909684}
-  - {fileID: 1582852321219679860}
-  - {fileID: 3550384760101982131}
-  - {fileID: 6658435421863840340}
-  - {fileID: 1053567903837724401}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _childParts: []
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
@@ -20210,7 +20210,7 @@ GameObject:
   - component: {fileID: 7827071682519076024}
   - component: {fileID: 3428964776667371522}
   - component: {fileID: 1359267098129411222}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20332,7 +20332,7 @@ GameObject:
   - component: {fileID: 5617522953834360602}
   - component: {fileID: 6544062802035973344}
   - component: {fileID: 3006823180867425618}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20454,7 +20454,7 @@ GameObject:
   - component: {fileID: 1218273373713599673}
   - component: {fileID: 6992869839908681836}
   - component: {fileID: 80051102063674195}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ArtMesh40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20574,7 +20574,7 @@ GameObject:
   - component: {fileID: 8055418782817792358}
   - component: {fileID: 9113662661094790159}
   - component: {fileID: 6268991071105754002}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: ParamBrowLX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

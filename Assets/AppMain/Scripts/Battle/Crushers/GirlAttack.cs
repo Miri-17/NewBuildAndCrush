@@ -68,6 +68,10 @@ public class GirlAttack : MonoBehaviour {
             var destroyableBuilder = hitInfo.transform.GetComponent<DestroyableBuilder>();
             var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
             var chef = hitInfo.transform.GetComponent<Chef>();
+            var bushi = hitInfo.transform.GetComponent<Bushi>();
+            var frog = hitInfo.transform.GetComponent<Frog>();
+            var zakoWolf = hitInfo.transform.GetComponent<ZakoWolf>();
+            var pig = hitInfo.transform.GetComponent<Pig>();
 
             if (destroyableObstacle != null) {
                 destroyableObstacle.TakeDamage(_damage);
@@ -83,6 +87,22 @@ public class GirlAttack : MonoBehaviour {
             }
             if (chef != null) {
                 chef.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (bushi != null) {
+                bushi.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (frog != null) {
+                frog.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (zakoWolf != null) {
+                zakoWolf.TakeDamage(_damage);
+                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+            }
+            if (pig != null) {
+                pig.TakeDamage(_damage);
                 Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
             }
         }

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8954905131600814379}
   - component: {fileID: 1496914844112749765}
   - component: {fileID: 965587146533394669}
-  - component: {fileID: 528754172685129720}
+  - component: {fileID: 1676574394496667161}
+  - component: {fileID: 7890560151766101438}
   - component: {fileID: 8369854353272919633}
   m_Layer: 8
   m_Name: Pig
@@ -154,7 +155,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30, y: 30}
   m_EdgeRadius: 1
---- !u!114 &528754172685129720
+--- !u!70 &1676574394496667161
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646566717604200337}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -3}
+  m_Size: {x: 40, y: 25}
+  m_Direction: 1
+--- !u!114 &7890560151766101438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,18 +199,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8646566717604200337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac4ce4a7da94415aaa4f4205174c08c, type: 3}
+  m_Script: {fileID: 11500000, guid: cb4583531f63a423da7f9e9a9d3bacb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacleSprites: []
-  _audioClip: {fileID: 8300000, guid: d88613effc53d43d0bb4ad829debc05c, type: 3}
-  _isUsingParticleSystem: 0
   _defense: 4
-  _boxCollider2Ds:
-  - {fileID: 965587146533394669}
-  _circleCollider2Ds: []
-  _capsuleCollider2Ds: []
   _duration: 2
+  _boxCollider2D: {fileID: 965587146533394669}
+  _capsuleCollider2D: {fileID: 1676574394496667161}
+  _endPosition: -272
+  _speed: 200
 --- !u!82 &8369854353272919633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -185,7 +218,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d88613effc53d43d0bb4ad829debc05c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

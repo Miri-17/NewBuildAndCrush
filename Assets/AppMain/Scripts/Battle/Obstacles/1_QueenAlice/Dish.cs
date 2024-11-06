@@ -17,6 +17,7 @@ public class Dish : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        Destroy(this.gameObject);
+        if (!collision.collider.CompareTag("Obstacle"))
+            Destroy(this.gameObject);
     }
 }

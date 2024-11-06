@@ -59,8 +59,8 @@ public class Chef : MonoBehaviour {
     }
 
     private async UniTaskVoid Crush(float duration) {
-        if (_audioSource != null)
-            _audioSource.PlayOneShot(_audioClip);
+        // if (_audioSource != null)
+        //     _audioSource.PlayOneShot(_audioClip);
 
         _animator.SetTrigger("Defeat");
         Destroy(_capsuleCollider2D);
