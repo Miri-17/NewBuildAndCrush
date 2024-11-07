@@ -95,6 +95,10 @@ public class CrusherSelectionController : MonoBehaviour {
                     GameDirector.Instance.BuilderIndex = _builderSelectionController.BuilderIndex;
                     GameDirector.Instance.CrusherIndex = _crusherIndex;
                     GameDirector.Instance.IsOpening = true;
+                    GameDirector.Instance.BuilderScore = 0;
+                    GameDirector.Instance.CrusherScore = 0;
+                    GameDirector.Instance.CrusherKillCounts = 0;
+                    GameDirector.Instance.WagonCrushCounts = 0;
                     FadeInImageAsync(1.8f, GameDirector.Instance.BuilderIndex == GameDirector.Instance.CrusherIndex).Forget();
                 } else if (Input.GetButtonDown("Jump")) {
                     foreach (var confirmPanel in _confirmPanels)
@@ -167,8 +171,9 @@ public class CrusherSelectionController : MonoBehaviour {
         var crusherInfo = _crushersDB.GetCrusherInfo(crusherIndex);
 
         _crusherName.text = _crusher.Name;
-        var crusherPosition = GetCrusherPosition(crusherIndex);
-        _crusherL2D = Instantiate(_crusher.Live2D, crusherPosition, Quaternion.identity, GameObject.Find("Crusher").transform);
+        _crusherL2D = Instantiate(_crusher.Live2D, new Vector3(0, 0, 0), Quaternion.identity);
+        _crusherL2D.transform.parent = GameObject.Find("Crusher").transform;
+        _crusherL2D.transform.localPosition = GetCrusherPosition(crusherIndex);
         _crusherAnimator = _crusherL2D.GetComponent<Animator>();
 
         _crusherNickname.text = crusherInfo.Nickname;
@@ -188,10 +193,10 @@ public class CrusherSelectionController : MonoBehaviour {
 
     private Vector3 GetCrusherPosition(int index) {
         switch (index) {
-            case 0: return new Vector3(-0.5f, 0, 80.0f);
-            case 1: return new Vector3(-0.85f, 0, 80.0f);
-            case 2: return new Vector3(-0.85f, 0, 80.0f);
-            default: return new Vector3(-0.65f, 0, 80.0f);
+            case 0: return new Vector3(-2.7f, 0, 80.0f);
+            case 1: return new Vector3(-3.9f, 0, 80.0f);
+            case 2: return new Vector3(-4.25f, 0, 80.0f);
+            default: return new Vector3(-3.2f, 0, 80.0f);
         }
     }
 

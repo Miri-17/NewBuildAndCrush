@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 1_QueenOfHearts.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: 3225fffffe02ffff86effeffe6b2feff
+  MotionInstanceIds: 4aa1fcffae67fcff0067fcff6066fcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: fd22937ca96cb474abbe3129b1e0035b, type: 2}
-  - {fileID: 11400000, guid: be8a6a87abe12415ba1e4506f25614d9, type: 2}
-  - {fileID: 11400000, guid: 80f2310e99c4c451a983c65bd09a0e63, type: 2}
-  - {fileID: 11400000, guid: 88c0f091dd5f24237bb4e9ca537ae4eb, type: 2}
+  - {fileID: 11400000, guid: 205683215f192471f8b61dca1e09a0c1, type: 2}
+  - {fileID: 11400000, guid: 50e726a95412140b3abbf4a6a5851484, type: 2}
+  - {fileID: 11400000, guid: 67a935f03bb3c464a9a77f6ca737d3d2, type: 2}
+  - {fileID: 11400000, guid: ce14f20df7e16438281c597e9c846dde, type: 2}

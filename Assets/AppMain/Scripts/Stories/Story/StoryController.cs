@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using Febucci.UI;
 
 public class StoryController : MonoBehaviour {
     #region Private Fields
@@ -13,13 +14,8 @@ public class StoryController : MonoBehaviour {
     private bool _goToNextPage = false;
     // 次へ行けるフラグ.
     private bool _currentPageCompleted = false;
-    // スキップフラグ.
-    private bool _isSkipped = false;
     // 現在のキャラクター情報.
     private List<StoryData> _talks = new List<StoryData>();
-    // タグ判定用.
-    private bool _isInTag = false;
-    private string _tagStrings = "";
     // シーン遷移関係.
     private AudioSource _audioSourceBGM = null;
     private AudioSource _audioSourceSE = null;
@@ -40,8 +36,8 @@ public class StoryController : MonoBehaviour {
     [SerializeField] private List<ComicsPanelDB> _openingsPanelDBs = new List<ComicsPanelDB>();
     [SerializeField] private List<ComicsPanelDB> _builderWinPanelDBs = new List<ComicsPanelDB>();
     [SerializeField] private List<ComicsPanelDB> _crusherWinPanelDBs = new List<ComicsPanelDB>();
-
     [SerializeField] private Image _endingFadeImage = null;
+    [SerializeField] private TypewriterByCharacter _typewriter = null;
     #endregion
     
     private void Start() {
@@ -58,11 +54,26 @@ public class StoryController : MonoBehaviour {
         _audioSourceBGM = BGM.Instance.GetComponent<AudioSource>();
         _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
         
+        _typewriter.waitForNormalChars = 0.08f;
+
         StartTalk();
     }
 
     private void Update() {
         if (!_canSkip) return;
+
+        if (_typewriter.isShowingText) {
+            if (Input.GetButtonDown("Select"))
+                _typewriter.SkipTypewriter();
+        } else {
+            if (!_currentPageCompleted) {
+                _currentPageCompleted = true;
+                _fadeInOutLoopAnimation.AnimationOnOff(true);
+            }
+
+            if (Input.GetButtonDown("Select"))
+                _goToNextPage = true;
+        }
 
         if (!_isChangingScene && Input.GetButtonDown("Fire1")) {
             _isChangingScene = true;
@@ -78,12 +89,6 @@ public class StoryController : MonoBehaviour {
                 _storiesUIController.TransitionUI(1.0f);
                 GoNextSceneAsync(1.0f, "ModeSelection").Forget();
             }
-        }
-        if (Input.GetButtonDown("Select")) {
-            if (_currentPageCompleted)
-                _goToNextPage = true;
-            else
-                _isSkipped = true;
         }
     }
 
@@ -112,7 +117,7 @@ public class StoryController : MonoBehaviour {
     }
 
     // 会話の開始.
-    private async UniTask TalkStart(List<StoryData> talkList, float wordInterval = 0.08f) {
+    private async UniTask TalkStart(List<StoryData> talkList) {
         Debug.Log("talkList Count: " + talkList.Count);
         int i = 0;
         foreach (var talk in talkList) {
@@ -123,44 +128,9 @@ public class StoryController : MonoBehaviour {
             _comicsText.text = "";
             _goToNextPage = false;
             _currentPageCompleted = false;
-            _isSkipped = false;
             _fadeInOutLoopAnimation.AnimationOnOff(false);
 
-            await UniTask.Delay((int)(0.5f * 1000f));
-
-            foreach (char word in talk.Talk) {
-                // タグ判定用
-                bool isCloseTag = false;
-                if (word.ToString() == "<") {
-                    Debug.Log("<です。");
-                    _isInTag = true;
-                } else if (word.ToString() == ">") {
-                    Debug.Log(">です。");
-                    _isInTag = false;
-                    isCloseTag = true;
-                }
-
-                if (_isInTag == false && isCloseTag == false && string.IsNullOrEmpty(_tagStrings) == false) {
-                    var _word = _tagStrings + word;
-                    _comicsText.text += _word;
-                    _tagStrings = "";
-                } else if (_isInTag == true || isCloseTag == true) {
-                    _tagStrings += word;
-                    Debug.Log("Tag内です。");
-                    continue;
-                } else {
-                    _comicsText.text += word;
-                }
-                await UniTask.Delay((int)(wordInterval * 1000f));
-
-                if (_isSkipped == true) {
-                    _comicsText.text = talk.Talk;
-                    break;
-                }
-            }
-
-            _currentPageCompleted = true;
-            _fadeInOutLoopAnimation.AnimationOnOff(true);
+            _typewriter.ShowText(talk.Talk);
 
             await UniTask.WaitUntil(() => _goToNextPage == true);
             
@@ -201,7 +171,7 @@ public class StoryController : MonoBehaviour {
     
 #region Add for Alice Ending
 // TODO あまり良くないコードなので直したい.
-    private async UniTask AliceEndingStart(List<StoryData> talkList, float wordInterval = 0.08f) {
+    private async UniTask AliceEndingStart(List<StoryData> talkList) {
         Debug.Log("アリスのエンディングです");
         Debug.Log("talkList Count: " + talkList.Count);
         int i = 0;
@@ -210,55 +180,17 @@ public class StoryController : MonoBehaviour {
                 Debug.Log("talkCount: " + i);
                 if (i == 16 && GameDirector.Instance.IsBuilderWin)
                     SetAliceEndingPanel(talk.ComicPanel);
-                    // await SetAliceEndingPanel(talk.ComicPanel);
                 else if (i == 26 && !GameDirector.Instance.IsBuilderWin)
                     SetAliceEndingPanel(talk.ComicPanel);
-                    // await SetAliceEndingPanel(talk.ComicPanel);
                 else
                     SetComicsPanel(talk.ComicPanel);
             }
 
-            _comicsText.text = "";
             _goToNextPage = false;
             _currentPageCompleted = false;
-            _isSkipped = false;
             _fadeInOutLoopAnimation.AnimationOnOff(false);
 
-            await UniTask.Delay((int)(0.5f * 1000f));
-
-            foreach (char word in talk.Talk) {
-                // タグ判定用
-                bool isCloseTag = false;
-                if (word.ToString() == "<") {
-                    Debug.Log("<です。");
-                    _isInTag = true;
-                } else if (word.ToString() == ">") {
-                    Debug.Log(">です。");
-                    _isInTag = false;
-                    isCloseTag = true;
-                }
-
-                if (_isInTag == false && isCloseTag == false && string.IsNullOrEmpty(_tagStrings) == false) {
-                    var _word = _tagStrings + word;
-                    _comicsText.text += _word;
-                    _tagStrings = "";
-                } else if (_isInTag == true || isCloseTag == true) {
-                    _tagStrings += word;
-                    Debug.Log("Tag内です。");
-                    continue;
-                } else {
-                    _comicsText.text += word;
-                }
-                await UniTask.Delay((int)(wordInterval * 1000f));
-
-                if (_isSkipped == true) {
-                    _comicsText.text = talk.Talk;
-                    break;
-                }
-            }
-
-            _currentPageCompleted = true;
-            _fadeInOutLoopAnimation.AnimationOnOff(true);
+            _typewriter.ShowText(talk.Talk);
 
             await UniTask.WaitUntil(() => _goToNextPage == true);
             
@@ -271,7 +203,6 @@ public class StoryController : MonoBehaviour {
         }
     }
     
-    // private async UniTask SetAliceEndingPanel(string comicsPanel) {
     private async void SetAliceEndingPanel(string comicsPanel) {
         _canSkip = false;
 
@@ -283,6 +214,7 @@ public class StoryController : MonoBehaviour {
             return;
         }
 
+        Debug.Log("フェードイン");
         // フェードイン
         await _endingFadeImage.DOFade(1.0f, 1.5f)
             .SetLink(_endingFadeImage.gameObject)
@@ -291,6 +223,7 @@ public class StoryController : MonoBehaviour {
         _comicsPanel.gameObject.SetActive(false);
         _comicsPanel.sprite = comicsPanelSprite;
 
+        Debug.Log("フェードアウト");
         // フェードアウト
         await _endingFadeImage.DOFade(0, 1.5f)
             .SetLink(_endingFadeImage.gameObject)

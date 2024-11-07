@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u5973\u738B\u30A2\u30EA\u30B9"
   _englishName: QueenAlice
-  _live2D: {fileID: 1301678314306599323, guid: 46925062631224e30b8c33c75bfecbfd, type: 3}
+  _live2D: {fileID: 3296808063815045498, guid: 2a5c9eab54aee45d69f131d41517c98b, type: 3}

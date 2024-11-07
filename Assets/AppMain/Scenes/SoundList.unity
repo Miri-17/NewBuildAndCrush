@@ -7708,6 +7708,7 @@ MonoBehaviour:
   - {fileID: 397399186}
   _nextSceneNames:
   - ModeSelection
+  _audioClipCount: 14
 --- !u!1 &1392183250
 GameObject:
   m_ObjectHideFlags: 0

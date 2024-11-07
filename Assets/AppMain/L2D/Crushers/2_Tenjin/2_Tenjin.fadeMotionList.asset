@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 2_Tenjin.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: 4c05ffff8204fffffeeffeff0eb3feff
+  MotionInstanceIds: 9486fcff827afcff5067fcff2867fcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: e7f6b0296322b4ef89bf77d0c235b853, type: 2}
-  - {fileID: 11400000, guid: ee1f6589c39a7409d996aa879c79fd75, type: 2}
-  - {fileID: 11400000, guid: a1cca826b417545b1a5554c3189e217a, type: 2}
-  - {fileID: 11400000, guid: 897c69c787eb345b69522d8a26d7f7c6, type: 2}
+  - {fileID: 11400000, guid: a924744a9becd4813a2a9001c9eef244, type: 2}
+  - {fileID: 11400000, guid: 157647a82cf2f440091224491584886a, type: 2}
+  - {fileID: 11400000, guid: 89cf6cfd38f8f4e7aa77ad6f16ed2f8e, type: 2}
+  - {fileID: 11400000, guid: cae1ba46f2d1b4ab2b226a3c837cd789, type: 2}

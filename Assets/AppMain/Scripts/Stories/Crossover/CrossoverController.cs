@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using Febucci.UI;
 
 public class CrossoverController : MonoBehaviour {
     #region Private Fields
@@ -13,14 +14,9 @@ public class CrossoverController : MonoBehaviour {
     private bool _goToNextPage = false;
     // 次へ行けるフラグ.
     private bool _currentPageCompleted = false;
-    // スキップフラグ.
-    private bool _isSkipped = false;
     // 現在のキャラクター情報.
     private string _currentCharacter = "";
     private List<StoryData> _talks = new List<StoryData>();
-    // タグ判定用.
-    private bool _isInTag = false;
-    private string _tagStrings = "";
     private string _csvName = "";
     // シーン遷移関係.
     private AudioSource _audioSourceBGM = null;
@@ -40,6 +36,7 @@ public class CrossoverController : MonoBehaviour {
     [SerializeField] private ComicsCharacterDB _comicsCharacterDB = null;
     [SerializeField] private Image _characterImage = null;
     [SerializeField, Header("0...Opening, 1...BuilderWin, 2...CrusherWin")] private List<ComicsPanelDB> _comicsPanelDBs = new List<ComicsPanelDB>();
+    [SerializeField] private TypewriterByCharacter _typewriter = null;
     #endregion
     
     private void Start() {
@@ -56,10 +53,25 @@ public class CrossoverController : MonoBehaviour {
         _audioSourceBGM = BGM.Instance.GetComponent<AudioSource>();
         _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
 
+        _typewriter.waitForNormalChars = 0.08f;
+
         StartTalk();
     }
 
     private void Update() {
+        if (_typewriter.isShowingText) {
+            if (Input.GetButtonDown("Select"))
+                _typewriter.SkipTypewriter();
+        } else {
+            if (!_currentPageCompleted) {
+                _currentPageCompleted = true;
+                _fadeInOutLoopAnimation.AnimationOnOff(true);
+            }
+
+            if (Input.GetButtonDown("Select"))
+                _goToNextPage = true;
+        }
+
         if (!_isChangingScene && Input.GetButtonDown("Fire1")) {
             _isChangingScene = true;
             if (GameDirector.Instance.IsOpening) {
@@ -74,12 +86,6 @@ public class CrossoverController : MonoBehaviour {
                 _storiesUIController.TransitionUI(1.0f);
                 GoNextSceneAsync(1.0f, "ModeSelection").Forget();
             }
-        }
-        if (Input.GetButtonDown("Select")) {
-            if (_currentPageCompleted)
-                _goToNextPage = true;
-            else
-                _isSkipped = true;
         }
     }
 
@@ -105,7 +111,7 @@ public class CrossoverController : MonoBehaviour {
         }
     }
 
-    private async UniTask TalkStart(List<StoryData> talkList, float wordInterval = 0.08f) {
+    private async UniTask TalkStart(List<StoryData> talkList) {
         _currentCharacter = "";
 
         Debug.Log("talkList Count: " + talkList.Count);
@@ -119,45 +125,10 @@ public class CrossoverController : MonoBehaviour {
             _comicsText.text = "";
             _goToNextPage = false;
             _currentPageCompleted = false;
-            _isSkipped = false;
             _fadeInOutLoopAnimation.AnimationOnOff(false);
             await SetCharacter(talk);
 
-            await UniTask.Delay((int)(0.5f * 1000f));
-
-            foreach (char word in talk.Talk) {
-                // タグ判定用
-                bool isCloseTag = false;
-                if (word.ToString() == "<") {
-                    Debug.Log("<です。");
-                    _isInTag = true;
-                } else if (word.ToString() == ">") {
-                    Debug.Log(">です。");
-                    _isInTag = false;
-                    isCloseTag = true;
-                }
-
-                if (_isInTag == false && isCloseTag == false && string.IsNullOrEmpty(_tagStrings) == false) {
-                    var _word = _tagStrings + word;
-                    _comicsText.text += _word;
-                    _tagStrings = "";
-                } else if (_isInTag == true || isCloseTag == true) {
-                    _tagStrings += word;
-                    Debug.Log("Tag内です。");
-                    continue;
-                } else {
-                    _comicsText.text += word;
-                }
-                await UniTask.Delay((int)(wordInterval * 1000f));
-
-                if (_isSkipped == true) {
-                    _comicsText.text = talk.Talk;
-                    break;
-                }
-            }
-
-            _currentPageCompleted = true;
-            _fadeInOutLoopAnimation.AnimationOnOff(true);
+            _typewriter.ShowText(talk.Talk);
             
             await UniTask.WaitUntil(() => _goToNextPage == true);
 

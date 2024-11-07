@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 869342401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8954bf5b0cd6141ebba949b3f0fa9d76, type: 3}
+  m_Script: {fileID: 11500000, guid: b24399e536ea54d79bf31346b4ef79fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _comicsText: {fileID: 1059943929}
@@ -1169,6 +1169,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28453031305d9496ea18ef2b77cf2d62, type: 2}
   - {fileID: 11400000, guid: d4aab453caec640fca5aa753502d4f6d, type: 2}
   _endingFadeImage: {fileID: 1646707938}
+  _typewriter: {fileID: 1059943932}
 --- !u!1 &897674706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1643,7 @@ GameObject:
   - component: {fileID: 1059943930}
   - component: {fileID: 1059943929}
   - component: {fileID: 1059943931}
+  - component: {fileID: 1059943932}
   m_Layer: 5
   m_Name: ComicsText
   m_TagString: Untagged
@@ -1722,7 +1724,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1796,6 +1798,49 @@ MonoBehaviour:
   - fade
   defaultBehaviorsTags: []
   defaultTagsMode: 0
+--- !u!114 &1059943932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059943927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a6945b90dcd0c4b81619c0d8b5c283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useTypeWriter: 1
+  startTypewriterMode: 3
+  hideAppearancesOnSkip: 0
+  hideDisappearancesOnSkip: 0
+  triggerEventsOnSkip: 0
+  resetTypingSpeedAtStartup: 1
+  disappearanceOrientation: 0
+  onTextShowed:
+    m_PersistentCalls:
+      m_Calls: []
+  onTypewriterStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onTextDisappeared:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  onMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  waitForNormalChars: 0.03
+  waitLong: 0.6
+  waitMiddle: 0.2
+  avoidMultiplePunctuationWait: 0
+  waitForNewLines: 1
+  waitForLastCharacter: 1
+  useTypewriterWaitForDisappearances: 1
+  disappearanceWaitTime: 0.015
+  disappearanceSpeedMultiplier: 1
 --- !u!1 &1093408670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,11 +3238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _isBuilderWin

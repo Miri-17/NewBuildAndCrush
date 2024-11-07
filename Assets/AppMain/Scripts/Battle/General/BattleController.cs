@@ -38,7 +38,7 @@ public class BattleController : MonoBehaviour {
             GoNextScene();
         } else if (!_isChangingScene && _destroyableBuilder.IsCrushed) {
             _isChangingScene = true;
-            GameDirector.Instance.IsBuilderWin = true;
+            GameDirector.Instance.IsBuilderWin = false;
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[7]);
             GoNextScene();
         }

@@ -9,13 +9,11 @@ public class ResultUIController : MonoBehaviour {
 
     #region Score-related Serialized Fields
     [Header("どちらも勝ち, 負けの順")]
-    [SerializeField] private List<Sprite> _bgs = new List<Sprite>();
     [SerializeField] private List<Sprite> _nameBgs = new List<Sprite>();
-    [SerializeField] private List<Sprite> _winLoses = new List<Sprite>();
+    [SerializeField] private List<Sprite> _frameSprites = new List<Sprite>();
     [Header("すべてBuilder, Crusherの順")]
-    [SerializeField] private List<Image> _bgImages = new List<Image>();
     [SerializeField] private List<Image> _nameBgImages = new List<Image>();
-    [SerializeField] private List<Image> _winLoseImages = new List<Image>();
+    [SerializeField] private List<Image> _frameImages = new List<Image>();
     [SerializeField] private List<TextMeshProUGUI> _crusherScores = new List<TextMeshProUGUI>();
     [SerializeField] private List<TextMeshProUGUI> _builderScores = new List<TextMeshProUGUI>();
     [SerializeField] private List<TextMeshProUGUI> _crusherKillCounts = new List<TextMeshProUGUI>();
@@ -25,7 +23,6 @@ public class ResultUIController : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private List<Image> _fadeOutImages = new List<Image>();
-    [SerializeField] private TextMeshProUGUI _nextText = null;
     #endregion
 
     public bool IsFadeOut { get; private set; } = false;
@@ -36,17 +33,14 @@ public class ResultUIController : MonoBehaviour {
         SetScoreSliders(GameDirector.Instance.BuilderScore, GameDirector.Instance.CrusherScore);
 
         StartFadeOUtAnimation();
-        AnimateNextText();
     }
 
     private void SetBackgrounds() {
         bool isBuilderWin = GameDirector.Instance.IsBuilderWin;
-        _bgImages[0].sprite = _bgs[isBuilderWin ? 0 : 1];
-        _bgImages[1].sprite = _bgs[isBuilderWin ? 1 : 0];
         _nameBgImages[0].sprite = _nameBgs[isBuilderWin ? 0 : 1];
         _nameBgImages[1].sprite = _nameBgs[isBuilderWin ? 1 : 0];
-        _winLoseImages[0].sprite = _winLoses[isBuilderWin ? 0 : 1];
-        _winLoseImages[1].sprite = _winLoses[isBuilderWin ? 1 : 0];
+        _frameImages[0].sprite = _frameSprites[isBuilderWin ? 0 : 1];
+        _frameImages[1].sprite = _frameSprites[isBuilderWin ? 1 : 0];
     }
 
     private void SetScoreUI(int builderScore, int crusherScore) {
@@ -62,7 +56,7 @@ public class ResultUIController : MonoBehaviour {
         float sumScore = builderScore + crusherScore;
         if (sumScore > 0) {
             _scoreSliders[0].value = builderScore / sumScore;
-            _scoreSliders[1].value = crusherScore / sumScore;
+            _scoreSliders[1].value = builderScore / sumScore;
         } else {
             _scoreSliders[0].value = 0.5f;
             _scoreSliders[1].value = 0.5f;
@@ -78,12 +72,5 @@ public class ResultUIController : MonoBehaviour {
             );
         }
         sequence.OnComplete(() => IsFadeOut = true);
-    }
-
-    private void AnimateNextText() {
-        _nextText.DOFade(0, START_TEXT_FADE_DURATION)
-            .SetEase(Ease.InQuart)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetLink(_nextText.gameObject);
     }
 }

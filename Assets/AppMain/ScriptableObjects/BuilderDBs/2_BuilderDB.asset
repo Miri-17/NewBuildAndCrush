@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u5FA1\u9580"
   _englishName: Mikado
-  _live2D: {fileID: 2350566629287001065, guid: d31d2ae8add3049c1abac4b30e5ea3ad, type: 3}
+  _live2D: {fileID: 2966004466993882035, guid: 614a553cc2d8b44e580ad7fc5891578b, type: 3}

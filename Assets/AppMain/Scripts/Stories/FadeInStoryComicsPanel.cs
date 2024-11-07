@@ -46,6 +46,7 @@ public class FadeInStoryComicsPanel : MonoBehaviour {
     }
 
     private bool CheckBuilderEndingConditions() {
+        Debug.Log("counter: " + _counter);
         if ((_counter == 11 && GameDirector.Instance.BuilderIndex == 1 && !GameDirector.Instance.IsBuilderWin) ||
             (_counter == 8 && GameDirector.Instance.IsBuilderWin)) {
             _backComicsPanel.enabled = false;
@@ -68,48 +69,4 @@ public class FadeInStoryComicsPanel : MonoBehaviour {
             _ => 7
         };
     }
-    
-    // private void SetBackComicsPanel() {
-    //     _backComicsPanel.sprite = _image.sprite;
-
-    //     if (!GameDirector.Instance.IsOpening) {
-    //         if (_counter == 11 && GameDirector.Instance.BuilderIndex == 1 && !GameDirector.Instance.IsBuilderWin) {
-    //             _backComicsPanel.enabled = false;
-    //             return;
-    //         } else if (_counter == 8 && GameDirector.Instance.IsBuilderWin) {
-    //             _backComicsPanel.enabled = false;
-    //             return;
-    //         } else {
-    //             _backComicsPanel.enabled = true;
-    //             return;
-    //         }
-    //     }
-
-    //     switch (GameDirector.Instance.BuilderIndex) {
-    //         case 0:
-    //             if (_counter == 12)
-    //                 _backComicsPanel.enabled = false;
-    //             else
-    //                 _backComicsPanel.enabled = true;
-    //             break;
-    //         case 1:
-    //             if (_counter == 13)
-    //                 _backComicsPanel.enabled = false;
-    //             else
-    //                 _backComicsPanel.enabled = true;
-    //             break;
-    //         case 2:
-    //             if (_counter == 8)
-    //                 _backComicsPanel.enabled = false;
-    //             else
-    //                 _backComicsPanel.enabled = true;
-    //             break;
-    //         default:
-    //             if (_counter == 7)
-    //                 _backComicsPanel.enabled = false;
-    //             else
-    //                 _backComicsPanel.enabled = true;
-    //             break;
-    //     }
-    // }
 }

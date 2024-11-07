@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u5929\u4EBA"
   _englishName: Tenjin
-  _live2D: {fileID: 3100244259056883136, guid: 6ffef2dc339d84f129b4174d445ca48e, type: 3}
+  _live2D: {fileID: 5757219719953670769, guid: e3fd799e048f74495bfac44d6c3adf47, type: 3}

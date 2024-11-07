@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 0_Girl.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: c624ffffe004ffffaeeffeff2ae4feff
+  MotionInstanceIds: 80a1fcffbc86fcff8866fcff3866fcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: 0242d35b48cf34f9c9225135cec45524, type: 2}
-  - {fileID: 11400000, guid: c16df1bad3a4349ab9b747797c15c3be, type: 2}
-  - {fileID: 11400000, guid: eb7b1c0c0c0fc4d3badc526108777b0c, type: 2}
-  - {fileID: 11400000, guid: 1bcfda10af4e3420588a68c35814a904, type: 2}
+  - {fileID: 11400000, guid: 6bf6e11cc5e8a44289c7e0eec4f4b587, type: 2}
+  - {fileID: 11400000, guid: 86efd82b3f0a0434b9af95c8cd44a300, type: 2}
+  - {fileID: 11400000, guid: 08a5bd0ece5fc4a9ba4043a094996b17, type: 2}
+  - {fileID: 11400000, guid: 4d81bfcd000894bf5a171f7df2c226fb, type: 2}

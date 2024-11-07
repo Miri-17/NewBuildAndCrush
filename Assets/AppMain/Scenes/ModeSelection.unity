@@ -6263,7 +6263,7 @@ MonoBehaviour:
   _rulesPanelImage: {fileID: 1518778275}
   _rulesPanelSprites:
   - {fileID: 21300000, guid: f3dc166a6261745f2bc41d87406c062e, type: 3}
-  - {fileID: 21300000, guid: 55db1fc98e05a4822b0b5367e8f73d29, type: 3}
+  - {fileID: 21300000, guid: 8feef5c510ca24eb1b2df53f72a93e51, type: 3}
   - {fileID: 21300000, guid: f79b5972e6e594220ab2050aacac82f4, type: 3}
   - {fileID: 21300000, guid: 13b80753685a0423d8b426b67967aafb, type: 3}
   _warningPanel: {fileID: 1411086695}

@@ -76,7 +76,7 @@ namespace Febucci.UI
 
                 case '!':
                 case '?':
-                case '.':
+                // case '.':
                     return waitLong;
             }
 

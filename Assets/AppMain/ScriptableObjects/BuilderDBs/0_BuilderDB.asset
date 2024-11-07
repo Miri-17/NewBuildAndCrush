@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u30AA\u30AA\u30AB\u30DF"
   _englishName: Wolf
-  _live2D: {fileID: 794753891948485932, guid: 35d23796c183042768b7d9789deb72fe, type: 3}
+  _live2D: {fileID: 8921857808853356505, guid: 951cc489f7ca3405c8444924b223a36d, type: 3}

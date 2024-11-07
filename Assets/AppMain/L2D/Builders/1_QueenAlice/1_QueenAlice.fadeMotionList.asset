@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 1_QueenAlice.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: b804ffff5ed2feff86b3feff36b3feff
+  MotionInstanceIds: d2dbfcfffcdafcffacdafcffc0a5fcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: 4810330b1e73540b3b4565bcab841b18, type: 2}
-  - {fileID: 11400000, guid: 691b274b986df4e4b8016838c059b125, type: 2}
-  - {fileID: 11400000, guid: 5bb5effbd0f25460881e55706c826052, type: 2}
-  - {fileID: 11400000, guid: 5a6c2bb07e45248efa8ca80588131d4a, type: 2}
+  - {fileID: 11400000, guid: dc22ff6736a964073bf9b85a4abad81d, type: 2}
+  - {fileID: 11400000, guid: b23297d216a064ff99174034ea1dc209, type: 2}
+  - {fileID: 11400000, guid: 737b10fd563194392b8a7b7e554dbe82, type: 2}
+  - {fileID: 11400000, guid: b2b5d27a02dc64fcdb1953ef1b38a0c0, type: 2}

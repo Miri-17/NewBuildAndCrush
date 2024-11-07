@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u304A\u83D3\u5B50\u306E\u9B54\u5973"
   _englishName: Witch
-  _live2D: {fileID: 852929565010149808, guid: 021b7beaf590e4d55a94b2f2db6889b7, type: 3}
+  _live2D: {fileID: 1372009385599672706, guid: 019ec5302c56946069147907ee71af40, type: 3}

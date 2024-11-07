@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 3_Witch.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: ac03ffff7603ffff2603ffffd6effeff
+  MotionInstanceIds: 8667fcffd866fcffb066fcff1066fcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: 0f4f65e117ffd4f779272861caaa7a3d, type: 2}
-  - {fileID: 11400000, guid: 22a15c6bf533846b2a8385a5d9773cdb, type: 2}
-  - {fileID: 11400000, guid: b9c122d9eda974e70bf80a42307ac764, type: 2}
-  - {fileID: 11400000, guid: ceb0f11d915a04b41bac49cb7fffd805, type: 2}
+  - {fileID: 11400000, guid: 4e7bc9edef64c430eba0d051b1957d8b, type: 2}
+  - {fileID: 11400000, guid: 36f29b2e5653a4d12803c5d54a806fd4, type: 2}
+  - {fileID: 11400000, guid: 512b9c87438794aaaa79c6cb6670cd92, type: 2}
+  - {fileID: 11400000, guid: 8244ca7dd2bcd4063b5bb8b6f0add8ea, type: 2}

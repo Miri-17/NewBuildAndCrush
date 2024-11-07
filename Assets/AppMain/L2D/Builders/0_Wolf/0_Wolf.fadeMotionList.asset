@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 0_Wolf.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: 5a04ffff4e03ffffd602ffff5ac6feff
+  MotionInstanceIds: f4f1fcff24dbfcffd4dafcff30b6fcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: 89ef14689deb0467eaa477bea77d354e, type: 2}
-  - {fileID: 11400000, guid: 2fbd888c34ca44796ae35f05e4fce305, type: 2}
-  - {fileID: 11400000, guid: 22ebdcbc3652c4dcd8a20d01d84948ec, type: 2}
-  - {fileID: 11400000, guid: e96d74d2f03d24afda23c0c3b4f7c8f8, type: 2}
+  - {fileID: 11400000, guid: 89f97c1cf8f6f41098fcba127385685a, type: 2}
+  - {fileID: 11400000, guid: 5576d0b9266c649ff85be19753a38376, type: 2}
+  - {fileID: 11400000, guid: 21bf9bf5737e9415eb29417b4985e2d2, type: 2}
+  - {fileID: 11400000, guid: e9886f9f48b2749c2bb5f3a9ea7d415d, type: 2}

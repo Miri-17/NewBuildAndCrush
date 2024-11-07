@@ -27,10 +27,11 @@ public class QueenOfHeartsAttack : MonoBehaviour {
     [SerializeField] private LayerMask _obstacleLayer;
 
     // QueenOfHearts固有
-    [SerializeField] private GameObject _attackEffectPrefab;
+    [SerializeField] private GameObject[] _attackEffectPrefabs = null;
     [SerializeField] private float _chargeTime = 1.0f;
     [SerializeField] private GameObject _chargingEffectPrefab = null;
     [SerializeField] private GameObject _heartChargedEffectPrefab = null;
+    [SerializeField] private AudioClip[] _audioClips = null;
     #endregion
 
 
@@ -53,17 +54,29 @@ public class QueenOfHeartsAttack : MonoBehaviour {
             if (verticalKey > 0) {
                 _animator.SetTrigger("Attack_Upwards");
                 Attack(_attackPointUp);
-                Instantiate(_attackEffectPrefab, _attackPointUp.transform);
+                if (_isCharging)
+                    Instantiate(_attackEffectPrefabs[1], _attackPointUp.transform);
+                else
+                    Instantiate(_attackEffectPrefabs[0], _attackPointUp.transform);
             } else if (verticalKey < 0) {
                 _animator.SetTrigger("Attack_Downwards");
                 Attack(_attackPointDown);
-                Instantiate(_attackEffectPrefab, _attackPointDown.transform);
+                if (_isCharging)
+                    Instantiate(_attackEffectPrefabs[1], _attackPointDown.transform);
+                else
+                    Instantiate(_attackEffectPrefabs[0], _attackPointDown.transform);
             } else {
                 _animator.SetTrigger("Attack");
                 Attack(_attackPoint);
-                Instantiate(_attackEffectPrefab, _attackPoint.transform);
+                if (_isCharging)
+                    Instantiate(_attackEffectPrefabs[1], _attackPoint.transform);
+                else
+                    Instantiate(_attackEffectPrefabs[0], _attackPoint.transform);
             }
-            _audioSource.PlayOneShot(_audioSource.clip);
+            if (_isCharging)
+                _audioSource.PlayOneShot(_audioClips[1]);
+            else
+                _audioSource.PlayOneShot(_audioClips[0]);
 
             _nextAttackTime = Time.time + 1.0f / _attackRate;
             

@@ -67,6 +67,7 @@ public class DirectionController : MonoBehaviour {
     }
 
     public void FinishDirection() {
+        IsDirection = true;
         Destroy(_battleBGM);
         var prefab0 = Instantiate(_finishPanel, GameObject.FindWithTag("BuilderDirection").transform);
         prefab0.transform.localPosition = Vector3.zero;

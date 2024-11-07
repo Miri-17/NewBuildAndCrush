@@ -3,9 +3,9 @@ using UnityEngine;
 using TMPro;
 
 public class BattleUIController : MonoBehaviour {
-    private const float END_POSITION = 5270.0f;
-
     #region Private Fields
+    private float _endPosition = 5270.0f;
+    // private float _endPosition = 5734.0f;
     private int _builderUpdateScore = 0;
     private int _crusherUpdateScore = 0;
     private bool _isChangingScene = false;
@@ -29,6 +29,9 @@ public class BattleUIController : MonoBehaviour {
     #endregion
 
     private void Start() {
+        GameDirector.Instance.CrusherPosition = 0;
+        // GameDirector.Instance.BuilderPosition = 0;
+        
         _builderScores[0].text = BuilderCurrentScore.ToString();
         _builderScores[1].text = BuilderCurrentScore.ToString();
         _crusherScores[0].text = CrusherCurrentScore.ToString();
@@ -78,14 +81,14 @@ public class BattleUIController : MonoBehaviour {
     }
 
     private void ScoreUpdate() {
-        _builderUpdateScore = (int)((END_POSITION - GameDirector.Instance.BuilderPosition) * 999 / END_POSITION);
+        _builderUpdateScore = (int)((_endPosition - GameDirector.Instance.BuilderPosition) * 999 / _endPosition);
         if (_builderUpdateScore >= 0 && _builderUpdateScore < 1000 && _builderUpdateScore > BuilderCurrentScore) {
             BuilderCurrentScore = _builderUpdateScore;
             _builderScores[0].text = BuilderCurrentScore.ToString();
             _builderScores[1].text = BuilderCurrentScore.ToString();
         }
 
-        _crusherUpdateScore = (int)(GameDirector.Instance.CrusherPosition * 999 / END_POSITION);
+        _crusherUpdateScore = (int)(GameDirector.Instance.CrusherPosition * 999 / _endPosition);
         if (_crusherUpdateScore < 1000 && _crusherUpdateScore > CrusherCurrentScore) {
             CrusherCurrentScore = _crusherUpdateScore;
             _crusherScores[0].text = CrusherCurrentScore.ToString();

@@ -61,7 +61,11 @@ public class CrusherController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_directionController.IsDirection) return;
+        if (_directionController.IsDirection) {
+            _rb2D.velocity = new Vector2(0, 0);
+            // _addSpeedX = 0;
+            return;
+        }
         
         GameDirector.Instance.CrusherPosition = this.transform.position.x;
 
@@ -119,7 +123,7 @@ public class CrusherController : MonoBehaviour {
             //ワゴンから降りたらクラッシャーのスピードを通常に戻す.
             if (_builderController.WagonControllerRun.CrusherExitCheck.IsOn) {
                 // Debug.Log("降りた。add speed x: " + _addSpeedX);
-                _addSpeedX = 0.0f;
+                _addSpeedX = 0;
             }
         }
         
@@ -127,6 +131,12 @@ public class CrusherController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        if (_directionController.IsDirection) {
+            _xSpeed = 0;
+            _addSpeedX = 0;
+            return;
+        }
+
         switch (_moveDirection) {
             case MOVE_DIRECTION.STOP:
                 _xSpeed = 0.0f;

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u30D8\u30F3\u30BC\u30EB\u3068\u30B0\u30EC\u30FC\u30C6\u30EB"
   _englishName: HanzelGretel
-  _live2D: {fileID: 5390927402218144024, guid: b17736b9abc094436a279e96b9e4424b, type: 3}
+  _live2D: {fileID: 1287445753989581668, guid: b91047f537b834edfbcca8415b185685, type: 3}

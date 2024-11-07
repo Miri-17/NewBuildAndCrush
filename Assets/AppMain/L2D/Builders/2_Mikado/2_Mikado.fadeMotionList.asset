@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 2_Mikado.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: 1605ffff2404ffffd403ffff26f0feff
+  MotionInstanceIds: bef1fcff9cdbfcffe0c8fcff08b6fcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: 490e4d14696994c67bf8b35391881267, type: 2}
-  - {fileID: 11400000, guid: e7349393aeea24ec0b66ee2de7a79347, type: 2}
-  - {fileID: 11400000, guid: 311d70aa0921a4c739ab33bc0f05cc00, type: 2}
-  - {fileID: 11400000, guid: 5355c83754004483eb162994bb6c903a, type: 2}
+  - {fileID: 11400000, guid: 29a823376f1084e03b375bf6116ac535, type: 2}
+  - {fileID: 11400000, guid: 13ab63ff00b3c4fe29a3e9dbf89cd3e2, type: 2}
+  - {fileID: 11400000, guid: 441541377193f4db594b87dd6c32d7f9, type: 2}
+  - {fileID: 11400000, guid: dfefede642dc147558003c667f84da4d, type: 2}

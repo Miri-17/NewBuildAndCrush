@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: 3_HanzelGretel.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: faa9feff1e94fefff693feffce93feff
+  MotionInstanceIds: 2af2fcff88f1fcff74dbfcff4cdbfcff
   CubismFadeMotionObjects:
-  - {fileID: 11400000, guid: aa39de6774a9d41d2a7a17d42c522c02, type: 2}
-  - {fileID: 11400000, guid: 228aad6d0801a49f4872eb014a5f4705, type: 2}
-  - {fileID: 11400000, guid: aef63eb636b6f44079ac6c4422765be8, type: 2}
-  - {fileID: 11400000, guid: 3db17cd8a0c3848fea39f080ec855348, type: 2}
+  - {fileID: 11400000, guid: e8d6c53b6ca39413aa03d2b9e9c6e3b6, type: 2}
+  - {fileID: 11400000, guid: 562897d2607244ef7b48f11dcb2bdbd3, type: 2}
+  - {fileID: 11400000, guid: 7a8248233132f48f89c5bea76821da75, type: 2}
+  - {fileID: 11400000, guid: d947546ce73144561a052aa31d856f6e, type: 2}

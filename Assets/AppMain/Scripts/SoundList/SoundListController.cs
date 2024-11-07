@@ -7,7 +7,6 @@ using Cysharp.Threading.Tasks;
 // TODO 早く切り替えた時のバグどうにかしたい
 public class SoundListController : MonoBehaviour {
     #region Private Fields
-    private int _audioClipCount = 0;
     private AudioSource _audioSourceBGM = null;
     private int _previousSelectionIndex = -1;
     // シーン遷移関係.
@@ -19,6 +18,7 @@ public class SoundListController : MonoBehaviour {
     [SerializeField] private SoundListUIController _soundListUIController = null;
     [SerializeField] private List<FadeInOutLoopAnimation> _fadeInOutLoopAnimations = null;
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    [SerializeField] private int _audioClipCount = 14;
     #endregion
 
     public int SoundIndex {get; private set; } = 0;
@@ -31,7 +31,7 @@ public class SoundListController : MonoBehaviour {
 
         _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
         _audioSourceBGM = BGM.Instance.GetComponent<AudioSource>();
-        _audioClipCount = BGM.Instance.BGMDB.GetAudioClipCount();
+        // _audioClipCount = BGM.Instance.BGMDB.GetAudioClipCount();
 
         GameDirector.Instance.PreviousSceneName = "SoundList";
     }

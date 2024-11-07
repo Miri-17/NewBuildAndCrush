@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: "\u8D64\u305A\u304D\u3093"
   _englishName: Girl
-  _live2D: {fileID: 2794290679981239808, guid: bd168c6dcc83d48218076ddd9b379040, type: 3}
+  _live2D: {fileID: 4159542145616623529, guid: d5529107f88474aee957efbdcaf977fc, type: 3}

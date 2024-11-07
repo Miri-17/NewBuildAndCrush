@@ -59,8 +59,9 @@ public class ResultController : MonoBehaviour {
         var builder = _buildersDB.GetBuilder(builderIndex);
 
         _builderName.text = builder.Name;
-        var builderPosition = GetBuilderPosition(builderIndex);
-        var builderL2D = Instantiate(builder.Live2D, builderPosition, Quaternion.identity, GameObject.Find("Builder").transform);
+        var builderL2D = Instantiate(builder.Live2D, new Vector3(0, 0, 0), Quaternion.identity);
+        builderL2D.transform.parent = GameObject.Find("Builder").transform;
+        builderL2D.transform.localPosition = GetBuilderPosition(builderIndex);
         string animationState = GameDirector.Instance.IsBuilderWin ? "L2D_Win" : "L2D_Lose";
         builderL2D.GetComponent<Animator>().Play($"{builder.EnglishName}{animationState}");
     }
@@ -69,27 +70,28 @@ public class ResultController : MonoBehaviour {
         var crusher = _crushersDB.GetCrusher(crusherIndex);
 
         _crusherName.text = crusher.Name;
-        var crusherPosition = GetCrusherPosition(crusherIndex);
-        var crusherL2D = Instantiate(crusher.Live2D, crusherPosition, Quaternion.identity, GameObject.Find("Crusher").transform);
+        var crusherL2D = Instantiate(crusher.Live2D, new Vector3(0, 0, 0), Quaternion.identity);
+        crusherL2D.transform.parent = GameObject.Find("Crusher").transform;
+        crusherL2D.transform.localPosition = GetCrusherPosition(crusherIndex);
         string animationState = GameDirector.Instance.IsBuilderWin ? "L2D_Lose" : "L2D_Win";
         crusherL2D.GetComponent<Animator>().Play($"{crusher.EnglishName}{animationState}");
     }
     
     private Vector3 GetBuilderPosition(int index) {
         switch (index) {
-            case 0: return new Vector3(1.0f, 0, 80.0f);
-            case 1: return new Vector3(0.75f, 0, 80.0f);
-            case 2: return new Vector3(0.9f, 0, 80.0f);
-            default: return new Vector3(0.85f, 0, 80.0f);
+            case 0: return new Vector3(5.0f, 0, 80.0f);
+            case 1: return new Vector3(3.2f, 0, 80.0f);
+            case 2: return new Vector3(5.0f, 0, 80.0f);
+            default: return new Vector3(4.5f, 0, 80.0f);
         }
     }
     
     private Vector3 GetCrusherPosition(int index) {
         switch (index) {
-            case 0: return new Vector3(-0.45f, 0, 80.0f);
-            case 1: return new Vector3(-0.95f, 0, 80.0f);
-            case 2: return new Vector3(-0.87f, 0, 80.0f);
-            default: return new Vector3(-0.65f, 0, 80.0f);
+            case 0: return new Vector3(-2.5f, 0, 80.0f);
+            case 1: return new Vector3(-4.5f, 0, 80.0f);
+            case 2: return new Vector3(-4.5f, 0, 80.0f);
+            default: return new Vector3(-3.5f, 0, 80.0f);
         }
     }
 

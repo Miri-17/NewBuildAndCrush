@@ -73,8 +73,9 @@ public class BuilderSelectionController : MonoBehaviour {
             _builderName.fontSize = 95;
         else
             _builderName.fontSize = 130;
-        var builderPosition = GetBuilderPosition();
-        _builderL2D = Instantiate(Builder.Live2D, builderPosition, Quaternion.identity, GameObject.Find("Builder").transform);
+        _builderL2D = Instantiate(Builder.Live2D, new Vector3(0, 0, 0), Quaternion.identity);
+        _builderL2D.transform.parent = GameObject.Find("Builder").transform;
+        _builderL2D.transform.localPosition = GetBuilderPosition(builderIndex);
         _builderAnimator = _builderL2D.GetComponent<Animator>();
 
         _builderNickname.text = builderInfo.Nickname;
@@ -101,9 +102,13 @@ public class BuilderSelectionController : MonoBehaviour {
         _previousBuilderIndex = builderIndex;
     }
 
-    private Vector3 GetBuilderPosition() {
-        // キャラクターごとに変える必要性が出てきたら, 引数にbuilderIndexを指定しswitch文を使用してください.
-        return new Vector3(0.85f, 0, 80.0f);
+    private Vector3 GetBuilderPosition(int index) {
+        switch (index) {
+            case 0: return new Vector3(4.0f, 0, 80.0f);
+            case 1: return new Vector3(2.8f, 0, 80.0f);
+            case 2: return new Vector3(4.3f, 0, 80.0f);
+            default: return new Vector3(3.9f, 0, 80.0f);
+        }
     }
 
     private void OnSelectionButtonClicked() {
