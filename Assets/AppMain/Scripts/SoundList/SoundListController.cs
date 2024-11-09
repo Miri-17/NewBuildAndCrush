@@ -9,6 +9,7 @@ public class SoundListController : MonoBehaviour {
     #region Private Fields
     private AudioSource _audioSourceBGM = null;
     private int _previousSelectionIndex = -1;
+    private float _nextSelectTime = 0;
     // シーン遷移関係.
     private bool _isChangingScene = false;
     private AudioSource _audioSourceSE = null;
@@ -19,6 +20,7 @@ public class SoundListController : MonoBehaviour {
     [SerializeField] private List<FadeInOutLoopAnimation> _fadeInOutLoopAnimations = null;
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
     [SerializeField] private int _audioClipCount = 14;
+    [SerializeField, Header("1秒に何回セレクトできるか")] private float _selectRate = 3.0f;
     #endregion
 
     public int SoundIndex {get; private set; } = 0;
@@ -39,7 +41,7 @@ public class SoundListController : MonoBehaviour {
     private void Update() {
         if (_isChangingScene) return;
         
-        if (Input.GetButtonDown("Vertical")) {
+        if (Time.time >= _nextSelectTime && Input.GetButton("Vertical")) {
             var verticalKey = Input.GetAxisRaw("Vertical");
             if (verticalKey < 0) {
                 SoundIndex++;
@@ -60,6 +62,7 @@ public class SoundListController : MonoBehaviour {
                 _soundListUIController.SetAnchoredPosition(new Vector2(0, 80.0f));
 
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[1]);
+            _nextSelectTime = Time.time + 1.0f / _selectRate;
         }
 
         if (Input.GetButtonDown("Select")) {
