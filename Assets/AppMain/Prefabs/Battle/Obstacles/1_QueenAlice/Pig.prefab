@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defense: 4
-  _duration: 2
+  _duration: 0.8
   _boxCollider2D: {fileID: 965587146533394669}
   _capsuleCollider2D: {fileID: 1676574394496667161}
   _endPosition: -272

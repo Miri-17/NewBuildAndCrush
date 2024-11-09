@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1581830134720565077}
   - component: {fileID: 5825465479958751429}
   - component: {fileID: 8385801798469956042}
-  - component: {fileID: 5052135466219232598}
+  - component: {fileID: 2304943111856064260}
   m_Layer: 0
   m_Name: AttackEffect1_QueenOfHearts
   m_TagString: QueenOfHeartsAttack
@@ -112,7 +112,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &8385801798469956042
 BoxCollider2D:
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 24, y: 42}
   m_EdgeRadius: 0
---- !u!114 &5052135466219232598
+--- !u!114 &2304943111856064260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,10 +168,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2548985142113107334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3322140ea99846aeb547896e46694c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f6132966bd134150bf8cec47e982f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 60
   _existenceTime: 0.1
   _damage: 2
   _obstacleCrushEffect: {fileID: 9190961169032549529, guid: e1fe2726918e34697b43cd9f1748f352, type: 3}
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 384
+  _attackRange: {x: 24, y: 42}

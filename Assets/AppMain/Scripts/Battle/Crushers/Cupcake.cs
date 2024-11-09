@@ -4,16 +4,16 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using DG.Tweening;
 
-public class AttackEffect : MonoBehaviour {
+public class Cupcake : MonoBehaviour {
     private CancellationTokenSource _cancellationTokenSource = null;
 
     #region Serialized Fields
-    [SerializeField, Header("飛距離")] private float _distance = 30.0f;
+    [SerializeField, Header("飛距離")] private float _distance = 60.0f;
     [SerializeField] private float _existenceTime = 0.1f;
-    [SerializeField] private int _damage = 1;
+    [SerializeField] private int _damage = 2;
     [SerializeField] private GameObject _obstacleCrushEffect;
     [SerializeField] private LayerMask _obstacleLayer;
-    [SerializeField] private Vector2 _attackRange = new Vector2(16, 28);
+    [SerializeField] private float _attackRange = 3.0f;
     #endregion
 
     private void Start() {
@@ -45,7 +45,7 @@ public class AttackEffect : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        Collider2D[] hitInfos = Physics2D.OverlapBoxAll(this.transform.position, _attackRange, _obstacleLayer);
+        Collider2D[] hitInfos = Physics2D.OverlapCircleAll(this.transform.position, _attackRange, _obstacleLayer);
         foreach (Collider2D hitInfo in hitInfos) {
             var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
             var destroyableBuilder = hitInfo.transform.GetComponent<DestroyableBuilder>();

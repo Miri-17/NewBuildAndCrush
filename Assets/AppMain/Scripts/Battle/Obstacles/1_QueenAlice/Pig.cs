@@ -13,7 +13,7 @@ public class Pig : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private int _defense = 4;
-    [SerializeField] private float _duration = 2.0f;
+    [SerializeField] private float _duration = 0.8f;
     [SerializeField] private BoxCollider2D _boxCollider2D = null;
     [SerializeField] private CapsuleCollider2D _capsuleCollider2D = null;
     [SerializeField] private float _endPosition = -272.0f;
@@ -51,6 +51,7 @@ public class Pig : MonoBehaviour {
     private async UniTaskVoid Crush(float duration) {
         Destroy(_boxCollider2D);
         Destroy(_capsuleCollider2D);
+        _tween.Pause();
         _animator.Play("Pig_Defeat");
 
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());

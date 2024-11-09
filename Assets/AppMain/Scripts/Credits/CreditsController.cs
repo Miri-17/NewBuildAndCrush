@@ -46,8 +46,7 @@ public class CreditsController : MonoBehaviour {
     private void Update() {
         if (_isChangingScene || !Input.GetButtonDown("Jump"))
             return;
-        
-        // _isChangingScene = true;
+            
         _audioSource_SE.PlayOneShot(_audioClip_SE);
         ChangeScene();
     }

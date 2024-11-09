@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 
 public class CreditsUIController : MonoBehaviour {
@@ -15,32 +16,31 @@ public class CreditsUIController : MonoBehaviour {
 
     public static float TransitionDuration { get; private set; } = 1.0f;
 
-    private void Start() {
+    private async void Start() {
+        await UniTask.Delay(2000);
+
+        if (_scrollingObjects == null) return;
+
         _scrollingObjects.DOAnchorPosY(_endAnchorPosY, _time)
             .SetEase(Ease.Linear)
-            // .OnComplete(CreditsEnded.Forget())
-            .OnComplete(CreditsEnded)
+            .OnComplete(async () => await CreditsEnded())
             .SetLink(_scrollingObjects.gameObject);
     }
 
     public void FadeInImage() {
         var sequence = DOTween.Sequence();
-        sequence.Append(
-            _fadeInImages[0].DOFade(1.0f, TransitionDuration)
-                .SetEase(Ease.Linear)
-                .SetLink(_fadeInImages[0].gameObject)
-        );
-        sequence.Join(
-            _fadeInImages[1].DOFade(1.0f, TransitionDuration)
-                .SetEase(Ease.Linear)
-                .SetLink(_fadeInImages[1].gameObject)
-        );
+        foreach (var image in _fadeInImages) {
+            if (image == null) break;
+            sequence.Join(
+                image.DOFade(1.0f, TransitionDuration)
+                    .SetEase(Ease.Linear)
+                    .SetLink(image.gameObject)
+            );
+        }
     }
 
-    private void CreditsEnded() {
-    // private async UniTaskVoid CreditsEnded() {
-        // await UniTask.Delay((int)(0.5f * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
-        // await UniTask.Delay((int)(1.0f * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
+    private async Task CreditsEnded() {
+        await UniTask.Delay(2000);
         _creditsController.ChangeScene();
     }
 }

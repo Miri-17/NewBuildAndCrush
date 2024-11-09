@@ -58,7 +58,6 @@ public class ModeSelectionController : MonoBehaviour {
         _previousSelectIndex = _nextSceneIndex;
         
         _rulesPanel.SetActive(false);
-        _rulesButton.sprite = _clickedRulesButtonSprite;
 
         _warningPanel.SetActive(false);
     }

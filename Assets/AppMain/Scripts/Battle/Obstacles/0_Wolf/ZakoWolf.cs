@@ -5,14 +5,15 @@ using DG.Tweening;
 public class ZakoWolf : MonoBehaviour {
     #region Private Fields
     private Tween _tween = null;
-    private Animator _animator = null;
+    private SpriteRenderer _spriteRenderer = null;
     private AudioSource _audioSource = null;
+    private Animator _animator = null;
     private bool _isRunning = false;
     private float _tweenDuration = 0;
     #endregion
 
     #region Serialized Fields
-    [SerializeField] private int _defense = 4;
+    [SerializeField] private int _defense = 8;
     [SerializeField] private float _duration = 2.0f;
     [SerializeField] private BoxCollider2D[] _boxCollider2Ds = new BoxCollider2D[2];
     [SerializeField] private CircleCollider2D _circleCollider2D = null;
@@ -21,8 +22,9 @@ public class ZakoWolf : MonoBehaviour {
     #endregion
 
     private void Start() {
-        _animator = this.GetComponent<Animator>();
+        _spriteRenderer = this.GetComponent<SpriteRenderer>();
         _audioSource = this.GetComponent<AudioSource>();
+        _animator = this.GetComponent<Animator>();
         _tweenDuration = (this.transform.localPosition.x - _endPosition) / _speed;
         InitializeTween();
     }
@@ -32,6 +34,7 @@ public class ZakoWolf : MonoBehaviour {
             _audioSource.PlayOneShot(_audioSource.clip);
 
         _defense -= damage;
+        Debug.Log("WolfのDefense: " + _defense);
         if (_defense <= 0) {
             Crush(_duration).Forget();
             return;
@@ -42,6 +45,7 @@ public class ZakoWolf : MonoBehaviour {
         foreach (var collider2D in _boxCollider2Ds)
             Destroy(collider2D);
         Destroy(_circleCollider2D);
+        Destroy(_spriteRenderer);
         
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         
