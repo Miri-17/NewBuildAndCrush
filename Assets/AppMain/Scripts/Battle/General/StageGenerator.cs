@@ -61,11 +61,10 @@ public class StageGenerator : MonoBehaviour {
 
     private Vector3 GetBuilderPosition(int index) {
         switch (index) {
-            // TODO zを変える以外の方法で、ビルダーの足を手前に持っていく.
-            case 0: return new Vector3(5270.0f, -137.0f, -2.0f);
-            case 1: return new Vector3(5270.0f, -132.7f, -2.0f);
-            case 2: return new Vector3(5270.0f, -143.7f, -2.0f);
-            default: return new Vector3(5270.0f, -144.7f, -2.0f);
+            case 0: return new Vector3(5270f, -136f, -2f);
+            case 1: return new Vector3(5270f, -132f, -2f);
+            case 2: return new Vector3(5270f, -143.7f, -2f);
+            default: return new Vector3(5270f, -144f, -2f);
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8809595644121698621}
   - component: {fileID: 5279288346670257195}
   - component: {fileID: 7567379387701219187}
+  - component: {fileID: 4121225523072428}
   - component: {fileID: 1946553350180357791}
   m_Layer: 7
   m_Name: Frog_Note1
@@ -121,6 +122,33 @@ CircleCollider2D:
   m_Offset: {x: -0.9, y: -0.8}
   serializedVersion: 2
   m_Radius: 8
+--- !u!50 &4121225523072428
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138741614421889702}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &1946553350180357791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,5 +162,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _index: 1
-  _rotation: 150
-  _speed: 25

@@ -58,7 +58,7 @@ public class DestroyableBuilder : MonoBehaviour {
         this.transform.DORotate(new Vector3(0, 0, -75), 2);
         this.transform.DOLocalPath(
             new[] {
-                new Vector3(100f, 30f, 0),
+                new Vector3(100f, 45f, 0),
                 new Vector3(200f, -10f, 0),
             },
             2f, PathType.CatmullRom)

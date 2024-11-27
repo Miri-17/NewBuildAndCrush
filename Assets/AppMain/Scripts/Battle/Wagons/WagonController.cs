@@ -64,7 +64,7 @@ public class WagonController : MonoBehaviour {
         _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[5]);
         _battleBuilderUIController.SetGoButtonInteractive(true);
         GameDirector.Instance.WagonCrushCounts++;
-        Instantiate(_wagonExplosionPrefab, this.transform.position, Quaternion.identity);
+        Instantiate(_wagonExplosionPrefab, new Vector3(this.transform.position.x + 200f, this.transform.position.y, -1f), Quaternion.identity);
         Destroy(this.gameObject);
     }
 

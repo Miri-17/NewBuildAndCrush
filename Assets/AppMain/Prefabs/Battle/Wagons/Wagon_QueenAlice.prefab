@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 173416109751179359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -399,7 +399,6 @@ MonoBehaviour:
   _crusherContinuePosition: {fileID: 7673990595559105970}
   _wagonExplosionPrefab: {fileID: 7749779667050500448, guid: 83bd0126d3f3740adb27bb4761c581ae, type: 3}
   _speed: 180
-  _explodeAudioClip: {fileID: 8300000, guid: b105f0203193b4bce81362a405487f19, type: 3}
 --- !u!1 &4517660878620231015
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 7673990595559105970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -300, y: -123, z: 0}
+  m_LocalPosition: {x: -300, y: -123, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

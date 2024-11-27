@@ -44,7 +44,9 @@ public class Cupcake : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    // private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnCollisionStay2D(Collision2D collision) {
+        Debug.Log("collision name: " + collision.gameObject.name);
         Collider2D[] hitInfos = Physics2D.OverlapCircleAll(this.transform.position, _attackRange, _obstacleLayer);
         foreach (Collider2D hitInfo in hitInfos) {
             var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
@@ -57,6 +59,7 @@ public class Cupcake : MonoBehaviour {
             var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
 
             if (destroyableObstacle != null) {
+                Debug.Log("obstacle attack");
                 destroyableObstacle.TakeDamage(_damage);
                 Instantiate(_obstacleCrushEffect, this.transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
@@ -87,6 +90,7 @@ public class Cupcake : MonoBehaviour {
                 Destroy(this.gameObject);
             }
             if (bushi != null) {
+                Debug.Log("Bushi attack");
                 bushi.TakeDamage(_damage);
                 Instantiate(_obstacleCrushEffect, this.transform.position, Quaternion.identity);
                 Destroy(this.gameObject);

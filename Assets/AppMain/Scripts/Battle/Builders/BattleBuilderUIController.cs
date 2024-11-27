@@ -130,6 +130,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         _partsGenerationBars[index].value = 0;
 
         _partsGenerationBars[index].DOValue(1.0f, _generationTime[index])
+            .SetEase(Ease.Linear)
             .SetLink(_partsGenerationBars[index].gameObject)
             .OnComplete(() => { _obstacleButtons[index].interactable = true; _isGeneration[index] = false; });
     }
@@ -142,7 +143,9 @@ public class BattleBuilderUIController : MonoBehaviour {
             _warningPanel.SetActive(true);
         }
 
-        _weighingBar.DOValue(_currentWeight, 0.5f);
+        _weighingBar.DOValue(_currentWeight, 0.5f)
+            .SetEase(Ease.OutQuad)
+            .SetLink(_weighingBar.gameObject);
     }
 
     /// <summary>

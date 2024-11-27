@@ -17,14 +17,14 @@ public class SetBaseBlock : MonoBehaviour {
     [SerializeField] private List<TextAsset> _csvFiles = new List<TextAsset>();
     #endregion
 
-    private void Start() {
+    private void Awake() {
         _baseBlockPrefab = _baseBlockPrefabs[GameDirector.Instance.BuilderIndex];
+        // BuilderControllerでSetSpawnPointを呼ぶより先にパターンを読む必要あり.
         LoadPatternsFromCSV();
-        SetSpawnPoint();
     }
 
     private void LoadPatternsFromCSV() {
-        // CSVの各行を読み込み、パターンごとに占有座標を保存
+        // CSVの各行を読み込み、パターンごとに占有座標を保存.
         var lines = _csvFiles[GameDirector.Instance.BuilderIndex].text.Split('\n');
         foreach (var line in lines) {
             if (string.IsNullOrWhiteSpace(line))
@@ -48,7 +48,7 @@ public class SetBaseBlock : MonoBehaviour {
             for (int i = 0; i < 18; i++) {
                 var spawnPoint = Instantiate(_spawnPointPrefab, new Vector3(0, 0, 0), Quaternion.identity);
                 spawnPoint.transform.parent = _builderController.Wagon.transform.Find("Grid").transform;
-                spawnPoint.transform.localPosition = new Vector3(_startPosX + _space * i, _startPosY - _space * j, 0);
+                spawnPoint.transform.localPosition = new Vector3(_startPosX + _space * i, _startPosY - _space * j, -3f);
                 _spawnPoints[i, j] = spawnPoint.GetComponent<SpawnPoint>();
                 _spawnPoints[i, j].X = i;
                 _spawnPoints[i, j].Y = j;
@@ -74,7 +74,7 @@ public class SetBaseBlock : MonoBehaviour {
                 if (_spawnPoints[i, j].IsOccupied) {
                     var baseBlock = Instantiate(_baseBlockPrefab, new Vector3(0, 0, 0), Quaternion.identity);
                     baseBlock.transform.parent = _builderController.Wagon.transform;
-                    baseBlock.transform.localPosition = _spawnPoints[i, j].transform.localPosition;
+                    baseBlock.transform.localPosition = new Vector3(_spawnPoints[i, j].transform.localPosition.x, _spawnPoints[i, j].transform.localPosition.y, 0);
                 }
             }
         }

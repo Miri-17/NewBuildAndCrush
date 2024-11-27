@@ -138,7 +138,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 25
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forceX: -400
-  _forceY: 40
-  _rotation: {x: 0, y: 0, z: 10}
+  _forceY: 0
+  _rotation: {x: 0, y: 0, z: 0}
 --- !u!82 &4319110075152785688
 AudioSource:
   m_ObjectHideFlags: 0

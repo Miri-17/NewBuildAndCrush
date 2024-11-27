@@ -30,7 +30,7 @@ public class FrogNote : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (!collision.collider.CompareTag("Obstacle"))
+        if (!collision.collider.CompareTag("Frog") && !collision.collider.CompareTag("Obstacle") && !collision.collider.CompareTag("CrusherWall"))
             Destroy(this.gameObject);
     }
 

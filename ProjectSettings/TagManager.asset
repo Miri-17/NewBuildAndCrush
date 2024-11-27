@@ -21,6 +21,8 @@ TagManager:
   - BuilderDirection
   - CrusherDirection
   - BattleBGM
+  - CrusherWall
+  - Frog
   layers:
   - Default
   - TransparentFX

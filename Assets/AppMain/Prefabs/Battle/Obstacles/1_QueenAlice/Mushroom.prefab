@@ -5149,6 +5149,7 @@ MonoBehaviour:
   _duration: 2
   _childGameObjects:
   - {fileID: 4963706550132115108}
+  _enableDefeatAnimation: 0
 --- !u!198 &851797927488928569
 ParticleSystem:
   m_ObjectHideFlags: 0
