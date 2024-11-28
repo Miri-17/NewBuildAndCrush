@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 5_Frog
   m_EditorClassIdentifier: 
   _obstacleImage: {fileID: 21300000, guid: 7c9bdf50fcee84eeca4f94b25ef04810, type: 3}
-  _obstaclePrefab: {fileID: 81753989200627590, guid: b4bcd0fd09bcf4124b99a1f0f85bdccf, type: 3}
-  _obstacleWeight: 25
+  _obstaclePrefab: {fileID: 7176742677389377155, guid: 481f2c948756f47fab8e731a0ed55ecf, type: 3}
   _generationTime: 10
+  _obstacleWeight: 25

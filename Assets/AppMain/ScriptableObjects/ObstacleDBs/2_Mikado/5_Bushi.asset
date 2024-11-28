@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 5_Bushi
   m_EditorClassIdentifier: 
   _obstacleImage: {fileID: 21300000, guid: f4d9e4db4f2b04895aafda35277643c8, type: 3}
-  _obstaclePrefab: {fileID: 7764914249723215697, guid: 86734f06da6f741a4a5837fb22c1e703, type: 3}
-  _obstacleWeight: 20
+  _obstaclePrefab: {fileID: 1588235776420159238, guid: daa71bd641324497f8a520ac43c3c30c, type: 3}
   _generationTime: 10
+  _obstacleWeight: 20

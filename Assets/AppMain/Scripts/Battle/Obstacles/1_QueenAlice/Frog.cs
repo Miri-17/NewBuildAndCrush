@@ -13,6 +13,7 @@ public class Frog : MonoBehaviour {
     #endregion
 
     #region Serialized Fields
+    [SerializeField] private GameObject _parentObject = null;
     [SerializeField, Header("0...Sing0, 1...Sing1, 2...Crush")] private AudioClip[] _audioClips = new AudioClip[3];
     [SerializeField] private GameObject[] _prefabs = new GameObject[3];
     [SerializeField] private Transform _attackPoint = null;
@@ -77,7 +78,7 @@ public class Frog : MonoBehaviour {
         
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         
-        Destroy(this.gameObject);
+        Destroy(_parentObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

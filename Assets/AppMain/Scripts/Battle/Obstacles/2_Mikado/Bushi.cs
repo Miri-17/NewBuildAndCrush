@@ -11,6 +11,7 @@ public class Bushi : MonoBehaviour {
     #endregion
 
     #region Serialized Fields
+    [SerializeField] private GameObject _parentObject = null;
     [SerializeField] private BoxCollider2D _boxCollider2D = null;
     [SerializeField] private CapsuleCollider2D _capsuleCollider2D = null;
     [SerializeField, Header("0...Defend, 1...Crush")] private AudioClip[] _audioClip = new AudioClip[2];
@@ -61,7 +62,7 @@ public class Bushi : MonoBehaviour {
         
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         
-        Destroy(this.gameObject);
+        Destroy(_parentObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

@@ -13,6 +13,7 @@ public class ZakoWolf : MonoBehaviour {
     #endregion
 
     #region Serialized Fields
+    [SerializeField] private GameObject _parentObject = null;
     [SerializeField] private int _defense = 8;
     [SerializeField] private float _duration = 2.0f;
     [SerializeField] private BoxCollider2D[] _boxCollider2Ds = new BoxCollider2D[2];
@@ -25,6 +26,7 @@ public class ZakoWolf : MonoBehaviour {
         _spriteRenderer = this.GetComponent<SpriteRenderer>();
         _audioSource = this.GetComponent<AudioSource>();
         _animator = this.GetComponent<Animator>();
+        _endPosition -= _parentObject.transform.localPosition.x;
         _tweenDuration = (this.transform.localPosition.x - _endPosition) / _speed;
         InitializeTween();
     }
@@ -49,14 +51,14 @@ public class ZakoWolf : MonoBehaviour {
         
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         
-        Destroy(this.gameObject);
+        Destroy(_parentObject);
     }
 
     private void InitializeTween() {
         _tween = this.transform.DOLocalMoveX(_endPosition, _tweenDuration)
             .SetEase(Ease.Linear)
             .SetLink(this.gameObject)
-            .OnComplete(() => Destroy(this.gameObject))
+            .OnComplete(() => Destroy(_parentObject))
             .Pause();
     }
 

@@ -10,6 +10,7 @@ public class Chef : MonoBehaviour {
     #endregion
 
     #region Serialized Fields
+    [SerializeField] private GameObject _parentObject = null;
     [SerializeField] private AudioClip _audioClip = null;
     [SerializeField] private GameObject _prefab = null;
     [SerializeField] private Transform _attackPoint = null;
@@ -59,15 +60,12 @@ public class Chef : MonoBehaviour {
     }
 
     private async UniTaskVoid Crush(float duration) {
-        // if (_audioSource != null)
-        //     _audioSource.PlayOneShot(_audioClip);
-
         _animator.SetTrigger("Defeat");
         Destroy(_capsuleCollider2D);
         Destroy(_childGameObject);
         
         await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
         
-        Destroy(this.gameObject);
+        Destroy(_parentObject);
     }
 }

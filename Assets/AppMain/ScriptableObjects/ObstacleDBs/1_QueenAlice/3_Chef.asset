@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 3_Chef
   m_EditorClassIdentifier: 
   _obstacleImage: {fileID: 21300000, guid: 0780de87a638d431890274d520304d75, type: 3}
-  _obstaclePrefab: {fileID: 362790618622682966, guid: e10153483647941b3b26163a465646d4, type: 3}
-  _obstacleWeight: 20
+  _obstaclePrefab: {fileID: 2392355306801951005, guid: 6d60e3cc711ba481e9c0c9587ef64502, type: 3}
   _generationTime: 10
+  _obstacleWeight: 20
