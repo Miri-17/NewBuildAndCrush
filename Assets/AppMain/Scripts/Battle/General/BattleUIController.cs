@@ -8,8 +8,8 @@ public class BattleUIController : MonoBehaviour {
     // private float _endPosition = 5734.0f;
     private int _builderUpdateScore = 0;
     private int _crusherUpdateScore = 0;
-    private bool _isChangingScene = false;
     private float _currentTime = 0;
+    private bool _isChangingScene = false;
     #endregion
 
     #region Serialized Fields
@@ -29,11 +29,6 @@ public class BattleUIController : MonoBehaviour {
     #endregion
 
     private void Start() {
-        // 制限時間の初期化.
-        _currentTime = GameDirector.Instance.LimitTime;
-        _timeText[0].text = _currentTime.ToString("f");
-        _timeText[1].text = _currentTime.ToString("f");
-
         GameDirector.Instance.CrusherPosition = 0;
         // GameDirector.Instance.BuilderPosition = 0;
         
@@ -46,6 +41,11 @@ public class BattleUIController : MonoBehaviour {
         _builderIcons[1].anchoredPosition = new Vector2(467.0f, -2.0f);
         _crusherIcons[0].anchoredPosition = new Vector2(-460.0f, -2.0f);
         _crusherIcons[1].anchoredPosition = new Vector2(-460.0f, -2.0f);
+
+        // 制限時間の初期化.
+        _currentTime = GameDirector.Instance.LimitTime;
+        _timeText[0].text = _currentTime.ToString("f");
+        _timeText[1].text = _currentTime.ToString("f");
     }
 
     private void Update() {

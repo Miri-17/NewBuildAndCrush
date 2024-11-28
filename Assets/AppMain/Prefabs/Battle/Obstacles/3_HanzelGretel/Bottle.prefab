@@ -162,6 +162,7 @@ MonoBehaviour:
   _duration: 2
   _childGameObjects:
   - {fileID: 7475645548050071422}
+  _enableDefeatAnimation: 0
 --- !u!198 &6220598030211963822
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5026,7 +5027,7 @@ AudioSource:
   m_GameObject: {fileID: 4313195810423949897}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4188454539346681919, guid: 6d09e82ca5da140a4aea77ef9e0f2d05, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5288,7 +5289,7 @@ AudioSource:
   m_GameObject: {fileID: 7475645548050071422}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4188454539346681919, guid: 6d09e82ca5da140a4aea77ef9e0f2d05, type: 2}
   m_audioClip: {fileID: 8300000, guid: a7a1cf5b73b6049e9bed62a5febad39c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

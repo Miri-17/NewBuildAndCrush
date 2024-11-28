@@ -6,8 +6,11 @@ using DG.Tweening;
 using TMPro;
 
 public class BattleTimeSettings : MonoBehaviour {
+    #region
+    private AudioSource _audioSourceSE = null;
     private int _limitTimeIndex = 0;
     private List<RectTransform> _arrows = new List<RectTransform>();
+    #endregion
 
     #region
     [SerializeField] private Image _bg = null;
@@ -25,6 +28,8 @@ public class BattleTimeSettings : MonoBehaviour {
     public bool IsSelected { get; private set; } = false;
 
     private void Start() {
+        _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
+
         // LINQ で _limitTimes のうち GameDirector の limitTime と等しい index を探す.
         _limitTimeIndex = Array.IndexOf(_limitTimes, GameDirector.Instance.LimitTime);
         // 見つからなければ 2 (5分) に設定し、GameDirector の limitTime もその時間にする.
@@ -71,6 +76,8 @@ public class BattleTimeSettings : MonoBehaviour {
                 if (_limitTimeIndex < 0)
                     _limitTimeIndex = _limitTimes.Length - 1;
             }
+
+            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[1]);
 
             GameDirector.Instance.LimitTime = _limitTimes[_limitTimeIndex];
             _valueText.text = (_limitTimes[_limitTimeIndex] / 60).ToString() + "分";

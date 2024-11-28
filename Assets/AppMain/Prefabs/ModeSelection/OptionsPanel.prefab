@@ -193,7 +193,7 @@ MonoBehaviour:
   - {fileID: 9127447492957971685}
   _arrowPositions:
   - -50
-  _changeRate: 3
+  _changeRate: 10
 --- !u!1 &284098754320449811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +1859,7 @@ MonoBehaviour:
   _arrowPositions:
   - 50
   - -50
-  _changeRate: 3
+  _changeRate: 10
 --- !u!1 &4273867265260656475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,7 +4106,7 @@ MonoBehaviour:
   _arrowPositions:
   - 50
   - -50
-  _changeRate: 3
+  _changeRate: 10
 --- !u!1 &8450056845167378197
 GameObject:
   m_ObjectHideFlags: 0

@@ -171,7 +171,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3ac4af057b6d4cf0b4e3c22ab182d93, type: 3}
   - {fileID: 8300000, guid: ae5ac7b134e8d4c94a7334ecce200c77, type: 3}
   - {fileID: 8300000, guid: 0a87548e14fb94e6488c4e450219a071, type: 3}
-  _duration: 10
   _defeatFilterPrefab: {fileID: 8694355005228100758, guid: 30bdca43ea62d421989bb4cd2e349bb9, type: 3}
 --- !u!82 &1616879239934505920
 AudioSource:
@@ -182,7 +181,7 @@ AudioSource:
   m_GameObject: {fileID: 3169502150516134200}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4188454539346681919, guid: 6d09e82ca5da140a4aea77ef9e0f2d05, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
