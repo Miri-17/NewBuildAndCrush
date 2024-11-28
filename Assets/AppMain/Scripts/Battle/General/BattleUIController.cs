@@ -9,6 +9,7 @@ public class BattleUIController : MonoBehaviour {
     private int _builderUpdateScore = 0;
     private int _crusherUpdateScore = 0;
     private bool _isChangingScene = false;
+    private float _currentTime = 0;
     #endregion
 
     #region Serialized Fields
@@ -19,7 +20,6 @@ public class BattleUIController : MonoBehaviour {
     [SerializeField] private List<RectTransform> _builderIcons = new List<RectTransform>();
     [SerializeField] private List<RectTransform> _crusherIcons = new List<RectTransform>();
     [SerializeField] private List<TextMeshProUGUI> _timeText = new List<TextMeshProUGUI>();
-    [SerializeField] private float _currentTime = 600.0f;
     #endregion
 
     #region Public Properties
@@ -29,6 +29,11 @@ public class BattleUIController : MonoBehaviour {
     #endregion
 
     private void Start() {
+        // 制限時間の初期化.
+        _currentTime = GameDirector.Instance.LimitTime;
+        _timeText[0].text = _currentTime.ToString("f");
+        _timeText[1].text = _currentTime.ToString("f");
+
         GameDirector.Instance.CrusherPosition = 0;
         // GameDirector.Instance.BuilderPosition = 0;
         

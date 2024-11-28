@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Audio;
 
 public class BattleBGMController : MonoBehaviour {
     #region Private Fields
@@ -11,6 +12,7 @@ public class BattleBGMController : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private BattleBGMDB _battleBGMDB = null;
     [SerializeField] private float _fadeDuration = 1.0f;
+    [SerializeField] private AudioMixerGroup _audioMixerGroup = null;
     #endregion
 
     private void Start() {
@@ -18,6 +20,9 @@ public class BattleBGMController : MonoBehaviour {
         
         _audioSourceNormal = this.gameObject.AddComponent<AudioSource>();
         _audioSourceWagon = this.gameObject.AddComponent<AudioSource>();
+
+        _audioSourceNormal.outputAudioMixerGroup = _audioMixerGroup;
+        _audioSourceWagon.outputAudioMixerGroup = _audioMixerGroup;
 
         _audioSourceNormal.clip = _battleBGMDB.GetNormalAudioClip(GameDirector.Instance.BuilderIndex);
         _audioSourceWagon.clip = _battleBGMDB.GetWagonAudioClip(GameDirector.Instance.BuilderIndex);

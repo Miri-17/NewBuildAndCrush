@@ -7,22 +7,25 @@ using Cysharp.Threading.Tasks;
 
 public class ModeSelectionController : MonoBehaviour {
     #region Private Fields
-    private AudioSource _audioSource_SE = null;
-    private AudioClip _audioClip_SE = null;
+    private AudioSource _audioSourceSE = null;
+    private AudioClip _audioClipSE = null;
+    private GameObject _rulesPanel = null;
+    private bool _isDisplayRulesPanel = false;
     // シーン遷移関係
+    private bool _isChangingScene = false;
     private int _nextSceneIndex = 0;
     private int _previousSelectIndex = 0;
-    private bool _isChangingScene = false;
     #endregion
 
-    // シーン遷移関係
-    [SerializeField] private List<ModeSelectionBook> _modeSelectionBooks = new List<ModeSelectionBook>();
+    #region Serialized Fields
     [SerializeField] private ModeSelectionUIController _modeSelectionUIController = null;
-    [SerializeField] private List<string> _nextSceneNames = new List<string>();
-    [SerializeField] private GameObject _rulesPanel = null;
+    [SerializeField] private List<ModeSelectionBook> _modeSelectionBooks = new List<ModeSelectionBook>();
     [SerializeField] private Image _rulesButton = null;
-    [SerializeField] private Sprite _clickedRulesButtonSprite = null;
-    [SerializeField] private GameObject _warningPanel = null;
+    [SerializeField] private Sprite[] _rulesButtonSprites = new Sprite[2];
+    [SerializeField] private GameObject _rulesPanelPrefab = null;
+    // シーン遷移関係
+    [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    #endregion
 
     private void Start() {
         if (CrusherSE.Instance == null) {
@@ -39,9 +42,9 @@ public class ModeSelectionController : MonoBehaviour {
             return;
         }
 
-        _audioSource_SE = CrusherSE.Instance.GetComponent<AudioSource>();
-        _audioClip_SE = CrusherSE.Instance.SEDB.AudioClips[0];
-        if (_audioSource_SE == null || _audioClip_SE == null)
+        _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
+        _audioClipSE = CrusherSE.Instance.SEDB.AudioClips[0];
+        if (_audioSourceSE == null || _audioClipSE == null)
             Debug.LogError("AudioSource of AudioClip is not assigned properly.");
         
         switch (GameDirector.Instance.PreviousSceneName) {
@@ -57,13 +60,11 @@ public class ModeSelectionController : MonoBehaviour {
         _modeSelectionBooks[_nextSceneIndex].SetSelection(true);
         _previousSelectIndex = _nextSceneIndex;
         
-        _rulesPanel.SetActive(false);
-
-        _warningPanel.SetActive(false);
+        _rulesButton.sprite = _rulesButtonSprites[0];
     }
 
     private void Update() {
-        if (_rulesPanel.activeSelf || _isChangingScene || !_modeSelectionUIController.IsAnimationEnded)
+        if (_isDisplayRulesPanel || _isChangingScene || !_modeSelectionUIController.IsAnimationEnded)
             return;
         
         if (Input.GetButtonDown("Horizontal")) {
@@ -82,16 +83,18 @@ public class ModeSelectionController : MonoBehaviour {
             _modeSelectionBooks[_nextSceneIndex].SetSelection(true);
             _previousSelectIndex = _nextSceneIndex;
 
-            _audioSource_SE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[1]);
+            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[1]);
         } else if (Input.GetButtonDown("Select")) {
             _isChangingScene = true;
             
-            _audioSource_SE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
+            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
 
             GoNextSceneAsync(0.5f, _nextSceneNames[_nextSceneIndex]).Forget();
         } else if (Input.GetButtonDown("Fire1")) {
-            _rulesPanel.SetActive(true);
-            _rulesButton.sprite = _clickedRulesButtonSprite;
+            _isDisplayRulesPanel = true;
+            _rulesPanel = Instantiate(_rulesPanelPrefab, GameObject.Find("MiddlePanel").transform);
+            _rulesPanel.transform.localPosition = Vector3.zero;
+            _rulesButton.sprite = _rulesButtonSprites[1];
         }
     }
 
@@ -102,5 +105,11 @@ public class ModeSelectionController : MonoBehaviour {
         } catch (System.Exception e) {
             Debug.LogError($"Scene transition failed: {e.Message}");
         }
+    }
+
+    public void CloseRulesPanel() {
+        _isDisplayRulesPanel = false;
+        _rulesButton.sprite = _rulesButtonSprites[0];
+        Destroy(_rulesPanel);
     }
 }

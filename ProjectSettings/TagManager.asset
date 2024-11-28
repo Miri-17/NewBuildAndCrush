@@ -23,6 +23,7 @@ TagManager:
   - BattleBGM
   - CrusherWall
   - Frog
+  - RulesPanel
   layers:
   - Default
   - TransparentFX
