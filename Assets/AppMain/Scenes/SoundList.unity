@@ -7932,7 +7932,7 @@ MonoBehaviour:
   _nextSceneNames:
   - ModeSelection
   _audioClipCount: 14
-  _selectRate: 3
+  _selectRate: 6
 --- !u!1 &1392183250
 GameObject:
   m_ObjectHideFlags: 0

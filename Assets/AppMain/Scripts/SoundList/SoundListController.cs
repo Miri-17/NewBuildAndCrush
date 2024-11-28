@@ -10,6 +10,7 @@ public class SoundListController : MonoBehaviour {
     private AudioSource _audioSourceBGM = null;
     private int _previousSelectionIndex = -1;
     private float _nextSelectTime = 0;
+    private bool _isKeepSelecting = false;
     // シーン遷移関係.
     private bool _isChangingScene = false;
     private AudioSource _audioSourceSE = null;
@@ -20,7 +21,7 @@ public class SoundListController : MonoBehaviour {
     [SerializeField] private List<FadeInOutLoopAnimation> _fadeInOutLoopAnimations = null;
     [SerializeField] private List<string> _nextSceneNames = new List<string>();
     [SerializeField] private int _audioClipCount = 14;
-    [SerializeField, Header("1秒に何回セレクトできるか")] private float _selectRate = 3.0f;
+    [SerializeField, Header("0...初期値, 1...連続選択時")] private float[] _selectRates = new float[] { 1.5f, 6.0f, };
     #endregion
 
     public int SoundIndex {get; private set; } = 0;
@@ -53,19 +54,24 @@ public class SoundListController : MonoBehaviour {
                     SoundIndex = _audioClipCount - 1;
             }
 
+            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[1]);
+            
             if (!_audioSourceBGM.isPlaying)
                 _soundListUIController.SetRecordSprite(SoundIndex);
-            
             if (SoundIndex < 13)
                 _soundListUIController.SetAnchoredPosition(new Vector2(0, -9.0f));
             else
                 _soundListUIController.SetAnchoredPosition(new Vector2(0, 80.0f));
-
-            _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[1]);
-            _nextSelectTime = Time.time + 1.0f / _selectRate;
-        }
-
-        if (Input.GetButtonDown("Select")) {
+            
+            if (_isKeepSelecting) {
+                _nextSelectTime = Time.time + 1.0f / _selectRates[1];
+            } else {
+                _nextSelectTime = Time.time + 1.0f / _selectRates[0];
+                _isKeepSelecting = true;
+            }
+        } else if (Input.GetButtonUp("Vertical")) {
+            _isKeepSelecting = false;
+        } else if (Input.GetButtonDown("Select")) {
             // if (_soundListUIController.IsFadingIllustration) return;
             if (_audioSourceBGM.isPlaying && _previousSelectionIndex == SoundIndex) {
                 _audioSourceBGM.Stop();
@@ -87,9 +93,7 @@ public class SoundListController : MonoBehaviour {
             _fadeInOutLoopAnimations[SoundIndex].AnimationOnOff(true);
 
             _previousSelectionIndex = SoundIndex;
-        }
-
-        if (Input.GetButtonDown("Jump")) {
+        } else if (Input.GetButtonDown("Jump")) {
             _isChangingScene = true;
             PlaySceneTransitionSound();
             GoNextSceneAsync(0.5f, _nextSceneNames[0]).Forget();
