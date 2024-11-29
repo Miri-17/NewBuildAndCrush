@@ -32,6 +32,7 @@ public class QueenOfHeartsAttack : MonoBehaviour {
     [SerializeField] private GameObject _chargingEffectPrefab = null;
     [SerializeField] private GameObject _heartChargedEffectPrefab = null;
     [SerializeField] private AudioClip[] _audioClips = null;
+    [SerializeField] private Transform _chargedAttackPointDown = null;
     #endregion
 
 
@@ -61,9 +62,10 @@ public class QueenOfHeartsAttack : MonoBehaviour {
             } else if (verticalKey < 0) {
                 _animator.SetTrigger("Attack_Downwards");
                 Attack(_attackPointDown);
-                if (_isCharging)
-                    Instantiate(_attackEffectPrefabs[1], _attackPointDown.transform);
-                else
+                if (_isCharging) {
+                    // Instantiate(_attackEffectPrefabs[1], _attackPointDown.transform);
+                    Instantiate(_attackEffectPrefabs[1], _chargedAttackPointDown);
+                } else
                     Instantiate(_attackEffectPrefabs[0], _attackPointDown.transform);
             } else {
                 _animator.SetTrigger("Attack");

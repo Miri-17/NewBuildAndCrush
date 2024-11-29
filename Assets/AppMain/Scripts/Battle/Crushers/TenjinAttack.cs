@@ -53,49 +53,49 @@ public class TenjinAttack : MonoBehaviour {
     }
 
     private void Attack(Transform point) {
-        Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, _attackRange, _obstacleLayer);
-        foreach (Collider2D hitInfo in hitInfos) {
-            var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
-            var destroyableBuilder = hitInfo.transform.GetComponent<DestroyableBuilder>();
-            var chef = hitInfo.transform.GetComponent<Chef>();
-            var zakoWolf = hitInfo.transform.GetComponent<ZakoWolf>();
-            var pig = hitInfo.transform.GetComponent<Pig>();
-            var frog = hitInfo.transform.GetComponent<Frog>();
-            var bushi = hitInfo.transform.GetComponent<Bushi>();
-            var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
+        // Collider2D[] hitInfos = Physics2D.OverlapCircleAll(point.position, _attackRange, _obstacleLayer);
+        // foreach (Collider2D hitInfo in hitInfos) {
+        //     var destroyableObstacle = hitInfo.transform.GetComponent<DestroyableObstacle>();
+        //     var destroyableBuilder = hitInfo.transform.GetComponent<DestroyableBuilder>();
+        //     var chef = hitInfo.transform.GetComponent<Chef>();
+        //     var zakoWolf = hitInfo.transform.GetComponent<ZakoWolf>();
+        //     var pig = hitInfo.transform.GetComponent<Pig>();
+        //     var frog = hitInfo.transform.GetComponent<Frog>();
+        //     var bushi = hitInfo.transform.GetComponent<Bushi>();
+        //     var creamPuff = hitInfo.transform.GetComponent<CreamPuff>();
 
-            if (destroyableObstacle != null) {
-                destroyableObstacle.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (destroyableBuilder != null) {
-                destroyableBuilder.TakeDamage(1);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (chef != null) {
-                chef.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (zakoWolf != null) {
-                zakoWolf.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (pig != null) {
-                pig.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (frog != null) {
-                frog.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (bushi != null) {
-                bushi.TakeDamage(_damage);
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-            if (creamPuff != null) {
-                creamPuff.TakeDamage();
-                Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
-            }
-        }
+        //     if (destroyableObstacle != null) {
+        //         destroyableObstacle.TakeDamage(_damage);
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        //     if (destroyableBuilder != null) {
+        //         destroyableBuilder.TakeDamage(1);
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        //     if (chef != null) {
+        //         chef.TakeDamage(_damage);
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        //     if (zakoWolf != null) {
+        //         zakoWolf.TakeDamage(_damage);
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        //     if (pig != null) {
+        //         pig.TakeDamage(_damage);
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        //     if (frog != null) {
+        //         frog.TakeDamage(_damage);
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        //     if (bushi != null) {
+        //         bushi.TakeDamage(_damage);
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        //     if (creamPuff != null) {
+        //         creamPuff.TakeDamage();
+        //         Instantiate(_obstacleCrushEffect, hitInfo.transform.position, Quaternion.identity);
+        //     }
+        // }
     }
 }

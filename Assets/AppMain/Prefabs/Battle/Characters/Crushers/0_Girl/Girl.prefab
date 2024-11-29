@@ -193,7 +193,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 320
   _walkSpeed: 110
-  _runSpeed: 198
+  _runSpeed: 205
   _jumpForce: 250
   _stunAudioClip: {fileID: 8300000, guid: 0848345c261f94981b16639cb4a47cb3, type: 3}
 --- !u!114 &6622394888129601557

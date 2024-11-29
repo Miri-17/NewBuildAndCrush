@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 6452872717895269617}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 15.4, y: 11.5, z: 0}
+  m_LocalPosition: {x: 16, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -286,7 +286,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 320
   _walkSpeed: 90
-  _runSpeed: 162
+  _runSpeed: 180
   _jumpForce: 250
   _stunAudioClip: {fileID: 8300000, guid: 0848345c261f94981b16639cb4a47cb3, type: 3}
 --- !u!114 &4117164537601133451
@@ -305,7 +305,7 @@ MonoBehaviour:
   _attackPointUp: {fileID: 76280736576024895}
   _attackPointDown: {fileID: 1667282692462205127}
   _attackRate: 0.8
-  _damage: 4
+  _damage: 2
   _attackRange: 10
   _obstacleCrushEffect: {fileID: 9190961169032549529, guid: e1fe2726918e34697b43cd9f1748f352, type: 3}
   _obstacleLayer:

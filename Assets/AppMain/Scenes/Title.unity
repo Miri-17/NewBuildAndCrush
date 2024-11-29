@@ -1206,6 +1206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxDisplayCount: 2
+  _warningText: {fileID: 1717955477}
 --- !u!1 &2062055359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ver.1.2.1\n\xA92023-2024 \u30E0\u30B5\u30D3\u30B2\u30FC\u30E0\u30E9\u30DC"
+  m_text: "Ver.1.2.2\n\xA92023-2024 \u30E0\u30B5\u30D3\u30B2\u30FC\u30E0\u30E9\u30DC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62f85e306a45840a9b2c520700137c49, type: 2}
   m_sharedMaterial: {fileID: -8954069089167471176, guid: 62f85e306a45840a9b2c520700137c49, type: 2}

@@ -18,8 +18,8 @@ public class SoundListController : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private SoundListUIController _soundListUIController = null;
-    [SerializeField] private List<FadeInOutLoopAnimation> _fadeInOutLoopAnimations = null;
-    [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    [SerializeField] private FadeInOutLoopAnimation[] _fadeInOutLoopAnimations = new FadeInOutLoopAnimation[0];
+    [SerializeField] private string[] _nextSceneNames = new string[0];
     [SerializeField] private int _audioClipCount = 14;
     [SerializeField, Header("0...初期値, 1...連続選択時")] private float[] _selectRates = new float[] { 1.5f, 6.0f, };
     #endregion

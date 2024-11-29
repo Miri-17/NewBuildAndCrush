@@ -36,6 +36,9 @@ public class TitleUIController : MonoBehaviour {
             .SetLink(_startText.gameObject);
     }
 
+    /// <summary>
+    /// タイトルからシーン遷移する際のUI挙動の定義.
+    /// </summary>
     public void TransitionUI() {
         _startText.enabled = false;
         _copyright.enabled = false;

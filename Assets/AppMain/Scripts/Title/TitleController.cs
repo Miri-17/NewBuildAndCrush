@@ -15,7 +15,7 @@ public class TitleController : MonoBehaviour {
 
     [SerializeField] private TitleUIController _titleUIController = null;
     // シーン遷移関係
-    [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    [SerializeField] private string[] _nextSceneNames = new string[0];
 
     private void Start() {
         if (CrusherSE.Instance == null) {

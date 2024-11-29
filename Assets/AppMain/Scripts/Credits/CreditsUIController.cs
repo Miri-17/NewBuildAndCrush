@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -11,7 +10,7 @@ public class CreditsUIController : MonoBehaviour {
     [SerializeField] private RectTransform _scrollingObjects = null;
     [SerializeField] private float _endAnchorPosY = 10725.0f;
     [SerializeField] private float _time = 90.0f;
-    [SerializeField] private List<Image> _fadeInImages = new List<Image>();
+    [SerializeField] private Image[] _fadeInImages = new Image[0];
     #endregion
 
     public static float TransitionDuration { get; private set; } = 1.0f;
