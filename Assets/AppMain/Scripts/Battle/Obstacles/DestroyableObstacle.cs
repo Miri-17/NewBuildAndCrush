@@ -75,7 +75,7 @@ public class DestroyableObstacle : MonoBehaviour {
             foreach (var childGameObject in _childGameObjects)
                 Destroy(childGameObject);
         if (_enableDefeatAnimation)
-            _animator.Play(this.gameObject.name + "_Defeat");
+            _animator.SetTrigger("Defeat");
         else
             Destroy(_spriteRenderer);
         

@@ -19,12 +19,12 @@ public class ModeSelectionController : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private ModeSelectionUIController _modeSelectionUIController = null;
-    [SerializeField] private List<ModeSelectionBook> _modeSelectionBooks = new List<ModeSelectionBook>();
+    [SerializeField] private ModeSelectionBook[] _modeSelectionBooks = new ModeSelectionBook[0];
     [SerializeField] private Image _rulesButton = null;
-    [SerializeField] private Sprite[] _rulesButtonSprites = new Sprite[2];
+    [SerializeField] private Sprite[] _rulesButtonSprites = new Sprite[0];
     [SerializeField] private GameObject _rulesPanelPrefab = null;
     // シーン遷移関係
-    [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    [SerializeField] private string[] _nextSceneNames = new string[0];
     #endregion
 
     private void Start() {
@@ -71,12 +71,12 @@ public class ModeSelectionController : MonoBehaviour {
             var horizontalKey = Input.GetAxisRaw("Horizontal");
             if (horizontalKey > 0) {
                 _nextSceneIndex++;
-                if (_nextSceneIndex >= _nextSceneNames.Count)
+                if (_nextSceneIndex >= _nextSceneNames.Length)
                     _nextSceneIndex = 0;
             } else if (horizontalKey < 0) {
                 _nextSceneIndex--;
                 if (_nextSceneIndex < 0)
-                    _nextSceneIndex = _nextSceneNames.Count - 1;
+                    _nextSceneIndex = _nextSceneNames.Length - 1;
             }
 
             _modeSelectionBooks[_previousSelectIndex].SetSelection(false);

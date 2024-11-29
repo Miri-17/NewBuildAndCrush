@@ -18,8 +18,8 @@ public class RulesPanelController : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private Image _rulesPanelImage = null;
-    [SerializeField] private Sprite[] _rulesPanelSprites = new Sprite[5];
-    [SerializeField] private ModeSelectionButton[] _modeSelectionButtons = new ModeSelectionButton[5];
+    [SerializeField] private Sprite[] _rulesPanelSprites = new Sprite[0];
+    [SerializeField] private ModeSelectionButton[] _modeSelectionButtons = new ModeSelectionButton[0];
     [SerializeField] private Image _glowImageY = null;
     [SerializeField] private GameObject _optionsPanelPrefab = null;
     [SerializeField] private GameObject _warningPanelPrefab = null;

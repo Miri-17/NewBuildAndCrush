@@ -8,10 +8,10 @@ public class CrusherSelectionUIController : MonoBehaviour {
     [SerializeField] private Image _leftImage = null;
     [SerializeField] private Image _rightImage = null;
     [SerializeField] private Image _statusImage = null;
-    [SerializeField] private List<Sprite> _centerSprites = new List<Sprite>();
-    [SerializeField] private List<Sprite> _leftSprites = new List<Sprite>();
-    [SerializeField] private List<Sprite> _rightSprites = new List<Sprite>();
-    [SerializeField] private List<Sprite> _statusSprites = new List<Sprite>();
+    [SerializeField] private Sprite[] _centerSprites = new Sprite[0];
+    [SerializeField] private Sprite[] _leftSprites = new Sprite[0];
+    [SerializeField] private Sprite[] _rightSprites = new Sprite[0];
+    [SerializeField] private Sprite[] _statusSprites = new Sprite[0];
     #endregion
 
     public void SetSprites(int index) {

@@ -7,7 +7,7 @@ public class OptionsPanelController : MonoBehaviour {
     private int _previousOptionIndex = 0;
 
     #region Serialized Fields
-    [SerializeField] private AudioSettings[] _audioSettings = new AudioSettings[3];
+    [SerializeField] private AudioSettings[] _audioSettings = new AudioSettings[0];
     [SerializeField] private BattleTimeSettings _battleTimeSettings = null;
     [SerializeField] private ModeSelectionButton _modeSelectionButton = null;
     #endregion

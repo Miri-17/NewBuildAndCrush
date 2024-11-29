@@ -24,12 +24,12 @@ public class BuilderSelectionController : MonoBehaviour {
     [SerializeField] private GameObject _statusPanel = null;
     [SerializeField] private Button _displayStatusButton = null;
     [SerializeField] private Button _hideStatusButton = null;
-    [SerializeField] private List<Button> _leftButtons = new List<Button>();
-    [SerializeField] private List<Button> _rightButtons = new List<Button>();
+    [SerializeField] private Button[] _leftButtons = new Button[0];
+    [SerializeField] private Button[] _rightButtons = new Button[0];
     [SerializeField] private Button _selectionButton = null;
     // WaitingPanel
     [SerializeField] private GameObject _waitingPanel = null;
-    [SerializeField] private List<GameObject> _waitingCharacters = new List<GameObject>();
+    [SerializeField] private GameObject[] _waitingCharacters = new GameObject[0];
     [SerializeField] private Button _deselectButton = null;
     #endregion
 

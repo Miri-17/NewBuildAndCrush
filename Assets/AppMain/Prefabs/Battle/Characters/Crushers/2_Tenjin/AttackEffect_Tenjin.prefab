@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6132966bd134150bf8cec47e982f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 20
+  _distance: 15
   _existenceTime: 0.1
   _damage: 1
   _obstacleCrushEffect: {fileID: 9190961169032549529, guid: e1fe2726918e34697b43cd9f1748f352, type: 3}

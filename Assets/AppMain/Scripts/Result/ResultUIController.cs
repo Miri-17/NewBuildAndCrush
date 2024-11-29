@@ -9,20 +9,20 @@ public class ResultUIController : MonoBehaviour {
 
     #region Score-related Serialized Fields
     [Header("どちらも勝ち, 負けの順")]
-    [SerializeField] private List<Sprite> _nameBgs = new List<Sprite>();
-    [SerializeField] private List<Sprite> _frameSprites = new List<Sprite>();
+    [SerializeField] private Sprite[] _nameBgs = new Sprite[0];
+    [SerializeField] private Sprite[] _frameSprites = new Sprite[0];
     [Header("すべてBuilder, Crusherの順")]
-    [SerializeField] private List<Image> _nameBgImages = new List<Image>();
-    [SerializeField] private List<Image> _frameImages = new List<Image>();
-    [SerializeField] private List<TextMeshProUGUI> _crusherScores = new List<TextMeshProUGUI>();
-    [SerializeField] private List<TextMeshProUGUI> _builderScores = new List<TextMeshProUGUI>();
-    [SerializeField] private List<TextMeshProUGUI> _crusherKillCounts = new List<TextMeshProUGUI>();
-    [SerializeField] private List<TextMeshProUGUI> _wagonCrushCounts = new List<TextMeshProUGUI>();
-    [SerializeField] private List<Slider> _scoreSliders = new List<Slider>();
+    [SerializeField] private Image[] _nameBgImages = new Image[0];
+    [SerializeField] private Image[] _frameImages = new Image[0];
+    [SerializeField] private TextMeshProUGUI[] _crusherScores = new TextMeshProUGUI[0];
+    [SerializeField] private TextMeshProUGUI[] _builderScores = new TextMeshProUGUI[0];
+    [SerializeField] private TextMeshProUGUI[] _crusherKillCounts = new TextMeshProUGUI[0];
+    [SerializeField] private TextMeshProUGUI[] _wagonCrushCounts = new TextMeshProUGUI[0];
+    [SerializeField] private Slider[] _scoreSliders = new Slider[0];
     #endregion
 
     #region Serialized Fields
-    [SerializeField] private List<Image> _fadeOutImages = new List<Image>();
+    [SerializeField] private Image[] _fadeOutImages = new Image[0];
     #endregion
 
     public bool IsFadeOut { get; private set; } = false;

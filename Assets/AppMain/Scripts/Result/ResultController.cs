@@ -23,7 +23,7 @@ public class ResultController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _crusherName = null;
     [SerializeField] private AudioClip _audioClipLoop = null;
     // シーン遷移関係
-    [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    [SerializeField] private string[] _nextSceneNames = new string[0];
     #endregion
 
     private void Start() {

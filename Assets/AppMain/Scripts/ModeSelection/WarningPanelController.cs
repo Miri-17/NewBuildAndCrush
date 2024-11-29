@@ -8,7 +8,7 @@ public class WarningPanelController : MonoBehaviour {
     private AudioSource _audioSource_SE = null;
     private int _warningIndex = 0;
 
-    [SerializeField] private ModeSelectionButton[] _modeSelectionButtons = new ModeSelectionButton[2];
+    [SerializeField] private ModeSelectionButton[] _modeSelectionButtons = new ModeSelectionButton[0];
 
     private void Start() {
         _rulesPanelController = GameObject.FindWithTag("RulesPanel").GetComponent<RulesPanelController>();

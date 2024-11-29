@@ -8,8 +8,8 @@ public class ModeSelectionBook : MonoBehaviour {
 
     [SerializeField] private Image _selectedImage = null;
     [SerializeField] private Image _textImage = null;
-    [SerializeField] private List<Image> _arrowImages = new List<Image>();
-    [SerializeField] private List<float> _arrowXPositions = new List<float>();
+    [SerializeField] private Image[] _arrowImages = new Image[0];
+    [SerializeField] private float[] _arrowXPositions = new float[0];
     
     public bool IsSelected { get; private set; } = false;
 

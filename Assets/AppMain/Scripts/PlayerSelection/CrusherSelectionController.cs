@@ -1,11 +1,9 @@
 using System.Linq;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
-using Cysharp.Threading.Tasks.CompilerServices;
 using DG.Tweening;
 
 public class CrusherSelectionController : MonoBehaviour {
@@ -33,14 +31,14 @@ public class CrusherSelectionController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _crusherDescription = null;
     [SerializeField] private GameObject _statusPanel = null;
     // WaitingPanel
-    [SerializeField, Header("0...Crusher, 1...Builder")] private List<GameObject> _waitingPanels = new List<GameObject>();
-    [SerializeField] private List<GameObject> _waitingCharacters = new List<GameObject>();
+    [SerializeField, Header("0...Crusher, 1...Builder")] private GameObject[] _waitingPanels = new GameObject[0];
+    [SerializeField] private GameObject[] _waitingCharacters = new GameObject[0];
     // ConfirmPanel
-    [SerializeField, Header("0...Crusher, 1...Builder")] private List<GameObject> _confirmPanels = new List<GameObject>();
+    [SerializeField, Header("0...Crusher, 1...Builder")] private GameObject[] _confirmPanels = new GameObject[0];
     // FadeInImage
-    [SerializeField] private List<Image> _fadeInImages = new List<Image>();
+    [SerializeField] private Image[] _fadeInImages = new Image[0];
     // シーン遷移関係
-    [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    [SerializeField] private string[] _nextSceneNames = new string[0];
     #endregion
 
     [HideInInspector] public bool IsSetConfirmPanel = false;

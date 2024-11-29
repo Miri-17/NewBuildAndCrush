@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
@@ -71,6 +70,7 @@ public class SoundListController : MonoBehaviour {
             }
         } else if (Input.GetButtonUp("Vertical")) {
             _isKeepSelecting = false;
+            _nextSelectTime = Time.time;
         } else if (Input.GetButtonDown("Select")) {
             // if (_soundListUIController.IsFadingIllustration) return;
             if (_audioSourceBGM.isPlaying && _previousSelectionIndex == SoundIndex) {

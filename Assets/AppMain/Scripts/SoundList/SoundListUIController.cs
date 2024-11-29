@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class SoundListUIController : MonoBehaviour {
     #region Private Fields
@@ -9,7 +8,7 @@ public class SoundListUIController : MonoBehaviour {
     private Tween _recordTween = null;
     private Tween _recordPlayerNeedleTween = null;
     private Color _illustrationColor = Color.white;
-    private List<float> _selectionPositionsY = new List<float>() {
+    private float[] _selectionPositionsY = new float[14] {
         481.0f, 391.0f, 301.0f, 211.0f, 121.0f, 31.0f, -59.0f, -149.0f, -239.0f, -329.0f, -419.0f, -509.0f, -599.0f, -599.0f, 
     };
     #endregion
@@ -17,11 +16,11 @@ public class SoundListUIController : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private SoundListController _soundListController = null;
     [SerializeField] private RectTransform _record = null;
-    [SerializeField] private List<Sprite> _recordSprites = new List<Sprite>();
+    [SerializeField] private Sprite[] _recordSprites = new Sprite[0];
     [SerializeField] private RectTransform _recordPlayerNeedle = null;
     [SerializeField] private Image _frontIllustrationImage = null;
     [SerializeField] private Image _backIllustrationImage = null;
-    [SerializeField] private List<Sprite> _illustrations = new List<Sprite>();
+    [SerializeField] private Sprite[] _illustrations = new Sprite[0];
     [SerializeField] private RectTransform _texts = null;
     [SerializeField] private RectTransform _selection = null;
     #endregion

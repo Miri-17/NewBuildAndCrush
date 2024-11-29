@@ -9,8 +9,8 @@ public class ModeSelectionButton : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private Image _frameImage = null;
     [SerializeField] private Image _glowImage = null;
-    [SerializeField] private Image[] _arrowImages = new Image[1];
-    [SerializeField] private float[] _arrowPositions = new float[1];
+    [SerializeField] private Image[] _arrowImages = new Image[0];
+    [SerializeField] private float[] _arrowPositions = new float[0];
     [SerializeField] private bool _isHorizontalButton = true;
     [Header("以下はないこともある")]
     [SerializeField] private Image _imageY = null;
