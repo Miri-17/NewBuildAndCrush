@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
@@ -15,7 +14,7 @@ public class BattleController : MonoBehaviour {
     [SerializeField] private DirectionController _directionController = null;
     [SerializeField] private BattleUIController _battleUIController = null;
     // シーン遷移関係
-    [SerializeField] private List<string> _nextSceneNames = new List<string>();
+    [SerializeField] private string[] _nextSceneNames = new string[0];
     #endregion
 
     private void Start() {

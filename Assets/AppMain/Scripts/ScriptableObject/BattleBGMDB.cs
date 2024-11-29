@@ -1,10 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BattleBGMDB", menuName = "ScriptableObjects/Battle BGM Database")]
 public class BattleBGMDB : ScriptableObject {
-    [SerializeField] private List<AudioClip> _normalAudioClips = null;
-    [SerializeField] private List<AudioClip> _wagonAudioClips = null;
+    [SerializeField] private AudioClip[] _normalAudioClips = new AudioClip[0];
+    [SerializeField] private AudioClip[] _wagonAudioClips = new AudioClip[0];
 
     /// <summary>
     /// 通常のバトル音楽を返す.

@@ -1,17 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BuildersDB", menuName = "ScriptableObjects/Builders Database")]
 public class BuildersDB : ScriptableObject {
-    [SerializeField] private List<BuilderDB> _builderDBs = new List<BuilderDB>();
-    [SerializeField] private List<BuilderInfoDB> _builderInfoDBs = new List<BuilderInfoDB>();
-    [SerializeField] private List<BattleBuilderDB> _battleBuilderDBs = new List<BattleBuilderDB>();
+    [SerializeField] private BuilderDB[] _builderDBs = new BuilderDB[0];
+    [SerializeField] private BuilderInfoDB[] _builderInfoDBs = new BuilderInfoDB[0];
+    [SerializeField] private BattleBuilderDB[] _battleBuilderDBs = new BattleBuilderDB[0];
 
     /// <summary>
     /// ビルダーの数を返す
     /// </summary>
-    public int BuilderCount {
-        get { return _builderDBs.Count; }
+    public int BuilderLength {
+        get { return _builderDBs.Length; }
     }
 
     /// <summary>

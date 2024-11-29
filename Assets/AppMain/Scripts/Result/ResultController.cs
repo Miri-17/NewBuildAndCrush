@@ -1,8 +1,7 @@
 using System.Linq;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cysharp.Threading.Tasks;
 using TMPro;
 
 public class ResultController : MonoBehaviour {
@@ -29,7 +28,7 @@ public class ResultController : MonoBehaviour {
     private void Start() {
         _audioSourceBGM = BGM.Instance?.GetComponent<AudioSource>();
         _audioSourceSE = CrusherSE.Instance?.GetComponent<AudioSource>();
-        if (_audioSourceBGM == null || _audioSourceSE == null || CrusherSE.Instance?.SEDB.AudioClips.Count < 3) {
+        if (_audioSourceBGM == null || _audioSourceSE == null || CrusherSE.Instance?.SEDB.AudioClips.Length < 3) {
             Debug.LogError("AudioSource of AudioClip is not set up correctly.");
             return;
         }

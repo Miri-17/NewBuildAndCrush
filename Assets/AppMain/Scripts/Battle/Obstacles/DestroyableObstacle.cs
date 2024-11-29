@@ -1,6 +1,5 @@
-using System.Collections.Generic;
-using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 public class DestroyableObstacle : MonoBehaviour {
     #region Private Fields
@@ -12,15 +11,15 @@ public class DestroyableObstacle : MonoBehaviour {
     #endregion
 
     #region Serialized Fields
-    [SerializeField] private List<Sprite> _obstacleSprites;
-    [SerializeField] private AudioClip _audioClip;
+    [SerializeField] private Sprite[] _obstacleSprites = new Sprite[0];
+    [SerializeField] private AudioClip _audioClip = null;
     [SerializeField] private bool _isUsingParticleSystem = false;
     [SerializeField] private int _defense = 4;
-    [SerializeField] private List<BoxCollider2D> _boxCollider2Ds;
-    [SerializeField] private List<CircleCollider2D> _circleCollider2Ds;
-    [SerializeField] private List<CapsuleCollider2D> _capsuleCollider2Ds;
+    [SerializeField] private BoxCollider2D[] _boxCollider2Ds = new BoxCollider2D[0];
+    [SerializeField] private CircleCollider2D[] _circleCollider2Ds = new CircleCollider2D[0];
+    [SerializeField] private CapsuleCollider2D[] _capsuleCollider2Ds = new CapsuleCollider2D[0];
     [SerializeField] private float _duration = 0;
-    [SerializeField] private List<GameObject> _childGameObjects = null;
+    [SerializeField] private GameObject[] _childGameObjects = new GameObject[0];
     [SerializeField] private bool _enableDefeatAnimation = false;
     #endregion
 
@@ -51,7 +50,7 @@ public class DestroyableObstacle : MonoBehaviour {
         }
 
         IsDamaged = true;
-        if (i < _obstacleSprites.Count) {
+        if (i < _obstacleSprites.Length) {
             _spriteRenderer.sprite = _obstacleSprites[i];
             i++;
         }
@@ -60,18 +59,17 @@ public class DestroyableObstacle : MonoBehaviour {
     private async UniTaskVoid Crush(float duration) {
         if (_isUsingParticleSystem)
             _particleSystem.Play();
-
-        // this.tag = "ObstacleGround";
-        if (_boxCollider2Ds.Count > 0)
+            
+        if (_boxCollider2Ds.Length > 0)
             foreach (var collider2D in _boxCollider2Ds)
                 Destroy(collider2D);
-        if (_circleCollider2Ds.Count > 0)
+        if (_circleCollider2Ds.Length > 0)
             foreach (var collider2D in _circleCollider2Ds)
                 Destroy(collider2D);
-        if (_capsuleCollider2Ds.Count > 0)
+        if (_capsuleCollider2Ds.Length > 0)
             foreach (var collider2D in _capsuleCollider2Ds)
                 Destroy(collider2D);
-        if (_childGameObjects.Count > 0)
+        if (_childGameObjects.Length > 0)
             foreach (var childGameObject in _childGameObjects)
                 Destroy(childGameObject);
         if (_enableDefeatAnimation)

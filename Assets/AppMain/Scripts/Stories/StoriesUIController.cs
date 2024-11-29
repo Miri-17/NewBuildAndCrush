@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -8,7 +7,7 @@ public class StoriesUIController : MonoBehaviour {
     private string _lowerRightSentence = "";
     private Color _textColor = Color.white;
 
-    [SerializeField] private List<Image> _fadeInOutImages = new List<Image>();
+    [SerializeField] private Image[] _fadeInOutImages = new Image[0];
     [SerializeField] private TextMeshProUGUI _lowerRightText = null;
 
     private void Start() {

@@ -1,16 +1,15 @@
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ComicsGenerator : MonoBehaviour {
     private int _builderIndex = 0;    
     private int _crusherIndex = 0;
 
     #region Serialized Fields
-    [SerializeField, Header("0...Openings, 1...BuilderWin, 2...CrusherWin")] private List<ComicsDB> _comicsDBs = null;
-    [SerializeField] private List<Sprite> _builderSprites = new List<Sprite>();
-    [SerializeField] private List<Sprite> _crusherSprites = new List<Sprite>();
+    [SerializeField, Header("0...Openings, 1...BuilderWin, 2...CrusherWin")] private ComicsDB[] _comicsDBs = new ComicsDB[0];
+    [SerializeField] private Sprite[] _builderSprites = new Sprite[0];
+    [SerializeField] private Sprite[] _crusherSprites = new Sprite[0];
     [SerializeField] private Image _builder = null;
     [SerializeField] private Image _crusher = null;
     [SerializeField] private TextMeshProUGUI _storyTitle = null;

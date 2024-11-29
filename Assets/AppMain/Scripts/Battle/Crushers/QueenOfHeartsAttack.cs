@@ -53,27 +53,32 @@ public class QueenOfHeartsAttack : MonoBehaviour {
             var verticalKey = Input.GetAxisRaw("Vertical");
 
             if (verticalKey > 0) {
-                _animator.SetTrigger("Attack_Upwards");
                 Attack(_attackPointUp);
-                if (_isCharging)
+                if (_isCharging) {
+                    _animator.SetTrigger("ChargedAttack_Upwards");
                     Instantiate(_attackEffectPrefabs[1], _attackPointUp.transform);
-                else
+                } else {
+                    _animator.SetTrigger("Attack_Upwards");
                     Instantiate(_attackEffectPrefabs[0], _attackPointUp.transform);
+                }
             } else if (verticalKey < 0) {
-                _animator.SetTrigger("Attack_Downwards");
                 Attack(_attackPointDown);
                 if (_isCharging) {
-                    // Instantiate(_attackEffectPrefabs[1], _attackPointDown.transform);
+                    _animator.SetTrigger("ChargedAttack_Downwards");
                     Instantiate(_attackEffectPrefabs[1], _chargedAttackPointDown);
-                } else
+                } else {
+                    _animator.SetTrigger("Attack_Downwards");
                     Instantiate(_attackEffectPrefabs[0], _attackPointDown.transform);
+                }
             } else {
-                _animator.SetTrigger("Attack");
                 Attack(_attackPoint);
-                if (_isCharging)
+                if (_isCharging) {
+                    _animator.SetTrigger("ChargedAttack");
                     Instantiate(_attackEffectPrefabs[1], _attackPoint.transform);
-                else
+                } else {
+                    _animator.SetTrigger("Attack");
                     Instantiate(_attackEffectPrefabs[0], _attackPoint.transform);
+                }
             }
             if (_isCharging)
                 _audioSource.PlayOneShot(_audioClips[1]);

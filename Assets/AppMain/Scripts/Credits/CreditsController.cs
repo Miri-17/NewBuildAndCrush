@@ -1,7 +1,7 @@
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
 
 public class CreditsController : MonoBehaviour {

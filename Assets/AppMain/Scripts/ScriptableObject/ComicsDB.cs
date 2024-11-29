@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ComicsDB", menuName = "ScriptableObjects/Comics Database")]
@@ -14,10 +13,10 @@ public class ComicsDB : ScriptableObject {
     [System.Serializable]
     public class BuilderParameter {
         public string Name = "";
-        public List<CrusherParameter> CrusherParameter = new List<CrusherParameter>();
+        public CrusherParameter[] CrusherParameter = new CrusherParameter[0];
     }
 
-    [SerializeField] private List<BuilderParameter> _builderParameters = new List<BuilderParameter>();
+    [SerializeField] private BuilderParameter[] _builderParameters = new BuilderParameter[0];
 
     private BuilderParameter GetBuilderParameter(int builderIndex) {
         return _builderParameters[builderIndex];

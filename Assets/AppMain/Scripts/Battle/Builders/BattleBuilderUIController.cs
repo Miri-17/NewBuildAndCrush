@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -9,12 +8,12 @@ public class BattleBuilderUIController : MonoBehaviour {
     private List<Image> _obstacleImages = new List<Image>();
     private List<float> _generationTime = new List<float>();
     private List<float> _obstacleWeight = new List<float>();
-    private List<Sprite> _faceSprites = new List<Sprite>();
+    private Sprite[] _faceSprites = new Sprite[0];
     // 今回のビルダーの障害物情報を格納しておく変数
     private int _selectedIndex = 0;
     private float _maxWeight = 0;
     private float _currentWeight = 0;
-    private List<bool> _isGeneration = new List<bool>() { false, false, false, false, false, false, };
+    private bool[] _isGeneration = new bool[6] { false, false, false, false, false, false, };
     private bool _isPlaceable = true;
     #endregion
 
@@ -27,8 +26,8 @@ public class BattleBuilderUIController : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private BuildersDB _buildersDB = null;
-    [SerializeField] private List<Button> _obstacleButtons = new List<Button>();
-    [SerializeField] private List<Slider> _partsGenerationBars = new List<Slider>();
+    [SerializeField] private Button[] _obstacleButtons = new Button[0];
+    [SerializeField] private Slider[] _partsGenerationBars = new Slider[0];
     [SerializeField] private Image _frame = null;
     [SerializeField] private Image _facesImage = null;
     [SerializeField] private BuilderController _builderController = null;
@@ -42,7 +41,7 @@ public class BattleBuilderUIController : MonoBehaviour {
     public GameObject CurrentPrefabs { get; private set; } = null;
 
     private void Start() {
-        for (int i = 0; i < _obstacleButtons.Count; i++) {
+        for (int i = 0; i < _obstacleButtons.Length; i++) {
             _obstacleImages.Add(null);
             _generationTime.Add(0.0f);
             _obstacleWeight.Add(0.0f);
@@ -52,7 +51,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         var battleBuilder = _buildersDB.GetBattleBuilder(GameDirector.Instance.BuilderIndex);
         _frame.sprite = battleBuilder.FrameSprite;
         _faceSprites = battleBuilder.FaceSprites;
-        for (int i = 0; i < _obstacleButtons.Count; i++) {
+        for (int i = 0; i < _obstacleButtons.Length; i++) {
             _obstacleImages[i] = _obstacleButtons[i].GetComponent<Image>();
             _obstacleImages[i].sprite = battleBuilder.GetObstacle(i).ObstacleImage;
             _generationTime[i] = battleBuilder.GetObstacle(i).GenerationTime;
@@ -159,7 +158,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         _builderController.Wagon.transform.Find("Grid").transform.gameObject.SetActive(false);
         
         // ボタンを押せる状態にする.
-        for (int i = 0; i < _obstacleButtons.Count; i++) {
+        for (int i = 0; i < _obstacleButtons.Length; i++) {
             if (i == _selectedIndex) {
                 SetPartsGenerationBar(_selectedIndex);
                 continue;

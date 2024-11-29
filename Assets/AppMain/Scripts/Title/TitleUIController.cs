@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using DG.Tweening;
+using TMPro;
 
 public class TitleUIController : MonoBehaviour {
     private const float START_TEXT_FADE_DURATION = 1.0f;

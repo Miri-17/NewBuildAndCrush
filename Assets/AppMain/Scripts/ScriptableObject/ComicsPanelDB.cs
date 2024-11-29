@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ComicsPanelDB", menuName = "ScriptableObjects/Comics Panel Database")]
@@ -13,7 +11,7 @@ public class ComicsPanelDB : ScriptableObject {
         public Sprite Sprite = null;
     }
 
-    [SerializeField] private List<Parameter> Parameters = new List<Parameter>();
+    [SerializeField] private Parameter[] Parameters = new Parameter[0];
 
     /// <summary>
     /// 画像名から画像を取得する.

@@ -1,6 +1,6 @@
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SoundListUIController : MonoBehaviour {
     #region Private Fields

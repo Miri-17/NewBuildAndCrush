@@ -1,6 +1,6 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class WaitingPanel : MonoBehaviour {
     private RectTransform _canvasGroupRectTransform = null;

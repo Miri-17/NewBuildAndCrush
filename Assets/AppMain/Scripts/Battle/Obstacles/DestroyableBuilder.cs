@@ -1,7 +1,7 @@
-using UnityEngine;
-using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using System;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
+using DG.Tweening;
 
 public class DestroyableBuilder : MonoBehaviour {
     #region Private Fields
@@ -11,7 +11,7 @@ public class DestroyableBuilder : MonoBehaviour {
     #endregion
 
     #region Serialized Fields
-    [SerializeField] private AudioClip[] _audioClips = new AudioClip[4];
+    [SerializeField] private AudioClip[] _audioClips = new AudioClip[0];
     [SerializeField] private GameObject _defeatFilterPrefab = null;
     #endregion
 

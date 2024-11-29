@@ -1,6 +1,6 @@
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 // TODO 見てるサイトとは違って、”"で囲んだ値が取得できない←非常に困る.
 // SpreadSheet使うものに変更することを考える.

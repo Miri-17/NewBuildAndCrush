@@ -1,9 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SEDB", menuName = "ScriptableObjects/SE Database")]
 public class SEDB : ScriptableObject {
-    [SerializeField] private List<AudioClip> _audioClips = null;
+    [SerializeField] private AudioClip[] _audioClips = new AudioClip[0];
 
-    public List<AudioClip> AudioClips { get => _audioClips; set => _audioClips = value; }
+    public AudioClip[] AudioClips { get => _audioClips; set => _audioClips = value; }
 }

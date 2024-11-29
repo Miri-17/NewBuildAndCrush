@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CrusherController : MonoBehaviour {
@@ -20,8 +19,8 @@ public class CrusherController : MonoBehaviour {
     private float _normalWalkSpeed = 0;
     private float _normalJumpForce = 0;
     private float _addSpeedX = 0.0f;
-    private List<float> _rightNum = new List<float>() { 19.0f, 17.0f, 20.0f, 18.9f, };
-    private List<float> _endNum = new List<float>() { 20.2f, 18.2f, 21.2f, 20.1f, };
+    private float[] _rightNum = new float[4] { 19.0f, 17.0f, 20.0f, 18.9f, };
+    private float[] _endNum = new float[4] { 20.2f, 18.2f, 21.2f, 20.1f, };
     private int _crusherIndex = 0;
     private AudioSource _audioSourceSE = null;
     #endregion

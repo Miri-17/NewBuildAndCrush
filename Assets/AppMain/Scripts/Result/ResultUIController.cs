@@ -1,8 +1,7 @@
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class ResultUIController : MonoBehaviour {
     private const float START_TEXT_FADE_DURATION = 1.0f;

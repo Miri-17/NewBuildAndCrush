@@ -12,7 +12,7 @@ public class DirectionController : MonoBehaviour {
     [SerializeField] private GameObject _wall = null;   // ビルダーのタッチ防ぐ用.
     [SerializeField] private Button _readyButton = null;
     [Header("0...Builder, 1...Crusher")]
-    [SerializeField] private GameObject[] _startPanels = null;
+    [SerializeField] private GameObject[] _startPanels = new GameObject[0];
     [SerializeField] private GameObject _readyGoPanel = null;
     [SerializeField] private GameObject _finishPanel = null;
     [SerializeField] private GameObject _battleBGMPrefab = null;

@@ -1,6 +1,5 @@
-using System.Collections.Generic;
-using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 public class SpecialFloorObstacle : MonoBehaviour {
     #region Private Fields
@@ -18,7 +17,7 @@ public class SpecialFloorObstacle : MonoBehaviour {
     [SerializeField] private BoxCollider2D _boxCollider2D;
     [SerializeField] private GameObject _childGameObject = null;
     // Hatakeのみ.
-    [SerializeField] private List<Sprite> _obstacleSprites;
+    [SerializeField] private Sprite[] _obstacleSprites = new Sprite[0];
     #endregion
 
     private void Start() {
@@ -50,7 +49,7 @@ public class SpecialFloorObstacle : MonoBehaviour {
             return;
         }
 
-        if (i < _obstacleSprites.Count) {
+        if (i < _obstacleSprites.Length) {
             _spriteRenderer.sprite = _obstacleSprites[i];
             i++;
         }

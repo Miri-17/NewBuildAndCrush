@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using System.Collections.Generic;
 
 public class FadeInStoryComicsPanel : MonoBehaviour {
     private int _counter = 0;
@@ -9,9 +8,6 @@ public class FadeInStoryComicsPanel : MonoBehaviour {
     private Color _imageColor = Color.white;
 
     [SerializeField] private Image _backComicsPanel = null;
-    [SerializeField] private List<int> _pageSwitchingNumbers = new List<int>() {
-        0, 
-    };
 
     private void Awake() {
         _image = this.GetComponent<Image>();

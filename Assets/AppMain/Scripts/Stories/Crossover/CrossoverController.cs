@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Febucci.UI;
+using TMPro;
 
 public class CrossoverController : MonoBehaviour {
     #region Private Fields
@@ -35,7 +35,7 @@ public class CrossoverController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _nameText = null;
     [SerializeField] private ComicsCharacterDB _comicsCharacterDB = null;
     [SerializeField] private Image _characterImage = null;
-    [SerializeField, Header("0...Opening, 1...BuilderWin, 2...CrusherWin")] private List<ComicsPanelDB> _comicsPanelDBs = new List<ComicsPanelDB>();
+    [SerializeField, Header("0...Opening, 1...BuilderWin, 2...CrusherWin")] private ComicsPanelDB[] _comicsPanelDBs = new ComicsPanelDB[0];
     [SerializeField] private TypewriterByCharacter _typewriter = null;
     #endregion
     

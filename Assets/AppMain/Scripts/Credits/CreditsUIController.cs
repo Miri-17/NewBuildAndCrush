@@ -1,8 +1,8 @@
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using System.Threading.Tasks;
-using Cysharp.Threading.Tasks;
 
 public class CreditsUIController : MonoBehaviour {
     #region Serialized Fields

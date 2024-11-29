@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a8e0dc71d70df483898f14e597d3bb32, type: 3}
   - {fileID: 8300000, guid: a55422558241e4619b389ec9b8da4c2f, type: 3}
   - {fileID: 8300000, guid: c63d86bee38d246da9de0b11fdddefb3, type: 3}
-  _prefabs:
+  _notePrefabs:
   - {fileID: 1340803230983231932, guid: 809c05b3b671249b78635a333e067f56, type: 3}
   - {fileID: 2138741614421889702, guid: 97ab71322195447e7965e233a17e4adf, type: 3}
   - {fileID: 8458864684156737995, guid: 8caa066cb506d4961aab432823367bf4, type: 3}

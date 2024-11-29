@@ -1,7 +1,6 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
-using System.Collections.Generic;
+using TMPro;
 
 public class BuilderSelectionController : MonoBehaviour {
     #region Private Fields
@@ -48,7 +47,7 @@ public class BuilderSelectionController : MonoBehaviour {
 
         _audioSource_SE = BuilderSE.Instance.GetComponent<AudioSource>();
         
-        _builderCount = _buildersDB.BuilderCount;
+        _builderCount = _buildersDB.BuilderLength;
         UpdateBuilder(BuilderIndex);
 
         _displayStatusButton.onClick.AddListener(() => OnDisplayStatusButtonClicked());

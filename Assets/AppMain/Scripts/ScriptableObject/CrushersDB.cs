@@ -1,17 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CrushersDB", menuName = "ScriptableObjects/Crushers Database")]
 public class CrushersDB : ScriptableObject {
-    [SerializeField] private List<CrusherDB> _crusherDBs = new List<CrusherDB>();
-    [SerializeField] private List<CrusherInfoDB> _crusherInfoDBs = new List<CrusherInfoDB>();
-    [SerializeField] private List<BattleCrusherDB> _battleCrusherDBs = new List<BattleCrusherDB>();
+    [SerializeField] private CrusherDB[] _crusherDBs = new CrusherDB[0];
+    [SerializeField] private CrusherInfoDB[] _crusherInfoDBs = new CrusherInfoDB[0];
+    [SerializeField] private BattleCrusherDB[] _battleCrusherDBs = new BattleCrusherDB[0];
     
     /// <summary>
     /// クラッシャーの数を返す
     /// </summary>
     public int CrusherCount {
-        get { return _crusherDBs.Count; }
+        get { return _crusherDBs.Length; }
     }
 
     /// <summary>

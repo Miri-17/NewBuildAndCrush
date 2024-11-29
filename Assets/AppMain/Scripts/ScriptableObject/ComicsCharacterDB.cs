@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -58,7 +57,7 @@ public class ComicsCharacterDB : ScriptableObject {
     public class Parameter {
         public string DisplayName = "";
         public Type Character = Type.None;
-        public List<ImageParam> ImageParams = new List<ImageParam>();
+        public ImageParam[] ImageParams = new ImageParam[0];
 
         public Sprite GetEmotionSprite(EmotionType emotion) {
             foreach (var imageParam in ImageParams) {
@@ -68,7 +67,7 @@ public class ComicsCharacterDB : ScriptableObject {
         }
     }
 
-    [SerializeField] private List<Parameter> Parameters = new List<Parameter>();
+    [SerializeField] private Parameter[] Parameters = new Parameter[0];
 
     /// <summary>
     /// キャラクター番号からキャラクター表示名を取得する.

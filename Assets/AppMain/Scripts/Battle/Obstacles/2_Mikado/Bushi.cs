@@ -1,6 +1,5 @@
-using System.Collections.Generic;
-using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 public class Bushi : MonoBehaviour {
     #region Private Fields
@@ -14,13 +13,13 @@ public class Bushi : MonoBehaviour {
     [SerializeField] private GameObject _parentObject = null;
     [SerializeField] private BoxCollider2D _boxCollider2D = null;
     [SerializeField] private CapsuleCollider2D _capsuleCollider2D = null;
-    [SerializeField, Header("0...Defend, 1...Crush")] private AudioClip[] _audioClip = new AudioClip[2];
+    [SerializeField, Header("0...Defend, 1...Crush")] private AudioClip[] _audioClip = new AudioClip[0];
     [SerializeField] private int _defense = 4;
     [SerializeField] private float _duration = 0;
     [SerializeField] private SpriteRenderer _notionSpriteRenderer = null;
     [SerializeField] private float _maxNotionTime = 1.0f;
     [SerializeField] private BoxCollider2D _swordCollider = null;
-    [SerializeField] private GameObject[] _childGameObjects = null;
+    [SerializeField] private GameObject[] _childGameObjects = new GameObject[0];
     #endregion
 
     private void Start() {

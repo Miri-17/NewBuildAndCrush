@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 public class SetBaseBlock : MonoBehaviour {
@@ -13,8 +12,8 @@ public class SetBaseBlock : MonoBehaviour {
     [SerializeField] private float _startPosX = -272.0f;
     [SerializeField] private float _startPosY = 128.0f;
     [SerializeField] private float _space = 32.0f;
-    [SerializeField] private List<GameObject> _baseBlockPrefabs = new List<GameObject>();
-    [SerializeField] private List<TextAsset> _csvFiles = new List<TextAsset>();
+    [SerializeField] private GameObject[] _baseBlockPrefabs = new GameObject[0];
+    [SerializeField] private TextAsset[] _csvFiles = new TextAsset[0];
     #endregion
 
     private void Awake() {

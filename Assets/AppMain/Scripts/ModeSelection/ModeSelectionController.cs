@@ -1,9 +1,8 @@
 using System.Linq;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Cysharp.Threading.Tasks;
 
 public class ModeSelectionController : MonoBehaviour {
     #region Private Fields
@@ -20,6 +19,7 @@ public class ModeSelectionController : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private ModeSelectionUIController _modeSelectionUIController = null;
     [SerializeField] private ModeSelectionBook[] _modeSelectionBooks = new ModeSelectionBook[0];
+    [SerializeField] private ParticleSystem[] _particleSystem = new ParticleSystem[0];
     [SerializeField] private Image _rulesButton = null;
     [SerializeField] private Sprite[] _rulesButtonSprites = new Sprite[0];
     [SerializeField] private GameObject _rulesPanelPrefab = null;
@@ -88,6 +88,7 @@ public class ModeSelectionController : MonoBehaviour {
             _isChangingScene = true;
             
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
+            _particleSystem[_nextSceneIndex].Play();
 
             GoNextSceneAsync(0.5f, _nextSceneNames[_nextSceneIndex]).Forget();
         } else if (Input.GetButtonDown("Fire1")) {

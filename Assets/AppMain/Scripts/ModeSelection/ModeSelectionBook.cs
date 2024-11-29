@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ModeSelectionBook : MonoBehaviour {
     private List<RectTransform> _arrows = new List<RectTransform>();

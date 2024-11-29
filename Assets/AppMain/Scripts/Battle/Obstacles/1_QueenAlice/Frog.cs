@@ -1,5 +1,5 @@
-using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 public class Frog : MonoBehaviour {
     #region Private Fields
@@ -15,12 +15,12 @@ public class Frog : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private GameObject _parentObject = null;
     [SerializeField, Header("0...Sing0, 1...Sing1, 2...Crush")] private AudioClip[] _audioClips = new AudioClip[3];
-    [SerializeField] private GameObject[] _prefabs = new GameObject[3];
+    [SerializeField] private GameObject[] _notePrefabs = new GameObject[3];
     [SerializeField] private Transform _attackPoint = null;
     [SerializeField, Header("1秒に何回攻撃できるか")] private float _attackRate = 1.0f;
     [SerializeField, Header("何回ごとに休むか")] private int _maxCount = 3;
     [SerializeField] private CircleCollider2D _circleCollider2D = null;
-    [SerializeField] private GameObject[] _childGameObjects = new GameObject[2];
+    [SerializeField] private GameObject[] _childGameObjects = new GameObject[0];
     [SerializeField] private float _duration = 0.5f;
     [SerializeField] private int _defense = 4;
 
@@ -45,7 +45,7 @@ public class Frog : MonoBehaviour {
             _nextAttackTime = Time.time + 1.0f / _attackRate;
             _counter++;
         } else {
-            Instantiate(_prefabs[_counter - 1], _attackPoint.transform);
+            Instantiate(_notePrefabs[_counter - 1], _attackPoint.transform);
             _counter++;
 
             if (_counter > _maxCount) {

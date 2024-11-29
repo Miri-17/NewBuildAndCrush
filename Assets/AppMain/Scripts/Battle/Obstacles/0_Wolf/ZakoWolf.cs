@@ -1,5 +1,5 @@
-using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using DG.Tweening;
 
 public class ZakoWolf : MonoBehaviour {
@@ -16,7 +16,7 @@ public class ZakoWolf : MonoBehaviour {
     [SerializeField] private GameObject _parentObject = null;
     [SerializeField] private int _defense = 8;
     [SerializeField] private float _duration = 2.0f;
-    [SerializeField] private BoxCollider2D[] _boxCollider2Ds = new BoxCollider2D[2];
+    [SerializeField] private BoxCollider2D[] _boxCollider2Ds = new BoxCollider2D[0];
     [SerializeField] private CircleCollider2D _circleCollider2D = null;
     [SerializeField] private float _endPosition = -272.0f;
     [SerializeField] private float _speed = 200.0f;

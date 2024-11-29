@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -15,11 +14,11 @@ public class BattleUIController : MonoBehaviour {
     #region Serialized Fields
     [SerializeField] private DirectionController _directionController = null;
     [Header("ビルダー側, クラッシャー側の順")]
-    [SerializeField] private List<TextMeshProUGUI> _builderScores = new List<TextMeshProUGUI>();
-    [SerializeField] private List<TextMeshProUGUI> _crusherScores = new List<TextMeshProUGUI>();
-    [SerializeField] private List<RectTransform> _builderIcons = new List<RectTransform>();
-    [SerializeField] private List<RectTransform> _crusherIcons = new List<RectTransform>();
-    [SerializeField] private List<TextMeshProUGUI> _timeText = new List<TextMeshProUGUI>();
+    [SerializeField] private TextMeshProUGUI[] _builderScores = new TextMeshProUGUI[0];
+    [SerializeField] private TextMeshProUGUI[] _crusherScores = new TextMeshProUGUI[0];
+    [SerializeField] private RectTransform[] _builderIcons = new RectTransform[0];
+    [SerializeField] private RectTransform[] _crusherIcons = new RectTransform[0];
+    [SerializeField] private TextMeshProUGUI[] _timeText = new TextMeshProUGUI[0];
     #endregion
 
     #region Public Properties

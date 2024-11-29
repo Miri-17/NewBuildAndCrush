@@ -1,9 +1,8 @@
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cysharp.Threading.Tasks;
 
-// TODO 早く切り替えた時のバグどうにかしたい
 public class SoundListController : MonoBehaviour {
     #region Private Fields
     private AudioSource _audioSourceBGM = null;

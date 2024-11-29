@@ -1,8 +1,7 @@
 using System.Linq;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cysharp.Threading.Tasks;
 
 public class TitleController : MonoBehaviour {
     #region Private Fields

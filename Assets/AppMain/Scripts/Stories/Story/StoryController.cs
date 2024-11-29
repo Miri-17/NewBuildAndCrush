@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using Febucci.UI;
+using TMPro;
 
 public class StoryController : MonoBehaviour {
     #region Private Fields
@@ -33,9 +33,9 @@ public class StoryController : MonoBehaviour {
     [SerializeField] private StoriesUIController _storiesUIController = null;
     // Story特有.
     [Header("ビルダーのインデックス順")]
-    [SerializeField] private List<ComicsPanelDB> _openingsPanelDBs = new List<ComicsPanelDB>();
-    [SerializeField] private List<ComicsPanelDB> _builderWinPanelDBs = new List<ComicsPanelDB>();
-    [SerializeField] private List<ComicsPanelDB> _crusherWinPanelDBs = new List<ComicsPanelDB>();
+    [SerializeField] private ComicsPanelDB[] _openingsPanelDBs = new ComicsPanelDB[0];
+    [SerializeField] private ComicsPanelDB[] _builderWinPanelDBs = new ComicsPanelDB[0];
+    [SerializeField] private ComicsPanelDB[] _crusherWinPanelDBs = new ComicsPanelDB[0];
     [SerializeField] private Image _endingFadeImage = null;
     [SerializeField] private TypewriterByCharacter _typewriter = null;
     #endregion
