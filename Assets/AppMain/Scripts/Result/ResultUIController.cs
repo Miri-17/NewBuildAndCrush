@@ -54,8 +54,8 @@ public class ResultUIController : MonoBehaviour {
     private void SetScoreSliders(int builderScore, int crusherScore) {
         float sumScore = builderScore + crusherScore;
         if (sumScore > 0) {
-            _scoreSliders[0].value = builderScore / sumScore;
-            _scoreSliders[1].value = builderScore / sumScore;
+            _scoreSliders[0].value = crusherScore / sumScore;
+            _scoreSliders[1].value = crusherScore / sumScore;
         } else {
             _scoreSliders[0].value = 0.5f;
             _scoreSliders[1].value = 0.5f;
