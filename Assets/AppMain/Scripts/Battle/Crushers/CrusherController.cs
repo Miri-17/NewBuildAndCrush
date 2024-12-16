@@ -105,6 +105,7 @@ public class CrusherController : MonoBehaviour {
         if (IsGrounded()) {
             if (Input.GetButtonDown("Jump")) {
                 _isJumping = true;
+                _animator.SetBool("Jump", _isJumping);  // ジャンプアニメーションがされないことのないようにする.
                 Jump();
             } else {
                 _isJumping = false;
@@ -177,7 +178,6 @@ public class CrusherController : MonoBehaviour {
     }
 
     private void Jump() {
-        Debug.Log("ジャンプ！");
         _rb2D.AddForce(new Vector2(0, _jumpForce), ForceMode2D.Impulse);
     }
 
@@ -203,6 +203,7 @@ public class CrusherController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("SpecialFloor")) {
+            Debug.Log("Enter");
             _walkSpeed *= 0.5f;
             _runSpeed *= 0.3f;
             _jumpForce *= 0.7f;
@@ -211,6 +212,7 @@ public class CrusherController : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("SpecialFloor")) {
+            Debug.Log("Exit");
             _walkSpeed = _normalWalkSpeed;
             _runSpeed = _normalRunSpeed;
             _jumpForce = _normalJumpForce;

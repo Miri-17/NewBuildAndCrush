@@ -1224,9 +1224,12 @@ MonoBehaviour:
   _startPanels:
   - {fileID: 4873188720707849439}
   - {fileID: 8267619542405772964}
+  _makeWagonPanel: {fileID: 471506078798853801, guid: 60c2ad0bf0f9d429cbd43b5015635ed3, type: 3}
+  _waitForBuilderPanel: {fileID: 8129938961240176942, guid: fc529f26b50e3455fb44f516883da5e4, type: 3}
   _readyGoPanel: {fileID: 5737983637879742868, guid: 5435d398f4bb6425180f11901f259fdc, type: 3}
   _finishPanel: {fileID: 5737983637879742868, guid: f57dc2b2cdc0544a3b9dadba7c639995, type: 3}
   _battleBGMPrefab: {fileID: 8161927448881941513, guid: c4d91f1954575475599e789e3cfa6743, type: 3}
+  _battleBuilderUIController: {fileID: 1686731071}
 --- !u!1 &389684070
 GameObject:
   m_ObjectHideFlags: 0
@@ -9214,7 +9217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderIndex
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _builderScore
@@ -9222,7 +9225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherIndex
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherScore

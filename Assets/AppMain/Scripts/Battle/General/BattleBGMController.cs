@@ -40,7 +40,6 @@ public class BattleBGMController : MonoBehaviour {
     private void Update() {
         if (_builderController.WagonControllerRun != null) {
             if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
-                Debug.Log("Yeah");
                 SetWagonBGM();
             }
         }

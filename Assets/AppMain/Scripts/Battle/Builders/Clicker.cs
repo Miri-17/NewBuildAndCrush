@@ -12,7 +12,6 @@ public class Clicker : MonoBehaviour {
             return;
 
         if (Input.GetMouseButtonDown(0)) {
-        Debug.Log("Clicker");      
             Ray ray = _builderCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit2D = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction, LayerMask.GetMask("SpawnPoint"));
             // Debug.Log(hit2D.collider.gameObject.layer);

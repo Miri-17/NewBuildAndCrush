@@ -7,6 +7,7 @@ public class Bushi : MonoBehaviour {
     private Animator _animator = null;
     private bool _isDefended = true;
     private float _notionTime = 0;
+    private bool _isContinueAttack = false;
     #endregion
 
     #region Serialized Fields
@@ -30,7 +31,7 @@ public class Bushi : MonoBehaviour {
     }
 
     private void Update() {
-        if (!_isDefended && _notionSpriteRenderer.enabled && Time.time > _notionTime)
+        if (_notionSpriteRenderer != null && _notionSpriteRenderer.enabled && Time.time > _notionTime)
             _notionSpriteRenderer.enabled = false;
     }
 
@@ -69,17 +70,14 @@ public class Bushi : MonoBehaviour {
             _notionSpriteRenderer.enabled = true;
             _notionTime = Time.time + _maxNotionTime;
             Debug.Log("Notion time: " + _notionTime);
-            _isDefended = true;
+            _isContinueAttack = true;
             _animator.SetBool("Attack", true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("Crusher")) {
-            _isDefended = true;
-            _notionSpriteRenderer.enabled = false;
-            _animator.SetBool("Attack", false);
-        }
+        if (other.CompareTag("Crusher"))
+            _isContinueAttack = false;
     }
 
     /// <summary>
@@ -104,5 +102,7 @@ public class Bushi : MonoBehaviour {
     /// </summary>
     public void DefenceAgain() {
         _isDefended = true;
+        if (!_isContinueAttack)
+            _animator.SetBool("Attack", false);
     }
 }

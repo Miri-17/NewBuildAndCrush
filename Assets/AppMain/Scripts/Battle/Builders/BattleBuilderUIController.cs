@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -108,7 +109,8 @@ public class BattleBuilderUIController : MonoBehaviour {
         _selectedIndex = index;
     }
 
-    private void OnGoButtonClicked() {
+    // private void OnGoButtonClicked() {
+    public void OnGoButtonClicked() {
         SetGoButtonInteractive(false);
 
         // 次のワゴンが設置されるまで障害物を置けないようにする.

@@ -23,7 +23,6 @@ public class BuilderController : MonoBehaviour {
 
     private void Start() {
         _battleBuilder = _buildersDB.GetBattleBuilder(GameDirector.Instance.BuilderIndex);
-        Debug.Log("wagon set");
         SetWagon(_wagonStartPosition);
         GameDirector.Instance.BuilderPosition = 5734.0f;
     }
