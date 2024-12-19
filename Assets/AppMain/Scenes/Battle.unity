@@ -1905,7 +1905,7 @@ MonoBehaviour:
   _builderController: {fileID: 887549563}
   _bg: {fileID: 1760817988}
   _ground: {fileID: 1833976902}
-  _startPoint: {fileID: 1397126245}
+  _continuePosition: {fileID: 1397126245}
 --- !u!1 &526060762
 GameObject:
   m_ObjectHideFlags: 0
@@ -9155,7 +9155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherIndex
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherScore

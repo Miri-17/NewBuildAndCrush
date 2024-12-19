@@ -1,10 +1,12 @@
 using UnityEngine;
 
-// TODO wagonに乗る前のクラッシャーコンティニュー位置
 public class StageGenerator : MonoBehaviour {
+    #region Private Fields
     private GameObject _crusher = null;
     private CrusherController _crusherController = null;
-    private GameObject _continuePoint = null;
+    private GameObject _startPosition = null;
+    private bool _isContinue2StartPosition = true;
+    #endregion
 
     #region Serialized Fields
     [SerializeField] private BuildersDB _buildersDB = null;
@@ -12,14 +14,13 @@ public class StageGenerator : MonoBehaviour {
     [SerializeField] private BuilderController _builderController = null;
     [SerializeField] private SpriteRenderer _bg;
     [SerializeField] private SpriteRenderer _ground;
-    [SerializeField] private GameObject _startPoint = null;
+    [SerializeField, Header("初期はStartPosition")] private GameObject _continuePosition = null;
     #endregion
     
     private void Start() {
         UpdateCrusherInfo(GameDirector.Instance.CrusherIndex);
         UpdateBuilderInfo(GameDirector.Instance.BuilderIndex);
-        // TODO 死んだ位置から少し前にコンティニューするよう変更.
-        _continuePoint = _startPoint;
+        _startPosition = _continuePosition;
     }
     
     private void Update() {
@@ -29,23 +30,34 @@ public class StageGenerator : MonoBehaviour {
             this.transform.position = new Vector3(crusherPosition.x, this.transform.position.y, this.transform.position.z);
         
         if (_crusherController.IsContinueWaiting()) {
-            _crusher.transform.position = _continuePoint.transform.position;
+            _crusher.transform.position = _continuePosition.transform.position;
             _crusherController.ContinueCrusher();
         }
 
         // TODO 時間があれば, このコードはBattleControllerに移す.
         if (_builderController.WagonControllerRun != null) {
-            // ワゴンに乗ったらコンティニューポイントを変更する.
-            if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn)
-                _continuePoint = _builderController.WagonControllerRun.CrusherContinuePosition;
-            // TODO ワゴンから降りたら、死んだ位置から少し前にコンティニューするよう変更.
+            // ワゴンが発車したら, ワゴンの先頭にコンティニューするようにする.
+            // これはワゴンの近くで死ぬこと以外がほぼ起こり得らないためである.
+            if (_isContinue2StartPosition) {
+                Debug.Log("hello A");
+                _isContinue2StartPosition = false;
+                _continuePosition = _builderController.WagonControllerRun.CrusherContinuePosition;
+            }
+        } else {
+            // 確率的にほぼあり得ないのだが,　ワゴンが壊されてから次のワゴンが発車するまでに死んだ場合は
+            // StartPositionからコンティニューするようにする.
+            if (!_isContinue2StartPosition) {
+                Debug.Log("hello B");
+                _isContinue2StartPosition = true;
+                _continuePosition = _startPosition;
+            }
         }
     }
 
     private void UpdateCrusherInfo(int crusherIndex) {
         var battleCrusher = _crushersDB.GetBattleCrusher(crusherIndex);
 
-        _crusher = Instantiate(battleCrusher.CrusherPrefab, _startPoint.transform.position, Quaternion.identity, GameObject.Find("Crusher").transform);
+        _crusher = Instantiate(battleCrusher.CrusherPrefab, _continuePosition.transform.position, Quaternion.identity, GameObject.Find("Crusher").transform);
         _crusherController = _crusher.GetComponent<CrusherController>();
     }
 
