@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
+// BattleWaitingPanel.csと統合したい.
 public class WaitingPanel : MonoBehaviour {
     private RectTransform _canvasGroupRectTransform = null;
     private Color _bgColor = Color.white;
@@ -15,6 +16,7 @@ public class WaitingPanel : MonoBehaviour {
 
     private void OnEnable() {
         _bgColor = _bg.color;
+        // ここをマジックナンバーでなくすとBattleWaitingPanel.csと同じ.
         _bgColor.a = 0;
         _bg.color = _bgColor;
         _bg.DOFade(0.78f, 0.5f)

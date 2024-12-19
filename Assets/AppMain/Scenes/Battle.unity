@@ -766,7 +766,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 770184835}
   - {fileID: 2269991713998905813}
   m_Father: {fileID: 915824689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1116,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ccc1626a731904447ab0ae2280d84e18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa02ab99bfbba4f3ab3c12f97976c623, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1219,15 +1218,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2123b640f544e9bac8e3a5785a9009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wall: {fileID: 770184834}
   _readyButton: {fileID: 6450506070032134937}
   _startPanels:
   - {fileID: 4873188720707849439}
   - {fileID: 8267619542405772964}
-  _makeWagonPanel: {fileID: 471506078798853801, guid: 60c2ad0bf0f9d429cbd43b5015635ed3, type: 3}
-  _waitForBuilderPanel: {fileID: 8129938961240176942, guid: fc529f26b50e3455fb44f516883da5e4, type: 3}
-  _readyGoPanel: {fileID: 5737983637879742868, guid: 5435d398f4bb6425180f11901f259fdc, type: 3}
-  _finishPanel: {fileID: 5737983637879742868, guid: f57dc2b2cdc0544a3b9dadba7c639995, type: 3}
+  _makeWagonPanelPrefab: {fileID: 471506078798853801, guid: 60c2ad0bf0f9d429cbd43b5015635ed3, type: 3}
+  _waitingPanelPrefabs:
+  - {fileID: 2323063133716133143, guid: a6f45f773bd504fa99dd9583e27ab280, type: 3}
+  - {fileID: 63463838229710814, guid: e243057d4ea6646dd920e38a97319233, type: 3}
+  _readyGoPanelPrefab: {fileID: 5737983637879742868, guid: 5435d398f4bb6425180f11901f259fdc, type: 3}
+  _finishPanelPrefab: {fileID: 5737983637879742868, guid: f57dc2b2cdc0544a3b9dadba7c639995, type: 3}
   _battleBGMPrefab: {fileID: 8161927448881941513, guid: c4d91f1954575475599e789e3cfa6743, type: 3}
   _battleBuilderUIController: {fileID: 1686731071}
 --- !u!1 &389684070
@@ -3529,81 +3529,6 @@ RectTransform:
   m_AnchoredPosition: {x: -308, y: 0}
   m_SizeDelta: {x: 18, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &770184834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 770184835}
-  - component: {fileID: 770184837}
-  - component: {fileID: 770184836}
-  m_Layer: 5
-  m_Name: Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &770184835
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770184834}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 170176517}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &770184836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770184834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &770184837
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770184834}
-  m_CullTransparentMesh: 0
 --- !u!1 &772385065
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,7 +5028,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 180
+  orthographic size: 193
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5128,7 +5053,7 @@ Transform:
   m_GameObject: {fileID: 1161481598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5734, y: -2, z: -10}
+  m_LocalPosition: {x: 5733, y: -3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6910,6 +6835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa22b16a3fd046c6a92743bd59731b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _directionController: {fileID: 378222762}
   _buildersDB: {fileID: 11400000, guid: 8b225cca68c2e4a41858d94457241968, type: 2}
   _obstacleButtons:
   - {fileID: 919876831}
@@ -6930,7 +6856,11 @@ MonoBehaviour:
   _builderController: {fileID: 887549563}
   _weighingBar: {fileID: 2079143053}
   _goButton: {fileID: 1967813582}
+  _goButtonSprite: {fileID: 21300000, guid: af8ae7cffbcbf4c8a956a2e731172651, type: 3}
+  _goButtonDisabledSprite: {fileID: 21300000, guid: eaa84fc4539f24bbbaa07feb55a2b782, type: 3}
   _warningPanel: {fileID: 1488826836}
+  _warningPanelImage: {fileID: 308171400}
+  _warningPanelForGoButtonSprite: {fileID: 21300000, guid: ccc1626a731904447ab0ae2280d84e18, type: 3}
 --- !u!1 &1688585794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7997,7 +7927,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 21300000, guid: eaa84fc4539f24bbbaa07feb55a2b782, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 97ccd692d1f57449b8a87630ff391a44, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -8029,7 +7959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af8ae7cffbcbf4c8a956a2e731172651, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df7f709b2f00b4043b13bb621dcf4a89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9225,7 +9155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherIndex
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 173098637978950476, guid: 69bb7414cb32b41a583d00a39eeea11b, type: 3}
       propertyPath: _crusherScore
@@ -9423,7 +9353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.043137256, g: 0.14117648, b: 0.22352941, a: 0.29411766}
+  m_Color: {r: 0.043137256, g: 0.14117648, b: 0.22352941, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9573,7 +9503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.043137256, g: 0.14117648, b: 0.22352941, a: 0.29411766}
+  m_Color: {r: 0.043137256, g: 0.14117648, b: 0.22352941, a: 0.5882353}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

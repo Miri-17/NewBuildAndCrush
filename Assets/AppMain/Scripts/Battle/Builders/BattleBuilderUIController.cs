@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,12 +9,14 @@ public class BattleBuilderUIController : MonoBehaviour {
     private List<float> _generationTime = new List<float>();
     private List<float> _obstacleWeight = new List<float>();
     private Sprite[] _faceSprites = new Sprite[0];
+    private Image _goButtonImage = null;
     // 今回のビルダーの障害物情報を格納しておく変数
     private int _selectedIndex = 0;
     private float _maxWeight = 0;
     private float _currentWeight = 0;
     private bool[] _isGeneration = new bool[6] { false, false, false, false, false, false, };
     private bool _isPlaceable = true;
+    private bool _isPreparation = true;
     #endregion
 
     private enum FACE_EXPRESSION {
@@ -26,6 +27,7 @@ public class BattleBuilderUIController : MonoBehaviour {
     FACE_EXPRESSION _faceExpression = FACE_EXPRESSION.FINE;
 
     #region Serialized Fields
+    [SerializeField] private DirectionController _directionController = null;
     [SerializeField] private BuildersDB _buildersDB = null;
     [SerializeField] private Button[] _obstacleButtons = new Button[0];
     [SerializeField] private Slider[] _partsGenerationBars = new Slider[0];
@@ -34,7 +36,11 @@ public class BattleBuilderUIController : MonoBehaviour {
     [SerializeField] private BuilderController _builderController = null;
     [SerializeField] private Slider _weighingBar = null;
     [SerializeField] private Button _goButton = null;
+    [SerializeField] private Sprite _goButtonSprite = null;
+    [SerializeField] private Sprite _goButtonDisabledSprite = null;
     [SerializeField] private GameObject _warningPanel = null;
+    [SerializeField] private Image _warningPanelImage = null;
+    [SerializeField] private Sprite _warningPanelForGoButtonSprite = null;
     #endregion
 
     public List<GameObject> ObstaclePrefabs { get; private set; } = new List<GameObject>();
@@ -66,6 +72,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         _facesImage.sprite = _faceSprites[0];
         _weighingBar.value = _currentWeight;
         _maxWeight = _weighingBar.maxValue;
+        _goButtonImage = _goButton.GetComponent<Image>();
         _goButton.onClick.AddListener(() => OnGoButtonClicked());
         _warningPanel.SetActive(false);
     }
@@ -111,19 +118,29 @@ public class BattleBuilderUIController : MonoBehaviour {
 
     // private void OnGoButtonClicked() {
     public void OnGoButtonClicked() {
-        SetGoButtonInteractive(false);
+        if (!_isPreparation) {
+            SetGoButtonInteractive(false);
 
-        // 次のワゴンが設置されるまで障害物を置けないようにする.
-        _isPlaceable = false;
+            // 次のワゴンが設置されるまで障害物を置けないようにする.
+            _isPlaceable = false;
 
-        // ワゴンを走らせる.
-        _builderController.RunWagon(_currentWeight);
+            // ワゴンを走らせる.
+            _builderController.RunWagon(_currentWeight);
 
-        // 重量を初期化する.
-        _currentWeight = 0;
-        _weighingBar.value = _currentWeight;
+            // 重量を初期化する.
+            _currentWeight = 0;
+            _weighingBar.value = _currentWeight;
 
-        _warningPanel.SetActive(false);
+            _warningPanel.SetActive(false);
+        } else {
+            _isPreparation = false;
+            _goButtonImage.sprite = _goButtonSprite;
+            var _goButtonSpriteState = _goButton.spriteState;
+            _goButtonSpriteState.disabledSprite = _goButtonDisabledSprite;
+            _goButton.spriteState = _goButtonSpriteState;
+            _warningPanelImage.sprite = _warningPanelForGoButtonSprite;
+            _directionController.BuilderReady();
+        }
     }
 
     private void SetPartsGenerationBar(int index) {
