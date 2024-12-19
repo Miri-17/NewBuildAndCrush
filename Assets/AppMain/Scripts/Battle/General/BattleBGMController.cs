@@ -11,7 +11,7 @@ public class BattleBGMController : MonoBehaviour {
 
     #region Serialized Fields
     [SerializeField] private BattleBGMDB _battleBGMDB = null;
-    [SerializeField] private float _fadeDuration = 1.0f;
+    [SerializeField] private float _fadeDuration = 0.8f;
     [SerializeField] private AudioMixerGroup _audioMixerGroup = null;
     #endregion
 
@@ -47,17 +47,21 @@ public class BattleBGMController : MonoBehaviour {
 
     private void SetWagonBGM() {
         _audioSourceNormal.DOFade(0, _fadeDuration)
+            .SetEase(Ease.Linear)
             .SetLink(_audioSourceNormal.gameObject);
         
         _audioSourceWagon.DOFade(1, _fadeDuration)
+            .SetEase(Ease.Linear)
             .SetLink(_audioSourceWagon.gameObject);
     }
     
     public void SetNormalBGM() {
         _audioSourceNormal.DOFade(1, _fadeDuration)
+            .SetEase(Ease.Linear)
             .SetLink(_audioSourceNormal.gameObject);
         
         _audioSourceWagon.DOFade(0, _fadeDuration)
+            .SetEase(Ease.Linear)
             .SetLink(_audioSourceWagon.gameObject);
     }
 }

@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _battleBGMDB: {fileID: 11400000, guid: f50c4d661b95447138163f8088f8d5d0, type: 2}
-  _fadeDuration: 1
+  _fadeDuration: 0.8
   _audioMixerGroup: {fileID: 9159599616453500549, guid: 6d09e82ca5da140a4aea77ef9e0f2d05, type: 2}

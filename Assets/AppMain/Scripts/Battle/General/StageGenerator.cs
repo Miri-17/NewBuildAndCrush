@@ -6,6 +6,7 @@ public class StageGenerator : MonoBehaviour {
     private CrusherController _crusherController = null;
     private GameObject _startPosition = null;
     private bool _isContinue2StartPosition = true;
+    private bool _isCrusherOn = false;
     #endregion
 
     #region Serialized Fields
@@ -30,6 +31,9 @@ public class StageGenerator : MonoBehaviour {
             this.transform.position = new Vector3(crusherPosition.x, this.transform.position.y, this.transform.position.z);
         
         if (_crusherController.IsContinueWaiting()) {
+            if (!_isCrusherOn)
+                _builderController.WagonControllerRun.CrusherEnterCheck.CrusherIsOn();
+            
             _crusher.transform.position = _continuePosition.transform.position;
             _crusherController.ContinueCrusher();
         }
@@ -43,11 +47,19 @@ public class StageGenerator : MonoBehaviour {
                 _isContinue2StartPosition = false;
                 _continuePosition = _builderController.WagonControllerRun.CrusherContinuePosition;
             }
+            if (_builderController.WagonControllerRun.CrusherEnterCheck.IsOn)
+                _isCrusherOn = true;
+            // ワゴン外で死んだ時に起こり得る. EnterCheckのIsOnフラグを強制的に降ろす.
+            if (!_isCrusherOn && _builderController.WagonControllerRun.CrusherEnterCheck.IsOn) {
+                _builderController.WagonControllerRun.CrusherEnterCheck.CrusherIsOff();
+                _isCrusherOn = true;
+            }
         } else {
             // 確率的にほぼあり得ないのだが,　ワゴンが壊されてから次のワゴンが発車するまでに死んだ場合は
             // StartPositionからコンティニューするようにする.
             if (!_isContinue2StartPosition) {
                 Debug.Log("hello B");
+                _isCrusherOn = false;
                 _isContinue2StartPosition = true;
                 _continuePosition = _startPosition;
             }
