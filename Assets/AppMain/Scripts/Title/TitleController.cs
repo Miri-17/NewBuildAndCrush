@@ -7,13 +7,13 @@ public class TitleController : MonoBehaviour {
     #region Private Fields
     private AudioSource _audioSource_SE = null;
     private AudioClip _audioClip_SE = null;
-    // シーン遷移関係
+    // シーン遷移関係.
     private int _nextSceneIndex = 0;
     private bool _isChangingScene = false;
     #endregion
 
     [SerializeField] private TitleUIController _titleUIController = null;
-    // シーン遷移関係
+    // シーン遷移関係.
     [SerializeField] private string[] _nextSceneNames = new string[0];
 
     private void Start() {

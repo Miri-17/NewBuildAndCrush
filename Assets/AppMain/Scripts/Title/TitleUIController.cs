@@ -7,19 +7,19 @@ public class TitleUIController : MonoBehaviour {
     private const float START_TEXT_FADE_DURATION = 1.0f;
     private const float TITLE_SCALE = 10.0f;
 
-    private Image _titleImage;
+    private Image _titleImage = null;
 
     #region Serialized Fields
+    [SerializeField] private RectTransform _title = null;
     [SerializeField] private TextMeshProUGUI _startText = null;
     [SerializeField] private TextMeshProUGUI _copyright = null;
-    [SerializeField] private RectTransform _title = null;
     [SerializeField] private Image _filter = null;
     #endregion
 
     public static float TransitionDuration { get; private set; } = 0.5f;
 
     private void Start() {
-        if (_title == null || _startText == null || _filter == null) {
+        if (_title == null || _startText == null || _copyright == null || _filter == null) {
             Debug.LogError("UI elements are not assigned.");
             return;
         }
