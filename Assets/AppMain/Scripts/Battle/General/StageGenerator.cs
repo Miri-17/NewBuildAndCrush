@@ -43,7 +43,6 @@ public class StageGenerator : MonoBehaviour {
             // ワゴンが発車したら, ワゴンの先頭にコンティニューするようにする.
             // これはワゴンの近くで死ぬこと以外がほぼ起こり得らないためである.
             if (_isContinue2StartPosition) {
-                Debug.Log("hello A");
                 _isContinue2StartPosition = false;
                 _continuePosition = _builderController.WagonControllerRun.CrusherContinuePosition;
             }
@@ -58,7 +57,6 @@ public class StageGenerator : MonoBehaviour {
             // 確率的にほぼあり得ないのだが,　ワゴンが壊されてから次のワゴンが発車するまでに死んだ場合は
             // StartPositionからコンティニューするようにする.
             if (!_isContinue2StartPosition) {
-                Debug.Log("hello B");
                 _isCrusherOn = false;
                 _isContinue2StartPosition = true;
                 _continuePosition = _startPosition;

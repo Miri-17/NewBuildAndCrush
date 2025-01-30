@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetBaseBlock : MonoBehaviour {
+    #region Private Fields
     private GameObject _baseBlockPrefab = null;
     private SpawnPoint[,] _spawnPoints = new SpawnPoint[18, 9];
     private Dictionary<int, List<Vector2Int>> _patterns = new Dictionary<int, List<Vector2Int>>();
+    #endregion
 
     #region Serialized Fields
     [SerializeField] private BuilderController _builderController = null;
@@ -22,6 +24,7 @@ public class SetBaseBlock : MonoBehaviour {
         LoadPatternsFromCSV();
     }
 
+    // ベースブロック配置のCSVファイルを読み込む.
     private void LoadPatternsFromCSV() {
         // CSVの各行を読み込み、パターンごとに占有座標を保存.
         var lines = _csvFiles[GameDirector.Instance.BuilderIndex].text.Split('\n');
@@ -39,10 +42,34 @@ public class SetBaseBlock : MonoBehaviour {
         }
     }
 
+    // ランダムに選ばれたCSVファイルの内容を元にベースブロックを配置する.
+    private void ApplyPattern(int patternId) {
+        if (!_patterns.ContainsKey(patternId))
+            return;
+
+        foreach (var pos in _patterns[patternId]) {
+            _spawnPoints[pos.x, pos.y].SetOccupied(true);
+        }
+
+        // isOccupiedがtrueの箇所にベースブロックを配置.
+        for (int j = 0; j < 9; j++) {
+            for (int i = 0; i < 18; i++) {
+                if (_spawnPoints[i, j].IsOccupied) {
+                    var baseBlock = Instantiate(_baseBlockPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                    baseBlock.transform.parent = _builderController.Wagon.transform;
+                    baseBlock.transform.localPosition = new Vector3(_spawnPoints[i, j].transform.localPosition.x, _spawnPoints[i, j].transform.localPosition.y, 0);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// SpawnPointを設置する.
+    /// </summary>
     public void SetSpawnPoint() {
         _spawnPoints = new SpawnPoint[18, 9];
 
-        // spawnPointsの初期化
+        // spawnPointsの初期化を行う.
         for (int j = 0; j < 9; j++) {
             for (int i = 0; i < 18; i++) {
                 var spawnPoint = Instantiate(_spawnPointPrefab, new Vector3(0, 0, 0), Quaternion.identity);
@@ -54,28 +81,8 @@ public class SetBaseBlock : MonoBehaviour {
             }
         }
 
-        // ランダムでパターンを選択し、配置
+        // ランダムでパターンを選択し、配置する.
         int randomPattern = Random.Range(0, 4);
         ApplyPattern(randomPattern);
-    }
-
-    private void ApplyPattern(int patternId) {
-        if (!_patterns.ContainsKey(patternId))
-            return;
-
-        foreach (var pos in _patterns[patternId]) {
-            _spawnPoints[pos.x, pos.y].SetOccupied(true);
-        }
-
-        // isOccupiedがtrueの箇所にベースブロックを配置
-        for (int j = 0; j < 9; j++) {
-            for (int i = 0; i < 18; i++) {
-                if (_spawnPoints[i, j].IsOccupied) {
-                    var baseBlock = Instantiate(_baseBlockPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-                    baseBlock.transform.parent = _builderController.Wagon.transform;
-                    baseBlock.transform.localPosition = new Vector3(_spawnPoints[i, j].transform.localPosition.x, _spawnPoints[i, j].transform.localPosition.y, 0);
-                }
-            }
-        }
     }
 }

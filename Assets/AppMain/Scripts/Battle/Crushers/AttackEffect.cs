@@ -25,7 +25,7 @@ public class AttackEffect : MonoBehaviour {
     
     private void OnEnable() {
         _cancellationTokenSource = new CancellationTokenSource();
-        DestroyBulletAsync(_cancellationTokenSource.Token).Forget();
+        DestroyAttackEffectAsync(_cancellationTokenSource.Token).Forget();
     }
 
     private void OnDisable() {
@@ -33,7 +33,8 @@ public class AttackEffect : MonoBehaviour {
         _cancellationTokenSource?.Dispose();
     }
 
-    private async UniTaskVoid DestroyBulletAsync(CancellationToken token) {
+    // 存在時間を超えた攻撃エフェクトを消す.
+    private async UniTaskVoid DestroyAttackEffectAsync(CancellationToken token) {
         try {
             await UniTask.Delay(TimeSpan.FromSeconds(_existenceTime), cancellationToken: token);
             if (!token.IsCancellationRequested) {

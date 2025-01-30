@@ -16,6 +16,7 @@ public class CreditsUIController : MonoBehaviour {
     public static float TransitionDuration { get; private set; } = 1.0f;
 
     private async void Start() {
+        // ゲームロゴを2秒間表示させてからスクロールを始める.
         await UniTask.Delay(2000);
 
         if (_scrollingObjects == null) return;
@@ -26,6 +27,15 @@ public class CreditsUIController : MonoBehaviour {
             .SetLink(_scrollingObjects.gameObject);
     }
 
+    // クレジットの終了後, 2秒待ってからモード選択に戻る.
+    private async Task CreditsEnded() {
+        await UniTask.Delay(2000);
+        _creditsController.ChangeScene();
+    }
+
+    /// <summary>
+    /// シーン遷移時に呼び, クラッシャー画面とビルダー画面に白フェードインをかける.
+    /// </summary>
     public void FadeInImage() {
         var sequence = DOTween.Sequence();
         foreach (var image in _fadeInImages) {
@@ -36,10 +46,5 @@ public class CreditsUIController : MonoBehaviour {
                     .SetLink(image.gameObject)
             );
         }
-    }
-
-    private async Task CreditsEnded() {
-        await UniTask.Delay(2000);
-        _creditsController.ChangeScene();
     }
 }

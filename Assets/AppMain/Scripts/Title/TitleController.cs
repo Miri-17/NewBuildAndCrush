@@ -49,6 +49,7 @@ public class TitleController : MonoBehaviour {
         GoNextSceneAsync(TitleUIController.TransitionDuration, _nextSceneNames[_nextSceneIndex]).Forget();
     }
 
+    // TODO このメソッドをDRYに則って書き換えたい.
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
         try {
             await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());

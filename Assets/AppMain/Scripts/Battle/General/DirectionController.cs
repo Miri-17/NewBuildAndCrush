@@ -59,15 +59,6 @@ public class DirectionController : MonoBehaviour {
         _makeWagonPanel.transform.localPosition = Vector3.zero;
     }
 
-    public void BuilderReady() {
-        _isBuilderReady = true;
-        Destroy(_makeWagonPanel);
-        if (!_isCrusherReady) {
-            _builderWaitingPanel = Instantiate(_waitingPanelPrefabs[0], GameObject.FindWithTag("BuilderDirection").transform);
-            _builderWaitingPanel.transform.localPosition = Vector3.zero;
-        }
-    }
-
     private async UniTaskVoid ReadyGo() {
         if (_crusherWaitingPanel != null)
             Destroy(_crusherWaitingPanel);
@@ -91,6 +82,21 @@ public class DirectionController : MonoBehaviour {
         _battleBuilderUIController.OnGoButtonClicked();
     }
 
+    /// <summary>
+    /// ビルダーが最初のワゴンに障害物まで設置し終わった時に呼ぶ.
+    /// </summary>
+    public void BuilderReady() {
+        _isBuilderReady = true;
+        Destroy(_makeWagonPanel);
+        if (!_isCrusherReady) {
+            _builderWaitingPanel = Instantiate(_waitingPanelPrefabs[0], GameObject.FindWithTag("BuilderDirection").transform);
+            _builderWaitingPanel.transform.localPosition = Vector3.zero;
+        }
+    }
+
+    /// <summary>
+    /// 戦闘終了時演出を流す.
+    /// </summary>
     public void FinishDirection() {
         IsDirection = true;
         Destroy(_battleBGM);

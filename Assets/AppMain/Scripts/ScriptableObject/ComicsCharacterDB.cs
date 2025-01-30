@@ -69,6 +69,30 @@ public class ComicsCharacterDB : ScriptableObject {
 
     [SerializeField] private Parameter[] Parameters = new Parameter[0];
 
+    // キャラクター番号からパラメータを取得する.
+    private Parameter GetParameterFromNumber(int characterNumber) {
+        foreach (Parameter param in Parameters) {
+            int typeInt = (int)param.Character;
+            if (typeInt == characterNumber) return param;
+        }
+        return null;
+    }
+    
+    // 表情部分の文字列からEmotionTypeを取得する.
+    private EmotionType GetEmotionType(string emotionString) {
+        switch(emotionString) {
+            case "Normal": return EmotionType.Normal;
+            case "Angry": return EmotionType.Angry;
+            case "Happy": return EmotionType.Happy;
+            case "Panic": return EmotionType.Panic;
+            case "Sad": return EmotionType.Sad;
+            case "Smile": return EmotionType.Smile;
+            case "Spoony": return EmotionType.Spoony;
+            case "Surprise": return EmotionType.Surprise;
+            default: return EmotionType.None;
+        }
+    }
+
     /// <summary>
     /// キャラクター番号からキャラクター表示名を取得する.
     /// </summary>
@@ -80,15 +104,6 @@ public class ComicsCharacterDB : ScriptableObject {
         
         Parameter param = GetParameterFromNumber(characterNumber);
         return param.DisplayName;
-    }
-
-    // キャラクター番号からパラメータを取得する.
-    private Parameter GetParameterFromNumber(int characterNumber) {
-        foreach (Parameter param in Parameters) {
-            int typeInt = (int)param.Character;
-            if (typeInt == characterNumber) return param;
-        }
-        return null;
     }
 
     /// <summary>
@@ -114,20 +129,5 @@ public class ComicsCharacterDB : ScriptableObject {
         Sprite emotionSprite = param.GetEmotionSprite(emotionType);
 
         return emotionSprite;
-    }
-
-    // 表情部分の文字列からEmotionTypeを取得する.
-    private EmotionType GetEmotionType(string emotionString) {
-        switch(emotionString) {
-            case "Normal": return EmotionType.Normal;
-            case "Angry": return EmotionType.Angry;
-            case "Happy": return EmotionType.Happy;
-            case "Panic": return EmotionType.Panic;
-            case "Sad": return EmotionType.Sad;
-            case "Smile": return EmotionType.Smile;
-            case "Spoony": return EmotionType.Spoony;
-            case "Surprise": return EmotionType.Surprise;
-            default: return EmotionType.None;
-        }
     }
 }

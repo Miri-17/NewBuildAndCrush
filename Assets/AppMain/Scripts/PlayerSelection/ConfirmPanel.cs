@@ -6,9 +6,11 @@ public class ConfirmPanel : MonoBehaviour {
     private RectTransform _canvasGroupRectTransform = null;
     private Color _bgColor = Color.white;
 
+    #region Serialized Fields
     [SerializeField] private Image _bg = null;
     [SerializeField] private Animator _ribbonAnimator = null;
     [SerializeField] private CanvasGroup _canvasGroup = null;
+    #endregion
 
     private void Awake() {
         _canvasGroupRectTransform = _canvasGroup.GetComponent<RectTransform>();

@@ -45,6 +45,7 @@ public class BattleBGMController : MonoBehaviour {
         }
     }
 
+    // ワゴン乗車時のBGMにクロスフェードする.
     private void SetWagonBGM() {
         _audioSourceNormal.DOFade(0, _fadeDuration)
             .SetEase(Ease.Linear)
@@ -55,6 +56,7 @@ public class BattleBGMController : MonoBehaviour {
             .SetLink(_audioSourceWagon.gameObject);
     }
     
+    // ワゴン乗車外のBGMにクロスフェードする.
     public void SetNormalBGM() {
         _audioSourceNormal.DOFade(1, _fadeDuration)
             .SetEase(Ease.Linear)

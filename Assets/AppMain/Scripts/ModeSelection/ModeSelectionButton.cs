@@ -12,7 +12,7 @@ public class ModeSelectionButton : MonoBehaviour {
     [SerializeField] private Image[] _arrowImages = new Image[0];
     [SerializeField] private float[] _arrowPositions = new float[0];
     [SerializeField] private bool _isHorizontalButton = true;
-    [Header("以下はないこともある")]
+    [Header("以下はnullなこともある")]
     [SerializeField] private Image _imageY = null;
     [SerializeField] private Image _glowImageY = null;
     #endregion
@@ -58,6 +58,10 @@ public class ModeSelectionButton : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// このクラスがアタッチされたボタンの選択状態を切り替える.
+    /// </summary>
+    /// <param name="isSelected"></param>
     public void SetSelection(bool isSelected) {
         IsSelected = isSelected;
         _frameImage.enabled = IsSelected;

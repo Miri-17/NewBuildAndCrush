@@ -18,7 +18,7 @@ public class CrusherController : MonoBehaviour {
     private float _normalRunSpeed = 0;
     private float _normalWalkSpeed = 0;
     private float _normalJumpForce = 0;
-    private float _addSpeedX = 0.0f;
+    private float _addSpeedX = 0;
     private float[] _rightNum = new float[4] { 19.0f, 17.0f, 20.0f, 18.9f, };
     private float[] _endNum = new float[4] { 20.2f, 18.2f, 21.2f, 20.1f, };
     private int _crusherIndex = 0;
@@ -243,7 +243,7 @@ public class CrusherController : MonoBehaviour {
     /// </summary>
     public void ContinueCrusher() {
         _isStunning = false;
-        _animator.SetBool("Stun",false);    // TODO addした. デバッグ時確認
+        _animator.SetBool("Stun",false);
         _animator.Play(_crusherName + "_Idle");
         _isWalking = false;
         _isRunning = false;

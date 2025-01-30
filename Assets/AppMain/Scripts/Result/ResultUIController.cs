@@ -6,7 +6,8 @@ using TMPro;
 public class ResultUIController : MonoBehaviour {
     private const float START_TEXT_FADE_DURATION = 1.0f;
 
-    #region Score-related Serialized Fields
+    #region Serialized Fields
+    // スコア関係.
     [Header("どちらも勝ち, 負けの順")]
     [SerializeField] private Sprite[] _nameBgs = new Sprite[0];
     [SerializeField] private Sprite[] _frameSprites = new Sprite[0];
@@ -18,9 +19,7 @@ public class ResultUIController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI[] _crusherKillCounts = new TextMeshProUGUI[0];
     [SerializeField] private TextMeshProUGUI[] _wagonCrushCounts = new TextMeshProUGUI[0];
     [SerializeField] private Slider[] _scoreSliders = new Slider[0];
-    #endregion
-
-    #region Serialized Fields
+    // スコア関係以外.
     [SerializeField] private Image[] _fadeOutImages = new Image[0];
     #endregion
 

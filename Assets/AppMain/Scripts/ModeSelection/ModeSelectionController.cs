@@ -10,7 +10,7 @@ public class ModeSelectionController : MonoBehaviour {
     private AudioClip _audioClipSE = null;
     private GameObject _rulesPanel = null;
     private bool _isDisplayRulesPanel = false;
-    // シーン遷移関係
+    // シーン遷移関係.
     private bool _isChangingScene = false;
     private int _nextSceneIndex = 0;
     private int _previousSelectIndex = 0;
@@ -23,7 +23,7 @@ public class ModeSelectionController : MonoBehaviour {
     [SerializeField] private Image _rulesButton = null;
     [SerializeField] private Sprite[] _rulesButtonSprites = new Sprite[0];
     [SerializeField] private GameObject _rulesPanelPrefab = null;
-    // シーン遷移関係
+    // シーン遷移関係.
     [SerializeField] private string[] _nextSceneNames = new string[0];
     #endregion
 
@@ -108,6 +108,9 @@ public class ModeSelectionController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// ルール説明パネルを閉じる (デストロイする).
+    /// </summary>
     public void CloseRulesPanel() {
         _isDisplayRulesPanel = false;
         _rulesButton.sprite = _rulesButtonSprites[0];

@@ -7,6 +7,7 @@ using DG.Tweening;
 using Febucci.UI;
 using TMPro;
 
+// TODO StoryControllerと統合したい.
 public class CrossoverController : MonoBehaviour {
     #region Private Fields
     private ComicsPanelDB _comicsPanelDB = null;
@@ -59,6 +60,7 @@ public class CrossoverController : MonoBehaviour {
     }
 
     private void Update() {
+        // Yボタンが押されたら台詞の表示中なら表示を即完了し, 表示が完了していたら次の台詞にする.
         if (_typewriter.isShowingText) {
             if (Input.GetButtonDown("Select"))
                 _typewriter.SkipTypewriter();
@@ -72,23 +74,25 @@ public class CrossoverController : MonoBehaviour {
                 _goToNextPage = true;
         }
 
+        // Rボタンが押されたら, ストーリーのスキップを行う.
         if (!_isChangingScene && Input.GetButtonDown("Fire1")) {
             _isChangingScene = true;
             if (GameDirector.Instance.IsOpening) {
                 _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-                _storiesUIController.TransitionUI(0.5f);
+                _storiesUIController.TransitionUI(true, 0.5f);
                 GoNextSceneAsync(0.5f, "Battle").Forget();
             } else {
                 _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[2]);
                 _audioSourceBGM.DOFade(0, 1.0f)
                     .SetEase(Ease.Linear)
                     .SetLink(_audioSourceBGM.gameObject);
-                _storiesUIController.TransitionUI(1.0f);
+                _storiesUIController.TransitionUI(true, 1.0f);
                 GoNextSceneAsync(1.0f, "ModeSelection").Forget();
             }
         }
     }
 
+    // ストーリー (会話) を始め, 終わったら次のシーンに遷移させる.
     private async void StartTalk() {
         Open();
         _talks = _csvReader.GetCSVData(_csvName);
@@ -100,17 +104,18 @@ public class CrossoverController : MonoBehaviour {
         _isChangingScene = true;
         if (GameDirector.Instance.IsOpening) {
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-            _storiesUIController.TransitionUI(0.5f);
+            _storiesUIController.TransitionUI(true, 0.5f);
             GoNextSceneAsync(0.5f, "Battle").Forget();
         } else {
             _audioSourceBGM.DOFade(0, 1.0f)
                 .SetEase(Ease.Linear)
                 .SetLink(_audioSourceBGM.gameObject);
-            _storiesUIController.TransitionUI(1.0f);
+            _storiesUIController.TransitionUI(true, 1.0f);
             GoNextSceneAsync(1.0f, "ModeSelection").Forget();
         }
     }
 
+    // ストーリー (会話) を進行させる.
     private async UniTask TalkStart(List<StoryData> talkList) {
         _currentCharacter = "";
 
@@ -140,13 +145,8 @@ public class CrossoverController : MonoBehaviour {
             }
         }
     }
-
-    /// <summary>
-    /// ウィンドウを開く
-    /// </summary>
-    /// <param name="initName"></param>
-    /// <param name="initText"></param>
-    /// <returns></returns>
+    
+    // ストーリーの初期化.
     private void Open(string initName = "", string initText = "") {
         SetCharacter(null).Forget();
         _nameText.text = initName;
@@ -154,8 +154,9 @@ public class CrossoverController : MonoBehaviour {
         _fadeInOutLoopAnimation.AnimationOnOff(false);
     }
 
+    // キャラクター画像の変更を行う.
     private async UniTask SetCharacter(StoryData storyData) {
-        // nullなら全て消す
+        // nullなら全て消す.
         if (storyData == null) {
             _characterImage.enabled = false;
             return;
@@ -192,6 +193,7 @@ public class CrossoverController : MonoBehaviour {
         if (hideLeft == true) _characterImage.enabled = false;
     }
 
+    // コミックパネルの変更を行う.
     private void SetComicsPanel(string comicsPanel) {
         Debug.Log("ComicsPanel: " + comicsPanel);
         Sprite comicsPanelSprite = _comicsPanelDB.GetComicsPanelSprite(comicsPanel);
@@ -207,6 +209,7 @@ public class CrossoverController : MonoBehaviour {
         _comicsPanel.gameObject.SetActive(true);
     }
 
+    // 次のシーンに遷移する.
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
         try {
             await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());

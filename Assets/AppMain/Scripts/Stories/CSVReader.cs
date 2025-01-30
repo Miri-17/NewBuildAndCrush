@@ -2,11 +2,9 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
-// TODO 見てるサイトとは違って、”"で囲んだ値が取得できない←非常に困る.
-// SpreadSheet使うものに変更することを考える.
 public class CSVReader : MonoBehaviour {
     // CSVファイル.
-    private TextAsset csvFile;
+    private TextAsset csvFile = null;
 
     public List<StoryData> GetCSVData(string name) {
         // CSVファイルの中身を入れるリスト.
@@ -25,7 +23,7 @@ public class CSVReader : MonoBehaviour {
             cells.Add(elements);
         }
 
-        // デバッグ用.
+        #region デバッグ用.
         string log = "";
         List<StoryData> stories = new List<StoryData>();
         foreach (var line in cells) {
@@ -44,8 +42,8 @@ public class CSVReader : MonoBehaviour {
             
             stories.Add(data);
         }
-
         Debug.Log(log);
+        #endregion
 
         return stories;
     }

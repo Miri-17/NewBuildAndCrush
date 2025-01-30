@@ -8,7 +8,8 @@ public class AspectKeeper : MonoBehaviour {
         var screenAspect = Screen.width / (float)Screen.height;
         var targetAspect = _aspectVector.x / _aspectVector.y;
 
-        var magnification = targetAspect / screenAspect; // 目的アスペクト比にするための倍率
+        // 目的アスペクト比にするための倍率.
+        var magnification = targetAspect / screenAspect;
         var viewportRect = new Rect(0, 0, 1, 1);
         if (magnification < 1) {
             viewportRect.width = magnification;

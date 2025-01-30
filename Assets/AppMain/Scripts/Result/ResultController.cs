@@ -9,7 +9,7 @@ public class ResultController : MonoBehaviour {
     private AudioSource _audioSourceBGM = null;
     private AudioSource _audioSourceSE = null;
     private AudioClip _audioClipSE = null;
-    // シーン遷移関係
+    // シーン遷移関係.
     private int _nextSceneIndex = 0;
     private bool _isChangingScene = false;
     #endregion
@@ -21,7 +21,7 @@ public class ResultController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI _builderName = null;
     [SerializeField] private TextMeshProUGUI _crusherName = null;
     [SerializeField] private AudioClip _audioClipLoop = null;
-    // シーン遷移関係
+    // シーン遷移関係.
     [SerializeField] private string[] _nextSceneNames = new string[0];
     #endregion
 
@@ -47,6 +47,7 @@ public class ResultController : MonoBehaviour {
     }
 
     private void Update() {
+        // リザルトBGMはイントロ有りのものを最初に流し, 終了後ループ用 (イントロ無し) に切り替える.
         if (!_audioSourceBGM.isPlaying)
             PlayLoopingBGM();
 
@@ -109,6 +110,7 @@ public class ResultController : MonoBehaviour {
         GoNextSceneAsync(TitleUIController.TransitionDuration, _nextSceneNames[_nextSceneIndex]).Forget();
     }
 
+    // 次のシーンに遷移する.
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
         try {
             await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());

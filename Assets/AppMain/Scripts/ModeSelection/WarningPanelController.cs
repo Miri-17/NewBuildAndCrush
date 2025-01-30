@@ -1,10 +1,12 @@
 using UnityEngine;
 
 public class WarningPanelController : MonoBehaviour {
+    #region Private Fields
     private RulesPanelController _rulesPanelController = null;
     private AchievementsController _achievementsController = null;
     private AudioSource _audioSource_SE = null;
     private int _warningIndex = 0;
+    #endregion
 
     [SerializeField] private ModeSelectionButton[] _modeSelectionButtons = new ModeSelectionButton[0];
 

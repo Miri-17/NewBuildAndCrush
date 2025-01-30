@@ -5,10 +5,12 @@ using UnityEngine;
 using DG.Tweening;
 
 public class CanonBullet : MonoBehaviour {
+    #region Private Fields
     private CancellationTokenSource _cancellationTokenSource = null;
     private CircleCollider2D _circleCollider2D = null;
     // 衝突結果を5個まで格納する.
     private Collider2D[] _results = new Collider2D[5];
+    #endregion
 
     [SerializeField] private float _finalPosition = 100.0f;
     [SerializeField] private float _existenceTime = 0.5f;

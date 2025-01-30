@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-// WaitingPanel.csと統合したい.
+// TODO WaitingPanel.csと統合したい.
 public class BattleWaitingPanel : MonoBehaviour {
     private RectTransform _canvasGroupRectTransform = null;
     private Color _bgColor = Color.white;
 
     #region Serialized Fields
     [SerializeField] private Image _bg = null;
+    [SerializeField] private float _initialBgAlpha = 0.58f;
     [SerializeField] private CanvasGroup _canvasGroup = null;
     [SerializeField] private GameObject _waitingCharacterParent = null;
     [SerializeField] private GameObject[] _waitingCharacterPrefabs = new GameObject[0];
@@ -51,8 +52,7 @@ public class BattleWaitingPanel : MonoBehaviour {
 
     private void OnEnable() {
         _bgColor = _bg.color;
-        // ここをマジックナンバーでなくすとWaitingPanel.csと同じ.
-        _bgColor.a = 0.58f;
+        _bgColor.a = _initialBgAlpha;
         _bg.color = _bgColor;
         _bg.DOFade(0.78f, 0.5f)
             .SetEase(Ease.Linear)

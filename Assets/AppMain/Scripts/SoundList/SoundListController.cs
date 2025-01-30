@@ -32,7 +32,6 @@ public class SoundListController : MonoBehaviour {
 
         _audioSourceSE = CrusherSE.Instance.GetComponent<AudioSource>();
         _audioSourceBGM = BGM.Instance.GetComponent<AudioSource>();
-        // _audioClipCount = BGM.Instance.BGMDB.GetAudioClipCount();
 
         GameDirector.Instance.PreviousSceneName = "SoundList";
     }
@@ -40,6 +39,7 @@ public class SoundListController : MonoBehaviour {
     private void Update() {
         if (_isChangingScene) return;
         
+        // 長押しで選択曲を変えられるようにしています.
         if (Time.time >= _nextSelectTime && Input.GetButton("Vertical")) {
             var verticalKey = Input.GetAxisRaw("Vertical");
             if (verticalKey < 0) {
@@ -70,8 +70,8 @@ public class SoundListController : MonoBehaviour {
         } else if (Input.GetButtonUp("Vertical")) {
             _isKeepSelecting = false;
             _nextSelectTime = Time.time;
+        // 曲の決定処理を行う.
         } else if (Input.GetButtonDown("Select")) {
-            // if (_soundListUIController.IsFadingIllustration) return;
             if (_audioSourceBGM.isPlaying && _previousSelectionIndex == SoundIndex) {
                 _audioSourceBGM.Stop();
                 _soundListUIController.ResetPlayback();
@@ -79,19 +79,20 @@ public class SoundListController : MonoBehaviour {
                 return;
             }
 
-            // 前回のBGMに対する処理
+            // 前回のBGMに対する処理.
             _audioSourceBGM.Stop();
             _soundListUIController.ResetPlayback();
             if (_previousSelectionIndex != -1)
                 _fadeInOutLoopAnimations[_previousSelectionIndex].AnimationOnOff(false);
             
-            // 今回のBGMに対する処理
+            // 今回のBGMに対する処理.
             _audioSourceBGM.clip = BGM.Instance.BGMDB.AudioClips[SoundIndex];
             _audioSourceBGM.Play();
             _soundListUIController.StartPlayback();
             _fadeInOutLoopAnimations[SoundIndex].AnimationOnOff(true);
 
             _previousSelectionIndex = SoundIndex;
+        // モード選択に戻る.
         } else if (Input.GetButtonDown("Jump")) {
             _isChangingScene = true;
             PlaySceneTransitionSound();
@@ -99,10 +100,12 @@ public class SoundListController : MonoBehaviour {
         }
     }
 
+    // シーン遷移時のSEを鳴らす.
     private void PlaySceneTransitionSound() {
         _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[2]);
     }
 
+    // 次のシーンに遷移する.
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
         try {
             await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());

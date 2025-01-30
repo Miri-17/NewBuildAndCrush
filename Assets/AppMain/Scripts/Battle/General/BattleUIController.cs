@@ -29,7 +29,6 @@ public class BattleUIController : MonoBehaviour {
 
     private void Start() {
         GameDirector.Instance.CrusherPosition = 0;
-        // GameDirector.Instance.BuilderPosition = 0;
         
         _builderScores[0].text = BuilderCurrentScore.ToString();
         _builderScores[1].text = BuilderCurrentScore.ToString();

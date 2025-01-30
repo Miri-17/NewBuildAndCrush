@@ -14,13 +14,19 @@ public class FadeInOutLoopAnimation : MonoBehaviour {
         InitializeTween();
     }
 
+    private void OnDestroy() {
+        if (_imageTween != null)
+            _imageTween.Kill();
+    }
+
+    // 画像のフェードインとアウトを繰り返すTweenを初期化する.
     private void InitializeTween() {
-        // もし既にTweenが存在する場合は再利用
+        // もし既にTweenが存在する場合は再利用する.
         if (_imageTween == null) {
             _imageTween = _image.DOFade(_minColorAlpha, _tweenDuration)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Yoyo)
-                .SetAutoKill(false) // Tweenを破棄せず再利用
+                .SetAutoKill(false) // Tweenを破棄せず再利用する.
                 .Pause()
                 .SetLink(_image.gameObject);
         }
@@ -39,10 +45,5 @@ public class FadeInOutLoopAnimation : MonoBehaviour {
         } else {
             _imageTween.Pause();
         }
-    }
-
-    private void OnDestroy() {
-        if (_imageTween != null)
-            _imageTween.Kill();
     }
 }

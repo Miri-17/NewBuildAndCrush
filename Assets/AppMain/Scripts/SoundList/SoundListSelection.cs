@@ -21,6 +21,7 @@ public class SoundListSelection : MonoBehaviour {
         AnimateArrow(_downArrow, _downArrowYPosition);
     }
 
+    // 矢印のTweenを設定する.
     private void AnimateArrow(RectTransform arrow, float targetYPosition) {
         arrow.DOAnchorPosY(targetYPosition, _animationDuration)
             .SetEase(_easeType)

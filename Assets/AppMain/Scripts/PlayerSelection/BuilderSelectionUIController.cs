@@ -13,6 +13,11 @@ public class BuilderSelectionUIController : MonoBehaviour {
         _statusImage.alphaHitTestMinimumThreshold = 1;
     }
 
+    /// <summary>
+    /// 表示中のビルダーによってボタンに挟まれた部分とステータスの画像を変更する.
+    /// ボタンの画像は, 押した時に表示を変える都合上 BuilderSelectionController.cs で変更しているので注意してください.
+    /// </summary>
+    /// <param name="index"></param>
     public void SetSprites(int index) {
         _centerImage.sprite = _centerSprites[index];
         _statusImage.sprite = _statusSprites[index];

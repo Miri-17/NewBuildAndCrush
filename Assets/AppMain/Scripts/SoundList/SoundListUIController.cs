@@ -29,7 +29,8 @@ public class SoundListUIController : MonoBehaviour {
         InitializeRecord();
         InitializeIllustration();
     }
-
+    
+    // レコードの画像とそのTweenを初期化する.
     private void InitializeRecord() {
         _recordImage = _record.GetComponent<Image>();
         _recordImage.sprite = _recordSprites[0];
@@ -45,6 +46,7 @@ public class SoundListUIController : MonoBehaviour {
             .Pause();
     }
     
+    // ビルダー画面のイラストレーションを初期化する.
     private void InitializeIllustration() {
         _frontIllustrationImage.enabled = false;
         _illustrationColor = _frontIllustrationImage.color;
@@ -54,6 +56,9 @@ public class SoundListUIController : MonoBehaviour {
         _backIllustrationImage.enabled = false;
     }
 
+    /// <summary>
+    /// 曲を流した時のUIの動きを制御する.
+    /// </summary>
     public void StartPlayback() {
         _recordImage.sprite = _recordSprites[_soundListController.SoundIndex];
         _recordTween.Play();
@@ -61,17 +66,18 @@ public class SoundListUIController : MonoBehaviour {
         _frontIllustrationImage.sprite = _illustrations[_soundListController.SoundIndex];
         _frontIllustrationImage.enabled = true;
 
-        // IsFadingIllustration = true;
         _frontIllustrationImage.DOFade(1.0f, 0.8f)
             .SetEase(Ease.Linear)
             .SetLink(_frontIllustrationImage.gameObject)
             .OnComplete(() => {
                 _backIllustrationImage.sprite = _illustrations[_soundListController.SoundIndex];
                 _backIllustrationImage.enabled = true;
-                // IsFadingIllustration = false;
             });
     }
 
+    /// <summary>
+    /// 曲を止めた時のUIの動きを制御する.
+    /// </summary>
     public void ResetPlayback() {
         _recordTween.Pause();
         _recordPlayerNeedleTween.Pause();
@@ -81,11 +87,19 @@ public class SoundListUIController : MonoBehaviour {
         _frontIllustrationImage.color = _illustrationColor;
     }
 
+    /// <summary>
+    /// 曲名全体の配置と, 選択ボックスの配置を制御する.
+    /// </summary>
+    /// <param name="position"></param>
     public void SetAnchoredPosition(Vector2 position) {
         _texts.anchoredPosition = position;
         _selection.anchoredPosition = new Vector2(0, _selectionPositionsY[_soundListController.SoundIndex]);
     }
 
+    /// <summary>
+    /// レコードの画像を変更する.
+    /// </summary>
+    /// <param name="index"></param>
     public void SetRecordSprite(int index) {
         _recordImage.sprite = _recordSprites[index];
     }

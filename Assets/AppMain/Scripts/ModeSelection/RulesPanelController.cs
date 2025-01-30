@@ -83,11 +83,17 @@ public class RulesPanelController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// ゲーム設定パネルを閉じる (デストロイする).
+    /// </summary>
     public void CloseOptionPanel() {
         _isDisplayOptionsPanel = false;
         Destroy(_optionsPanel);
     }
     
+    /// <summary>
+    /// 注意パネルを閉じる (デストロイする).
+    /// </summary>
     public void CloseWarningPanel() {
         _isDisplayWarningPanel = false;
         Destroy(_warningPanel);

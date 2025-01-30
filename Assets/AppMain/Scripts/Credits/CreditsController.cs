@@ -9,13 +9,13 @@ public class CreditsController : MonoBehaviour {
     private AudioSource _audioSource_BGM = null;
     private AudioSource _audioSource_SE = null;
     private AudioClip _audioClip_SE = null;
-    // シーン遷移関係
+    // シーン遷移関係.
     private int _nextSceneIndex = 0;
     private bool _isChangingScene = false;
     #endregion
 
     [SerializeField] private CreditsUIController _creditsUIController = null;
-    // シーン遷移関係
+    // シーン遷移関係.
     [SerializeField] private string[] _nextSceneNames = new string[0];
 
     private void Start() {
@@ -50,8 +50,18 @@ public class CreditsController : MonoBehaviour {
         ChangeScene();
     }
 
+    // 次のシーンに遷移する.
+    private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
+        try {
+            await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
+            SceneManager.LoadScene(nextSceneName);
+        } catch (System.Exception e) {
+            Debug.LogError($"Scene transition failed: {e.Message}");
+        }
+    }
+
     /// <summary>
-    /// シーン遷移する
+    /// シーン遷移とその際のUIの動きや音楽の制御を行う.
     /// </summary>
     public void ChangeScene() {
         if (_isChangingScene)
@@ -63,14 +73,5 @@ public class CreditsController : MonoBehaviour {
         _audioSource_BGM.DOFade(0, duration)
             .SetLink(_audioSource_BGM.gameObject);
         GoNextSceneAsync(duration, _nextSceneNames[_nextSceneIndex]).Forget();
-    }
-
-    private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
-        try {
-            await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());
-            SceneManager.LoadScene(nextSceneName);
-        } catch (System.Exception e) {
-            Debug.LogError($"Scene transition failed: {e.Message}");
-        }
     }
 }

@@ -2,9 +2,11 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "CrushersDB", menuName = "ScriptableObjects/Crushers Database")]
 public class CrushersDB : ScriptableObject {
+    #region Serialized Fields
     [SerializeField] private CrusherDB[] _crusherDBs = new CrusherDB[0];
     [SerializeField] private CrusherInfoDB[] _crusherInfoDBs = new CrusherInfoDB[0];
     [SerializeField] private BattleCrusherDB[] _battleCrusherDBs = new BattleCrusherDB[0];
+    #endregion
     
     /// <summary>
     /// クラッシャーの数を返す

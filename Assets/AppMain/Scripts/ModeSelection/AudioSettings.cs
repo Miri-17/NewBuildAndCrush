@@ -85,6 +85,10 @@ public class AudioSettings : MonoBehaviour {
         _valueText.text = _slider.value.ToString();
     }
 
+    /// <summary>
+    /// このクラスがアタッチされたオーディオバーの選択状態を切り替える.
+    /// </summary>
+    /// <param name="isSelected"></param>
     public void SetSelection(bool isSelected) {
         IsSelected = isSelected;
 

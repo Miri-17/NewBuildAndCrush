@@ -88,7 +88,8 @@ public class BGM : MonoBehaviour {
                 break;
         }
         #endregion
-        // _audioSource.Play(); // TODO デバッグを終えたらコメントアウト外す！！
+        // TODO 上のデバッグ用の部分をこちらに変更すると, コードが短くなる.
+        // _audioSource.Play();
 
         // シーンが切り替わった時に呼ばれるメソッドを登録する.
         SceneManager.activeSceneChanged += ChangedActiveScene;
@@ -100,19 +101,16 @@ public class BGM : MonoBehaviour {
 
         switch (nextScene.name) {
             case "ModeSelection":
-                // if (_audioSource.isPlaying && _audioSource.clip == _bgmDB.AudioClips[0])
                 if (GameDirector.Instance.PreviousSceneName == "Title" && _audioSource.clip == _bgmDB.AudioClips[0])
                         break;
                 _audioSource.Stop();
                 _audioSource.volume = 1;
                 _audioSource.clip = _bgmDB.AudioClips[0];
-                Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
             case "PlayerSelection":
                 _audioSource.Stop();
                 _audioSource.clip = _bgmDB.AudioClips[1];
-                Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
             case "SoundList":
@@ -121,7 +119,6 @@ public class BGM : MonoBehaviour {
             case "Credits":
                 _audioSource.Stop();
                 _audioSource.clip = _bgmDB.AudioClips[13];
-                Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
             case "Story":
@@ -160,24 +157,23 @@ public class BGM : MonoBehaviour {
                     _audioSource.clip = _bgmDB.AudioClips[2];
                 else
                     _audioSource.clip = _bgmDB.AudioClips[12];
-                Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
             case "Battle":
                 _audioSource.Stop();
                 _audioSource.clip = _bgmDB.AudioClips[14];
-                Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
             case "Result":
                 _audioSource.Stop();
                 _audioSource.loop = false;
                 _audioSource.clip = _bgmDB.AudioClips[11];
-                Debug.Log("audioSource.clip: " + _audioSource.clip);
                 _audioSource.Play();
                 break;
             default:
                 break;
         }
+        
+        Debug.Log("audioSource.clip: " + _audioSource.clip);
     }
 }

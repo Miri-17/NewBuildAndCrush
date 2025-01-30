@@ -7,6 +7,7 @@ using DG.Tweening;
 using Febucci.UI;
 using TMPro;
 
+// TODO CrossoverControllerと統合したい.
 public class StoryController : MonoBehaviour {
     #region Private Fields
     private ComicsPanelDB _comicsPanelDB = null;
@@ -62,6 +63,7 @@ public class StoryController : MonoBehaviour {
     private void Update() {
         if (!_canSkip) return;
 
+        // Yボタンが押されたら台詞の表示中なら表示を即完了し, 表示が完了していたら次の台詞にする.
         if (_typewriter.isShowingText) {
             if (Input.GetButtonDown("Select"))
                 _typewriter.SkipTypewriter();
@@ -75,23 +77,25 @@ public class StoryController : MonoBehaviour {
                 _goToNextPage = true;
         }
 
+        // Rボタンが押されたら, ストーリーのスキップを行う.
         if (!_isChangingScene && Input.GetButtonDown("Fire1")) {
             _isChangingScene = true;
             if (GameDirector.Instance.IsOpening) {
                 _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-                _storiesUIController.TransitionUI(0.5f);
+                _storiesUIController.TransitionUI(true, 0.5f);
                 GoNextSceneAsync(0.5f, "Battle").Forget();
             } else {
                 _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[2]);
                 _audioSourceBGM.DOFade(0, 1.0f)
                     .SetEase(Ease.Linear)
                     .SetLink(_audioSourceBGM.gameObject);
-                _storiesUIController.TransitionUI(1.0f);
+                _storiesUIController.TransitionUI(true, 1.0f);
                 GoNextSceneAsync(1.0f, "ModeSelection").Forget();
             }
         }
     }
 
+    // ストーリーを始め, 終わったら次のシーンに遷移させる.
     private async void StartTalk() {
         Open();
         _talks = _csvReader.GetCSVData(_csvName);
@@ -105,18 +109,18 @@ public class StoryController : MonoBehaviour {
         _isChangingScene = true;
         if (GameDirector.Instance.IsOpening) {
             _audioSourceSE.PlayOneShot(CrusherSE.Instance.SEDB.AudioClips[0]);
-            _storiesUIController.TransitionUI(0.5f);
+            _storiesUIController.TransitionUI(true, 0.5f);
             GoNextSceneAsync(0.5f, "Battle").Forget();
         } else {
             _audioSourceBGM.DOFade(0, 1.0f)
                 .SetEase(Ease.Linear)
                 .SetLink(_audioSourceBGM.gameObject);
-            _storiesUIController.TransitionUI(1.0f);
+            _storiesUIController.TransitionUI(true, 1.0f);
             GoNextSceneAsync(1.0f, "ModeSelection").Forget();
         }
     }
 
-    // 会話の開始.
+    // ストーリーを進行させる.
     private async UniTask TalkStart(List<StoryData> talkList) {
         Debug.Log("talkList Count: " + talkList.Count);
         int i = 0;
@@ -143,17 +147,13 @@ public class StoryController : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// ウィンドウを開く
-    /// </summary>
-    /// <param name="initName"></param>
-    /// <param name="initText"></param>
-    /// <returns></returns>
+    // ストーリーの初期化.
     private void Open(string initName = "", string initText = "") {
         _comicsText.text = initText;
         _fadeInOutLoopAnimation.AnimationOnOff(false);
     }
 
+    // コミックパネルの変更を行う.
     private void SetComicsPanel(string comicsPanel) {
         Sprite comicsPanelSprite = _comicsPanelDB.GetComicsPanelSprite(comicsPanel);
 
@@ -169,8 +169,9 @@ public class StoryController : MonoBehaviour {
         _comicsPanel.gameObject.SetActive(true);
     }
     
-#region Add for Alice Ending
-// TODO あまり良くないコードなので直したい.
+    // TODO あまり良くないコードなので直したい.
+    #region Add for Alice Ending
+    // AliceのエンディングのTalkStartに代わるメソッド.
     private async UniTask AliceEndingStart(List<StoryData> talkList) {
         Debug.Log("アリスのエンディングです");
         Debug.Log("talkList Count: " + talkList.Count);
@@ -203,6 +204,7 @@ public class StoryController : MonoBehaviour {
         }
     }
     
+    // AliceのエンディングのSetComicsPanelに代わるメソッド.
     private async void SetAliceEndingPanel(string comicsPanel) {
         _canSkip = false;
 
@@ -214,8 +216,7 @@ public class StoryController : MonoBehaviour {
             return;
         }
 
-        Debug.Log("フェードイン");
-        // フェードイン
+        // フェードイン.
         await _endingFadeImage.DOFade(1.0f, 1.5f)
             .SetLink(_endingFadeImage.gameObject)
             .AsyncWaitForCompletion();
@@ -223,8 +224,7 @@ public class StoryController : MonoBehaviour {
         _comicsPanel.gameObject.SetActive(false);
         _comicsPanel.sprite = comicsPanelSprite;
 
-        Debug.Log("フェードアウト");
-        // フェードアウト
+        // フェードアウト.
         await _endingFadeImage.DOFade(0, 1.5f)
             .SetLink(_endingFadeImage.gameObject)
             .AsyncWaitForCompletion();
@@ -233,8 +233,9 @@ public class StoryController : MonoBehaviour {
 
         _canSkip = true;
     }
-#endregion
+    #endregion
 
+    // 次のシーンに遷移する.
     private async UniTaskVoid GoNextSceneAsync(float duration, string nextSceneName) {
         try {
             await UniTask.Delay((int)(duration * 1000), cancellationToken: this.GetCancellationTokenOnDestroy());

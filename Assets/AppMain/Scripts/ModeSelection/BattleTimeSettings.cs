@@ -6,13 +6,13 @@ using DG.Tweening;
 using TMPro;
 
 public class BattleTimeSettings : MonoBehaviour {
-    #region
+    #region Private Fields
     private AudioSource _audioSourceSE = null;
     private int _limitTimeIndex = 0;
     private List<RectTransform> _arrows = new List<RectTransform>();
     #endregion
 
-    #region
+    #region Serialized Fields
     [SerializeField] private Image _bg = null;
     [SerializeField] private Sprite[] _bgSprites = new Sprite[0];
     [SerializeField] private TextMeshProUGUI _valueText = null;
@@ -84,6 +84,10 @@ public class BattleTimeSettings : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// このクラスが対戦時間設定の選択状態を切り替える.
+    /// </summary>
+    /// <param name="isSelected"></param>
     public void SetSelection(bool isSelected) {
         IsSelected = isSelected;
 

@@ -27,12 +27,12 @@ public class Spike : MonoBehaviour {
     private void Update() {
         if (_tween == null || _boxCollider2D == null) return;
 
-        // 落ちる状態であって、地面に接地していたら
+        // 落ちる状態であって、地面に接地していたら.
         if (_isTweenPlaying && _isFalling && IsHitToGround()) {
             Debug.Log("落ちるの止める");
             _isTweenPlaying = false;
             _tween.Pause();
-        // 落ちる状態であって、地面に接地していなければ
+        // 落ちる状態であって、地面に接地していなければ.
         } else if (!_isTweenPlaying && _isFalling && !IsHitToGround()) {
             Debug.Log("落ちるの再開");
             _isTweenPlaying = true;

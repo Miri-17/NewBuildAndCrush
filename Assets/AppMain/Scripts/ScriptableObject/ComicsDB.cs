@@ -2,6 +2,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "ComicsDB", menuName = "ScriptableObjects/Comics Database")]
 public class ComicsDB : ScriptableObject {
+    /// <summary>
+    /// ビルダーとクラッシャーの組み合わせによって発生するストーリーのCSVデータを格納する.
+    /// </summary>
     [System.Serializable]
     public class CrusherParameter {
         public string Name = "";
@@ -10,6 +13,9 @@ public class ComicsDB : ScriptableObject {
         public string CSVName = "";
     }
 
+    /// <summary>
+    /// あるビルダーとのクラッシャーの組み合わせをデータ化する.
+    /// </summary>
     [System.Serializable]
     public class BuilderParameter {
         public string Name = "";
@@ -18,16 +24,18 @@ public class ComicsDB : ScriptableObject {
 
     [SerializeField] private BuilderParameter[] _builderParameters = new BuilderParameter[0];
 
+    // インデックスからビルダーと, そのビルダーに対するクラッシャーの組み合わせを取得する.
     private BuilderParameter GetBuilderParameter(int builderIndex) {
         return _builderParameters[builderIndex];
     }
 
+    // ビルダーのパラメータとインデックスから, ストーリーのCSVデータを取得する.
     private CrusherParameter GetCrusherParameter(BuilderParameter parameter, int index) {
         return parameter.CrusherParameter[index];
     }
     
     /// <summary>
-    /// ビルダーとクラッシャーのインデックスから, csv名を取得する.
+    /// ビルダーとクラッシャーのインデックスから, CSV名を取得する.
     /// </summary>
     /// <param name="builderIndex"></param>
     /// <param name="crusherIndex"></param>

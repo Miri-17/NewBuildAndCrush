@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameDirector : MonoBehaviour {
     public static GameDirector Instance { get; private set; }
 
-    #region
+    #region Serialized Fields
     [SerializeField] private int _builderIndex = 0;
     [SerializeField] private int _crusherIndex = 0;
     [SerializeField] private int _builderScore = 0;
@@ -30,7 +30,7 @@ public class GameDirector : MonoBehaviour {
     [SerializeField] private List<int> _witchAchievements = new List<int>() { 0, 0, 0, 0, };
     #endregion
 
-    #region
+    #region Public Properties
     public int BuilderIndex { get => _builderIndex; set => _builderIndex = value; }
     public int CrusherIndex { get => _crusherIndex; set => _crusherIndex = value; }
     public int BuilderScore { get => _builderScore; set => _builderScore = value; }
@@ -38,7 +38,7 @@ public class GameDirector : MonoBehaviour {
     public int CrusherKillCounts { get => _crusherKillCounts; set => _crusherKillCounts = value; }
     public int WagonCrushCounts { get => _wagonCrushCounts; set => _wagonCrushCounts = value; }
     public bool IsBuilderWin { get => _isBuilderWin; set => _isBuilderWin = value; }
-    // TODO 以下2変数, Battleシーン外では使わないためできればここで宣言したくない.
+    // TODO 以下2変数はBattleシーン外では使わないため, できればここで宣言したくない.
     public float BuilderPosition { get => _builderPosition; set => _builderPosition = value; }
     public float CrusherPosition { get => _crusherPosition; set => _crusherPosition = value; }
     public string PreviousSceneName { get => _previousSceneName; set => _previousSceneName = value; }

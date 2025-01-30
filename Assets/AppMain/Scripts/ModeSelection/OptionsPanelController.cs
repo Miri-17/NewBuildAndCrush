@@ -1,10 +1,12 @@
 using UnityEngine;
 
 public class OptionsPanelController : MonoBehaviour {
+    #region Private Fields
     private RulesPanelController _rulesPanelController = null;
     private AudioSource _audioSourceSE = null;
     private int _optionIndex = 0;
     private int _previousOptionIndex = 0;
+    #endregion
 
     #region Serialized Fields
     [SerializeField] private AudioSettings[] _audioSettings = new AudioSettings[0];

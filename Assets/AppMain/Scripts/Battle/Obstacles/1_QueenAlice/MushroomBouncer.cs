@@ -2,9 +2,11 @@ using UnityEngine;
 using DG.Tweening;
 
 public class MushroomBouncer : MonoBehaviour {
+    #region Private Fields
     private ParticleSystem _particleSystem = null;
     private bool _firstBounced = false;
     private bool _isBounced = false;
+    #endregion
 
     #region Serialized Fields
     [SerializeField] private SpriteRenderer _spriteRenderer = null;

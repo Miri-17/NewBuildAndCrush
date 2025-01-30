@@ -30,11 +30,11 @@ public class SpawnPoint : MonoBehaviour {
 
     private void SetInfo() {
         if (IsOccupied == true) {
-            // Debug.Log("occupied: (x " + X + ", Y " + Y + ")");
+            // Debug.Log("occupied: (X " + X + ", Y " + Y + ")");
             _spriteRenderer.color = _redColor;
             this.gameObject.layer = 10;
         } else {
-            // Debug.Log("not occupied: (x " + X + ", Y " + Y + ")");
+            // Debug.Log("not occupied: (X " + X + ", Y " + Y + ")");
             _spriteRenderer.color = _greenColor;
             this.gameObject.layer = 9;
         }

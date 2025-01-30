@@ -41,11 +41,15 @@ public class BattleBuilderUIController : MonoBehaviour {
     [SerializeField] private GameObject _warningPanel = null;
     [SerializeField] private Image _warningPanelImage = null;
     [SerializeField] private Sprite _warningPanelForGoButtonSprite = null;
+    // 現在は, 部下たちが辛くないのは重量50未満の時, 少し辛くなるのは重量50以上80未満の時, 辛いのは重量80以上の時.
+    [SerializeField] private float[] _switchingWeights = new float[2] { 50.0f, 80.0f };
     #endregion
 
+    #region Public Properties
     public List<GameObject> ObstaclePrefabs { get; private set; } = new List<GameObject>();
     public bool IsButtonDown { get; private set; } = false;
     public GameObject CurrentPrefabs { get; private set; } = null;
+    #endregion
 
     private void Start() {
         for (int i = 0; i < _obstacleButtons.Length; i++) {
@@ -78,16 +82,19 @@ public class BattleBuilderUIController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_weighingBar.value < 50) {
+        // 部下たちが辛くない時.
+        if (_weighingBar.value < _switchingWeights[0]) {
             if (_faceExpression != FACE_EXPRESSION.FINE) {
                 _faceExpression = FACE_EXPRESSION.FINE;
                 _facesImage.sprite = _faceSprites[0];
             }
-        } else if (_weighingBar.value < 80) {
+        // 部下たちが少し辛くなる時.
+        } else if (_weighingBar.value < _switchingWeights[1]) {
             if (_faceExpression != FACE_EXPRESSION.PALE) {
                 _faceExpression = FACE_EXPRESSION.PALE;
                 _facesImage.sprite = _faceSprites[1];
             }
+        // 部下たちが辛い時.
         } else {
             if (_faceExpression != FACE_EXPRESSION.DEATHLY_PALE) {
                 _faceExpression = FACE_EXPRESSION.DEATHLY_PALE;
@@ -96,6 +103,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         }
     }
 
+    // 障害物ボタンを押した時の全ての障害物ボタンの制御を行う.
     private void OnObstacleButtonClicked(int index) {
         if (!_isPlaceable)
             return;
@@ -116,7 +124,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         _selectedIndex = index;
     }
 
-    // private void OnGoButtonClicked() {
+    // Goボタンを押した時のビルダー画面UIの制御を行う.
     public void OnGoButtonClicked() {
         if (!_isPreparation) {
             SetGoButtonInteractive(false);
@@ -143,6 +151,7 @@ public class BattleBuilderUIController : MonoBehaviour {
         }
     }
 
+    // ワゴンに載せた障害物が再度置けるか判断するためのバーの動きの制御を行う.
     private void SetPartsGenerationBar(int index) {
         _isGeneration[index] = true;
         _partsGenerationBars[index].value = 0;
@@ -153,6 +162,7 @@ public class BattleBuilderUIController : MonoBehaviour {
             .OnComplete(() => { _obstacleButtons[index].interactable = true; _isGeneration[index] = false; });
     }
 
+    // ワゴンに載せた障害物によって重量を加算し, 重量バーの動きの制御を行う.
     private void SetWeighingBar(float weight) {
         _currentWeight += weight;
         if (_currentWeight > _maxWeight) {
@@ -167,7 +177,7 @@ public class BattleBuilderUIController : MonoBehaviour {
     }
 
     /// <summary>
-    /// 物を置いた直後のUI更新を行う
+    /// 物を置いた直後のUI更新を行う.
     /// </summary>
     public void SetButtonUp() {
         // クリッカーを使えない状態にする.
@@ -190,12 +200,12 @@ public class BattleBuilderUIController : MonoBehaviour {
         SetWeighingBar(_obstacleWeight[_selectedIndex]);
 
         if (_builderController.WagonControllerRun != null) return;
-        // ワゴンが走っている時はこの処理を走らせない
+        // ワゴンが走っている時はこの処理を走らせない.
         SetGoButtonInteractive(true);
     }
 
     /// <summary>
-    /// Go Buttonのinteractiveを変更する。
+    /// Go Buttonのinteractiveを変更する.
     /// </summary>
     /// <param name="interactable"></param>
     public void SetGoButtonInteractive(bool interactable) {

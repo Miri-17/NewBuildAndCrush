@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour {
         _cancellationTokenSource?.Dispose();
     }
 
+    // 存在時間を超えた弾丸を消す.
     private async UniTaskVoid DestroyBulletAsync(CancellationToken token) {
         try {
             await UniTask.Delay(TimeSpan.FromSeconds(_existenceTime), cancellationToken: token);

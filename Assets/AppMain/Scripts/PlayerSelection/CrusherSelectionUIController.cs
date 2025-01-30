@@ -13,6 +13,10 @@ public class CrusherSelectionUIController : MonoBehaviour {
     [SerializeField] private Sprite[] _statusSprites = new Sprite[0];
     #endregion
 
+    /// <summary>
+    /// 表示中のクラッシャーによってボタンとステータスの画像を変更する.
+    /// </summary>
+    /// <param name="index"></param>
     public void SetSprites(int index) {
         _leftImage.sprite = _leftSprites[index];
         _centerImage.sprite = _centerSprites[index];

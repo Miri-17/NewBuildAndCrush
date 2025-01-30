@@ -25,7 +25,7 @@ public class Cupcake : MonoBehaviour {
     
     private void OnEnable() {
         _cancellationTokenSource = new CancellationTokenSource();
-        DestroyBulletAsync(_cancellationTokenSource.Token).Forget();
+        DestroyCupcakeAsync(_cancellationTokenSource.Token).Forget();
     }
 
     private void OnDisable() {
@@ -33,7 +33,8 @@ public class Cupcake : MonoBehaviour {
         _cancellationTokenSource?.Dispose();
     }
 
-    private async UniTaskVoid DestroyBulletAsync(CancellationToken token) {
+    // 存在時間を超えたカップケーキを消す.
+    private async UniTaskVoid DestroyCupcakeAsync(CancellationToken token) {
         try {
             await UniTask.Delay(TimeSpan.FromSeconds(_existenceTime), cancellationToken: token);
             if (!token.IsCancellationRequested) {
@@ -44,7 +45,6 @@ public class Cupcake : MonoBehaviour {
         }
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision) {
     private void OnCollisionStay2D(Collision2D collision) {
         Debug.Log("collision name: " + collision.gameObject.name);
         Collider2D[] hitInfos = Physics2D.OverlapCircleAll(this.transform.position, _attackRange, _obstacleLayer);

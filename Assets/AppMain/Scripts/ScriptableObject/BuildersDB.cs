@@ -2,9 +2,11 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "BuildersDB", menuName = "ScriptableObjects/Builders Database")]
 public class BuildersDB : ScriptableObject {
+    #region Serialized Fields
     [SerializeField] private BuilderDB[] _builderDBs = new BuilderDB[0];
     [SerializeField] private BuilderInfoDB[] _builderInfoDBs = new BuilderInfoDB[0];
     [SerializeField] private BattleBuilderDB[] _battleBuilderDBs = new BattleBuilderDB[0];
+    #endregion
 
     /// <summary>
     /// ビルダーの数を返す

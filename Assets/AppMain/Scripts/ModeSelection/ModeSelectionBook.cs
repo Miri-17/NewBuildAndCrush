@@ -6,10 +6,12 @@ using DG.Tweening;
 public class ModeSelectionBook : MonoBehaviour {
     private List<RectTransform> _arrows = new List<RectTransform>();
 
+    #region Serialized Fields
     [SerializeField] private Image _selectedImage = null;
     [SerializeField] private Image _textImage = null;
     [SerializeField] private Image[] _arrowImages = new Image[0];
     [SerializeField] private float[] _arrowXPositions = new float[0];
+    #endregion
     
     public bool IsSelected { get; private set; } = false;
 
@@ -36,6 +38,10 @@ public class ModeSelectionBook : MonoBehaviour {
             .SetLink(_textImage.gameObject);
     }
 
+    /// <summary>
+    /// このクラスがアタッチされた本の選択状態を切り替える.
+    /// </summary>
+    /// <param name="isSelected"></param>
     public void SetSelection(bool isSelected) {
         IsSelected = isSelected;
         _selectedImage.enabled = IsSelected;
